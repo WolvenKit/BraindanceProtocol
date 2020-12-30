@@ -1,0 +1,7 @@
+{
+    "name": "CyberTweaks2077",
+    "version_number": "0.1.0",
+    "website_url": "https://github.com/osulli/CyberTweaks2077",
+    "description": "A collecting of LUA scripts to modify your game experience",
+    "dependencies": []
+}
