@@ -19,7 +19,7 @@ There are two ways of using the scripts
 Inside of `bin\x64\plugins\cyber_engine_tweaks\scripts\autoexec.lua` add the following at the end of the script:
 
 ```
-Example = require("example")
+Example = require("examples.example")
 Example.Hello()
 ```
 
@@ -28,6 +28,14 @@ Example.Hello()
 Open the console and run:
 
 ```
-Example = require("example")
+Example = require("examples.example")
 Example.Hello()
+```
+
+Your console should look similar to the snippet below:
+
+```
+> Example = require("examples.example")
+> Example.Hello()
+Hello World
 ```
