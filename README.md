@@ -1,6 +1,6 @@
-# CyberTweaks2077
+# BraindanceProtocol
 
-A collection of LUA scripts to modify your game experience
+A collection of LUA scripts to modify your Cyberpunk 2077 experience
 
 ## Available Tweaks
 

@@ -1,2 +1,2 @@
 mkdir -p builds
-zip -r builds/cybertweaks2077.zip * -x "../.git/" -x "../.scripts/"
+zip -r builds/braindanceprotocol.zip * -x "../.git/" -x "../.scripts/"

@@ -1,7 +1,7 @@
 {
-    "name": "CyberTweaks2077",
+    "name": "BraindanceProtocol",
     "version_number": "0.1.2",
-    "website_url": "https://github.com/osulli/CyberTweaks2077",
-    "description": "A collecting of LUA scripts to modify your game experience",
+    "website_url": "https://github.com/osulli/BraindanceProtocol",
+    "description": "A collection of LUA scripts to modify your Cyberpunk 2077 experience",
     "dependencies": []
 }
