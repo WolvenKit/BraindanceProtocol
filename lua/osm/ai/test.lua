@@ -5,8 +5,11 @@ dofile ("Q:\\Modding\\Cyberpunk\\CyberTweaks2077\\lua\\osm\\ai\\test.lua")
 local Threat = {}
 
 
-local One = { drop = 0.001, maxtime = 0.001, avoidtraces = 0 }
-local Two = { drop = 9999, maxtime = 9999, avoidtraces = 9999 }
+local One = { drop = 0.001, maxtime = 0.001, avoidtracesnumber = 0, avoidtracesmindist = 0.5 } -- Took a long time to leave combat
+local Two = { drop = 0.001, maxtime = 0.001, avoidtracesnumber = 0, avoidtracesmindist = 5000 } -- 
+local Three = { drop = 0.001, maxtime = 5000, avoidtracesnumber = 0, avoidtracesmindist = 5000, tryfinaltracesonlymaxdist = 5000 } -- 
+local Four = { drop = 0.001, maxtime = 5000000, avoidtracesnumber = 0, avoidtracesmindist = 5000000, tryfinaltracesonlymaxdist = 5000000 } -- 
+local Five = { drop = 0.001, maxtime = 5000000000, avoidtracesnumber = 0, avoidtracesmindist = 5000000000, tryfinaltracesonlymaxdist = 5000000000 } -- 
 
 
 function Threat.PrintValues(stage)
@@ -14,7 +17,10 @@ function Threat.PrintValues(stage)
     one = GameOptions.Get("ThreatTracking", "ThreatDropFactor")
     two = GameOptions.Get("LoSFinderSystem", "TryFinalTracesOnlyMaxTime")
     three = GameOptions.Get("LoSFinderSystem", "AvoidTracesNumber")
-    print(stage, one, two, three)
+    four = GameOptions.Get("LoSFinderSystem", "AvoidTraceHitsMinDist")
+    five = GameOptions.Get("LoSFinderSystem", "TryFinalTracesOnlyMaxDist")
+
+    print(stage, one, two, three, four, five)
     print("--------------------------------------")
 end
 
@@ -25,12 +31,14 @@ function Threat.Test(config)
     
     GameOptions.SetFloat("ThreatTracking", "ThreatDropFactor", config.drop)
     GameOptions.SetFloat("LoSFinderSystem", "TryFinalTracesOnlyMaxTime", config.maxtime)
-    GameOptions.SetInt("LoSFinderSystem", "AvoidTracesNumber", config.avoidtraces)
+    GameOptions.SetInt("LoSFinderSystem", "AvoidTracesNumber", config.avoidtracesnumber)
+    GameOptions.SetFloat("LoSFinderSystem", "AvoidTraceHitsMinDist", config.avoidtracesmindist)
+    GameOptions.SetFloat("LoSFinderSystem", "TryFinalTracesOnlyMaxDist", config.tryfinaltracesonlymaxdist)
     
     Threat.PrintValues("After :")
 end
 
-Threat.Test(One)
+Threat.Test(Five)
 
 return Threat
 
