@@ -2,18 +2,20 @@ local Utilities = require("braindance_protocol.utility")
 
 local Crafting = {}
 
-function Crafting.AddLegendaryRecipies()
+function Crafting.AddLegendaryMaterials(quantity)
     local moduleName = "Add Crafting Materials"
     Utilities.StartProtocol(moduleName)
 
-    Utilities.AddItem("LegendaryMaterial1", 99)
-    Utilities.AddItem("LegendaryMaterial2", 99)
-    Utilities.AddItem("EpicMaterial1", 99)
-    Utilities.AddItem("EpicMaterial2", 99)
-    Utilities.AddItem("RareMaterial1", 99)
-    Utilities.AddItem("RareMaterial2", 99)
-    Utilities.AddItem("UncommonMaterial1", 99)
-    Utilities.AddItem("CommonMaterial1", 99)
+    quantity = quantity or 9999
+
+    Utilities.AddItem("LegendaryMaterial1", quantity)
+    Utilities.AddItem("LegendaryMaterial2", quantity)
+    Utilities.AddItem("EpicMaterial1", quantity)
+    Utilities.AddItem("EpicMaterial2", quantity)
+    Utilities.AddItem("RareMaterial1", quantity)
+    Utilities.AddItem("RareMaterial2", quantity)
+    Utilities.AddItem("UncommonMaterial1", quantity)
+    Utilities.AddItem("CommonMaterial1", quantity)
 
     Utilities.FinishProtocol(moduleName)
 end
