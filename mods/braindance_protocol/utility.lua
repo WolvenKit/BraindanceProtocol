@@ -13,6 +13,16 @@ function Utilities.FinishProtocol(name)
     print("")
 end
 
+function Utilities.DumpObject(obj, path)
+	local dump = tostring(Dump(obj))
+	local output = io.open(path or "output.txt", "w")
+	
+	print(dump)
+	
+	output:write(dump)
+	output:close()
+end
+
 function Utilities.AddItem(item, quantity)
     Game.AddToInventory(string.format("Items.%s", item), quantity)
 end
