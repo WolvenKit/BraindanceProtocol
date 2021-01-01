@@ -8,6 +8,7 @@ A collection of LUA scripts to modify your Cyberpunk 2077 experience
 - Disable AutoSaves
 - Increase AutoSaves increments
 - Decrease AutoSaves increments
+- Activate GodMode
 - Give Player Johnny's Items
 - Give Player lots of money
 - Set Player to Max Level, Streetcred, Perk level, and Attribute level
