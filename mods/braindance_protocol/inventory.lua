@@ -1,6 +1,6 @@
 local Inventory = {}
 
-local ItemHashes = "braindance_protocol/data/ItemHashes.txt"
+local ItemHashes = "data/ItemHashes.txt"
 
 function Inventory.AddItem(item, quantity)
 	quantity = quantity or 1

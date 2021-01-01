@@ -1,3 +1,5 @@
+print("Player")
+
 local Player = {}
 
 function Player.SetLevel(name, value)
