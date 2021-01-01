@@ -25,4 +25,8 @@ function Utilities.ModifyStat(name, value)
     Game.ModStatPlayer(string.format("%s", name), value)
 end
 
+function Utilities.AddStatModifier(name, value, modType)
+    Game.AddStatModifier(string.format("%s", name), value, modType)
+end
+
 return Utilities
