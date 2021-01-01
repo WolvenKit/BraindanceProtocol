@@ -19,7 +19,7 @@ A collection of LUA scripts to modify your Cyberpunk 2077 experience
 
 ## Installation
 
-Drop `mods` folder into  `bin\x64\plugins\cyber_engine_tweaks\`
+Drop `mods` folder into `bin\x64\plugins\cyber_engine_tweaks\`
 
 ## Usage
 
