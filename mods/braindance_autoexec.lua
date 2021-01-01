@@ -6,8 +6,10 @@ Add the Braindance Protocols you wish to autoexec at the start of the game (main
 
 -- Load LUA modules into memory
 Utilities = require("braindance_protocol.utility")
-Examples = require("braindance_protocol.examples.init")
+Player = require("braindance_protocol.player")
+Inventory = require("braindance_protocol.inventory")
 Vehicles = require("braindance_protocol.ai.vehicles")
+Examples = require("braindance_protocol.examples.init")
 
 Cheats =
 {
