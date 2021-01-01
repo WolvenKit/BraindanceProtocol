@@ -17,4 +17,12 @@ function Utilities.AddItem(item, quantity)
     Game.AddToInventory(string.format("Items.%s", item), quantity)
 end
 
+function Utilities.SetLevel(name, value)
+    Game.SetLevel(string.format("%s", name), value)
+end
+
+function Utilities.ModifyStat(name, value)
+    Game.ModStatPlayer(string.format("%s", name), value)
+end
+
 return Utilities
