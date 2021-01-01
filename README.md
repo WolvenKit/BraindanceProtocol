@@ -15,11 +15,11 @@ A collection of LUA scripts to modify your Cyberpunk 2077 experience
 
 ## Installation
 
-Drop `mods` folder into `bin\x64`
+Drop `mods` folder into  `bin\x64\plugins\cyber_engine_tweaks\`
 
 ## Usage
 
-Inside of `bin\x64\mods\autoexec.lua` add the following:
+Inside of `bin\x64\plugins\cyber_engine_tweaks\mods\autoexec.lua` add the following:
 
 ```
 s = [[
@@ -41,4 +41,4 @@ end
 
 ## Configuration
 
-Inside of `bin\x64\mods\braindance_autoexec.lua` configure the protocols you wish to run.
+Inside of `bin\x64\plugins\cyber_engine_tweaks\mods\braindance_autoexec.lua` configure the protocols you wish to run.
