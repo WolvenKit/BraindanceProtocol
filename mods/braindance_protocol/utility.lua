@@ -13,9 +13,8 @@ function Utilities.FinishProtocol(name)
     print("")
 end
 
--- function Utilities.Sleep(s)
---     local ntime = os.time() + s
---     repeat until os.time() > ntime
--- end
+function Utilities.AddItem(item, quantity)
+    Game.AddToInventory(string.format("Items.%s", item), quantity)
+end
 
 return Utilities
