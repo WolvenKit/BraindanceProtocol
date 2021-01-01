@@ -1,6 +1,6 @@
 {
     "name": "BraindanceProtocol",
-    "version_number": "0.2.0",
+    "version_number": "0.2.1",
     "website_url": "https://github.com/WolvenKit/BraindanceProtocol",
     "description": "A collection of LUA scripts to modify your Cyberpunk 2077 experience",
     "dependencies": []
