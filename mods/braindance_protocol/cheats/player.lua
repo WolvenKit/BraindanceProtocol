@@ -10,7 +10,22 @@ function Player.GodMode()
     Utilities.AddStatModifier("HealthRegeneration", 99999, "Additive")
     Utilities.ModifyStat("HealthInCombatRegenEnabled", true)
     Utilities.ModifyStat("HealthInCombatRegenRateMult", 20, "Additive")
-    Utilities.ModifyStat("HealthInCombatStartDelay", 0.1, "Additive")
+    Utilities.ModifyStat("HealthInCombatStartDelay", -99, "Additive")
+    Utilities.ModifyStat("HealthOutOfCombatRegenEnabled", true)
+    Utilities.ModifyStat("HealthOutOfCombatRegenRateMult", 20, "Additive")
+
+    Utilities.ModifyStat("StaminaRegenEnabled", true)
+    Utilities.ModifyStat("StaminaRegenRateMult", 20, "Additive")
+    Utilities.ModifyStat("StaminaRegenStartDelay", -99, "Additive")
+
+    Utilities.ModifyStat("Memory", 10)
+    Utilities.ModifyStat("MemoryCostModifier", -90, "Additive")
+    Utilities.ModifyStat("MemoryInCombatRegenEnabled", true)
+    Utilities.ModifyStat("MemoryInCombatRegenRateMult", 20, "Additive")
+    Utilities.ModifyStat("MemoryInCombatStartDelay", -99, "Additive")
+    Utilities.ModifyStat("MemoryOutOfCombatRegenEnabled", true)
+    Utilities.ModifyStat("MemoryOutOfCombatRegenRateMult", 20, "Additive")
+    Utilities.ModifyStat("MemoryOutOfCombatStartDelay", -99, "Additive")
 
     Utilities.FinishProtocol(moduleName)
 end
