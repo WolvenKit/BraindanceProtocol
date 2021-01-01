@@ -22,7 +22,7 @@ A collection of LUA scripts to modify your Cyberpunk 2077 experience
 
 Drop `mods` folder into `bin\x64\plugins\cyber_engine_tweaks\`
 
-## Usage
+## Pre-Requisites
 
 Inside of `bin\x64\plugins\cyber_engine_tweaks\mods\autoexec.lua` add the following:
 
@@ -46,4 +46,16 @@ end
 
 ## Configuration
 
+### Autorun Protocols
+
 Inside of `bin\x64\plugins\cyber_engine_tweaks\mods\braindance_autoexec.lua` configure the protocols you wish to run.
+
+### Manually Activate Protocols
+
+```lua
+-- Cheats
+Cheats.Player.MaxOut() -- Max Level, Attributes, Skill Points, Money,
+Cheats.Player.GodMode() -- Permanent to your SaveFile
+Cheats.Crafting.AddAll() -- Add Recipes & Materials
+Cheats.Johnny.AddItems() -- Adds Johnny's Legendary Items
+```
