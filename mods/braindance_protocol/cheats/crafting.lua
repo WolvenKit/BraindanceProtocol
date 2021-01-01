@@ -50,4 +50,14 @@ function Crafting.AddLegendaryRecipes()
     Utilities.FinishProtocol(moduleName)
 end
 
+function Crafting.AddAll()
+    local moduleName = "Add all Crafting objects"
+    Utilities.StartProtocol(moduleName)
+
+    Crafting.AddLegendaryMaterials()
+    Crafting.AddLegendaryRecipes()
+
+    Utilities.FinishProtocol(moduleName)
+end
+
 return Crafting
