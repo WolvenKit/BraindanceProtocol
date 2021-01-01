@@ -9,6 +9,8 @@ function Player.ModifyStat(name, value)
 end
 
 function Player.AddStatModifier(name, value, modType)
+	modType = modType or "Additive"
+	
     Game.AddStatModifier(string.format("%s", name), value, modType)
 end
 
