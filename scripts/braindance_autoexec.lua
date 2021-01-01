@@ -1,13 +1,23 @@
 --[[
 
-Add the Braindance Protocols you wish to autoexec at the start of the game
-
-To add a activate the Vehicles.PreventKnockdown protocol, add the following line:
-
-require("braindance_protocol.ai.vehicles.lua")
-Vehicles.PreventKnockdown()
+Add the Braindance Protocols you wish to autoexec at the start of the game (main menu)
 
 ]]
 
-require("braindance_protocol.examples.module")
-Example.Initialise()
+--[[ Debug
+dofile ("Q:\\Modding\\Cyberpunk\\BraindanceProtocol\\scripts\\braindance_autoexec.lua")
+]]
+
+-- Load LUA modules into memory
+local Utilities = require("braindance_protocol.utility")
+local Examples = require("braindance_protocol.examples.init")
+local Vehicles = require("braindance_protocol.ai.vehicles")
+
+-- Sleep
+-- Utilities.Sleep(5)
+
+-- Execute Braindance protocols
+Examples.Initialise()
+Vehicles.PreventKnockdown()
+
+-- Declare alias functions for in-game protocols
