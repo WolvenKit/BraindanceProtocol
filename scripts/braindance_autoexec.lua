@@ -4,10 +4,6 @@ Add the Braindance Protocols you wish to autoexec at the start of the game (main
 
 ]]
 
---[[ Debug
-dofile ("Q:\\Modding\\Cyberpunk\\BraindanceProtocol\\scripts\\braindance_autoexec.lua")
-]]
-
 -- Load LUA modules into memory
 local Utilities = require("braindance_protocol.utility")
 local Examples = require("braindance_protocol.examples.init")
