@@ -5,27 +5,27 @@ function Player.GodMode()
     local moduleName = "Enable God Mode"
     Utilities.StartProtocol(moduleName)
 
-    Player.ModifyStat("Health", 99999)
-    Player.ModifyStat("Armor", 99999)
-    Player.AddStatModifier("HealthRegeneration", 99999, "Additive")
-    Player.ModifyStat("HealthInCombatRegenEnabled", true)
-    Player.ModifyStat("HealthInCombatRegenRateMult", 20, "Additive")
-    Player.ModifyStat("HealthInCombatStartDelay", -99, "Additive")
-    Player.ModifyStat("HealthOutOfCombatRegenEnabled", true)
-    Player.ModifyStat("HealthOutOfCombatRegenRateMult", 20, "Additive")
+    Player.AddStatModifier("Health", 99999)
+    Player.AddStatModifier("Armor", 99999)
+    Player.AddStatModifier("HealthRegeneration", 99999)
+    Player.AddStatModifier("HealthInCombatRegenEnabled", 1)
+    Player.AddStatModifier("HealthInCombatRegenRateMult", 20)
+    Player.AddStatModifier("HealthInCombatStartDelay", -99)
+    Player.AddStatModifier("HealthOutOfCombatRegenEnabled", 1)
+    Player.AddStatModifier("HealthOutOfCombatRegenRateMult", 20)
 
-    Player.ModifyStat("StaminaRegenEnabled", true)
-    Player.ModifyStat("StaminaRegenRateMult", 20, "Additive")
-    Player.ModifyStat("StaminaRegenStartDelay", -99, "Additive")
+    Player.AddStatModifier("StaminaRegenEnabled", 1)
+    Player.AddStatModifier("StaminaRegenRateMult", 20)
+    Player.AddStatModifier("StaminaRegenStartDelay", -99)
 
-    Player.ModifyStat("Memory", 20)
-    Player.ModifyStat("MemoryCostModifier", -90, "Additive")
-    Player.ModifyStat("MemoryInCombatRegenEnabled", true)
-    Player.ModifyStat("MemoryInCombatRegenRateMult", 20, "Additive")
-    Player.ModifyStat("MemoryInCombatStartDelay", -99, "Additive")
-    Player.ModifyStat("MemoryOutOfCombatRegenEnabled", true)
-    Player.ModifyStat("MemoryOutOfCombatRegenRateMult", 20, "Additive")
-    Player.ModifyStat("MemoryOutOfCombatStartDelay", -99, "Additive")
+    Player.AddStatModifier("Memory", 20)
+    Player.AddStatModifier("MemoryCostModifier", -90)
+    Player.AddStatModifier("MemoryInCombatRegenEnabled", 1)
+    Player.AddStatModifier("MemoryInCombatRegenRateMult", 20)
+    Player.AddStatModifier("MemoryInCombatStartDelay", -99)
+    Player.AddStatModifier("MemoryOutOfCombatRegenEnabled", 1)
+    Player.AddStatModifier("MemoryOutOfCombatRegenRateMult", 20)
+    Player.AddStatModifier("MemoryOutOfCombatStartDelay", -99)
 
     Utilities.FinishProtocol(moduleName)
 end
@@ -81,10 +81,9 @@ function Player.MaxOut()
 		Game.AddExp(skill, 1000000000)
     end
 
-    Player.AddMoney(999999)
+    Player.AddMoney()
 
     Utilities.FinishProtocol(moduleName)
 end
 
 return Player
-
