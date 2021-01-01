@@ -10,10 +10,11 @@ local Two = { drop = 0.001, maxtime = 0.001, avoidtracesnumber = 0, avoidtracesm
 local Three = { drop = 0.001, maxtime = 5000, avoidtracesnumber = 0, avoidtracesmindist = 5000, tryfinaltracesonlymaxdist = 5000 } -- 
 local Four = { drop = 0.001, maxtime = 5000000, avoidtracesnumber = 0, avoidtracesmindist = 5000000, tryfinaltracesonlymaxdist = 5000000 } -- 
 local Five = { drop = 500000, maxtime = 5000000000, avoidtracesnumber = 0, avoidtracesmindist = 5000000000, tryfinaltracesonlymaxdist = 5000000000 } -- 
+local Six = { drop = 0.01, maxtime = 70000, avoidtracesnumber = 99, avoidtracesmindist = 7000.0, tryfinaltracesonlymaxdist = 10000.0 } -- 
 
 
 function Threat.PrintValues(stage)
-    print("--------------------------------------")
+    print("--------------------------------------------------------------------------")
     one = GameOptions.Get("ThreatTracking", "ThreatDropFactor")
     two = GameOptions.Get("LoSFinderSystem", "TryFinalTracesOnlyMaxTime")
     three = GameOptions.Get("LoSFinderSystem", "AvoidTracesNumber")
@@ -21,7 +22,7 @@ function Threat.PrintValues(stage)
     five = GameOptions.Get("LoSFinderSystem", "TryFinalTracesOnlyMaxDist")
 
     print(stage, one, two, three, four, five)
-    print("--------------------------------------")
+    print("--------------------------------------------------------------------------")
 end
 
 function Threat.Test(config)
@@ -34,18 +35,26 @@ function Threat.Test(config)
     GameOptions.SetInt("LoSFinderSystem", "AvoidTracesNumber", config.avoidtracesnumber)
     GameOptions.SetFloat("LoSFinderSystem", "AvoidTraceHitsMinDist", config.avoidtracesmindist)
     GameOptions.SetFloat("LoSFinderSystem", "TryFinalTracesOnlyMaxDist", config.tryfinaltracesonlymaxdist)
-    GameOptions.SetFloat("LoSFinderSystem", "ElevatedNPCNaviSearchRadius", 500000.0)
 
-    GameOptions.SetFloat("Occlusion", "MaxDistance", 2000.0)
-    GameOptions.SetFloat("Crowd", "AppropriateMinLastSeenTime", 10.0)
-    GameOptions.SetFloat("Crowd", "AppropriateMinDistToPlayer", 10.0)
-    GameOptions.SetFloat("Occlusion", "MaxFarPlane", 8000.0)
-    GameOptions.SetFloat("LoSFinderSystem", "ElevatedNPCNaviSearchRadius", 500000.0)
+    GameOptions.SetFloat("LoSFinderSystem", "ElevatedNPCNaviSearchRadius", 70000.0)
+    GameOptions.SetFloat("LoSFinderSystem", "ElevatedNPCNaviSearchRadius", 70000.0)
+    GameOptions.SetFloat("LoSFinderSystem", "LoSFinderSystem", 70000.0)
+    GameOptions.SetFloat("LoSFinderSystem", "MaxRaysNumber", 4000.0)
+    GameOptions.SetFloat("LoSFinderSystem", "LongRayLength", 4000.0)
+    GameOptions.SetFloat("LoSFinderSystem", "AvoidTraceMinDistToTarget", 600.0) -- Don't do final LoS until this dist
+    GameOptions.SetFloat("LoSFinderSystem", "TryFinalTracesOnlyLongTracesCoeff", 0.7)
+
+
+    GameOptions.SetFloat("Occlusion", "MaxDistance", 10000.0)
+    GameOptions.SetFloat("Occlusion", "MaxFarPlane", 10000.0)
+
+    GameOptions.SetFloat("Crowd", "AppropriateMinLastSeenTime", 40000.0)
+    GameOptions.SetFloat("Crowd", "AppropriateMinDistToPlayer", 7000.0)
 
     Threat.PrintValues("After :")
 end
 
-Threat.Test(Five)
+Threat.Test(Six)
 
 return Threat
 
