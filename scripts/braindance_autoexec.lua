@@ -9,3 +9,5 @@ Vehicles.PreventKnockdown()
 
 ]]
 
+require("braindance_protocol.examples.module")
+Example.Initialise()

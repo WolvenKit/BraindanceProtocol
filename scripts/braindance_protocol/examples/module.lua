@@ -2,10 +2,10 @@ require("braindance_protocol.utility")
 
 local Example = {}
 
-function Example.Hello()
+function Example.Initialise()
     local moduleName = "Hello World"
     Utilities.StartProtocol(moduleName)
-    print("Hello World")
+    print("Initialising Braindance Protocol")
     Utilities.FinishProtocol(moduleName)
 end
 
