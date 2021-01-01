@@ -21,7 +21,7 @@ function Crafting.AddLegendaryMaterials(quantity)
     Utilities.FinishProtocol(moduleName)
 end
 
-function Crafting.AddLegendaryRecipies()
+function Crafting.AddLegendaryRecipes()
     local moduleName = "Add Legendary Crafting Recipies"
     Utilities.StartProtocol(moduleName)
 
