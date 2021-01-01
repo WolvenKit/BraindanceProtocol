@@ -50,7 +50,7 @@ function Player.MaxOut()
 		"Intelligence",
 		"Cool"
 	}
-	
+
 	local skills =
 	{
 		"Level",
@@ -69,18 +69,20 @@ function Player.MaxOut()
 		"Kenjutsu", -- Blades
 		"Stealth"
 	}
-	
+
 	local moduleName = "Max out Level, Streetcred, Perk, and Attributes"
     Utilities.StartProtocol(moduleName)
 
 	for _, attribute in ipairs(attributes) do
 		Game.SetAtt(attribute, 20)
 	end
-	
+
 	for _, skill in ipairs(skills) do
 		Game.AddExp(skill, 1000000000)
-	end
-	
+    end
+
+    Player.AddMoney(999999)
+
     Utilities.FinishProtocol(moduleName)
 end
 
