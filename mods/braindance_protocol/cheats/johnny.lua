@@ -7,11 +7,13 @@ function Johnny.AddItems()
     local moduleName = "Add Johnny's Items"
     Utilities.StartProtocol(moduleName)
 
-    Inventory.AddItem("Q005_Johnny_Glasses", 1)
-    Inventory.AddItem("Q204_samurai_jacket", 1)
-    Inventory.AddItem("Q005_Johnny_Shirt", 1)
-    Inventory.AddItem("Q005_Johnny_Pants", 1)
-    Inventory.AddItem("Q005_Johnny_Shoes", 1)
+	Inventory.AddItem("Preset_Silverhand_3516")
+    Inventory.AddItem("Q005_Johnny_Glasses")
+    Inventory.AddItem("Q005_Johnny_Glasses")
+    Inventory.AddItem("Q204_samurai_jacket")
+    Inventory.AddItem("Q005_Johnny_Shirt")
+    Inventory.AddItem("Q005_Johnny_Pants")
+    Inventory.AddItem("Q005_Johnny_Shoes")
 
     Utilities.FinishProtocol(moduleName)
 end

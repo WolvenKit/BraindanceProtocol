@@ -18,7 +18,7 @@ function Player.GodMode()
     Player.ModifyStat("StaminaRegenRateMult", 20, "Additive")
     Player.ModifyStat("StaminaRegenStartDelay", -99, "Additive")
 
-    Player.ModifyStat("Memory", 10)
+    Player.ModifyStat("Memory", 20)
     Player.ModifyStat("MemoryCostModifier", -90, "Additive")
     Player.ModifyStat("MemoryInCombatRegenEnabled", true)
     Player.ModifyStat("MemoryInCombatRegenRateMult", 20, "Additive")
@@ -42,33 +42,45 @@ function Player.AddMoney(quantity)
 end
 
 function Player.MaxOut()
-    local moduleName = "Max out Level, Streetcred, Perk, and Attributes"
+	local attributes =
+	{
+		"Strength", -- Body
+		"Reflexes",
+		"TechnicalAbility",
+		"Intelligence",
+		"Cool"
+	}
+	
+	local skills =
+	{
+		"Level",
+		"StreetCred",
+
+		"Assault",
+		"Athletics",
+		"Brawling",
+		"ColdBlood",
+		"CombatHacking", -- Quickhacks
+		"Crafting",
+		"Demolition", -- Annihilation
+		"Engineering",
+		"Gunslinger",
+		"Hacking",
+		"Kenjutsu", -- Blades
+		"Stealth"
+	}
+	
+	local moduleName = "Max out Level, Streetcred, Perk, and Attributes"
     Utilities.StartProtocol(moduleName)
 
-    Player.SetLevel("Level", 50)
-    Player.SetLevel("StreetCred", 50)
-
-    -- Perks
-    Player.SetLevel("Assault", 20)
-    Player.SetLevel("Athletics", 20)
-    Player.SetLevel("Brawling", 20)
-    Player.SetLevel("ColdBlood", 20)
-    Player.SetLevel("CombatHacking", 20)
-    Player.SetLevel("Crafting", 20)
-    Player.SetLevel("Demolition", 20)
-    Player.SetLevel("Engineering", 20)
-    Player.SetLevel("Gunslinger", 20)
-    Player.SetLevel("Hacking", 20)
-    Player.SetLevel("Kenjutsu", 20)
-    Player.SetLevel("Stealth", 20)
-
-    -- Attributes
-    Player.SetLevel("Strength", 20)
-    Player.SetLevel("Reflexes", 20)
-    Player.SetLevel("TechnicalAbility", 20)
-    Player.SetLevel("Intelligence", 20)
-    Player.SetLevel("Cool", 20)
-
+	for _, attribute in ipairs(attributes) do
+		Game.SetAtt(attribute, 20)
+	end
+	
+	for _, skill in ipairs(skills) do
+		Game.AddExp(skill, 1000000000)
+	end
+	
     Utilities.FinishProtocol(moduleName)
 end
 
