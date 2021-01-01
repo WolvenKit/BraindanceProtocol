@@ -11,8 +11,7 @@ Inventory = require("braindance_protocol.inventory")
 Vehicles = require("braindance_protocol.ai.vehicles")
 Examples = require("braindance_protocol.examples.init")
 
-Cheats =
-{
+Cheats = {
 	Crafting = require("braindance_protocol.cheats.crafting"),
 	Johnny = require("braindance_protocol.cheats.johnny"),
 	Player = require("braindance_protocol.cheats.player")
