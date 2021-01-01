@@ -11,18 +11,34 @@ A collection of LUA scripts to modify your Cyberpunk 2077 experience
 
 ## Requirements
 
-[CyberEngineTweaks by Yamashi](https://github.com/yamashi/CyberEngineTweaks#usage-and-configuration)
+[CyberEngineTweaks](https://github.com/yamashi/CyberEngineTweaks#usage-and-configuration)
 
 ## Installation
 
-Drop `scripts` folder into `bin\x64\plugins\cyber_engine_tweaks`
+Drop `mods` folder into `bin\x64`
 
 ## Usage
 
-Inside of `bin\x64\plugins\cyber_engine_tweaks\scripts\autoexec.lua` add the following at the end of the script:
+Inside of `bin\x64\mods\autoexec.lua` add the following:
 
 ```
-dofile ("<path_to_game>\\bin\\x64\\plugins\\cyber_engine_tweaks\scripts\autoexec.lua")
+s = [[
+---------------------------------------------------------------------
+Running mod autoexec scripts in order...
+---------------------------------------------------------------------
+]]
+
+-- Load Order
+local loadOrder = {
+    "braindance"
+}
+
+-- Initialise Mods
+for i, mod in ipairs(loadOrder) do
+    dofile(string.format( "%s_autoexec.lua", mod ))
+end
 ```
 
-COMING SOON: Relative paths
+## Configuration
+
+Inside of `bin\x64\mods\braindance_autoexec.lua` configure the protocols you wish to run.
