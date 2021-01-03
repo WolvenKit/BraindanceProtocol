@@ -10,4 +10,4 @@ function Visual.Rain(state)
     Utilities.FinishProtocol(moduleName)
 end
 
-return Saves
+return Visual
