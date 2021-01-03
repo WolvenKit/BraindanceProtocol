@@ -86,4 +86,11 @@ function Player.MaxOut()
     Utilities.FinishProtocol(moduleName)
 end
 
+function Player.UnlockAllVehicles()
+    local moduleName = "Unlock All Vehicles"
+    Utilities.StartProtocol(moduleName)
+    Game.EnableAllPlayerVehicles()
+    Utilities.FinishProtocol(moduleName)
+end
+
 return Player
