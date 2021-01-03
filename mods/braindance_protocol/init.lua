@@ -6,16 +6,17 @@ function BraindanceProtocol:new()
     self.__index = self
     
 	-- Load LUA modules into memory
-	BD.Utilities = require("utility")
-	BD.Player = require("player")
-	BD.Inventory = require("inventory")
-	BD.Vehicles = require("ai.vehicles")
-	BD.Examples = require("examples.init")
+	BD.Utilities = require("braindance_protocol.utility")
+	BD.Player = require("braindance_protocol.player")
+	BD.Inventory = require("braindance_protocol.inventory")
+	BD.Vehicles = require("braindance_protocol.ai.vehicles")
+	BD.Examples = require("braindance_protocol.examples.init")
 
 	BD.Cheats = {
-		Crafting = require("cheats.crafting"),
-		Johnny = require("cheats.johnny"),
-		Player = require("cheats.player")
+		Crafting = require("braindance_protocol.cheats.crafting"),
+		Johnny = require("braindance_protocol.cheats.johnny"),
+		Player = require("braindance_protocol.cheats.player"),
+		Legend = require("braindance_protocol.cheats.legend")
 	}
 
 	-- Execute Braindance protocols

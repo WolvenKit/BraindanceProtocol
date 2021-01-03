@@ -1,4 +1,4 @@
-local Utilities = require("utility")
+local Utilities = require("braindance_protocol.utility")
 
 local Saves = {}
 
@@ -18,7 +18,7 @@ function Saves.DecreaseAutosaves()
 end
 
 function Saves.IncreaseAutosaves()
-    local moduleName = "Decrease Autosaves"
+    local moduleName = "Increase Autosaves"
     Utilities.StartProtocol(moduleName)
     GameOptions.SetFloat("SaveConfig", "AutoSaveEnabled", true)
     GameOptions.SetFloat("SaveConfig", "AutoSavePeriod", 100)

@@ -1,5 +1,5 @@
-local Utilities = require("utility")
-local Inventory = require("inventory")
+local Utilities = require("braindance_protocol.utility")
+local Inventory = require("braindance_protocol.inventory")
 
 local Johnny = {}
 

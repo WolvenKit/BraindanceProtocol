@@ -1,5 +1,5 @@
-local Utilities = require("utility")
-local Player = require("player")
+local Utilities = require("braindance_protocol.utility")
+local Player = require("braindance_protocol.player")
 
 function Player.GodMode()
     local moduleName = "Enable God Mode"

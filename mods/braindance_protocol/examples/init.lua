@@ -1,4 +1,4 @@
-local Utilities = require("utility")
+local Utilities = require("braindance_protocol.utility")
 
 local Example = {}
 
