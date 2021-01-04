@@ -1,22 +1,6 @@
 # BraindanceProtocol
 
-A collection of LUA scripts to modify your Cyberpunk 2077 experience
-
-## Available Tweaks
-
-- Prevent _V_ from being knocked over by NPC vehicles
-- Disable AutoSaves
-- Increase AutoSaves increments
-- Decrease AutoSaves increments
-- Increase Quicksave slots available
-- Toggle in-game rain
-- Activate GodMode
-- Give Player Johnny's Items
-- Give Player lots of money
-- Set Player to Max Level, Streetcred, Perk level, and Attribute level
-- Give Player all Legendary recipies
-- Make all equipped items Legendary with max stats
-- Give player all ownable vehicles
+A collection of Lua scripts to modify your Cyberpunk 2077 experience.
 
 ## Requirements
 
@@ -28,7 +12,7 @@ A collection of LUA scripts to modify your Cyberpunk 2077 experience
 
 Drop `mods` folder into `bin\x64\plugins\cyber_engine_tweaks\`
 
-## Using In-Game
+## In-Game Lua Console
 
 ```lua
 BD = GetMod("braindance_protocol")
@@ -36,7 +20,7 @@ BD = GetMod("braindance_protocol")
 
 Following that, all below commands will be available.
 
-## Manually Activate Protocols
+## Activating Protocols
 
 ```lua
 -- Cheats
