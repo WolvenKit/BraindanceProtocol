@@ -27,7 +27,7 @@ function Saves.IncreaseAutosaves()
     Utilities.FinishProtocol(moduleName)
 end
 
-function Saves.IncreaseQuickaves()
+function Saves.IncreaseQuicksaves()
     local moduleName = "Increase Quicksaves"
     Utilities.StartProtocol(moduleName)
     GameOptions.SetInt("SaveSlotsConfig", "NumQuickSaveSlots", 10)
