@@ -20,7 +20,8 @@ A collection of LUA scripts to modify your Cyberpunk 2077 experience
 
 ## Requirements
 
-- Requires v1.8.2 of [CyberEngineTweaks](https://github.com/yamashi/CyberEngineTweaks/tree/v1.8.2). For help installing CyberEngineTweaks, see this [Installation page on the wiki](https://wiki.cybermods.net/cyber-engine-tweaks/getting-started/installing).
+- Requires v1.8.2 of [CyberEngineTweaks](https://github.com/yamashi/CyberEngineTweaks/tree/v1.8.2).
+  - For help installing CyberEngineTweaks, see this [Installation page on the wiki](https://wiki.cybermods.net/cyber-engine-tweaks/getting-started/installing).
 - Version 1.0.6 of Cyberpunk 2077
 
 ## Installation
@@ -39,6 +40,7 @@ Following that, all below commands will be available.
 
 ```lua
 -- Cheats
+BD.Cheats.Platform.UnlockAllAchievements() -- Unlock all achievements on your platform (Steam / GoG)
 BD.Cheats.Player.MaxOut() -- Max Level, Attributes, Skill Points, Money,
 BD.Cheats.Player.GodMode() -- Gives you pseudo "god mode". Permanent to your SaveFile
 BD.Cheats.Player.AddMoney(amount) -- Gives the player specified amount of money. If no amount is specified, gives you 999999 money.
