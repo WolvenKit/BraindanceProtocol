@@ -12,4 +12,12 @@ function Vehicles.PreventKnockdown()
     Utilities.FinishProtocol(moduleName)
 end
 
+function Vehicles.GetAll()
+    local moduleName = "Get all vehicles"
+    Utilities.StartProtocol(moduleName)
+    vs = Game.GetVehicleSystem()
+    vs:EnableAllPlayerVehicles()
+    Utilities.FinishProtocol(moduleName)
+end
+
 return Vehicles

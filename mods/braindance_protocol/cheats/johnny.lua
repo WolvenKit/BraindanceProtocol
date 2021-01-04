@@ -5,8 +5,6 @@ local Johnny = {
 local Utilities = require(Johnny.rootPath.."utility")
 local Inventory = require(Johnny.rootPath.."inventory")
 
-local Johnny = {}
-
 function Johnny.AddItems()
     local moduleName = "Add Johnny's Items"
     Utilities.StartProtocol(moduleName)

@@ -13,49 +13,43 @@ A collection of LUA scripts to modify your Cyberpunk 2077 experience
 - Give Player lots of money
 - Set Player to Max Level, Streetcred, Perk level, and Attribute level
 - Give Player all Legendary recipies
+- Make all equipped items Legendary with max stats
+- Give player all ownable vehicles
 
 ## Requirements
 
-[CyberEngineTweaks](https://github.com/yamashi/CyberEngineTweaks#usage-and-configuration)
+Latest version of [CyberEngineTweaks](https://github.com/yamashi/CyberEngineTweaks#usage-and-configuration)
 
 ## Installation
 
 Drop `mods` folder into `bin\x64\plugins\cyber_engine_tweaks\`
 
-## Pre-Requisites
+## Using In-Game
 
-Inside of `bin\x64\plugins\cyber_engine_tweaks\mods\autoexec.lua` add the following:
+You must call the GetMod command to register commands for the mod.
 
-```
-s = [[
----------------------------------------------------------------------
-Running mod autoexec scripts in order...
----------------------------------------------------------------------
-]]
-
--- Load Order
-local loadOrder = {
-    "braindance"
-}
-
--- Initialise Mods
-for i, mod in ipairs(loadOrder) do
-    dofile(string.format( "%s_autoexec.lua", mod ))
-end
+```lua
+BD = GetMod("braindance_protocol")
 ```
 
-## Configuration
+Following that, all below commands will be available.
 
-### Autorun Protocols
-
-Inside of `bin\x64\plugins\cyber_engine_tweaks\mods\braindance_autoexec.lua` configure the protocols you wish to run.
-
-### Manually Activate Protocols
+## Manually Activate Protocols
 
 ```lua
 -- Cheats
-Cheats.Player.MaxOut() -- Max Level, Attributes, Skill Points, Money,
-Cheats.Player.GodMode() -- Permanent to your SaveFile
-Cheats.Crafting.AddAll() -- Add Recipes & Materials
-Cheats.Johnny.AddItems() -- Adds Johnny's Legendary Items
+BD.Cheats.Player.MaxOut() -- Max Level, Attributes, Skill Points, Money,
+BD.Cheats.Player.GodMode() -- Gives you pseudo "god mode". Permanent to your SaveFile
+BD.Cheats.Player.AddMoney(amount) -- Gives the player specified amount of money. If no amount is specified, gives you 999999 money.
+BD.Cheats.Crafting.AddAll() -- Add all Recipes & Materials
+BD.Cheats.Johnny.AddItems() -- Adds Johnny's Legendary Items
+BD.Cheats.Legend.Create() -- Makes all equipped items legendary with max stats.
+
+-- Saves
+BD.Saves.DisableAutosave() -- Disables auto saving.
+BD.Saves.DecreaseAutosaves() -- Decreases time between auto saves.
+BD.Saves.IncreaseAutosaves() -- Increases time between auto saves.
+
+-- Vehicles
+BD.Vehicles.GetAll() -- Grants you all ownable player vehicles.
 ```
