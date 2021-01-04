@@ -16,6 +16,7 @@ function BraindanceProtocol:new()
 	BD.Inventory = require(BraindanceProtocol.rootPath.."inventory")
 	BD.Vehicles = require(BraindanceProtocol.rootPath.."ai.vehicles")
 	BD.Examples = require(BraindanceProtocol.rootPath.."examples.init")
+	BD.Shopper = require(BraindanceProtocol.rootPath.."utility.shopper")
 
 	BD.Cheats = {
 		Crafting = require(BraindanceProtocol.rootPath.."cheats.crafting"),
