@@ -1,4 +1,8 @@
-local Utilities = require("braindance_protocol.utility")
+local Example = {
+    rootPath = "plugins.cyber_engine_tweaks.mods.braindance_protocol."
+}
+
+local Utilities = require(Example.rootPath.."utility")
 
 local Example = {}
 

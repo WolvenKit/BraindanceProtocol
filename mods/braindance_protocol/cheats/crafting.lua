@@ -1,7 +1,9 @@
-local Utilities = require("braindance_protocol.utility")
-local Inventory = require("braindance_protocol.inventory")
+local Crafting = {
+	rootPath = "plugins.cyber_engine_tweaks.mods.braindance_protocol."
+}
 
-local Crafting = {}
+local Utilities = require(Crafting.rootPath.."utility")
+local Inventory = require(Crafting.rootPath.."inventory")
 
 function Crafting.AddLegendaryMaterials(quantity)
     local moduleName = "Add Crafting Materials"

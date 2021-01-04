@@ -1,7 +1,9 @@
-local Utilities = require("braindance_protocol.utility")
-local Inventory = require("braindance_protocol.inventory")
+local Johnny = {
+    rootPath = "plugins.cyber_engine_tweaks.mods.braindance_protocol."
+}
 
-local Johnny = {}
+local Utilities = require(Johnny.rootPath.."utility")
+local Inventory = require(Johnny.rootPath.."inventory")
 
 function Johnny.AddItems()
     local moduleName = "Add Johnny's Items"
@@ -14,8 +16,10 @@ function Johnny.AddItems()
     Inventory.AddItem("Q005_Johnny_Shirt")
     Inventory.AddItem("Q005_Johnny_Pants")
     Inventory.AddItem("Q005_Johnny_Shoes")
-    vehicleSystem = Game.GetVehicleSystem()
-    vehicleSystem:EnablePlayerVehicle("Vehicle.v_sport2_porsche_911turbo_player", true, false)
+
+    vs = Game.GetVehicleSystem()
+    vs:EnablePlayerVehicle("Vehicle.v_sport2_porsche_911turbo_player", true, false)
+
     Utilities.FinishProtocol(moduleName)
 end
 
