@@ -1,5 +1,9 @@
-local Utilities = require("braindance_protocol.utility")
-local Inventory = require("braindance_protocol.inventory")
+local Johnny = {
+    rootPath = "plugins.cyber_engine_tweaks.mods.braindance_protocol."
+}
+
+local Utilities = require(Johnny.rootPath.."utility")
+local Inventory = require(Johnny.rootPath.."inventory")
 
 local Johnny = {}
 

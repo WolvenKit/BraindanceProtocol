@@ -1,6 +1,8 @@
-local Utilities = require("braindance_protocol.utility")
+local Legend = {
+	rootPath = "plugins.cyber_engine_tweaks.mods.braindance_protocol."
+}
 
-local Legend = {}
+local Utilities = require(Legend.rootPath.."utility")
 
 function Legend.Create()
     local moduleName = "I Am Legend - Make all equipped gear Legendary with max stats."

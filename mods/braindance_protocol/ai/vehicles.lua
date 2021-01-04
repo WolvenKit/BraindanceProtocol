@@ -1,6 +1,9 @@
-local Utilities = require("braindance_protocol.utility")
+local Vehicles = {
+    rootPath = "plugins.cyber_engine_tweaks.mods.braindance_protocol."
+}
 
-local Vehicles = {}
+local Utilities = require(Vehicles.rootPath.."utility")
+
 
 function Vehicles.PreventKnockdown()
     local moduleName = "Prevent Vehicle Knockdown"
