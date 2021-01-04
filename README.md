@@ -20,7 +20,8 @@ A collection of LUA scripts to modify your Cyberpunk 2077 experience
 
 ## Requirements
 
-Latest version of [CyberEngineTweaks](https://github.com/yamashi/CyberEngineTweaks#usage-and-configuration)
+- Requires v1.8.2 of [CyberEngineTweaks](https://github.com/yamashi/CyberEngineTweaks/tree/v1.8.2). For help installing CyberEngineTweaks, see this [Installation page on the wiki](https://wiki.cybermods.net/cyber-engine-tweaks/getting-started/installing).
+- Version 1.0.6 of Cyberpunk 2077
 
 ## Installation
 
@@ -54,6 +55,7 @@ BD.Shopper.SellAlcohol() -- "Sells" all alcohol items from players inventory by 
 BD.Saves.DisableAutosave() -- Disables auto saving.
 BD.Saves.DecreaseAutosaves() -- Decreases time between auto saves.
 BD.Saves.IncreaseAutosaves() -- Increases time between auto saves.
+BD.Saves.IncreaseQuicksaves() -- Increase Quicksave slots to 10
 
 -- Vehicles
 BD.Vehicles.GetAll() -- Grants you all ownable player vehicles.
