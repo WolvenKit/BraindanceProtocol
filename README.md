@@ -48,7 +48,10 @@ BD.Cheats.Johnny.AddItems() -- Adds Johnny's Legendary Items and his Porsche.
 BD.Cheats.Legend.Create() -- Makes all equipped items legendary with max stats.
 
 -- Utilities
-BD.Shopper.SellAlcohol() -- "Sells" all alcohol items from players inventory by removing them and adding appropriate amount of Eddies back.
+BD.Shopper.SellJunk() -- "Sells" all common junk items from players inventory by removing them and adding appropriate amount of Eddies back.
+BD.Shopper.SellAlcohol() -- As above but for alcohol (consumables).
+BD.Shopper.SellJewellery() -- As above but for jewellery (pricier junk).
+BD.Shopper.SellAllUselessItems() -- As above but all at the same time.
 
 -- Saves
 BD.Saves.DisableAutosave() -- Disables auto saving.
