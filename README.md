@@ -47,6 +47,8 @@ BD.Cheats.Crafting.AddLegendaryRecipes() -- Adds all legendary crafting recipes.
 BD.Cheats.Johnny.AddItems() -- Adds Johnny's Legendary Items and his Porsche.
 BD.Cheats.Legend.Create() -- Makes all equipped items legendary with max stats.
 
+-- Utilities
+BD.Shopper.SellAlcohol() -- "Sells" all alcohol items from players inventory by removing them and adding appropriate amount of Eddies back.
 
 -- Saves
 BD.Saves.DisableAutosave() -- Disables auto saving.
