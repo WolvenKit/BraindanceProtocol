@@ -8,6 +8,8 @@ A collection of LUA scripts to modify your Cyberpunk 2077 experience
 - Disable AutoSaves
 - Increase AutoSaves increments
 - Decrease AutoSaves increments
+- Increase Quicksave slots available
+- Toggle in-game rain
 - Activate GodMode
 - Give Player Johnny's Items
 - Give Player lots of money
@@ -25,8 +27,6 @@ Latest version of [CyberEngineTweaks](https://github.com/yamashi/CyberEngineTwea
 Drop `mods` folder into `bin\x64\plugins\cyber_engine_tweaks\`
 
 ## Using In-Game
-
-You must call the GetMod command to register commands for the mod.
 
 ```lua
 BD = GetMod("braindance_protocol")
