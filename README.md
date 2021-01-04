@@ -42,8 +42,11 @@ BD.Cheats.Player.MaxOut() -- Max Level, Attributes, Skill Points, Money,
 BD.Cheats.Player.GodMode() -- Gives you pseudo "god mode". Permanent to your SaveFile
 BD.Cheats.Player.AddMoney(amount) -- Gives the player specified amount of money. If no amount is specified, gives you 999999 money.
 BD.Cheats.Crafting.AddAll() -- Add all Recipes & Materials
-BD.Cheats.Johnny.AddItems() -- Adds Johnny's Legendary Items
+BD.Cheats.Crafting.AddLegendaryMaterials(quantity) -- Add specified amount of legendary crafting materials
+BD.Cheats.Crafting.AddLegendaryRecipes() -- Adds all legendary crafting recipes.
+BD.Cheats.Johnny.AddItems() -- Adds Johnny's Legendary Items and his Porsche.
 BD.Cheats.Legend.Create() -- Makes all equipped items legendary with max stats.
+
 
 -- Saves
 BD.Saves.DisableAutosave() -- Disables auto saving.

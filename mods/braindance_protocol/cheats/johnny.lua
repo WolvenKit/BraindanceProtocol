@@ -17,6 +17,9 @@ function Johnny.AddItems()
     Inventory.AddItem("Q005_Johnny_Pants")
     Inventory.AddItem("Q005_Johnny_Shoes")
 
+    vs = Game.GetVehicleSystem()
+    vs:EnablePlayerVehicle("Vehicle.v_sport2_porsche_911turbo_player", true, false)
+
     Utilities.FinishProtocol(moduleName)
 end
 
