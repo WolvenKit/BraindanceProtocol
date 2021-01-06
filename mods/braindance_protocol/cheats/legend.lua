@@ -19,13 +19,33 @@ function Legend.Create()
 	cs['SetItemLevel2'] = cs['SetItemLevel;gameItemData']
 
 	local slots = {
-		Face = 1,
-		Feet = 1,
-		Head = 1,
-		InnerChest = 1,
-		Legs = 1,
-		OuterChest = 1,
-		Weapon = 3
+        Head = 1,
+        Face = 1,
+        InnerChest = 1,
+        OuterChest = 1,
+        UnderwearTop = 1,
+        UnderwearBottom = 1,
+        Feet = 1,        
+        Legs = 1,
+        Weapon = 3,    
+        QuickSlot = 3,
+        Consumable = 3,
+        Splinter = 1,
+        PersonalLink = 1,
+        Gadget = 1,
+        LegsCW = 3,
+        FrontalCortexCW = 3,
+        EyesCW = 1,
+        IntegumentarySystemCW = 3,
+        MusculoSkeletalSystemCW = 2,
+        NervousSystemCW = 2,
+        CardiovascularSystemCW = 3,
+        ImmuneSystemCW = 2,
+        IntegumentarySystemCW = 3,
+        HandsCW = 2,
+        ArmsCW = 2,
+        AbilityCW = 6,
+        SystemReplacementCW = 1,    
 	}
 
 	for k,v in pairs(slots) do
