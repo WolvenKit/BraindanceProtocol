@@ -2,7 +2,8 @@ local Player = {
     rootPath = "plugins.cyber_engine_tweaks.mods.braindance_protocol."
 }
 
-local Utilities = require(Player.rootPath.."utility")
+local Utilities = require(Player.rootPath .. "utility")
+local Inventory = require(Player.rootPath .. "inventory")
 
 function Player.GodMode()
     local moduleName = "Enable God Mode"
