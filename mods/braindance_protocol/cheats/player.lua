@@ -5,6 +5,15 @@ local Player = {
 local Utilities = require(Player.rootPath .. "utility")
 local Inventory = require(Player.rootPath .. "inventory")
 
+local DEFAULT_ATTRIBUTE_LEVEL = 3
+local ATTRIBUTES = {
+    "Strength", -- Body
+    "Reflexes",
+    "TechnicalAbility",
+    "Intelligence",
+    "Cool"
+}
+
 function Player.GodMode()
     local moduleName = "Enable God Mode"
     Utilities.StartProtocol(moduleName)
@@ -46,15 +55,6 @@ function Player.AddMoney(quantity)
 end
 
 function Player.MaxOut()
-	local attributes =
-	{
-		"Strength", -- Body
-		"Reflexes",
-		"TechnicalAbility",
-		"Intelligence",
-		"Cool"
-	}
-
 	local skills =
 	{
 		"Level",
@@ -77,7 +77,7 @@ function Player.MaxOut()
 	local moduleName = "Max out Level, Streetcred, Perk, and Attributes"
     Utilities.StartProtocol(moduleName)
 
-	for _, attribute in ipairs(attributes) do
+	for _, attribute in ipairs(ATTRIBUTES) do
 		Game.SetAtt(attribute, 20)
 	end
 
@@ -86,6 +86,31 @@ function Player.MaxOut()
     end
 
     Player.AddMoney()
+
+    Utilities.FinishProtocol(moduleName)
+end
+
+function Player.Respec()
+    local moduleName = "Respec player perks and attributes"
+    Utilities.StartProtocol(moduleName)
+
+    local playerID = Game.GetPlayer():GetEntityID()
+    local statsSystem = Game.GetStatsSystem()
+    local attributesPointsToAdd = 0
+
+    -- reset each attribute to default level and compute how many attribute points the player get from the respect
+    for _, attribute in ipairs(ATTRIBUTES) do
+        local currentLevel = statsSystem:GetStatValue(playerID, attribute)
+        attributesPointsToAdd = attributesPointsToAdd + (currentLevel - DEFAULT_ATTRIBUTE_LEVEL)
+        Game.SetAtt(attribute, DEFAULT_ATTRIBUTE_LEVEL)
+    end 
+
+    if attributesPointsToAdd > 0 then
+        Game.GiveDevPoints("Attribute", attributesPointsToAdd)
+    end
+
+    -- reset perks using the tabula resa game item
+    Game.AddToInventory("Items.PerkPointsResetter",1)
 
     Utilities.FinishProtocol(moduleName)
 end

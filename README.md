@@ -26,6 +26,7 @@ Following that, all below commands will be available.
 -- Cheats
 BD.Cheats.Platform.UnlockAllAchievements() -- Unlock all achievements on your platform (Steam / GoG)
 BD.Cheats.Player.MaxOut() -- Max Level, Attributes, Skill Points, Money,
+BD.Cheats.Player.Respec() -- Respec attributes and perks
 BD.Cheats.Player.GodMode() -- Gives you pseudo "god mode". Permanent to your SaveFile
 BD.Cheats.Player.AddMoney(amount) -- Gives the player specified amount of money. If no amount is specified, gives you 999999 money.
 BD.Cheats.Crafting.AddAll() -- Add all Recipes & Materials
