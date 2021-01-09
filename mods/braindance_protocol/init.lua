@@ -1,4 +1,4 @@
-BraindanceProtocol = { 
+BraindanceProtocol = {
 	description = "",
 	rootPath =  "plugins.cyber_engine_tweaks.mods.braindance_protocol."
 }
@@ -7,8 +7,8 @@ function BraindanceProtocol:new()
 	BD = {}
 
     setmetatable(BD, self)
-	self.__index = self 
-	
+	self.__index = self
+
 
 	-- Load LUA modules into memory
 	BD.Utilities = require(BraindanceProtocol.rootPath.."utility")
@@ -27,8 +27,7 @@ function BraindanceProtocol:new()
 
 	-- Execute Braindance protocols
 	BD.Examples.Initialise()
-	BD.Vehicles.PreventKnockdown()
-	
+
 	return BD
 end
 
