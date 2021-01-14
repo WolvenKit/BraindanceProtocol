@@ -24,7 +24,7 @@ function Crafting.AddLegendaryMaterials(quantity)
 end
 
 function Crafting.AddLegendaryRecipes()
-    local moduleName = "Add Legendary Crafting Recipies"
+    local moduleName = "Add Legendary Crafting Recipes"
     Utilities.StartProtocol(moduleName)
     
 -- These are legendary clothing recipes
@@ -34,12 +34,15 @@ function Crafting.AddLegendaryRecipes()
     Inventory.AddItem("LegendaryTightJumpsuitRecipe")
     Inventory.AddItem("LegendaryTShirtRecipe")
    
-    -- Chest DLC/GOG
+    -- DLC/GOG Stuff
     Inventory.AddItem("Recipe_GOG_DLC_TShirt_Legendary")
     Inventory.AddItem("Recipe_GOG_DLC_TShirt_Epic")
     
     Inventory.AddItem("Recipe_GOG_Galaxy_TShirt_Legendary")
     Inventory.AddItem("Recipe_GOG_Galaxy_TShirt_Epic")
+    
+    Inventory.AddItem("Recipe_GOG_DLC_Jacket_Legendary")
+    Inventory.AddItem("Recipe_GOG_DLC_Jacket_Epic")
    
     -- Head Armor
     Inventory.AddItem("LegendaryCapRecipe")
@@ -65,9 +68,10 @@ function Crafting.AddLegendaryRecipes()
     -- Outer Torso Armor
     Inventory.AddItem("LegendaryJacketRecipe")
     Inventory.AddItem("LegendaryVestRecipe")
-    Inventory.AddItem("Recipe_GOG_DLC_Jacket_Legendary")
     Inventory.AddItem("Recipe_SQ031_Samurai_Jacket_Legendary")
-
+    Inventory.AddItem("Recipe_SQ031_Samurai_Jacket_Epic")
+    
+    
 -- These are all the legendary guns, rifles, etc recipes
     -- Assault Rifles
     Inventory.AddItem("LegendaryAjaxRecipe")
@@ -128,6 +132,7 @@ function Crafting.AddLegendaryRecipes()
     Inventory.AddItem("LegendaryMacheteRecipe")
     Inventory.AddItem("LegendaryTantoRecipe")
     Inventory.AddItem("Recipe_Preset_Katana_GoG_Legendary")
+    Inventory.AddItem("Recipe_Preset_Katana_GoG_Epic")
    
     
     -- Blunt weapons
@@ -135,6 +140,7 @@ function Crafting.AddLegendaryRecipes()
     Inventory.AddItem("LegendaryBatRecipe")
     Inventory.AddItem("LegendaryCrowbarRecipe")
     Inventory.AddItem("LegendaryHammerRecipe")
+    Inventory.AddItem("LegendaryIronPipeRecipe")
     Inventory.AddItem("LegendaryKanaboRecipe")
     Inventory.AddItem("LegendaryPipeWrenchRecipe")
     Inventory.AddItem("LegendaryTireIronRecipe")
@@ -149,7 +155,7 @@ function Crafting.AddLegendaryRecipes()
     Inventory.AddItem("Recipe_SimpleFabricEnhancer03")
     Inventory.AddItem("Recipe_SimpleFabricEnhancer04")
 
--- All Legendary Quickhack Mods
+-- All Legendary Quickhack Mods (Max-LVL4 Quickhacks)
     Inventory.AddItem("Recipe_BlindLvl4Program")
     Inventory.AddItem("Recipe_BlindLvl3Program")
     Inventory.AddItem("Recipe_BlindLvl2Program")
@@ -206,18 +212,6 @@ function Crafting.AddLegendaryRecipes()
     Inventory.AddItem("Recipe_WeaponMalfunctionLvl2Program")
     Inventory.AddItem("Recipe_WeaponMalfunctionProgram")
    
-    -- All Epic Quickhack Mods
-    Inventory.AddItem("Recipe_WhistleLvl3Program")
-    Inventory.AddItem("Recipe_WhistleLvl2Program")
-    Inventory.AddItem("Recipe_WhistleProgram")
-    
-    Inventory.AddItem("Recipe_MemoryWipeLvl3Program")
-    Inventory.AddItem("Recipe_MemoryWipeLvl2Program")
-    
-    Inventory.AddItem("Recipe_DisableCyberwareLvl3Program")
-    Inventory.AddItem("Recipe_DisableCyberwareLvl2Program")
-    Inventory.AddItem("Recipe_DisableCyberwareProgram")
-
     
 -- "Iconic" (unique) weapons tagged as legendary + the lesser versions of the recipes
 -- Note: All of these might not work, due to some recipes requiring the  
@@ -372,7 +366,7 @@ end
 
 
 function Crafting.AddModRecipes()
-    local moduleName = "Add All Mod Recipies"
+    local moduleName = "Add All Mod Recipes"
     Utilities.StartProtocol(moduleName)
     
 -- These are all the Clothing Mod recipes 
@@ -472,7 +466,7 @@ function Crafting.AddModRecipes()
 end    
 
 function Crafting.AddMedRecipes()
-    local moduleName = "Add All Med/Medicine Recipies"
+    local moduleName = "Add All Med/Medicine Recipes"
     Utilities.StartProtocol(moduleName)
  
 -- These are all the Medicine recipes 
@@ -494,7 +488,7 @@ function Crafting.AddMedRecipes()
 end    
 
 function Crafting.AddGrenadeRecipes()
-    local moduleName = "Add All Grenade Recipies"
+    local moduleName = "Add All Grenade Recipes"
     Utilities.StartProtocol(moduleName)
 -- These are all the Grenade recipes, except "Ozob's Nose"    
     Inventory.AddItem("RecipeGrenadeBiohazardHoming")
@@ -523,17 +517,430 @@ function Crafting.AddGrenadeRecipes()
     Utilities.FinishProtocol(moduleName)
 end    
 
+function Crafting.AddEpicRecipes()
+    local moduleName = "Add All Epic Crafting Recipes"
+    Utilities.StartProtocol(moduleName)
+    
+-- These are legendary clothing recipes
+    -- Chest Armor
+    Inventory.AddItem("EpicLooseShirtRecipe")
+    Inventory.AddItem("EpicTShirtRecipe")
+    Inventory.AddItem("EpicUndershirtRecipe")
+   
+    -- Head Armor
+    Inventory.AddItem("EpicCapRecipe")
+    Inventory.AddItem("EpicHatRecipe")
+    Inventory.AddItem("EpicHelmetRecipe")
+    Inventory.AddItem("EpicScarfRecipe")
+
+    -- Face Armor
+    Inventory.AddItem("EpicGlassesRecipe")
+    Inventory.AddItem("EpicMaskRecipe")
+    Inventory.AddItem("EpicVisorRecipe")
+   
+    -- Feet Armor
+    Inventory.AddItem("EpicBootsRecipe")
+    Inventory.AddItem("EpicCasualShoesRecipe")
+    Inventory.AddItem("EpicFormalShoesRecipe")
+   
+    -- Legs Armor
+    Inventory.AddItem("EpicFormalSkirtRecipe")
+    Inventory.AddItem("EpicPantsRecipe")
+    Inventory.AddItem("EpicShortsRecipe")
+    
+    -- Outer Torso Armor
+    Inventory.AddItem("EpicCoatRecipe")
+    Inventory.AddItem("EpicFormalJacketRecipe")
+
+-- These are all the epic guns, rifles, etc recipes
+    -- Assault Rifles
+    Inventory.AddItem("EpicAjaxRecipe")
+    Inventory.AddItem("EpicCopperheadRecipe")
+    Inventory.AddItem("EpicMasamuneRecipe")
+    Inventory.AddItem("EpicSidewinderRecipe")
+    
+    -- SMGs
+    Inventory.AddItem("EpicDianRecipe")
+    Inventory.AddItem("EpicPulsarRecipe")
+    Inventory.AddItem("EpicSaratogaRecipe")
+    Inventory.AddItem("EpicShingenRecipe")
+    
+    -- DB Shotguns
+    Inventory.AddItem("EpicIglaRecipe")
+    Inventory.AddItem("EpicPalicaRecipe")
+    Inventory.AddItem("EpicSataraRecipe")
+    Inventory.AddItem("EpicTesteraRecipe")
+    
+    -- Shotguns
+    Inventory.AddItem("EpicCarnageRecipe")
+    Inventory.AddItem("EpicCrusherRecipe")
+    Inventory.AddItem("EpicTacticianRecipe")
+    Inventory.AddItem("EpicZhuoRecipe")
+     
+    -- Pistols
+    Inventory.AddItem("EpicChaoRecipe")
+    Inventory.AddItem("EpicKenshinRecipe")
+    Inventory.AddItem("EpicLexingtonRecipe")
+    Inventory.AddItem("EpicLibertyRecipe")
+    Inventory.AddItem("EpicNueRecipe")
+    Inventory.AddItem("EpicOmahaRecipe")
+    Inventory.AddItem("EpicUnityRecipe")
+    Inventory.AddItem("EpicYukimuraRecipe")
+    
+    -- Revolvers
+    Inventory.AddItem("EpicBuryaRecipe")
+    Inventory.AddItem("EpicNovaRecipe")
+    Inventory.AddItem("EpicOvertureRecipe")
+    Inventory.AddItem("EpicQuasarRecipe")
+   
+    -- Precision Rifles
+    Inventory.AddItem("EpicAchillesRecipe")
+    Inventory.AddItem("EpicSor22Recipe")
+    
+    -- Sniper Rifles
+    Inventory.AddItem("EpicAshuraRecipe")
+    Inventory.AddItem("EpicGradRecipe")
+    Inventory.AddItem("EpicNekomataRecipe")
+
+-- Melee Weapons
+    -- Blade weapons
+    Inventory.AddItem("EpicButchersKnifeRecipe")
+    Inventory.AddItem("EpicChefsKnifeRecipe")
+    Inventory.AddItem("EpicKatanaRecipe")
+    Inventory.AddItem("EpicKnifeRecipe")
+    Inventory.AddItem("EpicKukriRecipe")
+    Inventory.AddItem("EpicMacheteRecipe")
+    Inventory.AddItem("EpicTantoRecipe")
+
+    -- Blunt weapons
+    Inventory.AddItem("EpicBatonGammaRecipe")
+    Inventory.AddItem("EpicBatRecipe")
+    Inventory.AddItem("EpicHammerRecipe")
+    Inventory.AddItem("EpicIronPipeRecipe")
+    Inventory.AddItem("EpicKanaboRecipe")
+    Inventory.AddItem("EpicTireIronRecipe")
+
+-- All Epic Quickhack Mods (Max-LVL3 Quickhack mods)
+    Inventory.AddItem("Recipe_WhistleLvl3Program")
+    Inventory.AddItem("Recipe_WhistleLvl2Program")
+    Inventory.AddItem("Recipe_WhistleProgram")
+    
+    Inventory.AddItem("Recipe_MemoryWipeLvl3Program")
+    Inventory.AddItem("Recipe_MemoryWipeLvl2Program")
+    
+    Inventory.AddItem("Recipe_DisableCyberwareLvl3Program")
+    Inventory.AddItem("Recipe_DisableCyberwareLvl2Program")
+    Inventory.AddItem("Recipe_DisableCyberwareProgram")
+    
+    Utilities.FinishProtocol(moduleName)
+end
+
+function Crafting.AddRareRecipes()
+    local moduleName = "Add All Rare Crafting Recipes"
+    Utilities.StartProtocol(moduleName)
+
+-- These are rare clothing recipes
+    -- Chest Armor
+    Inventory.AddItem("RareShirtRecipe")
+    Inventory.AddItem("RareTShirtRecipe")
+    Inventory.AddItem("RareUndershirtRecipe")
+
+    -- Head Armor
+    Inventory.AddItem("RareHatRecipe")
+    Inventory.AddItem("RareHelmetRecipe")
+    Inventory.AddItem("RareScarfRecipe")
+
+    -- Face Armor
+    Inventory.AddItem("RareGlassesRecipe")
+    Inventory.AddItem("RareMaskRecipe")
+    Inventory.AddItem("RareTechRecipe")
+   
+    -- Feet Armor
+    Inventory.AddItem("RareBootsRecipe")
+    Inventory.AddItem("RareCasualShoesRecipe")
+    Inventory.AddItem("RareFormalShoesRecipe")
+   
+    -- Legs Armor
+    Inventory.AddItem("RareFormalPantsRecipe")
+    Inventory.AddItem("RarePantsRecipe")
+    Inventory.AddItem("RareShortsRecipe")
+    
+    -- Outer Torso Armor
+    Inventory.AddItem("RareCoatRecipe")
+    Inventory.AddItem("RareFormalJacketRecipe")
+    Inventory.AddItem("RareJacketRecipe")
+    Inventory.AddItem("RareVestRecipe")
+
+-- These are all the rare guns, rifles, etc recipes
+    -- Assault Rifles
+    Inventory.AddItem("RareAjaxRecipe")
+    Inventory.AddItem("RareCopperheadRecipe")
+    Inventory.AddItem("RareMasamuneRecipe")
+    Inventory.AddItem("RareSidewinderRecipe")
+    
+    -- SMGs
+    Inventory.AddItem("RareDianRecipe")
+    Inventory.AddItem("RarePulsarRecipe")
+    Inventory.AddItem("RareSaratogaRecipe")
+    Inventory.AddItem("RareShingenRecipe")
+    
+    -- LMGs
+    Inventory.AddItem("RareDefenderRecipe")
+    
+    -- DB Shotguns
+    Inventory.AddItem("RareIglaRecipe")
+    Inventory.AddItem("RarePalicaRecipe")
+    Inventory.AddItem("RareSataraRecipe")
+    Inventory.AddItem("RareTesteraRecipe")
+    
+    -- Shotguns
+    Inventory.AddItem("RareCarnageRecipe")
+    Inventory.AddItem("RareCrusherRecipe")
+    Inventory.AddItem("RareTacticianRecipe")
+    Inventory.AddItem("RareZhuoRecipe")
+     
+    -- Pistols
+    Inventory.AddItem("RareChaoRecipe")
+    Inventory.AddItem("RareKenshinRecipe")
+    Inventory.AddItem("RareLexingtonRecipe")
+    Inventory.AddItem("RareLibertyRecipe")
+    Inventory.AddItem("RareNueRecipe")
+    Inventory.AddItem("RareOmahaRecipe")
+    Inventory.AddItem("RareUnityRecipe")
+    Inventory.AddItem("RareYukimuraRecipe")
+    
+    -- Revolvers
+    Inventory.AddItem("RareBuryaRecipe")
+    Inventory.AddItem("RareNovaRecipe")
+    Inventory.AddItem("RareOvertureRecipe")
+    Inventory.AddItem("RareQuasarRecipe")
+   
+    -- Precision Rifles
+    Inventory.AddItem("RareAchillesRecipe")
+    Inventory.AddItem("RareSor22Recipe")
+    
+    -- Sniper Rifles
+    Inventory.AddItem("RareAshuraRecipe")
+    Inventory.AddItem("RareGradRecipe")
+    Inventory.AddItem("RareNekomataRecipe")
+
+-- Melee Weapons
+    -- Blade weapons
+    Inventory.AddItem("RareButchersKnifeRecipe")
+    Inventory.AddItem("RareChefsKnifeRecipe")
+    Inventory.AddItem("RareKatanaRecipe")
+    Inventory.AddItem("RareKnifeRecipe")
+    Inventory.AddItem("RareKukriRecipe")
+    Inventory.AddItem("RareMacheteRecipe")
+    Inventory.AddItem("RareTantoRecipe")
+
+    -- Blunt weapons
+    Inventory.AddItem("RareBatonBetaRecipe")
+    Inventory.AddItem("RareBatRecipe")
+    Inventory.AddItem("RareHammerRecipe")
+    Inventory.AddItem("RareIronPipeRecipe")
+    Inventory.AddItem("RareKanaboRecipe")
+    Inventory.AddItem("RareTireIronRecipe")
+    
+    Utilities.FinishProtocol(moduleName)
+end
+
+function Crafting.AddUncommonRecipes()
+    local moduleName = "Add All Uncommon Crafting Recipes"
+    Utilities.StartProtocol(moduleName)
+    
+-- These are uncommon clothing recipes
+    -- Chest Armor
+    Inventory.AddItem("UncommonShirtRecipe")
+    Inventory.AddItem("UncommonUndershirtRecipe")
+   
+    -- Head Armor
+    Inventory.AddItem("UncommonBalaclavaRecipe")
+    Inventory.AddItem("UncommonCapRecipe")
+    Inventory.AddItem("UncommonHelmetRecipe")
+
+    -- Face Armor
+    Inventory.AddItem("UncommonMaskRecipe")
+    Inventory.AddItem("UncommonTechRecipe")
+    Inventory.AddItem("UncommonVisorRecipe")
+   
+    -- Feet Armor
+    Inventory.AddItem("UncommonBootsRecipe")
+    Inventory.AddItem("UncommonCasualShoesRecipe")
+    Inventory.AddItem("UncommonFormalShoesRecipe")
+   
+    -- Legs Armor
+    Inventory.AddItem("UncommonFormalPantsRecipe")
+    Inventory.AddItem("UncommonFormalSkirtRecipe")
+    Inventory.AddItem("UncommonPantsRecipe")
+    
+    -- Outer Torso Armor
+    Inventory.AddItem("UncommonJacketRecipe")
+    Inventory.AddItem("UncommonVestRecipe")
+
+    
+-- These are all the uncommon guns, rifles, etc recipes
+    -- Assault Rifles
+    Inventory.AddItem("UncommonAjaxRecipe")
+    Inventory.AddItem("UncommonCopperheadRecipe")
+    Inventory.AddItem("UncommonMasamuneRecipe")
+    Inventory.AddItem("UncommonSidewinderRecipe")
+    
+    -- SMGs
+    Inventory.AddItem("UncommonDianRecipe")
+    Inventory.AddItem("UncommonPulsarRecipe")
+    Inventory.AddItem("UncommonSaratogaRecipe")
+    Inventory.AddItem("UncommonShingenRecipe")
+    
+    -- DB Shotguns
+    Inventory.AddItem("UncommonIglaRecipe")
+    Inventory.AddItem("UncommonPalicaRecipe")
+    Inventory.AddItem("UncommonSataraRecipe")
+    Inventory.AddItem("UncommonTesteraRecipe")
+    
+    -- Shotguns
+    Inventory.AddItem("UncommonCarnageRecipe")
+    Inventory.AddItem("UncommonCrusherRecipe")
+    Inventory.AddItem("UncommonTacticianRecipe")
+    Inventory.AddItem("UncommonZhuoRecipe")
+     
+    -- Pistols
+    Inventory.AddItem("UncommonChaoRecipe")
+    Inventory.AddItem("UncommonKenshinRecipe")
+    Inventory.AddItem("UncommonLexingtonRecipe")
+    Inventory.AddItem("UncommonLibertyRecipe")
+    Inventory.AddItem("UncommonNueRecipe")
+    Inventory.AddItem("UncommonOmahaRecipe")
+    Inventory.AddItem("UncommonUnityRecipe")
+    Inventory.AddItem("UncommonYukimuraRecipe")
+    
+    -- Revolvers
+    Inventory.AddItem("UncommonBuryaRecipe")
+    Inventory.AddItem("UncommonNovaRecipe")
+    Inventory.AddItem("UncommonOvertureRecipe")
+    Inventory.AddItem("UncommonQuasarRecipe")
+   
+    -- Precision Rifles
+    Inventory.AddItem("UncommonAchillesRecipe")
+    Inventory.AddItem("UncommonSor22Recipe")
+    
+    -- Sniper Rifles
+    Inventory.AddItem("UncommonAshuraRecipe")
+    Inventory.AddItem("UncommonGradRecipe")
+    Inventory.AddItem("UncommonNekomataRecipe")
+
+-- Melee Weapons
+    -- Blade weapons
+    Inventory.AddItem("UncommonButchersKnifeRecipe")
+    Inventory.AddItem("UncommonChefsKnifeRecipe")
+    Inventory.AddItem("UncommonKatanaRecipe")
+    Inventory.AddItem("UncommonKnifeRecipe")
+    Inventory.AddItem("UncommonKukriRecipe")
+    Inventory.AddItem("UncommonMacheteRecipe")
+    Inventory.AddItem("UncommonTantoRecipe")
+
+    -- Blunt weapons
+    Inventory.AddItem("UncommonBatonRecipe")
+    Inventory.AddItem("UncommonBatRecipe")
+    Inventory.AddItem("UncommonHammerRecipe")
+    Inventory.AddItem("UncommonIronPipeRecipe")
+    Inventory.AddItem("UncommonKanaboRecipe")
+    Inventory.AddItem("UncommonTireIronRecipe")
+    
+    Utilities.FinishProtocol(moduleName)
+end 
+
+
+function Crafting.AddCommonRecipes()
+    local moduleName = "Add All Common Crafting Recipes"
+    Utilities.StartProtocol(moduleName)
+-- There are no common clothing recipes
+-- These are all the common guns, rifles, etc recipes
+    -- Assault Rifles
+    Inventory.AddItem("CommonAjaxRecipe")
+    Inventory.AddItem("CommonCopperheadRecipe")
+    Inventory.AddItem("CommonMasamuneRecipe")
+    Inventory.AddItem("CommonSidewinderRecipe")
+    
+    -- SMGs
+    Inventory.AddItem("CommonDianRecipe")
+    Inventory.AddItem("CommonPulsarRecipe")
+    Inventory.AddItem("CommonSaratogaRecipe")
+    Inventory.AddItem("CommonShingenRecipe")
+    
+    -- DB Shotguns
+    Inventory.AddItem("CommonIglaRecipe")
+    Inventory.AddItem("CommonPalicaRecipe")
+    Inventory.AddItem("CommonSataraRecipe")
+    Inventory.AddItem("CommonTesteraRecipe")
+    
+    -- Shotguns
+    Inventory.AddItem("CommonCarnageRecipe")
+    Inventory.AddItem("CommonCrusherRecipe")
+    Inventory.AddItem("CommonTacticianRecipe")
+    Inventory.AddItem("CommonZhuoRecipe")
+     
+    -- Pistols
+    Inventory.AddItem("CommonChaoRecipe")
+    Inventory.AddItem("CommonKenshinRecipe")
+    Inventory.AddItem("CommonLexingtonRecipe")
+    Inventory.AddItem("CommonLibertyRecipe")
+    Inventory.AddItem("CommonNueRecipe")
+    Inventory.AddItem("CommonOmahaRecipe")
+    Inventory.AddItem("CommonUnityRecipe")
+    Inventory.AddItem("CommonYukimuraRecipe")
+    
+    -- Revolvers
+    Inventory.AddItem("CommonBuryaRecipe")
+    Inventory.AddItem("CommonNovaRecipe")
+    Inventory.AddItem("CommonOvertureRecipe")
+    Inventory.AddItem("CommonQuasarRecipe")
+   
+    -- Precision Rifles
+    Inventory.AddItem("CommonAchillesRecipe")
+    Inventory.AddItem("CommonSor22Recipe")
+    
+    -- Sniper Rifles
+    Inventory.AddItem("CommonAshuraRecipe")
+    Inventory.AddItem("CommonGradRecipe")
+    Inventory.AddItem("CommonNekomataRecipe")
+
+-- Melee Weapons
+    -- Blade weapons
+    Inventory.AddItem("CommonButchersKnifeRecipe")
+    Inventory.AddItem("CommonChefsKnifeRecipe")
+    Inventory.AddItem("CommonKatanaRecipe")
+    Inventory.AddItem("CommonKnifeRecipe")
+    Inventory.AddItem("CommonKukriRecipe")
+    Inventory.AddItem("CommonMacheteRecipe")
+    Inventory.AddItem("CommonTantoRecipe")
+
+    -- Blunt weapons
+    Inventory.AddItem("CommonBatRecipe")
+    Inventory.AddItem("CommonBatonAlphaRecipe")
+    Inventory.AddItem("CommonHammerRecipe")
+    Inventory.AddItem("CommonIronPipeRecipe")
+    Inventory.AddItem("CommonKanaboRecipe")
+    Inventory.AddItem("CommonTireIronRecipe")
+    
+    Utilities.FinishProtocol(moduleName)
+end 
+
 
 function Crafting.AddAll()
-    local moduleName = "Add all Crafting objects"
+    local moduleName = "Add All Crafting Objects"
     Utilities.StartProtocol(moduleName)
 
     Crafting.AddLegendaryMaterials()
     Crafting.AddLegendaryRecipes()
+    Crafting.AddEpicRecipes()
+    Crafting.AddRareRecipes()
+    Crafting.AddUncommonRecipes()
+    Crafting.AddCommonRecipes()
     Crafting.AddModRecipes()
     Crafting.AddMedRecipes()
     Crafting.AddGrenadeRecipes()
-
+    
     Utilities.FinishProtocol(moduleName)
 end
 
