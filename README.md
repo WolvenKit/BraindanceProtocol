@@ -42,6 +42,24 @@ BD.Cheats.Crafting.AddGrenadeRecipes() -- Adds all grenade recipes (except Ozob'
 BD.Cheats.Johnny.AddItems() -- Adds Johnny's Legendary Items and his Porsche.
 BD.Cheats.Legend.Create() -- Makes all equipped items legendary with max stats.
 
+-- Item Sets
+BD.Cheats.ItemSets.AddAllSets() -- Adds All Item Sets Listed Below
+BD.Cheats.ItemSets.AddSetCorpo() -- Adds the "Corpo" item set
+BD.Cheats.ItemSets.AddSetFixer() -- Adds the "Fixer" item set
+BD.Cheats.ItemSets.AddSetMaxTac() -- Adds the "MaxTac" item set
+BD.Cheats.ItemSets.AddSetMedia() -- Adds the "Media" item set
+BD.Cheats.ItemSets.AddSetNetrunner() -- Adds the "Netrunner" item set
+BD.Cheats.ItemSets.AddSetNomad() -- Adds the "Nomad" item set
+BD.Cheats.ItemSets.AddSetPolice() -- Adds the "Police" item set
+BD.Cheats.ItemSets.AddSetRocker() -- Adds the "Rocker" item set
+BD.Cheats.ItemSets.AddSetSolo() -- Adds the "Solo" item set
+BD.Cheats.ItemSets.AddSetTechie() -- Adds the "Techie" item set
+BD.Cheats.ItemSets.AddSetVCorpo() -- Adds "V's Corpo" item set
+BD.Cheats.ItemSets.AddSetVNomad() -- Adds "V's Nomad" item set
+BD.Cheats.ItemSets.AddSetVStreetkid() -- Adds "V's Streetkid" item set
+BD.Cheats.ItemSets.AddSetVEpilogue() -- Adds "V's Epilogue" item set
+BD.Cheats.ItemSets.AddSetVMisc() -- Adds "the rest" of V's default gear
+
 -- Utilities
 BD.Shopper.SellJunk() -- "Sells" all common junk items from players inventory by removing them and adding appropriate amount of Eddies back.
 BD.Shopper.SellAlcohol() -- As above but for alcohol (consumables).
