@@ -32,6 +32,13 @@ BD.Cheats.Player.AddMoney(amount) -- Gives the player specified amount of money.
 BD.Cheats.Crafting.AddAll() -- Add all Recipes & Materials
 BD.Cheats.Crafting.AddLegendaryMaterials(quantity) -- Add specified amount of legendary crafting materials
 BD.Cheats.Crafting.AddLegendaryRecipes() -- Adds all legendary crafting recipes.
+BD.Cheats.Crafting.AddEpicRecipes() -- Adds all epic crafting recipes.
+BD.Cheats.Crafting.AddRareRecipes() -- Adds all rare crafting recipes.
+BD.Cheats.Crafting.AddUncommonRecipes() -- Adds all uncommon crafting recipes.
+BD.Cheats.Crafting.AddCommonRecipes() -- Adds all common crafting recipes.
+BD.Cheats.Crafting.AddModRecipes() -- Adds all mod recipes (clothing + cyberware + weapon mods)
+BD.Cheats.Crafting.AddMedRecipes() -- Adds all medicine recipes
+BD.Cheats.Crafting.AddGrenadeRecipes() -- Adds all grenade recipes (except Ozob's Nose)
 BD.Cheats.Johnny.AddItems() -- Adds Johnny's Legendary Items and his Porsche.
 BD.Cheats.Legend.Create() -- Makes all equipped items legendary with max stats.
 
