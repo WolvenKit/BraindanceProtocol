@@ -961,6 +961,7 @@ Items.ma_std_arr_14_onscreen_01
 Items.ma_std_arr_14_onscreen_02
 Items.ma_pac_wwd_01_onscreen_02
 Items.ma_pac_wwd_02_onscreen_01
+Items.PlayerSilverhandArm
 Items.Preset_Baseball_Bat_Denny
 Items.Preset_Baton_Alpha
 Items.Preset_Baton_Gamma
