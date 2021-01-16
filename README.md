@@ -4,7 +4,7 @@ A collection of Lua scripts to modify your Cyberpunk 2077 experience.
 
 ## Requirements
 
-- Requires v1.8.2 of [CyberEngineTweaks](https://github.com/yamashi/CyberEngineTweaks/tree/v1.8.2).
+- Requires v1.8.3 of [CyberEngineTweaks](https://github.com/yamashi/CyberEngineTweaks/tree/v1.8.3).
   - For help installing CyberEngineTweaks, see this [Installation page on the wiki](https://wiki.cybermods.net/cyber-engine-tweaks/getting-started/installing).
 - Version 1.0.6 of Cyberpunk 2077
 
