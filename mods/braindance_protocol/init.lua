@@ -23,7 +23,8 @@ function BraindanceProtocol:new()
 		Johnny = require(BraindanceProtocol.rootPath.."cheats.johnny"),
 		Player = require(BraindanceProtocol.rootPath.."cheats.player"),
 		Legend = require(BraindanceProtocol.rootPath.."cheats.legend"),
-		Platform = require(BraindanceProtocol.rootPath.."cheats.platform")
+		Platform = require(BraindanceProtocol.rootPath.."cheats.platform"),
+		Modify = require(BraindanceProtocol.rootPath.."cheats.modify")
 	}
 
 	-- Execute Braindance protocols
