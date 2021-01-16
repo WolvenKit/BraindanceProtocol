@@ -92,7 +92,8 @@ end
 function ItemSets.AddSetPolice()
     local moduleName = "Add Police Item Set"
     Utilities.StartProtocol(moduleName)
-    -- Police Set
+    
+	-- Police Set
     Inventory.AddItem("Cop_01_Set_Boots")
     Inventory.AddItem("Cop_01_Set_Glasses")
     Inventory.AddItem("Cop_01_Set_Jacket")
