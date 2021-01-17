@@ -389,6 +389,19 @@ function Cyberware.AddCommonCW()
 	Inventory.AddItem("MemoryBoostCommon")
 	Inventory.AddItem("RoboticCoreCommon")
 	
+	-- Hands
+	-- "Tattoo: Together Forever"
+	Game.GetTransactionSystem():GiveItem(Game.GetPlayer(), 
+	GetSingleton("gameItemID"):FromTDBID(TweakDBID.new(0x15138755, 0x16)), 1)
+	
+	-- "Tattoo: Tyger Claws Dermal Imprint"
+	Game.GetTransactionSystem():GiveItem(Game.GetPlayer(), 
+	GetSingleton("gameItemID"):FromTDBID(TweakDBID.new(0x18FD8A52, 0x12)), 1)
+	
+	-- "Tattoo: Johnny's Special"
+	Game.GetTransactionSystem():GiveItem(Game.GetPlayer(), 
+	GetSingleton("gameItemID"):FromTDBID(TweakDBID.new(0xA93E60FD, 0x12)), 1)
+	
 	-- Immune System
 	Inventory.AddItem("ElectroshockMechanismCommon")
 	Inventory.AddItem("ResistancesBoosterCommon")

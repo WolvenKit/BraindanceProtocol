@@ -40,7 +40,7 @@ BD.Cheats.Crafting.AddUncommonRecipes() -- Adds all uncommon crafting recipes.
 BD.Cheats.Crafting.AddCommonRecipes() -- Adds all common crafting recipes.
 BD.Cheats.Crafting.AddModRecipes() -- Adds all mod recipes (clothing + cyberware + weapon mods)
 BD.Cheats.Crafting.AddMedRecipes() -- Adds all medicine recipes
-BD.Cheats.Crafting.AddGrenadeRecipes() -- Adds all grenade recipes (except Ozob's Nose)
+BD.Cheats.Crafting.AddGrenadeRecipes() -- Adds all grenade recipes
 BD.Cheats.Johnny.AddItems() -- Adds Johnny's Legendary Items and his Porsche.
 BD.Cheats.Legend.Create() -- Makes all equipped items legendary with max stats.
 
