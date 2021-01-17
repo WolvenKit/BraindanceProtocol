@@ -71,6 +71,28 @@ BD.Cheats.Cyberware.AddRareCW() -- Adds all rare Cyberware items
 BD.Cheats.Cyberware.AddUncommonCW() -- Adds all uncommon Cyberware items 
 BD.Cheats.Cyberware.AddCommonCW() -- Adds all common Cyberware items
 
+-- Facts [Spoiler Alert!]
+BD.Cheats.Facts.SetSkippyToSCK() -- Sets Skippy to "Stone Cold Killer" mode
+BD.Cheats.Facts.SetSkippyToPLP() -- Sets Skippy to "Puppy-Loving Pacifist" mode
+BD.Cheats.Facts.SetSkippyToFriendly() -- Sets Skippy to being "Friendly" 
+BD.Cheats.Facts.SetSkippyToHostile() -- Sets Skippy to being "Hostile"
+
+BD.Cheats.Facts.SendJackieToViktor() -- You sent Jackie to Viktor
+BD.Cheats.Facts.SendJackieToWelles() -- You sent Jackie to Mama Welles
+BD.Cheats.Facts.LeftJackieInCar() -- You left Jackie in the car
+
+BD.Cheats.Facts.SetGoroAlive() -- Takemura is alive (you saved him)
+BD.Cheats.Facts.SetGoroDead() -- Takemura is dead (you left him to die)
+
+BD.Cheats.Facts.SetFingersToFriendly() -- Fingers M.D. is now friendly
+
+BD.Cheats.Facts.SetJudyRomance() -- Judy is now romanceable
+BD.Cheats.Facts.SetRiverRomance() -- River is now romanceable
+BD.Cheats.Facts.SetPanamRomance() -- Panam is now romanceable
+BD.Cheats.Facts.SetKerryRomance() -- Kerry is now romanceable
+
+BD.Cheats.Facts.SetJohnnyAsFriend() -- Unlock Johnny's secret ending
+
 -- Utilities
 BD.Shopper.SellJunk() -- "Sells" all common junk items from players inventory by removing them and adding appropriate amount of Eddies back.
 BD.Shopper.SellAlcohol() -- As above but for alcohol (consumables).
