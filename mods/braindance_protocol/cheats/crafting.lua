@@ -490,7 +490,7 @@ end
 function Crafting.AddGrenadeRecipes()
     local moduleName = "Add All Grenade Recipes"
     Utilities.StartProtocol(moduleName)
--- These are all the Grenade recipes, except "Ozob's Nose"    
+-- These are all the Grenade recipes    
     Inventory.AddItem("RecipeGrenadeBiohazardHoming")
     Inventory.AddItem("RecipeGrenadeBiohazardRegular")
     
@@ -513,6 +513,10 @@ function Crafting.AddGrenadeRecipes()
     
     Inventory.AddItem("RecipeGrenadeReconRegular")
     Inventory.AddItem("RecipeGrenadeReconSticky")
+	
+	-- Ozob's Nose
+	Game.GetTransactionSystem():GiveItem(Game.GetPlayer(), 
+	GetSingleton("gameItemID"):FromTDBID(TweakDBID.new(0xA91A5B6B, 28)), 1)
 
     Utilities.FinishProtocol(moduleName)
 end    

@@ -29,6 +29,8 @@ BD.Cheats.Player.MaxOut() -- Max Level, Attributes, Skill Points, Money,
 BD.Cheats.Player.Respec() -- Respec attributes and perks
 BD.Cheats.Player.GodMode() -- Gives you pseudo "god mode". Permanent to your SaveFile
 BD.Cheats.Player.AddMoney(amount) -- Gives the player specified amount of money. If no amount is specified, gives you 999999 money.
+
+-- Crafting Recipes
 BD.Cheats.Crafting.AddAll() -- Add all Recipes & Materials
 BD.Cheats.Crafting.AddLegendaryMaterials(quantity) -- Add specified amount of legendary crafting materials
 BD.Cheats.Crafting.AddLegendaryRecipes() -- Adds all legendary crafting recipes.
@@ -38,9 +40,58 @@ BD.Cheats.Crafting.AddUncommonRecipes() -- Adds all uncommon crafting recipes.
 BD.Cheats.Crafting.AddCommonRecipes() -- Adds all common crafting recipes.
 BD.Cheats.Crafting.AddModRecipes() -- Adds all mod recipes (clothing + cyberware + weapon mods)
 BD.Cheats.Crafting.AddMedRecipes() -- Adds all medicine recipes
-BD.Cheats.Crafting.AddGrenadeRecipes() -- Adds all grenade recipes (except Ozob's Nose)
+BD.Cheats.Crafting.AddGrenadeRecipes() -- Adds all grenade recipes
 BD.Cheats.Johnny.AddItems() -- Adds Johnny's Legendary Items and his Porsche.
 BD.Cheats.Legend.Create() -- Makes all equipped items legendary with max stats.
+
+-- Item Sets
+BD.Cheats.ItemSets.AddAllSets() -- Adds All Item Sets Listed Below
+BD.Cheats.ItemSets.AddSetCorpo() -- Adds the "Corpo" item set
+BD.Cheats.ItemSets.AddSetFixer() -- Adds the "Fixer" item set
+BD.Cheats.ItemSets.AddSetMaxTac() -- Adds the "MaxTac" item set
+BD.Cheats.ItemSets.AddSetMedia() -- Adds the "Media" item set
+BD.Cheats.ItemSets.AddSetNetrunner() -- Adds the "Netrunner" item set
+BD.Cheats.ItemSets.AddSetNomad() -- Adds the "Nomad" item set
+BD.Cheats.ItemSets.AddSetPolice() -- Adds the "Police" item set
+BD.Cheats.ItemSets.AddSetRocker() -- Adds the "Rocker" item set
+BD.Cheats.ItemSets.AddSetSolo() -- Adds the "Solo" item set
+BD.Cheats.ItemSets.AddSetTechie() -- Adds the "Techie" item set
+BD.Cheats.ItemSets.AddSetVCorpo() -- Adds "V's Corpo" item set
+BD.Cheats.ItemSets.AddSetVNomad() -- Adds "V's Nomad" item set
+BD.Cheats.ItemSets.AddSetVStreetkid() -- Adds "V's Streetkid" item set
+BD.Cheats.ItemSets.AddSetVEpilogue() -- Adds "V's Epilogue" item set
+BD.Cheats.ItemSets.AddSetVMisc() -- Adds "the rest" of V's default gear
+
+-- Cyberware Items
+BD.Cheats.Cyberware.AddAllCW() -- Adds all Cyberware items (all qualities)
+BD.Cheats.Cyberware.AddIconicCW() -- Adds all iconic Cyberware items
+BD.Cheats.Cyberware.AddLegendaryCW() -- Adds all legendary Cyberware items
+BD.Cheats.Cyberware.AddEpicCW() -- Adds all epic Cyberware items
+BD.Cheats.Cyberware.AddRareCW() -- Adds all rare Cyberware items
+BD.Cheats.Cyberware.AddUncommonCW() -- Adds all uncommon Cyberware items 
+BD.Cheats.Cyberware.AddCommonCW() -- Adds all common Cyberware items
+
+-- Facts [Spoiler Alert!]
+BD.Cheats.Facts.SetSkippyToSCK() -- Sets Skippy to "Stone Cold Killer" mode
+BD.Cheats.Facts.SetSkippyToPLP() -- Sets Skippy to "Puppy-Loving Pacifist" mode
+BD.Cheats.Facts.SetSkippyToFriendly() -- Sets Skippy to being "Friendly" 
+BD.Cheats.Facts.SetSkippyToHostile() -- Sets Skippy to being "Hostile"
+
+BD.Cheats.Facts.SendJackieToViktor() -- You sent Jackie to Viktor
+BD.Cheats.Facts.SendJackieToWelles() -- You sent Jackie to Mama Welles
+BD.Cheats.Facts.LeftJackieInCar() -- You left Jackie in the car
+
+BD.Cheats.Facts.SetGoroAlive() -- Takemura is alive (you saved him)
+BD.Cheats.Facts.SetGoroDead() -- Takemura is dead (you left him to die)
+
+BD.Cheats.Facts.SetFingersToFriendly() -- Fingers M.D. is now friendly
+
+BD.Cheats.Facts.SetJudyRomance() -- Judy is now romanceable
+BD.Cheats.Facts.SetRiverRomance() -- River is now romanceable
+BD.Cheats.Facts.SetPanamRomance() -- Panam is now romanceable
+BD.Cheats.Facts.SetKerryRomance() -- Kerry is now romanceable
+
+BD.Cheats.Facts.SetJohnnyAsFriend() -- Unlock Johnny's secret ending
 
 -- Utilities
 BD.Shopper.SellJunk() -- "Sells" all common junk items from players inventory by removing them and adding appropriate amount of Eddies back.
