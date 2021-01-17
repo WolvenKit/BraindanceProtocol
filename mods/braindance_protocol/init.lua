@@ -25,7 +25,8 @@ function BraindanceProtocol:new()
 		Legend = require(BraindanceProtocol.rootPath.."cheats.legend"),
 		Platform = require(BraindanceProtocol.rootPath.."cheats.platform"),
 		Modify = require(BraindanceProtocol.rootPath.."cheats.modify"),
-		ItemSets = require(BraindanceProtocol.rootPath.."cheats.itemsets")
+		ItemSets = require(BraindanceProtocol.rootPath.."cheats.itemsets"),
+		Cyberware = require(BraindanceProtocol.rootPath.."cheats.cyberware")
 	}
 
 	-- Execute Braindance protocols

@@ -29,6 +29,8 @@ BD.Cheats.Player.MaxOut() -- Max Level, Attributes, Skill Points, Money,
 BD.Cheats.Player.Respec() -- Respec attributes and perks
 BD.Cheats.Player.GodMode() -- Gives you pseudo "god mode". Permanent to your SaveFile
 BD.Cheats.Player.AddMoney(amount) -- Gives the player specified amount of money. If no amount is specified, gives you 999999 money.
+
+-- Crafting Recipes
 BD.Cheats.Crafting.AddAll() -- Add all Recipes & Materials
 BD.Cheats.Crafting.AddLegendaryMaterials(quantity) -- Add specified amount of legendary crafting materials
 BD.Cheats.Crafting.AddLegendaryRecipes() -- Adds all legendary crafting recipes.
@@ -59,6 +61,15 @@ BD.Cheats.ItemSets.AddSetVNomad() -- Adds "V's Nomad" item set
 BD.Cheats.ItemSets.AddSetVStreetkid() -- Adds "V's Streetkid" item set
 BD.Cheats.ItemSets.AddSetVEpilogue() -- Adds "V's Epilogue" item set
 BD.Cheats.ItemSets.AddSetVMisc() -- Adds "the rest" of V's default gear
+
+-- Cyberware Items
+BD.Cheats.Cyberware.AddAllCW() -- Adds all Cyberware items (all qualities)
+BD.Cheats.Cyberware.AddIconicCW() -- Adds all iconic Cyberware items
+BD.Cheats.Cyberware.AddLegendaryCW() -- Adds all legendary Cyberware items
+BD.Cheats.Cyberware.AddEpicCW() -- Adds all epic Cyberware items
+BD.Cheats.Cyberware.AddRareCW() -- Adds all rare Cyberware items
+BD.Cheats.Cyberware.AddUncommonCW() -- Adds all uncommon Cyberware items 
+BD.Cheats.Cyberware.AddCommonCW() -- Adds all common Cyberware items
 
 -- Utilities
 BD.Shopper.SellJunk() -- "Sells" all common junk items from players inventory by removing them and adding appropriate amount of Eddies back.
