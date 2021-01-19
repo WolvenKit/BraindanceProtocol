@@ -68,7 +68,7 @@ registerForEvent("onDraw", function()
 						elseif protocols.Items[t].type == "Select" then
 							ImGui.PushItemWidth(btnWidth)
 							protocols.Items[t].value, protocols.Items[t].press = ImGui.Combo("##select", protocols.Items[t].value, protocols.Items[t].options)
-							ImGui.PushItemWidth()
+							ImGui.PopItemWidth()
 						end
 						ImGui.SameLine()
 						ImGui.Text(protocols.Items[t].name)
