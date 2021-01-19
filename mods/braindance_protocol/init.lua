@@ -52,6 +52,7 @@ registerForEvent("onDraw", function()
 			local headerOpen = ImGui.CollapsingHeader(protocols.Parents[i].name)
 			CPS.colorEnd(2)
 			if headerOpen then
+				ImGui.Indent(6)
 				for t in pairs(protocols.Items) do
 					local btnWidth = 130
 					if protocols.Items[t].parent == protocols.Parents[i].id then
@@ -81,6 +82,7 @@ registerForEvent("onDraw", function()
 						end
 					end
 				end
+				ImGui.Unindent(6)
 			end
 		end
 		ImGui.End()
