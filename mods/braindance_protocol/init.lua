@@ -83,6 +83,7 @@ registerForEvent("onDraw", function()
 				end
 			end
 		end
+		ImGui.End()
 		CPS.setThemeEnd()
 	end
 end)
