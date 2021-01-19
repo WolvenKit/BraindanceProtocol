@@ -1,6 +1,6 @@
 -- MIT License
 --
--- - CPStyle.lua
+-- - CPStyling.lua
 --
 -- Copyright (c) 2021 Mingming Cui
 --
