@@ -13,6 +13,8 @@ registerForEvent("onInit", function()
 	color = CPS.color
 	drawWindow = false
 	wWidth, wHeight = GetDisplayResolution()
+	-- Execute Braindance protocols
+	BD.Examples.Initialise()
 end)
 
 registerForEvent("onUpdate", function()
@@ -50,25 +52,26 @@ registerForEvent("onDraw", function()
 			local headerOpen = ImGui.CollapsingHeader(protocols.Parents[i].name)
 			CPS.colorEnd(2)
 			if headerOpen then
+				ImGui.Indent(6)
 				for t in pairs(protocols.Items) do
 					local btnWidth = 130
 					if protocols.Items[t].parent == protocols.Parents[i].id then
 						ImGui.BeginGroup()
 						ImGui.PushID(t)
 						if protocols.Items[t].type == "Button" then
-							protocols.Items[t].press = ImGui.Button(protocols.Items[t].button_label, btnWidth, 0)
+							protocols.Items[t].press = CPS.CPButton(protocols.Items[t].button_label, btnWidth, 0)
 						elseif protocols.Items[t].type == "Input" then
 							ImGui.PushItemWidth(btnWidth*2/3-2)
 							protocols.Items[t].value = ImGui.InputInt("##input" , protocols.Items[t].value, 0)
 							ImGui.PopItemWidth()
 							ImGui.SameLine(btnWidth*2/3)
-							protocols.Items[t].press = ImGui.Button(protocols.Items[t].button_label, btnWidth/3, 0)
+							protocols.Items[t].press = CPS.CPButton(protocols.Items[t].button_label, btnWidth/3, 0)
 						elseif protocols.Items[t].type == "Toggle" then
 							protocols.Items[t].value, protocols.Items[t].press = CPS.CPToggle( nil, protocols.Items[t].button_label1, protocols.Items[t].button_label2, protocols.Items[t].value, btnWidth, 0)
 						elseif protocols.Items[t].type == "Select" then
 							ImGui.PushItemWidth(btnWidth)
 							protocols.Items[t].value, protocols.Items[t].press = ImGui.Combo("##select", protocols.Items[t].value, protocols.Items[t].options)
-							ImGui.PushItemWidth()
+							ImGui.PopItemWidth()
 						end
 						ImGui.SameLine()
 						ImGui.Text(protocols.Items[t].name)
@@ -79,8 +82,10 @@ registerForEvent("onDraw", function()
 						end
 					end
 				end
+				ImGui.Unindent(6)
 			end
 		end
+		ImGui.End()
 		CPS.setThemeEnd()
 	end
 end)
