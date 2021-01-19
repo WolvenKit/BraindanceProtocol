@@ -13,6 +13,8 @@ registerForEvent("onInit", function()
 	color = CPS.color
 	drawWindow = false
 	wWidth, wHeight = GetDisplayResolution()
+	-- Execute Braindance protocols
+	BD.Examples.Initialise()
 end)
 
 registerForEvent("onUpdate", function()

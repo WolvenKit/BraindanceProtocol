@@ -31,9 +31,6 @@ function BraindanceProtocol:new()
 		Facts = require(BraindanceProtocol.rootPath.."cheats.facts")
 	}
 
-	-- Execute Braindance protocols
-	BDScripts.Examples.Initialise()
-
 	return BDScripts
 end
 
