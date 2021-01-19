@@ -58,13 +58,13 @@ registerForEvent("onDraw", function()
 						ImGui.BeginGroup()
 						ImGui.PushID(t)
 						if protocols.Items[t].type == "Button" then
-							protocols.Items[t].press = ImGui.Button(protocols.Items[t].button_label, btnWidth, 0)
+							protocols.Items[t].press = CPS.CPButton(protocols.Items[t].button_label, btnWidth, 0)
 						elseif protocols.Items[t].type == "Input" then
 							ImGui.PushItemWidth(btnWidth*2/3-2)
 							protocols.Items[t].value = ImGui.InputInt("##input" , protocols.Items[t].value, 0)
 							ImGui.PopItemWidth()
 							ImGui.SameLine(btnWidth*2/3)
-							protocols.Items[t].press = ImGui.Button(protocols.Items[t].button_label, btnWidth/3, 0)
+							protocols.Items[t].press = CPS.CPButton(protocols.Items[t].button_label, btnWidth/3, 0)
 						elseif protocols.Items[t].type == "Toggle" then
 							protocols.Items[t].value, protocols.Items[t].press = CPS.CPToggle( nil, protocols.Items[t].button_label1, protocols.Items[t].button_label2, protocols.Items[t].value, btnWidth, 0)
 						elseif protocols.Items[t].type == "Select" then
