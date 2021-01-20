@@ -1,6 +1,6 @@
 identifier = "braindance_protocol"
 display_name = "Braindance Protocol"
 creator = "osulli"
-description = "A GUI and Console tool to modify you Cyberpunk 2077 experience"
-version = "1.4.1"
+description = "A GUI and Console tool to modify your Cyberpunk 2077 experience"
+version = "1.4.2"
 license = "GNU GPL V3"
