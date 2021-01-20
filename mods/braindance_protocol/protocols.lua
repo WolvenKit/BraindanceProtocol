@@ -83,7 +83,8 @@ local Protocols = {
     { id = "Saves.DecreaseAutosaves" , name = "Decrease Autosaves" , parent = "Saves" , description = "Decreases time between auto saves." , type = "Button" , button_label = "Execute" , cmd = function() BD.Saves.DecreaseAutosaves() end },
     { id = "Saves.IncreaseAutosaves" , name = "Increase Autosaves" , parent = "Saves" , description = "Increases time between auto saves." , type = "Button" , button_label = "Execute" , cmd = function() BD.Saves.IncreaseAutosaves() end },
     { id = "Saves.IncreaseQuicksaves" , name = "Increase Quicksaves" , parent = "Saves" , description = "Increase Quicksave slots to 10." , type = "Button" , button_label = "Execute" , cmd = function() BD.Saves.IncreaseQuicksaves() end },
-    { id = "Vehicles.GetAll" , name = "Get All Vehicles" , parent = "Vehicles" , description = "Grants you all ownable player vehicles." , type = "Button" , button_label = "Execute" , cmd = function() BD.Vehicles.GetAll() end }
+    { id = "Vehicles.GetAll" , name = "Get All Vehicles" , parent = "Vehicles" , description = "Grants you all ownable player vehicles." , type = "Button" , button_label = "Execute" , cmd = function() BD.Vehicles.GetAll() end },
+    { id = "Vehicles.PreventKnockdown", name = "Prevent Vehicle Knock Down" , parent = "Vehicles" , description = "Prevent getting knocked down by vehicles" , type = "Button" , button_label = "Execute" , cmd = function() BD.Vehicles.PreventKnockdown() end }
   }
 }
 
