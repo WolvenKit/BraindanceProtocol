@@ -17,17 +17,18 @@ registerForEvent("onInit", function()
 	BD.Examples.Initialise()
 end)
 
-registerForEvent("onUpdate", function()
-	if ImGui.IsKeyDown(0x42) and ImGui.IsKeyPressed(0x44, false) then -- Hotkey B+D
-		if not drawWindow then
-			for i in pairs(protocols.Items) do
-				if protocols.Items[i].parent == "Facts" and protocols.Items[i].type ~= "Button" then
-					protocols.Items[i].value = fact.GetValue(protocols.Items[i].id)
-				end
+registerHotkey("braindance_protocol_interface", "Open Protocol Interface", function()
+	if not drawWindow then
+		for i in pairs(protocols.Items) do
+			if protocols.Items[i].parent == "Facts" and protocols.Items[i].type ~= "Button" then
+				protocols.Items[i].value = fact.GetValue(protocols.Items[i].id)
 			end
 		end
-		drawWindow = not drawWindow
 	end
+	drawWindow = not drawWindow
+end)
+
+registerForEvent("onUpdate", function()
 	for i in pairs(protocols.Items) do
 		if protocols.Items[i].press then
 			if protocols.Items[i].type ~= "Button" and protocols.Items[i].value ~= nil then
