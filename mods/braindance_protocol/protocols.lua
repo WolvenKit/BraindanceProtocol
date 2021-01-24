@@ -31,11 +31,14 @@ local Protocols = {
 -- Select:
 --  	{ id = "ID" , name = "Display name" , parent = "Parent" , description = "Tooltip text" , type = "Select" , options = "Option1\0Option2\0Option3\0" , cmd = function(value) print("Command to run") end },
 
+-- Cheats
 	{ id = "Platform.UnlockAllAchievements" , name = "Unlock All Achievements" , parent = "Cheats" , description = "Unlock all achievements on your platform (Steam / GoG)." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Platform.UnlockAllAchievements() end },
 	{ id = "Player.MaxOut" , name = "MaxOut Level, Attributes, etc" , parent = "Cheats" , description = "Max Level, Attributes, Skill Points, Money." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Player.MaxOut() end },
 	{ id = "Player.Respec" , name = "Respec perks and attributes" , parent = "Cheats" , description = "Respec attributes and perks." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Player.Respec() end },
 	{ id = "Player.GodMode" , name = "GodMode" , parent = "Cheats" , description = "Gives you pseudo \"god mode\". Permanent to your SaveFile." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Player.GodMode() end },
 	{ id = "Player.AddMoney" , name = "Add Money" , parent = "Cheats" , description = "Gives the player specified amount of money." , type = "Input" , button_label = "Add" , value = 10000 , cmd = function(value) BD.Cheats.Player.AddMoney(value) end },
+
+-- Crafting
 	{ id = "Crafting.AddAll" , name = "Add All Recipes & Materials" , parent = "Crafting" , description = "Add all Recipes & Materials." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Crafting.AddAll() end },
 	{ id = "Crafting.AddLegendaryMaterials" , name = "Add Legendary Materials" , parent = "Crafting" , description = "Add specified amount of legendary crafting materials." , type = "Input" , button_label = "Add" , value = 50 , cmd = function(value) BD.Cheats.Crafting.AddLegendaryMaterials(value) end },
 	{ id = "Crafting.AddLegendaryRecipes" , name = "Add Legendary Recipes" , parent = "Crafting" , description = "Adds all legendary crafting recipes." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Crafting.AddLegendaryRecipes() end },
@@ -48,6 +51,8 @@ local Protocols = {
 	{ id = "Crafting.AddGrenadeRecipes" , name = "Add Grenade Recipes" , parent = "Crafting" , description = "Adds all grenade recipes." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Crafting.AddGrenadeRecipes() end },
 	{ id = "Johnny.AddItems" , name = "Add Johnny's Items" , parent = "Crafting" , description = "Adds Johnny's Legendary Items and his Porsche." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Johnny.AddItems() end },
 	{ id = "Legend.Create" , name = "Legendize Equipped Items" , parent = "Crafting" , description = "Makes all equipped items legendary with max stats." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Legend.Create() end },
+
+-- ItemSets
 	{ id = "ItemSets.AddAllSets" , name = "Add All Item Sets" , parent = "ItemSets" , description = "Adds All Item Sets Listed Below." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.ItemSets.AddAllSets() end },
 	{ id = "ItemSets.AddSetCorpo" , name = "Add Corpo Set" , parent = "ItemSets" , description = "Adds the \"Corpo\" item set." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.ItemSets.AddSetCorpo() end },
 	{ id = "ItemSets.AddSetFixer" , name = "Add Fixer Set" , parent = "ItemSets" , description = "Adds the \"Fixer\" item set." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.ItemSets.AddSetFixer() end },
@@ -64,6 +69,8 @@ local Protocols = {
 	{ id = "ItemSets.AddSetVStreetkid" , name = "Add V's Streetkid Set" , parent = "ItemSets" , description = "Adds \"V's Streetkid\" item set." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.ItemSets.AddSetVStreetkid() end },
 	{ id = "ItemSets.AddSetVEpilogue" , name = "Add V's Epilogue Set" , parent = "ItemSets" , description = "Adds \"V's Epilogue\" item set." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.ItemSets.AddSetVEpilogue() end },
 	{ id = "ItemSets.AddSetVMisc" , name = "Add V's Misc Set" , parent = "ItemSets" , description = "Adds \"the rest\" of V's default gear." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.ItemSets.AddSetVMisc() end },
+
+-- Cyberware
 	{ id = "Cyberware.AddAllCW" , name = "Add All Cyberware" , parent = "Cyberware" , description = "Adds all Cyberware items (all qualities)." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Cyberware.AddAllCW() end },
 	{ id = "Cyberware.AddIconicCW" , name = "Add Iconic Cyberware" , parent = "Cyberware" , description = "Adds all iconic Cyberware items." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Cyberware.AddIconicCW() end },
 	{ id = "Cyberware.AddLegendaryCW" , name = "Add Legendary Cyberware" , parent = "Cyberware" , description = "Adds all legendary Cyberware items." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Cyberware.AddLegendaryCW() end },
@@ -71,6 +78,8 @@ local Protocols = {
 	{ id = "Cyberware.AddRareCW" , name = "Add Rare Cyberware" , parent = "Cyberware" , description = "Adds all rare Cyberware items." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Cyberware.AddRareCW() end },
 	{ id = "Cyberware.AddUncommonCW" , name = "Add Uncommon Cyberware" , parent = "Cyberware" , description = "Adds all uncommon Cyberware items." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Cyberware.AddUncommonCW() end },
 	{ id = "Cyberware.AddCommonCW" , name = "Add Common Cyberware" , parent = "Cyberware" , description = "Adds all common Cyberware items." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Cyberware.AddCommonCW() end },
+
+-- Facts
 	{ id = "Facts.SkippyMode" , name = "Set Skippy's Mode" , parent = "Facts" , description = "Sets Skippy to \"Stone Cold Killer\" mode or \"Puppy-Loving Pacifist\" mode." , type = "Toggle" , button_label1 = "Killer" , button_label2 = "Pacifist" , cmd = function(value) if value then BD.Cheats.Facts.SetSkippyToPLP() else BD.Cheats.Facts.SetSkippyToSCK() end end },
 	{ id = "Facts.SkippyAttitude" , name = "Set Skippy's Attitude" , parent = "Facts" , description = "Sets Skippy to being \"Friendly\" or \"Angry\"." , type = "Toggle" , button_label1 = "Angry" , button_label2 = "Friendly" , cmd = function(value) if value then BD.Cheats.Facts.SetSkippyToFriendly() else BD.Cheats.Facts.SetSkippyToHostile() end end },
 	{ id = "Facts.JackieBody" , name = "Set Jackie's Fate" , parent = "Facts" , description = "Select where you sent Jackie's body." , type = "Select" , options = "Send to victor\0Send to Welles\0Left in the Car\0" , cmd = function(value) if value == 0 then BD.Cheats.Facts.SendJackieToViktor() elseif value == 1 then BD.Cheats.Facts.SendJackieToWelles() elseif value == 2 then BD.Cheats.Facts.LeftJackieInCar() end end },
@@ -81,10 +90,14 @@ local Protocols = {
 	-- 	{ id = "Facts.SetPanamRomance" , name = "Set Panam Romance" , parent = "Facts" , description = "Panam is now romanceable." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Facts.SetPanamRomance() end },
 	{ id = "Facts.SetKerryRomance" , name = "Set Kerry Romance" , parent = "Facts" , description = "Kerry is now romanceable." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Facts.SetKerryRomance() end },
 	{ id = "Facts.SetJohnnyAsFriend" , name = "Set Johnny As Friend" , parent = "Facts" , description = "Unlock Johnny's secret ending." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Facts.SetJohnnyAsFriend() end },
+
+-- Shopper
 	{ id = "Shopper.SellJunk" , name = "Sell Junk" , parent = "Utilities" , description = "\"Sells\" all common junk items from players inventory by removing\nthem and adding appropriate amount of Eddies back." , type = "Button" , button_label = "Execute" , cmd = function() BD.Shopper.SellJunk() end },
 	{ id = "Shopper.SellAlcohol" , name = "Sell Alcohol" , parent = "Utilities" , description = "As above but for alcohol (consumables)." , type = "Button" , button_label = "Execute" , cmd = function() BD.Shopper.SellAlcohol() end },
 	{ id = "Shopper.SellJewellery" , name = "Sell Jewellery" , parent = "Utilities" , description = "As above but for jewellery (pricier junk)." , type = "Button" , button_label = "Execute" , cmd = function() BD.Shopper.SellJewellery() end },
 	{ id = "Shopper.SellAllUselessItems" , name = "Sell All Useless Items" , parent = "Utilities" , description = "As above but all at the same time." , type = "Button" , button_label = "Execute" , cmd = function() BD.Shopper.SellAllUselessItems() end },
+
+-- Teleportation
 	-- Player Homes
 	{ id = "Teleport.VsApartment" , name = "V's Apartment" , parent = "Teleport" , description = "Teleport to V's Apartment." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Teleport.VsApartment() end },
 	{ id = "Teleport.VsMansion" , name = "V's Mansion" , parent = "Teleport" , description = "Teleport to V's Mansion." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Teleport.VsMansion() end },
@@ -121,7 +134,6 @@ local Protocols = {
 	{ id = "Teleport.NPCWakakoOkada" , name = "Wakako Okada" , parent = "Teleport3" , description = "Teleport to Wakako Okada" , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Teleport.NPCWakakoOkada() end },
 	{ id = "Teleport.NPCDeadDexter" , name = "Dexter DeShawn (dead)" , parent = "Teleport3" , description = "Teleport to the corpse of Dexter DeShawn" , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Teleport.NPCDeadDexter() end },
 	-- Store Locations
-	-- Named them numerically, with the actual store name in description
 	{ id = "Teleport.ShopClothing1" , name = "Clothing Shop #1" , parent = "Teleport4" , description = "Teleport to Pershing ST Store" , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Teleport.ShopClothing1() end }, -- Clothing Stores
 	{ id = "Teleport.ShopClothing2" , name = "Clothing Shop #2" , parent = "Teleport4" , description = "Teleport to Little China North Store" , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Teleport.ShopClothing2() end },
 	{ id = "Teleport.ShopClothing3" , name = "Clothing Shop #3" , parent = "Teleport4" , description = "Teleport to Kabuki Store" , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Teleport.ShopClothing3() end },
@@ -196,6 +208,7 @@ local Protocols = {
 	{ id = "Saves.IncreaseQuicksaves" , name = "Increase Quicksaves" , parent = "Saves" , description = "Increase Quicksave slots to 10." , type = "Button" , button_label = "Execute" , cmd = function() BD.Saves.IncreaseQuicksaves() end },
 	{ id = "Vehicles.GetAll" , name = "Get All Vehicles" , parent = "Vehicles" , description = "Grants you all ownable player vehicles." , type = "Button" , button_label = "Execute" , cmd = function() BD.Vehicles.GetAll() end },
 	{ id = "Vehicles.PreventKnockdown", name = "Prevent Vehicle Knock Down" , parent = "Vehicles" , description = "Prevent getting knocked down by vehicles" , type = "Button" , button_label = "Execute" , cmd = function() BD.Vehicles.PreventKnockdown() end },
+-- Vehicles
 	-- Individual Vehicles
 	{ id = "Vehicles.GetMahirSupronFS3", name = "Mahir - Supron FS3" , parent = "Vehicles" , description = "Add the vehicle Mahir - Supron FS3" , type = "Button" , button_label = "Execute" , cmd = function() BD.Vehicles.GetMahirSupronFS3() end },
 	{ id = "Vehicles.GetMaiMaiP126", name = "Makigai - MaiMai P126" , parent = "Vehicles" , description = "Add the vehicle Makigai - MaiMai P126" , type = "Button" , button_label = "Execute" , cmd = function() BD.Vehicles.GetMaiMaiP126() end },
