@@ -8,17 +8,18 @@ local Protocols = {
   Parents = {
 	{ id = "Cheats"		, name = "Cheats"                       },
 	{ id = "Crafting"	, name = "Crafting Recipes"             },
-	{ id = "ItemSets"	, name = "Item Sets"                    },
 	{ id = "Cyberware"	, name = "Cyberware Items"              },
 	{ id = "Facts"		, name = "Facts [Spoiler Alert!]"       },
-	{ id = "Utilities"	, name = "Utilities"                    },
+	{ id = "ItemSets"	, name = "Item Sets"                    },
+	{ id = "Saves"		, name = "Saves"                        },
 	{ id = "Teleport"	, name = "Teleport - V's Homes"         },
 	{ id = "Teleport2"	, name = "Teleport - Generic"           },
 	{ id = "Teleport3"	, name = "Teleport - NPCs"              },
 	{ id = "Teleport4"	, name = "Teleport - Stores"            },
 	{ id = "Teleport5"	, name = "Teleport - Ripperdocs"        },
 	{ id = "Teleport6"	, name = "Teleport - Bonus Locations"   },
-	{ id = "Saves"		, name = "Saves"                        },
+	{ id = "Time"		, name = "Time Options"					},
+	{ id = "Utilities"	, name = "Utilities"                    },
 	{ id = "Vehicles"	, name = "Vehicles"                     }
   },
   Items = {
@@ -52,24 +53,6 @@ local Protocols = {
 	{ id = "Johnny.AddItems" , name = "Add Johnny's Items" , parent = "Crafting" , description = "Adds Johnny's Legendary Items and his Porsche." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Johnny.AddItems() end },
 	{ id = "Legend.Create" , name = "Legendize Equipped Items" , parent = "Crafting" , description = "Makes all equipped items legendary with max stats." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Legend.Create() end },
 
--- ItemSets
-	{ id = "ItemSets.AddAllSets" , name = "Add All Item Sets" , parent = "ItemSets" , description = "Adds All Item Sets Listed Below." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.ItemSets.AddAllSets() end },
-	{ id = "ItemSets.AddSetCorpo" , name = "Add Corpo Set" , parent = "ItemSets" , description = "Adds the \"Corpo\" item set." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.ItemSets.AddSetCorpo() end },
-	{ id = "ItemSets.AddSetFixer" , name = "Add Fixer Set" , parent = "ItemSets" , description = "Adds the \"Fixer\" item set." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.ItemSets.AddSetFixer() end },
-	{ id = "ItemSets.AddSetMaxTac" , name = "Add MaxTac Set" , parent = "ItemSets" , description = "Adds the \"MaxTac\" item set." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.ItemSets.AddSetMaxTac() end },
-	{ id = "ItemSets.AddSetMedia" , name = "Add Media Set" , parent = "ItemSets" , description = "Adds the \"Media\" item set." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.ItemSets.AddSetMedia() end },
-	{ id = "ItemSets.AddSetNetrunner" , name = "Add Netrunner Set" , parent = "ItemSets" , description = "Adds the \"Netrunner\" item set." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.ItemSets.AddSetNetrunner() end },
-	{ id = "ItemSets.AddSetNomad" , name = "Add Nomad Set" , parent = "ItemSets" , description = "Adds the \"Nomad\" item set." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.ItemSets.AddSetNomad() end },
-	{ id = "ItemSets.AddSetPolice" , name = "Add Police Set" , parent = "ItemSets" , description = "Adds the \"Police\" item set." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.ItemSets.AddSetPolice() end },
-	{ id = "ItemSets.AddSetRocker" , name = "Add Rocker Set" , parent = "ItemSets" , description = "Adds the \"Rocker\" item set." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.ItemSets.AddSetRocker() end },
-	{ id = "ItemSets.AddSetSolo" , name = "Add Solo Set" , parent = "ItemSets" , description = "Adds the \"Solo\" item set." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.ItemSets.AddSetSolo() end },
-	{ id = "ItemSets.AddSetTechie" , name = "Add Techie Set" , parent = "ItemSets" , description = "Adds the \"Techie\" item set." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.ItemSets.AddSetTechie() end },
-	{ id = "ItemSets.AddSetVCorpo" , name = "Add V's Corpo Set" , parent = "ItemSets" , description = "Adds \"V's Corpo\" item set." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.ItemSets.AddSetVCorpo() end },
-	{ id = "ItemSets.AddSetVNomad" , name = "Add V's Nomad Set" , parent = "ItemSets" , description = "Adds \"V's Nomad\" item set." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.ItemSets.AddSetVNomad() end },
-	{ id = "ItemSets.AddSetVStreetkid" , name = "Add V's Streetkid Set" , parent = "ItemSets" , description = "Adds \"V's Streetkid\" item set." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.ItemSets.AddSetVStreetkid() end },
-	{ id = "ItemSets.AddSetVEpilogue" , name = "Add V's Epilogue Set" , parent = "ItemSets" , description = "Adds \"V's Epilogue\" item set." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.ItemSets.AddSetVEpilogue() end },
-	{ id = "ItemSets.AddSetVMisc" , name = "Add V's Misc Set" , parent = "ItemSets" , description = "Adds \"the rest\" of V's default gear." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.ItemSets.AddSetVMisc() end },
-
 -- Cyberware
 	{ id = "Cyberware.AddAllCW" , name = "Add All Cyberware" , parent = "Cyberware" , description = "Adds all Cyberware items (all qualities)." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Cyberware.AddAllCW() end },
 	{ id = "Cyberware.AddIconicCW" , name = "Add Iconic Cyberware" , parent = "Cyberware" , description = "Adds all iconic Cyberware items." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Cyberware.AddIconicCW() end },
@@ -91,11 +74,23 @@ local Protocols = {
 	{ id = "Facts.SetKerryRomance" , name = "Set Kerry Romance" , parent = "Facts" , description = "Kerry is now romanceable." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Facts.SetKerryRomance() end },
 	{ id = "Facts.SetJohnnyAsFriend" , name = "Set Johnny As Friend" , parent = "Facts" , description = "Unlock Johnny's secret ending." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Facts.SetJohnnyAsFriend() end },
 
--- Shopper
-	{ id = "Shopper.SellJunk" , name = "Sell Junk" , parent = "Utilities" , description = "\"Sells\" all common junk items from players inventory by removing\nthem and adding appropriate amount of Eddies back." , type = "Button" , button_label = "Execute" , cmd = function() BD.Shopper.SellJunk() end },
-	{ id = "Shopper.SellAlcohol" , name = "Sell Alcohol" , parent = "Utilities" , description = "As above but for alcohol (consumables)." , type = "Button" , button_label = "Execute" , cmd = function() BD.Shopper.SellAlcohol() end },
-	{ id = "Shopper.SellJewellery" , name = "Sell Jewellery" , parent = "Utilities" , description = "As above but for jewellery (pricier junk)." , type = "Button" , button_label = "Execute" , cmd = function() BD.Shopper.SellJewellery() end },
-	{ id = "Shopper.SellAllUselessItems" , name = "Sell All Useless Items" , parent = "Utilities" , description = "As above but all at the same time." , type = "Button" , button_label = "Execute" , cmd = function() BD.Shopper.SellAllUselessItems() end },
+-- ItemSets
+	{ id = "ItemSets.AddAllSets" , name = "Add All Item Sets" , parent = "ItemSets" , description = "Adds All Item Sets Listed Below." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.ItemSets.AddAllSets() end },
+	{ id = "ItemSets.AddSetCorpo" , name = "Add Corpo Set" , parent = "ItemSets" , description = "Adds the \"Corpo\" item set." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.ItemSets.AddSetCorpo() end },
+	{ id = "ItemSets.AddSetFixer" , name = "Add Fixer Set" , parent = "ItemSets" , description = "Adds the \"Fixer\" item set." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.ItemSets.AddSetFixer() end },
+	{ id = "ItemSets.AddSetMaxTac" , name = "Add MaxTac Set" , parent = "ItemSets" , description = "Adds the \"MaxTac\" item set." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.ItemSets.AddSetMaxTac() end },
+	{ id = "ItemSets.AddSetMedia" , name = "Add Media Set" , parent = "ItemSets" , description = "Adds the \"Media\" item set." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.ItemSets.AddSetMedia() end },
+	{ id = "ItemSets.AddSetNetrunner" , name = "Add Netrunner Set" , parent = "ItemSets" , description = "Adds the \"Netrunner\" item set." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.ItemSets.AddSetNetrunner() end },
+	{ id = "ItemSets.AddSetNomad" , name = "Add Nomad Set" , parent = "ItemSets" , description = "Adds the \"Nomad\" item set." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.ItemSets.AddSetNomad() end },
+	{ id = "ItemSets.AddSetPolice" , name = "Add Police Set" , parent = "ItemSets" , description = "Adds the \"Police\" item set." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.ItemSets.AddSetPolice() end },
+	{ id = "ItemSets.AddSetRocker" , name = "Add Rocker Set" , parent = "ItemSets" , description = "Adds the \"Rocker\" item set." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.ItemSets.AddSetRocker() end },
+	{ id = "ItemSets.AddSetSolo" , name = "Add Solo Set" , parent = "ItemSets" , description = "Adds the \"Solo\" item set." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.ItemSets.AddSetSolo() end },
+	{ id = "ItemSets.AddSetTechie" , name = "Add Techie Set" , parent = "ItemSets" , description = "Adds the \"Techie\" item set." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.ItemSets.AddSetTechie() end },
+	{ id = "ItemSets.AddSetVCorpo" , name = "Add V's Corpo Set" , parent = "ItemSets" , description = "Adds \"V's Corpo\" item set." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.ItemSets.AddSetVCorpo() end },
+	{ id = "ItemSets.AddSetVNomad" , name = "Add V's Nomad Set" , parent = "ItemSets" , description = "Adds \"V's Nomad\" item set." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.ItemSets.AddSetVNomad() end },
+	{ id = "ItemSets.AddSetVStreetkid" , name = "Add V's Streetkid Set" , parent = "ItemSets" , description = "Adds \"V's Streetkid\" item set." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.ItemSets.AddSetVStreetkid() end },
+	{ id = "ItemSets.AddSetVEpilogue" , name = "Add V's Epilogue Set" , parent = "ItemSets" , description = "Adds \"V's Epilogue\" item set." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.ItemSets.AddSetVEpilogue() end },
+	{ id = "ItemSets.AddSetVMisc" , name = "Add V's Misc Set" , parent = "ItemSets" , description = "Adds \"the rest\" of V's default gear." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.ItemSets.AddSetVMisc() end },
 
 -- Teleportation
 	-- Player Homes
@@ -202,14 +197,27 @@ local Protocols = {
 	{ id = "Teleport.BonusNCPDRoom" , name = "NCPD Room" , parent = "Teleport6" , description = "Teleport to NCPD Room" , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Teleport.BonusNCPDRoom() end },
 	{ id = "Teleport.BonusMegaH8Top" , name = "Megabuilding H8 Top" , parent = "Teleport6" , description = "Teleport to the top of Megabuilding H8" , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Teleport.BonusMegaH8Top() end },
 	{ id = "Teleport.BonusMegaH10Top" , name = "Megabuilding H10 Top" , parent = "Teleport6" , description = "Teleport to the top of Megabuilding H10" , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Teleport.BonusMegaH10Top() end },
+
+-- Time Options
+	{ id = "Time.SetTime" , name = "Set Time" , parent = "Time" , description = "Set the time - Use 24h format" , type = "Input" , button_label = "Set" , value = 18 , cmd = function(value) BD.Time.SetTime(value) end },
+	{ id = "Time.SetTimeTo06AM" , name = "6AM / 06:00" , parent = "Time" , description = "Sets the time to 6AM / 06:00" , type = "Button" , button_label = "Execute" , cmd = function() BD.Time.SetTimeTo06AM() end },
+	{ id = "Time.SetTimeTo10PM" , name = "10PM / 22:00" , parent = "Time" , description = "Sets the time to 10PM / 22:00" , type = "Button" , button_label = "Execute" , cmd = function() BD.Time.SetTimeTo10PM() end },
+	
+-- Save File Editing	
 	{ id = "Saves.DisableAutosave" , name = "Disable Autosave" , parent = "Saves" , description = "Disables auto saving." , type = "Button" , button_label = "Execute" , cmd = function() BD.Saves.DisableAutosave() end },
 	{ id = "Saves.DecreaseAutosaves" , name = "Decrease Autosaves" , parent = "Saves" , description = "Decreases time between auto saves." , type = "Button" , button_label = "Execute" , cmd = function() BD.Saves.DecreaseAutosaves() end },
 	{ id = "Saves.IncreaseAutosaves" , name = "Increase Autosaves" , parent = "Saves" , description = "Increases time between auto saves." , type = "Button" , button_label = "Execute" , cmd = function() BD.Saves.IncreaseAutosaves() end },
 	{ id = "Saves.IncreaseQuicksaves" , name = "Increase Quicksaves" , parent = "Saves" , description = "Increase Quicksave slots to 10." , type = "Button" , button_label = "Execute" , cmd = function() BD.Saves.IncreaseQuicksaves() end },
-	{ id = "Vehicles.GetAll" , name = "Get All Vehicles" , parent = "Vehicles" , description = "Grants you all ownable player vehicles." , type = "Button" , button_label = "Execute" , cmd = function() BD.Vehicles.GetAll() end },
-	{ id = "Vehicles.PreventKnockdown", name = "Prevent Vehicle Knock Down" , parent = "Vehicles" , description = "Prevent getting knocked down by vehicles" , type = "Button" , button_label = "Execute" , cmd = function() BD.Vehicles.PreventKnockdown() end },
+
+-- Utilities / Shopper
+	{ id = "Shopper.SellJunk" , name = "Sell Junk" , parent = "Utilities" , description = "\"Sells\" all common junk items from players inventory by removing\nthem and adding appropriate amount of Eddies back." , type = "Button" , button_label = "Execute" , cmd = function() BD.Shopper.SellJunk() end },
+	{ id = "Shopper.SellAlcohol" , name = "Sell Alcohol" , parent = "Utilities" , description = "As above but for alcohol (consumables)." , type = "Button" , button_label = "Execute" , cmd = function() BD.Shopper.SellAlcohol() end },
+	{ id = "Shopper.SellJewellery" , name = "Sell Jewellery" , parent = "Utilities" , description = "As above but for jewellery (pricier junk)." , type = "Button" , button_label = "Execute" , cmd = function() BD.Shopper.SellJewellery() end },
+	{ id = "Shopper.SellAllUselessItems" , name = "Sell All Useless Items" , parent = "Utilities" , description = "As above but all at the same time." , type = "Button" , button_label = "Execute" , cmd = function() BD.Shopper.SellAllUselessItems() end },
 
 -- Vehicles
+	{ id = "Vehicles.GetAll" , name = "Get All Vehicles" , parent = "Vehicles" , description = "Grants you all ownable player vehicles." , type = "Button" , button_label = "Execute" , cmd = function() BD.Vehicles.GetAll() end },
+	{ id = "Vehicles.PreventKnockdown", name = "Prevent Vehicle Knock Down" , parent = "Vehicles" , description = "Prevent getting knocked down by vehicles" , type = "Button" , button_label = "Execute" , cmd = function() BD.Vehicles.PreventKnockdown() end },
 	-- Individual Vehicles
 	{ id = "Vehicles.GetMahirSupronFS3", name = "Mahir - Supron FS3" , parent = "Vehicles" , description = "Add the vehicle Mahir - Supron FS3" , type = "Button" , button_label = "Execute" , cmd = function() BD.Vehicles.GetMahirSupronFS3() end },
 	{ id = "Vehicles.GetMaiMaiP126", name = "Makigai - MaiMai P126" , parent = "Vehicles" , description = "Add the vehicle Makigai - MaiMai P126" , type = "Button" , button_label = "Execute" , cmd = function() BD.Vehicles.GetMaiMaiP126() end },
