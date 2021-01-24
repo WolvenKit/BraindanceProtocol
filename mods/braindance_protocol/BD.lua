@@ -17,7 +17,7 @@ function BraindanceProtocol:new()
 	BDScripts.Vehicles = require(BraindanceProtocol.rootPath.."ai.vehicles")
 	BDScripts.Examples = require(BraindanceProtocol.rootPath.."examples.init")
 	BDScripts.Shopper = require(BraindanceProtocol.rootPath.."utility.shopper")
-  BDScripts.Saves = require(BraindanceProtocol.rootPath.."engine.saves")
+	BDScripts.Saves = require(BraindanceProtocol.rootPath.."engine.saves")
 
 	BDScripts.Cheats = {
 		Crafting = require(BraindanceProtocol.rootPath.."cheats.crafting"),
@@ -28,7 +28,8 @@ function BraindanceProtocol:new()
 		Modify = require(BraindanceProtocol.rootPath.."cheats.modify"),
 		ItemSets = require(BraindanceProtocol.rootPath.."cheats.itemsets"),
 		Cyberware = require(BraindanceProtocol.rootPath.."cheats.cyberware"),
-		Facts = require(BraindanceProtocol.rootPath.."cheats.facts")
+		Facts = require(BraindanceProtocol.rootPath.."cheats.facts"),
+		Teleport = require(BraindanceProtocol.rootPath.."cheats.teleport")
 	}
 
 	return BDScripts
