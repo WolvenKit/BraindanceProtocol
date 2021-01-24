@@ -18,6 +18,7 @@ function BraindanceProtocol:new()
 	BDScripts.Examples = require(BraindanceProtocol.rootPath.."examples.init")
 	BDScripts.Shopper = require(BraindanceProtocol.rootPath.."utility.shopper")
 	BDScripts.Saves = require(BraindanceProtocol.rootPath.."engine.saves")
+	BDScripts.Time = require(BraindanceProtocol.rootPath.."engine.time")
 
 	BDScripts.Cheats = {
 		Crafting = require(BraindanceProtocol.rootPath.."cheats.crafting"),
