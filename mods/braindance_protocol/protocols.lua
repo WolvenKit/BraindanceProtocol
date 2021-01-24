@@ -1,25 +1,25 @@
 local BraindanceProtocol = {
-rootPath ="plugins.cyber_engine_tweaks.mods.braindance_protocol."
+rootPath =	"plugins.cyber_engine_tweaks.mods.braindance_protocol."
 }
 
 local BD = require(BraindanceProtocol.rootPath.."BD")
 
 local Protocols = {
   Parents = {
-	{ id = "Cheats" , name = "Cheats"},
-	{ id = "Crafting"   , name = "Crafting Recipes"},
-	{ id = "ItemSets"   , name = "Item Sets"},
-	{ id = "Cyberware"  , name = "Cyberware Items"},
-	{ id = "Facts"  , name = "Facts [Spoiler Alert!]"},
-	{ id = "Utilities"  , name = "Utilities"},
-	{ id = "Teleport", name = "Teleport - V's Homes"},
-	{ id = "Teleport2", name = "Teleport - Generic"},
-	{ id = "Teleport3", name = "Teleport - NPCs"},
-	{ id = "Teleport4", name = "Teleport - Stores"},
-	{ id = "Teleport5", name = "Teleport - Ripperdocs"},
-	{ id = "Teleport6", name = "Teleport - Bonus Locations"},
-	{ id = "Saves"  , name = "Saves"},
-	{ id = "Vehicles"   , name = "Vehicles"}
+	{ id = "Cheats"		, name = "Cheats"						},
+	{ id = "Crafting"	, name = "Crafting Recipes"				},
+	{ id = "ItemSets"	, name = "Item Sets"					},
+	{ id = "Cyberware"	, name = "Cyberware Items"				},
+	{ id = "Facts"		, name = "Facts [Spoiler Alert!]"		},
+	{ id = "Utilities"	, name = "Utilities"					},
+	{ id = "Teleport"	, name = "Teleport - V's Homes"			},
+	{ id = "Teleport2"	, name = "Teleport - Generic"			},
+	{ id = "Teleport3"	, name = "Teleport - NPCs"				},
+	{ id = "Teleport4"	, name = "Teleport - Stores"			},
+	{ id = "Teleport5"	, name = "Teleport - Ripperdocs"		},
+	{ id = "Teleport6"	, name = "Teleport - Bonus Locations"	},
+	{ id = "Saves"		, name = "Saves"						},
+	{ id = "Vehicles"	, name = "Vehicles"						}
   },
   Items = {
 -- Button:
