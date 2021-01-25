@@ -3,24 +3,25 @@ rootPath =	"plugins.cyber_engine_tweaks.mods.braindance_protocol."
 }
 
 local BD = require(BraindanceProtocol.rootPath.."BD")
+local i18n = require(BraindanceProtocol.rootPath.."i18n")
 
 local Protocols = {
   Parents = {
-	{ id = "Cheats"		, name = "Cheats"                       },
-	{ id = "Crafting"	, name = "Crafting Recipes"             },
-	{ id = "Cyberware"	, name = "Cyberware Items"              },
-	{ id = "Facts"		, name = "Facts [Spoiler Alert!]"       },
-	{ id = "ItemSets"	, name = "Item Sets"                    },
-	{ id = "Saves"		, name = "Saves"                        },
-	{ id = "Teleport"	, name = "Teleport - V's Homes"         },
-	{ id = "Teleport2"	, name = "Teleport - Generic"           },
-	{ id = "Teleport3"	, name = "Teleport - NPCs"              },
-	{ id = "Teleport4"	, name = "Teleport - Stores"            },
-	{ id = "Teleport5"	, name = "Teleport - Ripperdocs"        },
-	{ id = "Teleport6"	, name = "Teleport - Bonus Locations"   },
-	{ id = "Time"		, name = "Time Options"					},
-	{ id = "Utilities"	, name = "Utilities"                    },
-	{ id = "Vehicles"	, name = "Vehicles"                     }
+  	{ id = "Cheats"      , name = i18n("parent_Cheats")     },
+  	{ id = "Crafting"    , name = i18n("parent_Crafting")   },
+  	{ id = "Cyberware"   , name = i18n("parent_Cyberware")  },
+  	{ id = "Facts"       , name = i18n("parent_Facts")      },
+  	{ id = "ItemSets"    , name = i18n("parent_ItemSets")   },
+  	{ id = "Saves"       , name = i18n("parent_Saves")      },
+  	{ id = "Teleport"    , name = i18n("parent_Teleport")   },
+  	{ id = "Teleport2"   , name = i18n("parent_Teleport2")  },
+  	{ id = "Teleport3"   , name = i18n("parent_Teleport3")  },
+  	{ id = "Teleport4"   , name = i18n("parent_Teleport4")  },
+  	{ id = "Teleport5"   , name = i18n("parent_Teleport5")  },
+  	{ id = "Teleport6"   , name = i18n("parent_Teleport6")  },
+  	{ id = "Time"        , name = i18n("parent_Time")       },
+  	{ id = "Utilities"   , name = i18n("parent_Utilities")  },
+  	{ id = "Vehicles"    , name = i18n("parent_Vehicles")   }
   },
   Items = {
 -- Button:
@@ -168,7 +169,7 @@ local Protocols = {
 	{ id = "Teleport.ShopWeapons15" , name = "Weapon Shop #15" , parent = "Teleport4" , description = "Teleport to Pacifica Vendor" , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Teleport.ShopWeapons15() end },
 	{ id = "Teleport.ShopWeapons16" , name = "Weapon Shop #16" , parent = "Teleport4" , description = "Teleport to Fuel Station Vendor" , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Teleport.ShopWeapons16() end },
 	-- Ripperdoc Locations
-	{ id = "Teleport.Ripperdoc1" , name = "Ripperdoc #1" , parent = "Teleport5" , description = "Teleport to Viktor's Clinic" , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Teleport.Ripperdoc1() end }, 
+	{ id = "Teleport.Ripperdoc1" , name = "Ripperdoc #1" , parent = "Teleport5" , description = "Teleport to Viktor's Clinic" , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Teleport.Ripperdoc1() end },
 	{ id = "Teleport.Ripperdoc2" , name = "Ripperdoc #2" , parent = "Teleport5" , description = "Teleport to Cassius Ryder's Clinic" , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Teleport.Ripperdoc2() end },
 	{ id = "Teleport.Ripperdoc3" , name = "Ripperdoc #3" , parent = "Teleport5" , description = "Teleport to Buck's Clinic" , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Teleport.Ripperdoc3() end },
 	{ id = "Teleport.Ripperdoc4" , name = "Ripperdoc #4" , parent = "Teleport5" , description = "Teleport to Dr. Chrome" , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Teleport.Ripperdoc4() end },
@@ -202,8 +203,8 @@ local Protocols = {
 	{ id = "Time.SetTime" , name = "Set Time" , parent = "Time" , description = "Set the time - Use 24h format" , type = "Input" , button_label = "Set" , value = 18 , cmd = function(value) BD.Time.SetTime(value) end },
 	{ id = "Time.SetTimeTo06AM" , name = "6AM / 06:00" , parent = "Time" , description = "Sets the time to 6AM / 06:00" , type = "Button" , button_label = "Execute" , cmd = function() BD.Time.SetTimeTo06AM() end },
 	{ id = "Time.SetTimeTo10PM" , name = "10PM / 22:00" , parent = "Time" , description = "Sets the time to 10PM / 22:00" , type = "Button" , button_label = "Execute" , cmd = function() BD.Time.SetTimeTo10PM() end },
-	
--- Save File Editing	
+
+-- Save File Editing
 	{ id = "Saves.DisableAutosave" , name = "Disable Autosave" , parent = "Saves" , description = "Disables auto saving." , type = "Button" , button_label = "Execute" , cmd = function() BD.Saves.DisableAutosave() end },
 	{ id = "Saves.DecreaseAutosaves" , name = "Decrease Autosaves" , parent = "Saves" , description = "Decreases time between auto saves." , type = "Button" , button_label = "Execute" , cmd = function() BD.Saves.DecreaseAutosaves() end },
 	{ id = "Saves.IncreaseAutosaves" , name = "Increase Autosaves" , parent = "Saves" , description = "Increases time between auto saves." , type = "Button" , button_label = "Execute" , cmd = function() BD.Saves.IncreaseAutosaves() end },
