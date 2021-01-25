@@ -1,6 +1,6 @@
 {
     "name": "BraindanceProtocol",
-    "version_number": "1.5.1",
+    "version_number": "1.5.2",
     "website_url": "https://github.com/WolvenKit/BraindanceProtocol",
     "description": "A GUI and Console tool to modify your Cyberpunk 2077 experience",
     "dependencies": []
