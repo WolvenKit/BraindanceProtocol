@@ -222,7 +222,7 @@ return {
     item_Teleport_GenericReconciliationPark_tip                 = "Teleporter til Reconciliation Park" ,
     item_Teleport_GenericReconciliationPark_btn                 = "Udfør" ,
     item_Teleport_GenericRockyRidge_name                        = "Rocky Ridge" ,
-    item_Teleport_GenericRockyRidge_tip                         = "Teleporter til Rokcy Ridge" ,
+    item_Teleport_GenericRockyRidge_tip                         = "Teleporter til Rocky Ridge" ,
     item_Teleport_GenericRockyRidge_btn                         = "Udfør" ,
     item_Teleport_NPCJudyHouse_name                             = "Judy" ,
     item_Teleport_NPCJudyHouse_tip                              = "Teleporter til Judy's Lejlighed" ,
