@@ -53,10 +53,15 @@ end)
 registerForEvent("onDraw", function()
 	if drawWindow then
 		CPS.setThemeBegin()
-		drawWindow = ImGui.Begin(i18n("window_title"), true, ImGuiWindowFlags.NoResize)
+		CPS.styleBegin("WindowPadding", 5, 5)
+		drawWindow = ImGui.Begin(i18n("window_title"), true, ImGuiWindowFlags.NoResize | ImGuiWindowFlags.NoTitleBar)
 		ImGui.SetWindowSize(400, 620)
 		ImGui.SetWindowPos(wWidth-600, wHeight/2-180, ImGuiCond.FirstUseEver)
-		if ImGui.Button(i18n("button_language")) then
+		ImGui.AlignTextToFramePadding()
+		ImGui.Text(i18n("window_title"))
+		ImGui.SameLine(390-ImGui.CalcTextSize(i18n("button_language")))
+		ImGui.Text(i18n("button_language"))
+		if ImGui.IsItemClicked() then
 			ImGui.OpenPopup("Language")
 		end
 		if ImGui.BeginPopup("Language") then
@@ -65,6 +70,8 @@ registerForEvent("onDraw", function()
 			end
 			ImGui.EndPopup()
 		end
+		local Childx, Childy = ImGui.GetContentRegionAvail()
+		ImGui.BeginChild("List", Childx+6, Childy)
 		for i in pairs(protocols.Parents) do
 			if i <= 2 then ImGui.SetNextItemOpen(true, ImGuiCond.FirstUseEver) end
 			CPS.colorBegin("Text" , color.white)
@@ -105,7 +112,9 @@ registerForEvent("onDraw", function()
 				ImGui.Unindent(3)
 			end
 		end
+		ImGui.EndChild()
 		ImGui.End()
+		CPS.styleEnd(1)
 		CPS.setThemeEnd()
 	end
 end)
