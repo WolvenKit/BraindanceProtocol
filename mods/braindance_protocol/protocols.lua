@@ -10,6 +10,7 @@ local Protocols = {
 	{ id = "Crafting"	, name = "Crafting Recipes"             },
 	{ id = "Cyberware"	, name = "Cyberware Items"              },
 	{ id = "Facts"		, name = "Facts [Spoiler Alert!]"       },
+	{ id = "ItemMods"	, name = "Item Modifications"			},
 	{ id = "ItemSets"	, name = "Item Sets"                    },
 	{ id = "Saves"		, name = "Saves"                        },
 	{ id = "Teleport"	, name = "Teleport - V's Homes"         },
@@ -38,7 +39,8 @@ local Protocols = {
 	{ id = "Player.Respec" , name = "Respec perks and attributes" , parent = "Cheats" , description = "Respec attributes and perks." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Player.Respec() end },
 	{ id = "Player.GodMode" , name = "GodMode" , parent = "Cheats" , description = "Gives you pseudo \"god mode\". Permanent to your SaveFile." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Player.GodMode() end },
 	{ id = "Player.AddMoney" , name = "Add Money" , parent = "Cheats" , description = "Gives the player specified amount of money." , type = "Input" , button_label = "Add" , value = 10000 , cmd = function(value) BD.Cheats.Player.AddMoney(value) end },
-
+	{ id = "Johnny.AddItems" , name = "Add Johnny's Items" , parent = "Cheats" , description = "Adds Johnny's Legendary Items and his Porsche." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Johnny.AddItems() end },
+	
 -- Crafting
 	{ id = "Crafting.AddAll" , name = "Add All Recipes & Materials" , parent = "Crafting" , description = "Add all Recipes & Materials." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Crafting.AddAll() end },
 	{ id = "Crafting.AddLegendaryMaterials" , name = "Add Legendary Materials" , parent = "Crafting" , description = "Add specified amount of legendary crafting materials." , type = "Input" , button_label = "Add" , value = 50 , cmd = function(value) BD.Cheats.Crafting.AddLegendaryMaterials(value) end },
@@ -50,8 +52,6 @@ local Protocols = {
 	{ id = "Crafting.AddModRecipes" , name = "Add Mod Recipes" , parent = "Crafting" , description = "Adds all mod recipes (clothing + cyberware + weapon mods)." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Crafting.AddModRecipes() end },
 	{ id = "Crafting.AddMedRecipes" , name = "Add Medicine Recipes" , parent = "Crafting" , description = "Adds all medicine recipes." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Crafting.AddMedRecipes() end },
 	{ id = "Crafting.AddGrenadeRecipes" , name = "Add Grenade Recipes" , parent = "Crafting" , description = "Adds all grenade recipes." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Crafting.AddGrenadeRecipes() end },
-	{ id = "Johnny.AddItems" , name = "Add Johnny's Items" , parent = "Crafting" , description = "Adds Johnny's Legendary Items and his Porsche." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Johnny.AddItems() end },
-	{ id = "Legend.Create" , name = "Legendize Equipped Items" , parent = "Crafting" , description = "Makes all equipped items legendary with max stats." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Legend.Create() end },
 
 -- Cyberware
 	{ id = "Cyberware.AddAllCW" , name = "Add All Cyberware" , parent = "Cyberware" , description = "Adds all Cyberware items (all qualities)." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Cyberware.AddAllCW() end },
@@ -91,6 +91,14 @@ local Protocols = {
 	{ id = "ItemSets.AddSetVStreetkid" , name = "Add V's Streetkid Set" , parent = "ItemSets" , description = "Adds \"V's Streetkid\" item set." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.ItemSets.AddSetVStreetkid() end },
 	{ id = "ItemSets.AddSetVEpilogue" , name = "Add V's Epilogue Set" , parent = "ItemSets" , description = "Adds \"V's Epilogue\" item set." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.ItemSets.AddSetVEpilogue() end },
 	{ id = "ItemSets.AddSetVMisc" , name = "Add V's Misc Set" , parent = "ItemSets" , description = "Adds \"the rest\" of V's default gear." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.ItemSets.AddSetVMisc() end },
+
+-- Items
+	{ id = "Legend.UpgradeAll" , name = "Legendize All Equipped Items" , parent = "ItemMods" , description = "Makes all equipped items legendary with max stats (except mods)" , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Legend.UpgradeAll() end },
+	{ id = "Legend.UpgradeWeapons" , name = "Legendize Equipped Weapons" , parent = "ItemMods" , description = "Makes all equipped weapons legendary with max stats" , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Legend.UpgradeWeapons() end },
+	{ id = "Legend.UpgradeArmor" , name = "Legendize Equipped Armor" , parent = "ItemMods" , description = "Makes all equipped armor legendary with max stats" , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Legend.UpgradeArmor() end },
+	{ id = "Legend.UpgradeMods" , name = "Legendize Non-Equipped Mods" , parent = "ItemMods" , description = "Makes all non-equppied mods legendary with max stats" , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Legend.UpgradeMods() end },
+	{ id = "Legend.UpgradeCW" , name = "Legendize Equipped Cyberware" , parent = "ItemMods" , description = "Makes all Cyberware legendary. NOTE: This is just for aesthetics.\nYou should add the real items, from the other commands" , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Legend.UpgradeCW() end },
+	
 
 -- Teleportation
 	-- Player Homes
