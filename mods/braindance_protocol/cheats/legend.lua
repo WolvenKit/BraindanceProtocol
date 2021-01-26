@@ -191,7 +191,7 @@ function Legend.UpgradeAll()
 	Legend.UpgradeWeapons()
 	Legend.UpgradeArmor()
 	Legend.UpgradeMods()
-	Legend.UpgradeCW()
+	--Legend.UpgradeCW()
 	
     Utilities.FinishProtocol(moduleName)
 end
