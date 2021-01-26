@@ -8,9 +8,13 @@ local BD = require(BraindanceProtocol.rootPath.."BD")
 registerForEvent("onInit", function()
 	CPS = require(BraindanceProtocol.rootPath.."CPStyling")
 	fact = require(BraindanceProtocol.rootPath.."fact")
-	protocols = require(BraindanceProtocol.rootPath.."protocols")
+	i18n = require(BraindanceProtocol.rootPath.."i18n")
+	languages = require(BraindanceProtocol.rootPath.."lang.lang")
 	theme = CPS.theme
 	color = CPS.color
+	currentWorkingDir = CPS.getCWD("braindance_protocol")
+	config = loadConfig(currentWorkingDir)
+	protocols = require(BraindanceProtocol.rootPath.."protocols")
 	drawWindow = false
 	wWidth, wHeight = GetDisplayResolution()
 	-- Execute Braindance protocols
@@ -29,6 +33,12 @@ registerHotkey("braindance_protocol_interface", "Open Protocol Interface", funct
 end)
 
 registerForEvent("onUpdate", function()
+	for l in pairs(languages) do
+		if languages[l].selLang then
+			setLang(languages[l].id, currentWorkingDir)
+			languages[l].selLang = false
+		end
+	end
 	for i in pairs(protocols.Items) do
 		if protocols.Items[i].press then
 			if protocols.Items[i].type ~= "Button" and protocols.Items[i].value ~= nil then
@@ -43,9 +53,25 @@ end)
 registerForEvent("onDraw", function()
 	if drawWindow then
 		CPS.setThemeBegin()
-		drawWindow = ImGui.Begin("Braindance Protocol", true, ImGuiWindowFlags.NoResize)
+		CPS.styleBegin("WindowPadding", 5, 5)
+		drawWindow = ImGui.Begin(i18n("window_title"), true, ImGuiWindowFlags.NoResize | ImGuiWindowFlags.NoTitleBar)
 		ImGui.SetWindowSize(400, 620)
 		ImGui.SetWindowPos(wWidth-600, wHeight/2-180, ImGuiCond.FirstUseEver)
+		ImGui.AlignTextToFramePadding()
+		ImGui.Text(i18n("window_title"))
+		ImGui.SameLine(390-ImGui.CalcTextSize(i18n("button_language")))
+		ImGui.Text(i18n("button_language"))
+		if ImGui.IsItemClicked() then
+			ImGui.OpenPopup("Language")
+		end
+		if ImGui.BeginPopup("Language") then
+			for l in pairs(languages) do
+				languages[l].selLang = ImGui.Selectable(languages[l].name, false)
+			end
+			ImGui.EndPopup()
+		end
+		local Childx, Childy = ImGui.GetContentRegionAvail()
+		ImGui.BeginChild("List", Childx+6, Childy)
 		for i in pairs(protocols.Parents) do
 			if i <= 2 then ImGui.SetNextItemOpen(true, ImGuiCond.FirstUseEver) end
 			CPS.colorBegin("Text" , color.white)
@@ -53,7 +79,7 @@ registerForEvent("onDraw", function()
 			local headerOpen = ImGui.CollapsingHeader(protocols.Parents[i].name)
 			CPS.colorEnd(2)
 			if headerOpen then
-				ImGui.Indent(6)
+				ImGui.Indent(3)
 				for t in pairs(protocols.Items) do
 					local btnWidth = 130
 					if protocols.Items[t].parent == protocols.Parents[i].id then
@@ -83,12 +109,53 @@ registerForEvent("onDraw", function()
 						end
 					end
 				end
-				ImGui.Unindent(6)
+				ImGui.Unindent(3)
 			end
 		end
+		ImGui.EndChild()
 		ImGui.End()
+		CPS.styleEnd(1)
 		CPS.setThemeEnd()
 	end
 end)
+
+function saveConfig(config_file, config)
+	local file = io.open(config_file, "w")
+	io.output(file)
+	local jconfig = json.encode(config)
+	io.write(jconfig)
+	file:close()
+end
+
+function loadConfig(currentWorkingDir)
+	local config_file = currentWorkingDir.."config.json"
+	local config
+	if CPS.fileExists(config_file) then
+		local file = io.open(config_file, "r")
+		io.input(file)
+		config = json.decode(io.read("*a"))
+		file:close()
+		if config.lang == nil then
+			config.lang = "en"
+			saveConfig(config_file, config)
+		end
+	else
+		config = { lang = "en" }
+		saveConfig(config_file, config)
+	end
+	if config.lang ~= "en" then
+		i18n.loadFile(currentWorkingDir.."lang/en.lua")
+	end
+	i18n.loadFile(currentWorkingDir.."lang/"..config.lang..".lua")
+	i18n.setLocale(config.lang)
+	return config
+end
+
+function setLang(language, currentWorkingDir)
+	i18n.loadFile(currentWorkingDir.."lang/"..language..".lua")
+	i18n.setLocale(language)
+	config.lang = language
+	saveConfig(currentWorkingDir.."config.json", config)
+end
 
 return BD
