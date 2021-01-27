@@ -76,7 +76,7 @@ registerForEvent("onDraw", function()
 			if i <= 2 then ImGui.SetNextItemOpen(true, ImGuiCond.FirstUseEver) end
 			CPS.colorBegin("Text" , color.white)
 			CPS.colorBegin("Header", { 0.08, 0.08, 0.15, 0.8 })
-			local headerOpen = ImGui.CollapsingHeader(protocols.Parents[i].name)
+			local headerOpen = ImGui.CollapsingHeader(i18n(protocols.Parents[i].name))
 			CPS.colorEnd(2)
 			if headerOpen then
 				ImGui.Indent(3)
@@ -86,26 +86,26 @@ registerForEvent("onDraw", function()
 						ImGui.BeginGroup()
 						ImGui.PushID(t)
 						if protocols.Items[t].type == "Button" then
-							protocols.Items[t].press = CPS.CPButton(protocols.Items[t].button_label, btnWidth, 0)
+							protocols.Items[t].press = CPS.CPButton(i18n(protocols.Items[t].button_label), btnWidth, 0)
 						elseif protocols.Items[t].type == "Input" then
 							ImGui.PushItemWidth(btnWidth*2/3-2)
 							protocols.Items[t].value = ImGui.InputInt("##input" , protocols.Items[t].value, 0)
 							ImGui.PopItemWidth()
 							ImGui.SameLine(btnWidth*2/3)
-							protocols.Items[t].press = CPS.CPButton(protocols.Items[t].button_label, btnWidth/3, 0)
+							protocols.Items[t].press = CPS.CPButton(i18n(protocols.Items[t].button_label), btnWidth/3, 0)
 						elseif protocols.Items[t].type == "Toggle" then
-							protocols.Items[t].value, protocols.Items[t].press = CPS.CPToggle( nil, protocols.Items[t].button_label1, protocols.Items[t].button_label2, protocols.Items[t].value, btnWidth, 0)
+							protocols.Items[t].value, protocols.Items[t].press = CPS.CPToggle( nil, i18n(protocols.Items[t].button_label1), i18n(protocols.Items[t].button_label2), protocols.Items[t].value, btnWidth, 0)
 						elseif protocols.Items[t].type == "Select" then
 							ImGui.PushItemWidth(btnWidth)
-							protocols.Items[t].value, protocols.Items[t].press = ImGui.Combo("##select", protocols.Items[t].value, protocols.Items[t].options)
+							protocols.Items[t].value, protocols.Items[t].press = ImGui.Combo("##select", protocols.Items[t].value, i18n(protocols.Items[t].options))
 							ImGui.PopItemWidth()
 						end
 						ImGui.SameLine()
-						ImGui.Text(protocols.Items[t].name)
+						ImGui.Text(i18n(protocols.Items[t].name))
 						ImGui.PopID()
 						ImGui.EndGroup()
 						if ImGui.IsItemHovered() then
-							ImGui.SetTooltip(protocols.Items[t].description)
+							ImGui.SetTooltip(i18n(protocols.Items[t].description))
 						end
 					end
 				end

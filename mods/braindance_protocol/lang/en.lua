@@ -2,7 +2,7 @@ return {
   en = {
     window_title                                                = "Braindance Protocol" ,
     button_language                                             = "EN" ,
-    parent_Cheats                                               = "チート" ,
+    parent_Cheats                                               = "Cheats" ,
     parent_Crafting                                             = "Crafting Recipes" ,
     parent_Cyberware                                            = "Cyberware Items" ,
     parent_Facts                                                = "Facts [Spoiler Alert!]" ,
