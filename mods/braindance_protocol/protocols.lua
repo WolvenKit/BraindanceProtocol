@@ -11,7 +11,7 @@ local Protocols = {
   	{ id = "Crafting"    , name = i18n("parent_Crafting")   },
   	{ id = "Cyberware"   , name = i18n("parent_Cyberware")  },
   	{ id = "Facts"       , name = i18n("parent_Facts")      },
-  	{ id = "ItemMods"    , name = "Item Modifications"      },
+  	{ id = "ItemMods"    , name = i18n("parent_ItemMods")   },
   	{ id = "ItemSets"    , name = i18n("parent_ItemSets")   },
   	{ id = "Saves"       , name = i18n("parent_Saves")      },
   	{ id = "Teleport"    , name = i18n("parent_Teleport")   },
@@ -92,11 +92,11 @@ local Protocols = {
     { id = "ItemSets.AddSetVMisc" , name = i18n("item_ItemSets_AddSetVMisc_name") , parent = "ItemSets" , description = i18n("item_ItemSets_AddSetVMisc_tip") , type = "Button" , button_label = i18n("item_ItemSets_AddSetVMisc_btn") , cmd = function() BD.Cheats.ItemSets.AddSetVMisc() end } ,
 
   -- Items
-  	{ id = "Legend.UpgradeAll" , name = "Legendize All Equipped Items" , parent = "ItemMods" , description = "Makes all equipped items legendary with max stats (except mods)" , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Legend.UpgradeAll() end },
-  	{ id = "Legend.UpgradeWeapons" , name = "Legendize Equipped Weapons" , parent = "ItemMods" , description = "Makes all equipped weapons legendary with max stats" , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Legend.UpgradeWeapons() end },
-  	{ id = "Legend.UpgradeArmor" , name = "Legendize Equipped Armor" , parent = "ItemMods" , description = "Makes all equipped armor legendary with max stats" , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Legend.UpgradeArmor() end },
-  	{ id = "Legend.UpgradeMods" , name = "Legendize Non-Equipped Mods" , parent = "ItemMods" , description = "Makes all non-equppied mods legendary with max stats" , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Legend.UpgradeMods() end },
-  	{ id = "Legend.UpgradeCW" , name = "Legendize Equipped Cyberware" , parent = "ItemMods" , description = "Makes all Cyberware legendary. NOTE: This is just for aesthetics.\nYou should add the real items, from the other commands" , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Legend.UpgradeCW() end },
+  	{ id = "Legend.UpgradeAll" , name = i18n("item_Legend_UpgradeAll_name") , parent = "ItemMods" , description = i18n("item_Legend_UpgradeAll_tip") , type = "Button" , button_label = i18n("item_Legend_UpgradeAll_btn") , cmd = function() BD.Cheats.Legend.UpgradeAll() end },
+  	{ id = "Legend.UpgradeWeapons" , name = i18n("item_Legend_UpgradeWeapons_name") , parent = "ItemMods" , description = i18n("item_Legend_UpgradeWeapons_tip") , type = "Button" , button_label = i18n("item_Legend_UpgradeWeapons_btn") , cmd = function() BD.Cheats.Legend.UpgradeWeapons() end },
+  	{ id = "Legend.UpgradeArmor" , name = i18n("item_Legend_UpgradeArmor_name") , parent = "ItemMods" , description = i18n("item_Legend_UpgradeArmor_tip") , type = "Button" , button_label = i18n("item_Legend_UpgradeArmor_btn") , cmd = function() BD.Cheats.Legend.UpgradeArmor() end },
+  	{ id = "Legend.UpgradeMods" , name = i18n("item_Legend_UpgradeMods_name") , parent = "ItemMods" , description = i18n("item_Legend_UpgradeMods_tip") , type = "Button" , button_label = i18n("item_Legend_UpgradeMods_btn") , cmd = function() BD.Cheats.Legend.UpgradeMods() end },
+  	{ id = "Legend.UpgradeCW" , name = i18n("item_Legend_UpgradeCW_name") , parent = "ItemMods" , description = i18n("item_Legend_UpgradeCW_tip") , type = "Button" , button_label = i18n("item_Legend_UpgradeCW_btn") , cmd = function() BD.Cheats.Legend.UpgradeCW() end },
 
   -- Teleportation
   -- Player Homes
@@ -203,8 +203,8 @@ local Protocols = {
     { id = "Teleport.BonusMegaH8Top" , name = i18n("item_Teleport_BonusMegaH8Top_name") , parent = "Teleport6" , description = i18n("item_Teleport_BonusMegaH8Top_tip") , type = "Button" , button_label = i18n("item_Teleport_BonusMegaH8Top_btn") , cmd = function() BD.Cheats.Teleport.BonusMegaH8Top() end } ,
     { id = "Teleport.BonusMegaH10Top" , name = i18n("item_Teleport_BonusMegaH10Top_name") , parent = "Teleport6" , description = i18n("item_Teleport_BonusMegaH10Top_tip") , type = "Button" , button_label = i18n("item_Teleport_BonusMegaH10Top_btn") , cmd = function() BD.Cheats.Teleport.BonusMegaH10Top() end } ,
     { id = "Teleport.BonusNCPDRoom" , name = i18n("item_Teleport_BonusNCPDRoom_name") , parent = "Teleport6" , description = i18n("item_Teleport_BonusNCPDRoom_tip") , type = "Button" , button_label = i18n("item_Teleport_BonusNCPDRoom_btn") , cmd = function() BD.Cheats.Teleport.BonusNCPDRoom() end } ,
-    { id = "Teleport.BonusPeralezApartment" , name = "Peralez's Apartment" , parent = "Teleport6" , description = "Teleport to the inside of Peralez's apartment" , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Teleport.BonusPeralezApartment()() end },
-    { id = "Teleport.BonusVoodooTempleBasement" , name = "Voodoo Temple (basement)" , parent = "Teleport6" , description = "Teleport to the basement of the Voodoo Temple" , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Teleport.BonusVoodooTempleBasement() end },
+    { id = "Teleport.BonusPeralezApartment" , name = i18n("item_Teleport_BonusPeralezApartment_name") , parent = "Teleport6" , description = i18n("item_Teleport_BonusPeralezApartment_tip") , type = "Button" , button_label = i18n("item_Teleport_BonusPeralezApartment_btn") , cmd = function() BD.Cheats.Teleport.BonusPeralezApartment()() end },
+    { id = "Teleport.BonusVoodooTempleBasement" , name = i18n("item_Teleport_BonusVoodooTempleBasement_name") , parent = "Teleport6" , description = i18n("item_Teleport_BonusVoodooTempleBasement_tip") , type = "Button" , button_label = i18n("item_Teleport_BonusVoodooTempleBasement_btn") , cmd = function() BD.Cheats.Teleport.BonusVoodooTempleBasement() end },
 
   -- Time Options
     { id = "Time.SetTime" , name = i18n("item_Time_SetTime_name") , parent = "Time" , description = i18n("item_Time_SetTime_tip") , type = "Input" , button_label = i18n("item_Time_SetTime_btn") , value = 18 , cmd = function(value) BD.Time.SetTime(value) end },
