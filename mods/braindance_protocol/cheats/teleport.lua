@@ -146,6 +146,14 @@ function Teleport.GenericRockyRidge()
     Utilities.FinishProtocol(moduleName)
 end
 
+function Teleport.GenericTheAtlantis()
+    local moduleName = "Teleporting to The Atlantis (inside)"
+    Utilities.StartProtocol(moduleName)
+	Game.TeleportPlayerToPosition("-756.44885253906","1074.7010498047","62.005004882812")
+    Utilities.FinishProtocol(moduleName)
+end
+
+
 -- NPC Locations
 function Teleport.NPCJudyHouse()
     local moduleName = "Teleporting to Judy's Apartment"
@@ -702,6 +710,20 @@ function Teleport.BonusMegaH10Top()
     local moduleName = "Teleporting to Megabuilding H10 Top"
     Utilities.StartProtocol(moduleName)
     Game.TeleportPlayerToPosition("-1371.780029","1340.888550","311.471313")
+    Utilities.FinishProtocol(moduleName)
+end
+
+function Teleport.BonusPeralezApartment()
+    local moduleName = "Teleporting to the Peralez's apartment (inside)"
+    Utilities.StartProtocol(moduleName)
+	Game.TeleportPlayerToPosition("-81.354858398438","-121.20021057129","119.15728759766")
+    Utilities.FinishProtocol(moduleName)
+end
+
+function Teleport.BonusVoodooTempleBasement()
+    local moduleName = "Teleporting to the VooDoo Temple (basement)"
+    Utilities.StartProtocol(moduleName)
+	Game.TeleportPlayerToPosition("-1712.8552246094","-1876.8553466797","56.717567443848")
     Utilities.FinishProtocol(moduleName)
 end
 
