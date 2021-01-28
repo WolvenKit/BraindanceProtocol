@@ -48,14 +48,14 @@ function Teleport.GenericTotentanzClub()
     Utilities.FinishProtocol(moduleName)
 end
 
-function Teleport.GenericDMCInside()
+function Teleport.GenericDeMCInside()
     local moduleName = "Teleporting to Dark Matter Club (inside)"
     Utilities.StartProtocol(moduleName)
     Game.TeleportPlayerToPosition("-346.081238","221.274918","191.086502")
     Utilities.FinishProtocol(moduleName)
 end
 
-function Teleport.GenericDMCOutside()
+function Teleport.GenericDeMCOutside()
     local moduleName = "Teleporting to Dark Matter Club (outside)"
     Utilities.StartProtocol(moduleName)
     Game.TeleportPlayerToPosition("-346.648010","222.090622","27.594040")
@@ -153,6 +153,13 @@ function Teleport.GenericTheAtlantis()
     Utilities.FinishProtocol(moduleName)
 end
 
+function Teleport.GenericNomadStartLocationAWACSZone()
+    local moduleName = "Teleporting to Nomad Starting Location - Awacs Zone"
+    Utilities.StartProtocol(moduleName)
+	Game.TeleportPlayerToPosition("-3972.6013183594","-6495.1479492188","75.73356628418")
+    Utilities.FinishProtocol(moduleName)
+end
+
 
 -- NPC Locations
 function Teleport.NPCJudyHouse()
@@ -236,6 +243,13 @@ function Teleport.NPCDeadDexter()
     local moduleName = "Teleporting to the corpse of Dexter DeShawn"
     Utilities.StartProtocol(moduleName)
     Game.TeleportPlayerToPosition("1544.395996","-1971.859009","73.342407")
+    Utilities.FinishProtocol(moduleName)
+end
+
+function Teleport.NPCSandraDorsettApartment()
+    local moduleName = "Teleporting to Sandra Dorsett's Apartment"
+    Utilities.StartProtocol(moduleName)
+    Game.TeleportPlayerToPosition(" -1282.4926757812","1518.7532958984","45.0")
     Utilities.FinishProtocol(moduleName)
 end
 
@@ -621,6 +635,155 @@ function Teleport.Ripperdoc15()
     Utilities.FinishProtocol(moduleName)
 end
 
+-- Tarot Card Locations / Graffiti Locations
+function Teleport.TarotLoc1()
+    local moduleName = "Teleporting to Tarot Card: Death"
+    Utilities.StartProtocol(moduleName)
+    Game.TeleportPlayerToPosition("-1808.519287","-542.195801","10.144997")
+    Utilities.FinishProtocol(moduleName)
+end
+
+function Teleport.TarotLoc2()
+    local moduleName = "Teleporting to Tarot Card: Justice"
+    Utilities.StartProtocol(moduleName)
+    Game.TeleportPlayerToPosition("51.435013","-498.468506","15.313713")
+    Utilities.FinishProtocol(moduleName)
+end
+
+function Teleport.TarotLoc3()
+    local moduleName = "Teleporting to Tarot Card: Strength"
+    Utilities.StartProtocol(moduleName)
+    Game.TeleportPlayerToPosition("684.020813","-616.751282","9.846458")
+    Utilities.FinishProtocol(moduleName)
+end
+
+function Teleport.TarotLoc4()
+    local moduleName = "Teleporting to Tarot Card: Temperance"
+    Utilities.StartProtocol(moduleName)
+    Game.TeleportPlayerToPosition("195.212189","574.286682","120.330841")
+    Utilities.FinishProtocol(moduleName)
+end
+
+function Teleport.TarotLoc5()
+    local moduleName = "Teleporting to Tarot Card: The Chariot"
+    Utilities.StartProtocol(moduleName)
+    Game.TeleportPlayerToPosition("-1503.578857","1137.667480","18.070541")
+    Utilities.FinishProtocol(moduleName)
+end
+
+function Teleport.TarotLoc6()
+    local moduleName = "Teleporting to Tarot Card: The Emperor"
+    Utilities.StartProtocol(moduleName)
+    Game.TeleportPlayerToPosition("-2103.592773","1772.950562","18.331223")
+    Utilities.FinishProtocol(moduleName)
+end
+
+function Teleport.TarotLoc7()
+    local moduleName = "Teleporting to Tarot Card: The Empress"
+    Utilities.StartProtocol(moduleName)
+    Game.TeleportPlayerToPosition("-1460.803711","1047.891846","18.762367")
+    Utilities.FinishProtocol(moduleName)
+end
+
+function Teleport.TarotLoc8()
+    local moduleName = "Teleporting to Tarot Card: The Fool"
+    Utilities.StartProtocol(moduleName)
+    Game.TeleportPlayerToPosition("-1391.457397","1268.110229","123.082397")
+    Utilities.FinishProtocol(moduleName)
+end
+
+function Teleport.TarotLoc9()
+    local moduleName = "Teleporting to Tarot Card: The Hanged Man"
+    Utilities.StartProtocol(moduleName)
+    Game.TeleportPlayerToPosition("-1834.668945","3877.000000","17.890144")
+    Utilities.FinishProtocol(moduleName)
+end
+
+function Teleport.TarotLoc10()
+    local moduleName = "Teleporting to Tarot Card: The Heremit"
+    Utilities.StartProtocol(moduleName)
+    Game.TeleportPlayerToPosition("-1736.029663","-1934.164917","61.592911")
+    Utilities.FinishProtocol(moduleName)
+end
+
+function Teleport.TarotLoc11()
+    local moduleName = "Teleporting to Tarot Card: The Hierophant"
+    Utilities.StartProtocol(moduleName)
+    Game.TeleportPlayerToPosition("-880.238464","1320.123047","5.821556")
+    Utilities.FinishProtocol(moduleName)
+end
+
+function Teleport.TarotLoc12()
+    local moduleName = "Teleporting to Tarot Card: The High Priestess"
+    Utilities.StartProtocol(moduleName)
+    Game.TeleportPlayerToPosition("-630.949707","-212.408829","20.170006")
+    Utilities.FinishProtocol(moduleName)
+end
+
+function Teleport.TarotLoc13()
+    local moduleName = "Teleporting to Tarot Card: The Lovers"
+    Utilities.StartProtocol(moduleName)
+    Game.TeleportPlayerToPosition("-113.085938","1935.875000","100.617203")
+    Utilities.FinishProtocol(moduleName)
+end
+
+function Teleport.TarotLoc14()
+    local moduleName = "Teleporting to Tarot Card: The Magician"
+    Utilities.StartProtocol(moduleName)
+    Game.TeleportPlayerToPosition("-1231.555420","1559.181641","22.671944")
+    Utilities.FinishProtocol(moduleName)
+end
+
+function Teleport.TarotLoc15()
+    local moduleName = "Teleporting to Tarot Card: The Moon"
+    Utilities.StartProtocol(moduleName)
+    Game.TeleportPlayerToPosition("397.054016","1151.880493","220.754074")
+    Utilities.FinishProtocol(moduleName)
+end
+
+function Teleport.TarotLoc16()
+    local moduleName = "Teleporting to Tarot Card: The Star"
+    Utilities.StartProtocol(moduleName)
+    Game.TeleportPlayerToPosition("-611.084839","-3845.938721","72.121140")
+    Utilities.FinishProtocol(moduleName)
+end
+
+function Teleport.TarotLoc17()
+    local moduleName = "Teleporting to Tarot Card: The Sun"
+    Utilities.StartProtocol(moduleName)
+    Game.TeleportPlayerToPosition("-1330.365479","1202.760132","19.432549")
+    Utilities.FinishProtocol(moduleName)
+end
+
+function Teleport.TarotLoc18()
+    local moduleName = "Teleporting to Tarot Card: The Tower"
+    Utilities.StartProtocol(moduleName)
+    Game.TeleportPlayerToPosition("-1574.320435","148.965622","2.385063")
+    Utilities.FinishProtocol(moduleName)
+end
+
+function Teleport.TarotLoc19()
+    local moduleName = "Teleporting to Tarot Card: The Wheel Of Fortune"
+    Utilities.StartProtocol(moduleName)
+    Game.TeleportPlayerToPosition("1650.025879","-793.365784","49.820427")
+    Utilities.FinishProtocol(moduleName)
+end
+
+function Teleport.TarotLoc20()
+    local moduleName = "Teleporting to Tarot Card: The World"
+    Utilities.StartProtocol(moduleName)
+    Game.TeleportPlayerToPosition("-1549.944092","1208.757080","57.000008")
+    Utilities.FinishProtocol(moduleName)
+end
+
+function Teleport.TarotLoc21()
+    local moduleName = "Teleporting to Tarot Card: Judgement [Ending Quest]"
+    Utilities.StartProtocol(moduleName)
+    Game.TeleportPlayerToPosition("-1361.474121","155.524597","-26.648010")
+    Utilities.FinishProtocol(moduleName)
+end
+
+
 -- Extra Locations (Bonus / Out-of-reach stuff)
 function Teleport.BonusAkulovPenthouse()
     local moduleName = "Teleporting to Akulov Penthouse"
@@ -650,6 +813,13 @@ function Teleport.BonusArasakaTowerTemple()
     Utilities.FinishProtocol(moduleName)
 end
 
+function Teleport.BonusBadlandsMovieSite()
+    local moduleName = "Teleporting to Badlands Movie Site"
+    Utilities.StartProtocol(moduleName)
+    Game.TeleportPlayerToPosition("3492.3449707031","1171.1573486328","138.11395263672")
+    Utilities.FinishProtocol(moduleName)
+end
+
 function Teleport.BonusBadlandsTunnelEntrance()
     local moduleName = "Teleporting to Badlands Tunnel Entrance"
     Utilities.StartProtocol(moduleName)
@@ -671,6 +841,13 @@ function Teleport.BonusJohnnyInterrogationRoom()
     Utilities.FinishProtocol(moduleName)
 end
 
+function Teleport.BonusJoanneKochHotelSuite()
+    local moduleName = "Teleporting to Joanne Koch Hotel Suite"
+    Utilities.StartProtocol(moduleName)
+    Game.TeleportPlayerToPosition("-2154.8049316406","461.67517089844","89.467163085938")
+    Utilities.FinishProtocol(moduleName)
+end
+
 function Teleport.BonusKonpekiPlazaHotelSuite()
     local moduleName = "Teleporting to Konpeki Plaza (Hotel Suite)"
     Utilities.StartProtocol(moduleName)
@@ -682,6 +859,13 @@ function Teleport.BonusKonpekiPlazaYorinobuRoom()
     local moduleName = "Teleporting to Konpeki Plaza (Yorinobu's Room)"
     Utilities.StartProtocol(moduleName)
     Game.TeleportPlayerToPosition("-2226.746582","1767.182129","308.000000")
+    Utilities.FinishProtocol(moduleName)
+end
+
+function Teleport.BonusKonpekiPlazaPool()
+    local moduleName = "Teleporting to the Konpeki Plaza Pool"
+    Utilities.StartProtocol(moduleName)
+    Game.TeleportPlayerToPosition("-2176.3708496094","1784.4736328125","275.0")
     Utilities.FinishProtocol(moduleName)
 end
 
