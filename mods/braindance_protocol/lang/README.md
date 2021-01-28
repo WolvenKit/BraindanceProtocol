@@ -30,7 +30,7 @@
 
 After adding more protocols into `protocols.lua`, we need to update the language files to match the new protocols. There is a function for you to do this automatically.
 
-1. Add `"debug" = true` into `config.json`. For example:
+1. Add `"debug":true` into `config.json`. For example:
     ```json
     {"lang":"en", "debug":true}
     ```
