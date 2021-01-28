@@ -145,7 +145,8 @@ function Crafting.AddLegendaryRecipes()
     Inventory.AddItem("LegendaryPipeWrenchRecipe")
     Inventory.AddItem("LegendaryTireIronRecipe")
     Inventory.AddItem("LegendaryTomahawkRecipe")
-
+	Inventory.AddItem("LegendaryBatonBetaRecipe")
+	Inventory.AddItem("LegendaryBatonGammaRecipe")
     
 -- Legendary Clothing Mods
     Inventory.AddItem("Recipe_PowerfulFabricEnhancer01")
@@ -164,7 +165,7 @@ function Crafting.AddLegendaryRecipes()
     Inventory.AddItem("Recipe_BrainMeltLvl4Program")
     Inventory.AddItem("Recipe_BrainMeltLvl3Program")
     Inventory.AddItem("Recipe_BrainMeltLvl2Program")
-    
+	
     Inventory.AddItem("Recipe_CommsNoiseLvl4Program")
     Inventory.AddItem("Recipe_CommsNoiseLvl3Program")
     Inventory.AddItem("Recipe_CommsNoiseLvl2Program")
@@ -310,6 +311,7 @@ function Crafting.AddLegendaryRecipes()
     
     -- Breakthrough
     Inventory.AddItem("Recipe_Preset_Nekomata_Breakthrough_Legendary")
+	Inventory.AddItem("Recipe_Preset_Nekomata_Breakthrough")
     
     -- Doom Doom
     Inventory.AddItem("Recipe_Preset_Nova_Doom_Doom_Legendary")
@@ -361,6 +363,12 @@ function Crafting.AddLegendaryRecipes()
     -- Genjiroh
     Inventory.AddItem("Recipe_Preset_Yukimura_Kiji_Legendary")    
     
+	-- Yinglong
+	Inventory.AddItem("Recipe_Preset_Dian_Yinglong")
+	
+	-- Ba Xing Chong
+	Inventory.AddItem("Recipe_Preset_Zhuo_Eight_Star")
+	
     Utilities.FinishProtocol(moduleName)
 end
 
@@ -515,7 +523,9 @@ function Crafting.AddGrenadeRecipes()
     Inventory.AddItem("RecipeGrenadeReconSticky")
 	
 	-- Ozob's Nose
-	Game.AddToInventory("Items.RecipeGrenadeOzobsNose")
+	Inventory.AddItem("RecipeGrenadeOzobsNose")
+	
+	-- This command is supposedly not needed anymore for Ozobs Nose
 	--Game.GetTransactionSystem():GiveItem(Game.GetPlayer(), 
 	--GetSingleton("gameItemID"):FromTDBID(TweakDBID.new(0xA91A5B6B, 28)), 1)
 
@@ -531,6 +541,7 @@ function Crafting.AddEpicRecipes()
     Inventory.AddItem("EpicLooseShirtRecipe")
     Inventory.AddItem("EpicTShirtRecipe")
     Inventory.AddItem("EpicUndershirtRecipe")
+	Inventory.AddItem("EpicFormalShirtRecipe")
    
     -- Head Armor
     Inventory.AddItem("EpicCapRecipe")
@@ -547,6 +558,7 @@ function Crafting.AddEpicRecipes()
     Inventory.AddItem("EpicBootsRecipe")
     Inventory.AddItem("EpicCasualShoesRecipe")
     Inventory.AddItem("EpicFormalShoesRecipe")
+
    
     -- Legs Armor
     Inventory.AddItem("EpicFormalSkirtRecipe")
@@ -624,18 +636,27 @@ function Crafting.AddEpicRecipes()
     Inventory.AddItem("EpicIronPipeRecipe")
     Inventory.AddItem("EpicKanaboRecipe")
     Inventory.AddItem("EpicTireIronRecipe")
+	Inventory.AddItem("EpicBatonAlphaRecipe")
+	Inventory.AddItem("EpicBatonBetaRecipe")
+	Inventory.AddItem("EpicCrowbarRecipe")
+	Inventory.AddItem("EpicPipeWrenchRecipe")
+	Inventory.AddItem("EpicTomahawkRecipe")
 
 -- All Epic Quickhack Mods (Max-LVL3 Quickhack mods)
-    Inventory.AddItem("Recipe_WhistleLvl3Program")
-    Inventory.AddItem("Recipe_WhistleLvl2Program")
-    Inventory.AddItem("Recipe_WhistleProgram")
+
+	Inventory.AddItem("Recipe_CommsCallInLvl3Program")
+	Inventory.AddItem("Recipe_CommsCallInProgram")
     
-    Inventory.AddItem("Recipe_MemoryWipeLvl3Program")
-    Inventory.AddItem("Recipe_MemoryWipeLvl2Program")
-    
-    Inventory.AddItem("Recipe_DisableCyberwareLvl3Program")
     Inventory.AddItem("Recipe_DisableCyberwareLvl2Program")
+    Inventory.AddItem("Recipe_DisableCyberwareLvl3Program")
     Inventory.AddItem("Recipe_DisableCyberwareProgram")
+	
+    Inventory.AddItem("Recipe_MemoryWipeLvl2Program")
+    Inventory.AddItem("Recipe_MemoryWipeLvl3Program")
+	
+    Inventory.AddItem("Recipe_WhistleLvl2Program")
+    Inventory.AddItem("Recipe_WhistleLvl3Program")
+    Inventory.AddItem("Recipe_WhistleProgram")
     
     Utilities.FinishProtocol(moduleName)
 end
@@ -746,6 +767,11 @@ function Crafting.AddRareRecipes()
     Inventory.AddItem("RareIronPipeRecipe")
     Inventory.AddItem("RareKanaboRecipe")
     Inventory.AddItem("RareTireIronRecipe")
+	Inventory.AddItem("RareBatonAlphaRecipe")
+	Inventory.AddItem("RareBatonGammaRecipe")
+	Inventory.AddItem("RareCrowbarRecipe")
+	Inventory.AddItem("RarePipeWrenchRecipe")
+	Inventory.AddItem("RareTomahawkRecipe")
     
     Utilities.FinishProtocol(moduleName)
 end
@@ -758,6 +784,8 @@ function Crafting.AddUncommonRecipes()
     -- Chest Armor
     Inventory.AddItem("UncommonShirtRecipe")
     Inventory.AddItem("UncommonUndershirtRecipe")
+	Inventory.AddItem("UncommonFormalShirtRecipe")
+	Inventory.AddItem("UncommonShirtLooseRecipe")
    
     -- Head Armor
     Inventory.AddItem("UncommonBalaclavaRecipe")
@@ -782,6 +810,8 @@ function Crafting.AddUncommonRecipes()
     -- Outer Torso Armor
     Inventory.AddItem("UncommonJacketRecipe")
     Inventory.AddItem("UncommonVestRecipe")
+	Inventory.AddItem("UncommonDressRecipe")
+	
 
     
 -- These are all the uncommon guns, rifles, etc recipes
@@ -851,7 +881,12 @@ function Crafting.AddUncommonRecipes()
     Inventory.AddItem("UncommonIronPipeRecipe")
     Inventory.AddItem("UncommonKanaboRecipe")
     Inventory.AddItem("UncommonTireIronRecipe")
-    
+	Inventory.AddItem("UncommonBatonBetaRecipe")
+	Inventory.AddItem("UncommonBatonGammaRecipe")
+	Inventory.AddItem("UncommonCrowbarRecipe")
+	Inventory.AddItem("UncommonPipeWrenchRecipe")
+	Inventory.AddItem("UncommonTomahawkRecipe")
+	
     Utilities.FinishProtocol(moduleName)
 end 
 
@@ -919,6 +954,11 @@ function Crafting.AddCommonRecipes()
     Inventory.AddItem("CommonKukriRecipe")
     Inventory.AddItem("CommonMacheteRecipe")
     Inventory.AddItem("CommonTantoRecipe")
+	Inventory.AddItem("CommonBatonBetaRecipe")
+	Inventory.AddItem("CommonBatonGammaRecipe")
+	Inventory.AddItem("CommonCrowbarRecipe")
+	Inventory.AddItem("CommonPipeWrenchRecipe")
+	Inventory.AddItem("CommonTomahawkRecipe")
 
     -- Blunt weapons
     Inventory.AddItem("CommonBatRecipe")
