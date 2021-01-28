@@ -37,10 +37,10 @@ After adding more protocols into `protocols.lua`, we need to update the language
 2. Start *Braindance Protocol*, press the <kbd>Update language files</kbd> button.
 3. Updated language files will be created with "_update" suffix inside "lang/". (e.g. `en_update.lua`)
 4. New strings will be commented inside the `xx_update.lua`
-```lua
-    window_title = "Brandance Protocol",
-    -- new_string = ""
-```
+    ```lua
+        window_title = "Brandance Protocol",
+        -- new_string = ""
+    ```
 
 ### How <kbd>Update language files</kbd> works?
 1. It will scan `init.lua` for strings inside `i18n("some_string")`, and strings from `protocols.lua`.
