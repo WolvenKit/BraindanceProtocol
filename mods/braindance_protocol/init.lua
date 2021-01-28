@@ -15,7 +15,11 @@ registerForEvent("onInit", function()
 	currentWorkingDir = CPS.getCWD("braindance_protocol")
 	config = loadConfig(currentWorkingDir)
 	protocols = require(BraindanceProtocol.rootPath.."protocols")
-	drawWindow = false
+	if config.debug then
+		drawWindow = true
+	else
+		drawWindow = false
+	end
 	wWidth, wHeight = GetDisplayResolution()
 	-- Execute Braindance protocols
 	BD.Examples.Initialise()
@@ -65,6 +69,12 @@ registerForEvent("onDraw", function()
 			ImGui.OpenPopup("Language")
 		end
 		if ImGui.BeginPopup("Language") then
+			if config.debug then
+				if ImGui.Button("Update language files") then
+					updateLang()
+					print("[BD] Language files updated..")
+				end
+			end
 			for l in pairs(languages) do
 				languages[l].selLang = ImGui.Selectable(languages[l].name, false)
 			end
@@ -156,6 +166,106 @@ function setLang(language, currentWorkingDir)
 	i18n.setLocale(language)
 	config.lang = language
 	saveConfig(currentWorkingDir.."config.json", config)
+end
+
+function updateLang()
+	local cwd = CPS.getCWD("braindance_protocol")
+	local i18n_str = {}
+	local i = 1
+	-- scan init.lua for i18n strings
+	local init_lua = io.open(cwd.."init.lua", "r")
+	io.input(init_lua)
+	local init_lua_s = io.read("*a")
+	for w in string.gmatch(init_lua_s, [[i18n%("([^"]+)]]) do
+		for t in pairs(i18n_str) do
+			if w == i18n_str[t] then
+				str_exsit = true
+			else
+				str_exsit = false
+			end
+		end
+		if str_exsit ~= true then
+			i18n_str[i] = w
+			print(i..": "..i18n_str[i])
+			i = i + 1
+		end
+	end
+	init_lua:close()
+	-- read protocols.Parents into i18n_str
+	local protocols = dofile(cwd.."protocols.lua")
+	for t in pairs(protocols.Parents) do
+		i18n_str[i] = "parent_"..protocols.Parents[t].id
+		print(i..": "..i18n_str[i])
+		i = i + 1
+	end
+	-- read protocols.Items into i18n_str
+	for t in pairs(protocols.Items) do
+		i18n_str[i] = protocols.Items[t].name --name
+		print(i..": "..i18n_str[i])
+		i = i + 1
+		i18n_str[i] = protocols.Items[t].description --tip
+		print(i..": "..i18n_str[i])
+		i = i + 1
+		if protocols.Items[t].type == "Button" or protocols.Items[t].type == "Input" then --Button and Input
+			i18n_str[i] = protocols.Items[t].button_label
+			print(i..": "..i18n_str[i])
+			i = i + 1
+		elseif protocols.Items[t].type == "Select" then --Select
+			i18n_str[i] = protocols.Items[t].options
+			print(i..": "..i18n_str[i])
+			i = i + 1
+		elseif protocols.Items[t].type == "Toggle" then --Toggle
+			i18n_str[i] = protocols.Items[t].button_label1
+			print(i..": "..i18n_str[i])
+			i = i + 1
+			i18n_str[i] = protocols.Items[t].button_label2
+			print(i..": "..i18n_str[i])
+			i = i + 1
+		end
+	end
+	--Done read all i18n strings into i18n_str
+
+	-- Write into files.
+	local function alignstr(str) -- for aligning the table in output files
+	    count = string.len(str)
+	    stime = 59 - count
+	    newstr = str
+	    for i = 1, stime do
+	        newstr = newstr.." "
+	    end
+	    return newstr
+	end
+	local languages = dofile(cwd.."lang/lang.lua")
+	for t in pairs(languages) do
+		local lang = languages[t].id
+		local old_en_file = dofile(cwd.."lang/en.lua")
+		local old_lang_file = dofile(cwd.."lang/"..lang..".lua")
+		local new_lang_file = io.open(cwd.."/lang/"..lang.."_update.lua", "w")
+		io.output(new_lang_file)
+		-- header
+		io.write("return {\n")
+		io.write("  "..lang.." = {\n")
+		-- strings starts here
+		for t in pairs(i18n_str) do
+			if old_lang_file[lang][i18n_str[t]] then  -- if this i18n string exists in the old lang file, copy it
+				io.write("    "..alignstr(i18n_str[t]).." = \"")
+				io.write(old_lang_file[lang][i18n_str[t]]:gsub("\"","\\\""):gsub("\0","\\0"):gsub("\n","\\n").."\"")
+			elseif old_en_file.en[i18n_str[t]] then -- if this i18n string exists in the old en file, copy it and comment
+				io.write("    -- "..alignstr(i18n_str[t]).." = \"")
+				io.write(old_en_file.en[i18n_str[t]]:gsub("\"","\\\""):gsub("\0","\\0"):gsub("\n","\\n").."\"")
+			else
+				io.write("    -- "..alignstr(i18n_str[t]).." = \"\"") -- else leave blank and comment
+			end
+			if t < i-1 then
+				io.write(" ,\n")
+			else
+				io.write("\n")
+			end
+		end
+		-- end
+		io.write("  }\n}")
+		io.close(new_lang_file)
+	end
 end
 
 return BD
