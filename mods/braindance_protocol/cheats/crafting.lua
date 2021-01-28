@@ -28,13 +28,13 @@ function Crafting.AddLegendaryRecipes()
     Utilities.StartProtocol(moduleName)
 
 -- These are legendary clothing recipes
--- Chest Armor
+	-- Chest Armor
 	Inventory.AddItem("LegendaryJumpsuitRecipe")
 	Inventory.AddItem("LegendaryShirtRecipe")
 	Inventory.AddItem("LegendaryTightJumpsuitRecipe")
 	Inventory.AddItem("LegendaryTShirtRecipe")
    
--- DLC/GOG Stuff
+	-- DLC/GOG Stuff
 	Inventory.AddItem("Recipe_GOG_DLC_TShirt_Legendary")
 	Inventory.AddItem("Recipe_GOG_DLC_TShirt_Epic")
 
@@ -44,28 +44,28 @@ function Crafting.AddLegendaryRecipes()
 	Inventory.AddItem("Recipe_GOG_DLC_Jacket_Legendary")
 	Inventory.AddItem("Recipe_GOG_DLC_Jacket_Epic")
    
--- Head Armor
+	-- Head Armor
 	Inventory.AddItem("LegendaryCapRecipe")
 	Inventory.AddItem("LegendaryHatRecipe")
 	Inventory.AddItem("LegendaryScarfRecipe")
    
--- Face Armor
+	-- Face Armor
 	Inventory.AddItem("LegendaryGlassesRecipe")
 	Inventory.AddItem("LegendaryTechRecipe")
 	Inventory.AddItem("LegendaryVisorRecipe")
   
--- Feet Armor
+	-- Feet Armor
 	Inventory.AddItem("LegendaryBootsRecipe")
 	Inventory.AddItem("LegendaryCasualShoesRecipe")
 	Inventory.AddItem("LegendaryFormalShoesRecipe")
    
--- Legs Armor
+	-- Legs Armor
 	Inventory.AddItem("LegendaryFormalPantsRecipe")
 	Inventory.AddItem("LegendaryFormalSkirtRecipe")
 	Inventory.AddItem("LegendaryPantsRecipe")
 	Inventory.AddItem("LegendaryShortsRecipe")
 
--- Outer Torso Armor
+	-- Outer Torso Armor
 	Inventory.AddItem("LegendaryJacketRecipe")
 	Inventory.AddItem("LegendaryVestRecipe")
 	Inventory.AddItem("Recipe_SQ031_Samurai_Jacket_Legendary")
@@ -73,31 +73,31 @@ function Crafting.AddLegendaryRecipes()
 
 
 -- These are all the legendary guns, rifles, etc recipes
--- Assault Rifles
+	-- Assault Rifles
 	Inventory.AddItem("LegendaryAjaxRecipe")
 	Inventory.AddItem("LegendaryCopperheadRecipe")
 	Inventory.AddItem("LegendaryMasamuneRecipe")
 	Inventory.AddItem("LegendarySidewinderRecipe")
 
--- SMGs
+	-- SMGs
 	Inventory.AddItem("LegendaryDianRecipe")
 	Inventory.AddItem("LegendaryPulsarRecipe")
 	Inventory.AddItem("LegendarySaratogaRecipe")
 	Inventory.AddItem("LegendaryShingenRecipe")
 
--- DB Shotguns
+	-- DB Shotguns
 	Inventory.AddItem("LegendaryIglaRecipe")
 	Inventory.AddItem("LegendaryPalicaRecipe")
 	Inventory.AddItem("LegendarySataraRecipe")
 	Inventory.AddItem("LegendaryTesteraRecipe")
 
--- Shotguns
+	-- Shotguns
 	Inventory.AddItem("LegendaryCarnageRecipe")
 	Inventory.AddItem("LegendaryCrusherRecipe")
 	Inventory.AddItem("LegendaryTacticianRecipe")
 	Inventory.AddItem("LegendaryZhuoRecipe")
  
--- Pistols
+	-- Pistols
 	Inventory.AddItem("LegendaryChaoRecipe")
 	Inventory.AddItem("LegendaryKenshinRecipe")
 	Inventory.AddItem("LegendaryLexingtonRecipe")
@@ -107,23 +107,23 @@ function Crafting.AddLegendaryRecipes()
 	Inventory.AddItem("LegendaryUnityRecipe")
 	Inventory.AddItem("LegendaryYukimuraRecipe")
 
--- Revolvers
+	-- Revolvers
 	Inventory.AddItem("LegendaryBuryaRecipe")
 	Inventory.AddItem("LegendaryNovaRecipe")
 	Inventory.AddItem("LegendaryOvertureRecipe")
 	Inventory.AddItem("LegendaryQuasarRecipe")
    
--- Precision Rifles
+	-- Precision Rifles
 	Inventory.AddItem("LegendaryAchillesRecipe")
 	Inventory.AddItem("LegendarySor22Recipe")
 
--- Sniper Rifles
+	-- Sniper Rifles
 	Inventory.AddItem("LegendaryAshuraRecipe")
 	Inventory.AddItem("LegendaryGradRecipe")
 	Inventory.AddItem("LegendaryNekomataRecipe")
 
 -- Melee Weapons
--- Blade weapons
+	-- Blade weapons
 	Inventory.AddItem("LegendaryButchersKnifeRecipe")
 	Inventory.AddItem("LegendaryChefsKnifeRecipe")
 	Inventory.AddItem("LegendaryKatanaRecipe")
@@ -135,7 +135,7 @@ function Crafting.AddLegendaryRecipes()
 	Inventory.AddItem("Recipe_Preset_Katana_GoG_Epic")
    
 
--- Blunt weapons
+	-- Blunt weapons
 	Inventory.AddItem("LegendaryBatonAlphaRecipe")
 	Inventory.AddItem("LegendaryBatRecipe")
 	Inventory.AddItem("LegendaryCrowbarRecipe")
@@ -217,156 +217,156 @@ function Crafting.AddLegendaryRecipes()
 -- "Iconic" (unique) weapons tagged as legendary + the lesser versions of the recipes
 -- Note: All of these might not work, due to some recipes requiring the  
 -- "original" weapon, given as a reward different from different quests
--- Gold Plated Baseball Bat
+	-- Gold Plated Baseball Bat
 	Inventory.AddItem("Recipe_Preset_Baseball_Bat_Denny_Legendary")
 	Inventory.AddItem("Recipe_Preset_Baseball_Bat_Denny_Epic")
 
--- Widow Maker
+	-- Widow Maker
 	Inventory.AddItem("Recipe_Preset_Achilles_Nash_Legendary")
 	Inventory.AddItem("Recipe_Preset_Achilles_Nash_Epic")
 
--- Moron Labe
+	-- Moron Labe
 	Inventory.AddItem("Recipe_Preset_Ajax_Moron_Legendary")
 	Inventory.AddItem("Recipe_Preset_Ajax_Moron")
 
--- Tinker Bell
+	-- Tinker Bell
 	Inventory.AddItem("Recipe_Preset_Baton_Tinker_Bell_Legendary")
 	Inventory.AddItem("Recipe_Preset_Baton_Tinker_Bell_Epic")
 
--- Comrade's Hammer
+	-- Comrade's Hammer
 	Inventory.AddItem("Recipe_Preset_Burya_Comrade_Legendary")
 	Inventory.AddItem("Recipe_Preset_Burya_Comrade")
 
--- Cottonmouth
+	-- Cottonmouth
 	Inventory.AddItem("Recipe_Preset_Cane_Fingers_Legendary")
 	Inventory.AddItem("Recipe_Preset_Cane_Fingers_Epic")
 
--- Mox
+	-- Mox
 	Inventory.AddItem("Recipe_Preset_Carnage_Mox_Legendary")
 	Inventory.AddItem("Recipe_Preset_Carnage_Mox_Epic")
 
--- PSALM 11:16
+	-- PSALM 11:16
 	Inventory.AddItem("Recipe_Preset_Copperhead_Genesis_Legendary")
 	Inventory.AddItem("Recipe_Preset_Copperhead_Genesis_Epic")
 	Inventory.AddItem("Recipe_Preset_Copperhead_Genesis")
 
--- Sir John Phallustiff
+	-- Sir John Phallustiff
 	Inventory.AddItem("Recipe_Preset_Dildo_Stout_Legendary")
 	Inventory.AddItem("Recipe_Preset_Dildo_Stout_Epic")
 
--- O'Five
+	-- O'Five
 	Inventory.AddItem("Recipe_Preset_Grad_Buck_Legendary")
 
--- Overwatch
+	-- Overwatch
 	Inventory.AddItem("Recipe_Preset_Grad_Panam_Legendary")
 	Inventory.AddItem("Recipe_Preset_Grad_Panam_Epic")
 	Inventory.AddItem("Recipe_Preset_Grad_Panam")
 
--- Sovereign
+	-- Sovereign
 	Inventory.AddItem("Recipe_Preset_Igla_Sovereign_Legendary")
 	Inventory.AddItem("Recipe_Preset_Igla_Sovereign")
 
--- Cocktail Stick
+	-- Cocktail Stick
 	Inventory.AddItem("Recipe_Preset_Katana_Cocktail_Legendary")
 	Inventory.AddItem("Recipe_Preset_Katana_Cocktail_Epic")
 
--- Tsumetogi
+	-- Tsumetogi
 	Inventory.AddItem("Recipe_Preset_Katana_Hiromi_Legendary")
 	Inventory.AddItem("Recipe_Preset_Katana_Hiromi_Epic")
 
--- Satori
+	-- Satori
 	Inventory.AddItem("Recipe_Preset_Katana_Saburo_Legendary")
 	Inventory.AddItem("Recipe_Preset_Katana_Saburo_Epic")
 
--- Scalpel
+	-- Scalpel
 	Inventory.AddItem("Recipe_Preset_Katana_Surgeon_Legendary")
 	Inventory.AddItem("Recipe_Preset_Katana_Surgeon_Epic")
 
--- Jinchu-Maru
+	-- Jinchu-Maru
 	Inventory.AddItem("Recipe_Preset_Katana_Takemura_Legendary")
 
--- Apparition
+	-- Apparition
 	Inventory.AddItem("Recipe_Preset_Kenshin_Frank_Legendary")
 
--- Chaos
+	-- Chaos
 	Inventory.AddItem("Recipe_Preset_Kenshin_Royce_Legendary")
 	Inventory.AddItem("Recipe_Preset_Kenshin_Royce_Epic")
 
--- Stinger
+	-- Stinger
 	Inventory.AddItem("Recipe_Preset_Knife_Stinger_Legendary")
 	Inventory.AddItem("Recipe_Preset_Knife_Stinger_Epic")
 
--- Dying Night
+	-- Dying Night
 	Inventory.AddItem("Recipe_Preset_Lexington_Wilson_Legendary")
 	Inventory.AddItem("Recipe_Preset_Lexington_Wilson_Epic")
 	Inventory.AddItem("Recipe_Preset_Lexington_Wilson_Rare")
 
--- Plan B
+	-- Plan B
 	Inventory.AddItem("Recipe_Preset_Liberty_Dex_Legendary")
 	Inventory.AddItem("Recipe_Preset_Liberty_Dex_Epic")
 
--- Kongou
+	-- Kongou
 	Inventory.AddItem("Recipe_Preset_Liberty_Yorinobu_Legendary")
 	Inventory.AddItem("Recipe_Preset_Liberty_Yorinobu_Epic")
 
--- Breakthrough
+	-- Breakthrough
 	Inventory.AddItem("Recipe_Preset_Nekomata_Breakthrough_Legendary")
 	Inventory.AddItem("Recipe_Preset_Nekomata_Breakthrough")
 
--- Doom Doom
+	-- Doom Doom
 	Inventory.AddItem("Recipe_Preset_Nova_Doom_Doom_Legendary")
 	Inventory.AddItem("Recipe_Preset_Nova_Doom_Doom_Epic")
 
--- La Chingona Dorada
+	-- La Chingona Dorada
 	Inventory.AddItem("Recipe_Preset_Nue_Jackie_Legendary")
 	Inventory.AddItem("Recipe_Preset_Nue_Jackie_Epic")
 
--- Death & Taxes
+	-- Death & Taxes
 	Inventory.AddItem("Recipe_Preset_Nue_Maiko_Legendary")
 	Inventory.AddItem("Recipe_Preset_Nue_Maiko_Epic")
 
--- Lizzie
+	-- Lizzie
 	Inventory.AddItem("Recipe_Preset_Omaha_Suzie_Legendary")
 	Inventory.AddItem("Recipe_Preset_Omaha_Suzie_Epic")
 
--- Amnesty
+	-- Amnesty
 	Inventory.AddItem("Recipe_Preset_Overture_Cassidy_Legendary")
 
--- Archangel
+	-- Archangel
 	Inventory.AddItem("Recipe_Preset_Overture_Kerry_Legendary")
 	Inventory.AddItem("Recipe_Preset_Overture_Kerry_Epic")
 
--- Crash
+	-- Crash
 	Inventory.AddItem("Recipe_Preset_Overture_River_Legendary")
 
--- Buzzsaw
+	-- Buzzsaw
 	Inventory.AddItem("Recipe_Preset_Pulsar_Buzzsaw_Legendary")
 	Inventory.AddItem("Recipe_Preset_Pulsar_Buzzsaw_Epic")
 	Inventory.AddItem("Recipe_Preset_Pulsar_Buzzsaw")
 
--- Fenrir
+	-- Fenrir
 	Inventory.AddItem("Recipe_Preset_Saratoga_Maelstrom_Legendary")
 	Inventory.AddItem("Recipe_Preset_Saratoga_Maelstrom_Epic")
 
--- Problem Solver
+	-- Problem Solver
 	Inventory.AddItem("Recipe_Preset_Saratoga_Raffen_Legendary")
 	Inventory.AddItem("Recipe_Preset_Saratoga_Raffen_Epic")
 
--- Divided We Stand
+	-- Divided We Stand
 	Inventory.AddItem("Recipe_Preset_Sidewinder_Divided_Legendary")
 	Inventory.AddItem("Recipe_Preset_Sidewinder_Divided_Epic")
 
--- The Headsman
+	-- The Headsman
 	Inventory.AddItem("Recipe_Preset_Tactician_Headsman_Legendary")
 	Inventory.AddItem("Recipe_Preset_Tactician_Headsman")
 
--- Genjiroh
+	-- Genjiroh
 	Inventory.AddItem("Recipe_Preset_Yukimura_Kiji_Legendary")
 
--- Yinglong
+	-- Yinglong
 	Inventory.AddItem("Recipe_Preset_Dian_Yinglong")
 
--- Ba Xing Chong
+	-- Ba Xing Chong
 	Inventory.AddItem("Recipe_Preset_Zhuo_Eight_Star")
 
     Utilities.FinishProtocol(moduleName)
@@ -462,12 +462,12 @@ function Crafting.AddModRecipes()
 	Inventory.AddItem("Recipe_SimpleWeaponMod04")
 
 -- These 6 are marked as useless, added them nontheless. Remove the dashes to enable them.   
---	Inventory.AddItem("Recipe_PowerWeaponMod01")
---	Inventory.AddItem("Recipe_PowerWeaponMod02")
---	Inventory.AddItem("Recipe_PowerWeaponMod03")
---	Inventory.AddItem("Recipe_PowerWeaponMod04")
---	Inventory.AddItem("Recipe_PowerWeaponMod05")
---	Inventory.AddItem("Recipe_PowerWeaponMod06")
+	--	Inventory.AddItem("Recipe_PowerWeaponMod01")
+	--	Inventory.AddItem("Recipe_PowerWeaponMod02")
+	--	Inventory.AddItem("Recipe_PowerWeaponMod03")
+	--	Inventory.AddItem("Recipe_PowerWeaponMod04")
+	--	Inventory.AddItem("Recipe_PowerWeaponMod05")
+	--	Inventory.AddItem("Recipe_PowerWeaponMod06")
 
 
     Utilities.FinishProtocol(moduleName)
@@ -522,12 +522,12 @@ function Crafting.AddGrenadeRecipes()
 	Inventory.AddItem("RecipeGrenadeReconRegular")
 	Inventory.AddItem("RecipeGrenadeReconSticky")
 
--- Ozob's Nose
+	-- Ozob's Nose
 	Inventory.AddItem("RecipeGrenadeOzobsNose")
 
 -- This command is supposedly not needed anymore for Ozobs Nose
---Game.GetTransactionSystem():GiveItem(Game.GetPlayer(), 
---GetSingleton("gameItemID"):FromTDBID(TweakDBID.new(0xA91A5B6B, 28)), 1)
+	--Game.GetTransactionSystem():GiveItem(Game.GetPlayer(), 
+	--GetSingleton("gameItemID"):FromTDBID(TweakDBID.new(0xA91A5B6B, 28)), 1)
 
     Utilities.FinishProtocol(moduleName)
 end
@@ -537,64 +537,64 @@ function Crafting.AddEpicRecipes()
     Utilities.StartProtocol(moduleName)
 
 -- These are legendary clothing recipes
--- Chest Armor
+	-- Chest Armor
 	Inventory.AddItem("EpicLooseShirtRecipe")
 	Inventory.AddItem("EpicTShirtRecipe")
 	Inventory.AddItem("EpicUndershirtRecipe")
 	Inventory.AddItem("EpicFormalShirtRecipe")
    
--- Head Armor
+	-- Head Armor
 	Inventory.AddItem("EpicCapRecipe")
 	Inventory.AddItem("EpicHatRecipe")
 	Inventory.AddItem("EpicHelmetRecipe")
 	Inventory.AddItem("EpicScarfRecipe")
 
--- Face Armor
+	-- Face Armor
 	Inventory.AddItem("EpicGlassesRecipe")
 	Inventory.AddItem("EpicMaskRecipe")
 	Inventory.AddItem("EpicVisorRecipe")
    
--- Feet Armor
+	-- Feet Armor
 	Inventory.AddItem("EpicBootsRecipe")
 	Inventory.AddItem("EpicCasualShoesRecipe")
 	Inventory.AddItem("EpicFormalShoesRecipe")
 
    
--- Legs Armor
+	-- Legs Armor
 	Inventory.AddItem("EpicFormalSkirtRecipe")
 	Inventory.AddItem("EpicPantsRecipe")
 	Inventory.AddItem("EpicShortsRecipe")
 
--- Outer Torso Armor
+	-- Outer Torso Armor
 	Inventory.AddItem("EpicCoatRecipe")
 	Inventory.AddItem("EpicFormalJacketRecipe")
 
 -- These are all the epic guns, rifles, etc recipes
--- Assault Rifles
+	-- Assault Rifles
 	Inventory.AddItem("EpicAjaxRecipe")
 	Inventory.AddItem("EpicCopperheadRecipe")
 	Inventory.AddItem("EpicMasamuneRecipe")
 	Inventory.AddItem("EpicSidewinderRecipe")
 
--- SMGs
+	-- SMGs
 	Inventory.AddItem("EpicDianRecipe")
 	Inventory.AddItem("EpicPulsarRecipe")
 	Inventory.AddItem("EpicSaratogaRecipe")
 	Inventory.AddItem("EpicShingenRecipe")
 
--- DB Shotguns
+	-- DB Shotguns
 	Inventory.AddItem("EpicIglaRecipe")
 	Inventory.AddItem("EpicPalicaRecipe")
 	Inventory.AddItem("EpicSataraRecipe")
 	Inventory.AddItem("EpicTesteraRecipe")
 
--- Shotguns
+	-- Shotguns
 	Inventory.AddItem("EpicCarnageRecipe")
 	Inventory.AddItem("EpicCrusherRecipe")
 	Inventory.AddItem("EpicTacticianRecipe")
 	Inventory.AddItem("EpicZhuoRecipe")
  
--- Pistols
+	-- Pistols
 	Inventory.AddItem("EpicChaoRecipe")
 	Inventory.AddItem("EpicKenshinRecipe")
 	Inventory.AddItem("EpicLexingtonRecipe")
@@ -604,23 +604,23 @@ function Crafting.AddEpicRecipes()
 	Inventory.AddItem("EpicUnityRecipe")
 	Inventory.AddItem("EpicYukimuraRecipe")
 
--- Revolvers
+	-- Revolvers
 	Inventory.AddItem("EpicBuryaRecipe")
 	Inventory.AddItem("EpicNovaRecipe")
 	Inventory.AddItem("EpicOvertureRecipe")
 	Inventory.AddItem("EpicQuasarRecipe")
    
--- Precision Rifles
+	-- Precision Rifles
 	Inventory.AddItem("EpicAchillesRecipe")
 	Inventory.AddItem("EpicSor22Recipe")
 
--- Sniper Rifles
+	-- Sniper Rifles
 	Inventory.AddItem("EpicAshuraRecipe")
 	Inventory.AddItem("EpicGradRecipe")
 	Inventory.AddItem("EpicNekomataRecipe")
 
 -- Melee Weapons
--- Blade weapons
+	-- Blade weapons
 	Inventory.AddItem("EpicButchersKnifeRecipe")
 	Inventory.AddItem("EpicChefsKnifeRecipe")
 	Inventory.AddItem("EpicKatanaRecipe")
@@ -629,7 +629,7 @@ function Crafting.AddEpicRecipes()
 	Inventory.AddItem("EpicMacheteRecipe")
 	Inventory.AddItem("EpicTantoRecipe")
 
--- Blunt weapons
+	-- Blunt weapons
 	Inventory.AddItem("EpicBatonGammaRecipe")
 	Inventory.AddItem("EpicBatRecipe")
 	Inventory.AddItem("EpicHammerRecipe")
@@ -666,66 +666,66 @@ function Crafting.AddRareRecipes()
     Utilities.StartProtocol(moduleName)
 
 -- These are rare clothing recipes
--- Chest Armor
+	-- Chest Armor
 	Inventory.AddItem("RareShirtRecipe")
 	Inventory.AddItem("RareTShirtRecipe")
 	Inventory.AddItem("RareUndershirtRecipe")
 
--- Head Armor
+	-- Head Armor
 	Inventory.AddItem("RareHatRecipe")
 	Inventory.AddItem("RareHelmetRecipe")
 	Inventory.AddItem("RareScarfRecipe")
 
--- Face Armor
+	-- Face Armor
 	Inventory.AddItem("RareGlassesRecipe")
 	Inventory.AddItem("RareMaskRecipe")
 	Inventory.AddItem("RareTechRecipe")
    
--- Feet Armor
+	-- Feet Armor
 	Inventory.AddItem("RareBootsRecipe")
 	Inventory.AddItem("RareCasualShoesRecipe")
 	Inventory.AddItem("RareFormalShoesRecipe")
    
--- Legs Armor
+	-- Legs Armor
 	Inventory.AddItem("RareFormalPantsRecipe")
 	Inventory.AddItem("RarePantsRecipe")
 	Inventory.AddItem("RareShortsRecipe")
 
--- Outer Torso Armor
+	-- Outer Torso Armor
 	Inventory.AddItem("RareCoatRecipe")
 	Inventory.AddItem("RareFormalJacketRecipe")
 	Inventory.AddItem("RareJacketRecipe")
 	Inventory.AddItem("RareVestRecipe")
 
 -- These are all the rare guns, rifles, etc recipes
--- Assault Rifles
+	-- Assault Rifles
 	Inventory.AddItem("RareAjaxRecipe")
 	Inventory.AddItem("RareCopperheadRecipe")
 	Inventory.AddItem("RareMasamuneRecipe")
 	Inventory.AddItem("RareSidewinderRecipe")
 
--- SMGs
+	-- SMGs
 	Inventory.AddItem("RareDianRecipe")
 	Inventory.AddItem("RarePulsarRecipe")
 	Inventory.AddItem("RareSaratogaRecipe")
 	Inventory.AddItem("RareShingenRecipe")
 
--- LMGs
+	-- LMGs
 	Inventory.AddItem("RareDefenderRecipe")
 
--- DB Shotguns
+	-- DB Shotguns
 	Inventory.AddItem("RareIglaRecipe")
 	Inventory.AddItem("RarePalicaRecipe")
 	Inventory.AddItem("RareSataraRecipe")
 	Inventory.AddItem("RareTesteraRecipe")
 
--- Shotguns
+	-- Shotguns
 	Inventory.AddItem("RareCarnageRecipe")
 	Inventory.AddItem("RareCrusherRecipe")
 	Inventory.AddItem("RareTacticianRecipe")
 	Inventory.AddItem("RareZhuoRecipe")
  
--- Pistols
+	-- Pistols
 	Inventory.AddItem("RareChaoRecipe")
 	Inventory.AddItem("RareKenshinRecipe")
 	Inventory.AddItem("RareLexingtonRecipe")
@@ -735,23 +735,23 @@ function Crafting.AddRareRecipes()
 	Inventory.AddItem("RareUnityRecipe")
 	Inventory.AddItem("RareYukimuraRecipe")
 
--- Revolvers
+	-- Revolvers
 	Inventory.AddItem("RareBuryaRecipe")
 	Inventory.AddItem("RareNovaRecipe")
 	Inventory.AddItem("RareOvertureRecipe")
 	Inventory.AddItem("RareQuasarRecipe")
    
--- Precision Rifles
+	-- Precision Rifles
 	Inventory.AddItem("RareAchillesRecipe")
 	Inventory.AddItem("RareSor22Recipe")
 
--- Sniper Rifles
+	-- Sniper Rifles
 	Inventory.AddItem("RareAshuraRecipe")
 	Inventory.AddItem("RareGradRecipe")
 	Inventory.AddItem("RareNekomataRecipe")
 
 -- Melee Weapons
--- Blade weapons
+	-- Blade weapons
 	Inventory.AddItem("RareButchersKnifeRecipe")
 	Inventory.AddItem("RareChefsKnifeRecipe")
 	Inventory.AddItem("RareKatanaRecipe")
@@ -760,7 +760,7 @@ function Crafting.AddRareRecipes()
 	Inventory.AddItem("RareMacheteRecipe")
 	Inventory.AddItem("RareTantoRecipe")
 
--- Blunt weapons
+	-- Blunt weapons
 	Inventory.AddItem("RareBatonBetaRecipe")
 	Inventory.AddItem("RareBatRecipe")
 	Inventory.AddItem("RareHammerRecipe")
@@ -781,33 +781,33 @@ function Crafting.AddUncommonRecipes()
     Utilities.StartProtocol(moduleName)
 
 -- These are uncommon clothing recipes
--- Chest Armor
+	-- Chest Armor
 	Inventory.AddItem("UncommonShirtRecipe")
 	Inventory.AddItem("UncommonUndershirtRecipe")
 	Inventory.AddItem("UncommonFormalShirtRecipe")
 	Inventory.AddItem("UncommonShirtLooseRecipe")
    
--- Head Armor
+	-- Head Armor
 	Inventory.AddItem("UncommonBalaclavaRecipe")
 	Inventory.AddItem("UncommonCapRecipe")
 	Inventory.AddItem("UncommonHelmetRecipe")
 
--- Face Armor
+	-- Face Armor
 	Inventory.AddItem("UncommonMaskRecipe")
 	Inventory.AddItem("UncommonTechRecipe")
 	Inventory.AddItem("UncommonVisorRecipe")
    
--- Feet Armor
+	-- Feet Armor
 	Inventory.AddItem("UncommonBootsRecipe")
 	Inventory.AddItem("UncommonCasualShoesRecipe")
 	Inventory.AddItem("UncommonFormalShoesRecipe")
    
--- Legs Armor
+	-- Legs Armor
 	Inventory.AddItem("UncommonFormalPantsRecipe")
 	Inventory.AddItem("UncommonFormalSkirtRecipe")
 	Inventory.AddItem("UncommonPantsRecipe")
 
--- Outer Torso Armor
+	-- Outer Torso Armor
 	Inventory.AddItem("UncommonJacketRecipe")
 	Inventory.AddItem("UncommonVestRecipe")
 	Inventory.AddItem("UncommonDressRecipe")
@@ -815,31 +815,31 @@ function Crafting.AddUncommonRecipes()
 
 
 -- These are all the uncommon guns, rifles, etc recipes
--- Assault Rifles
+	-- Assault Rifles
 	Inventory.AddItem("UncommonAjaxRecipe")
 	Inventory.AddItem("UncommonCopperheadRecipe")
 	Inventory.AddItem("UncommonMasamuneRecipe")
 	Inventory.AddItem("UncommonSidewinderRecipe")
 
--- SMGs
+	-- SMGs
 	Inventory.AddItem("UncommonDianRecipe")
 	Inventory.AddItem("UncommonPulsarRecipe")
 	Inventory.AddItem("UncommonSaratogaRecipe")
 	Inventory.AddItem("UncommonShingenRecipe")
 
--- DB Shotguns
+	-- DB Shotguns
 	Inventory.AddItem("UncommonIglaRecipe")
 	Inventory.AddItem("UncommonPalicaRecipe")
 	Inventory.AddItem("UncommonSataraRecipe")
 	Inventory.AddItem("UncommonTesteraRecipe")
 
--- Shotguns
+	-- Shotguns
 	Inventory.AddItem("UncommonCarnageRecipe")
 	Inventory.AddItem("UncommonCrusherRecipe")
 	Inventory.AddItem("UncommonTacticianRecipe")
 	Inventory.AddItem("UncommonZhuoRecipe")
  
--- Pistols
+	-- Pistols
 	Inventory.AddItem("UncommonChaoRecipe")
 	Inventory.AddItem("UncommonKenshinRecipe")
 	Inventory.AddItem("UncommonLexingtonRecipe")
@@ -849,23 +849,23 @@ function Crafting.AddUncommonRecipes()
 	Inventory.AddItem("UncommonUnityRecipe")
 	Inventory.AddItem("UncommonYukimuraRecipe")
 
--- Revolvers
+	-- Revolvers
 	Inventory.AddItem("UncommonBuryaRecipe")
 	Inventory.AddItem("UncommonNovaRecipe")
 	Inventory.AddItem("UncommonOvertureRecipe")
 	Inventory.AddItem("UncommonQuasarRecipe")
    
--- Precision Rifles
+	-- Precision Rifles
 	Inventory.AddItem("UncommonAchillesRecipe")
 	Inventory.AddItem("UncommonSor22Recipe")
 
--- Sniper Rifles
+	-- Sniper Rifles
 	Inventory.AddItem("UncommonAshuraRecipe")
 	Inventory.AddItem("UncommonGradRecipe")
 	Inventory.AddItem("UncommonNekomataRecipe")
 
 -- Melee Weapons
--- Blade weapons
+	-- Blade weapons
 	Inventory.AddItem("UncommonButchersKnifeRecipe")
 	Inventory.AddItem("UncommonChefsKnifeRecipe")
 	Inventory.AddItem("UncommonKatanaRecipe")
@@ -896,31 +896,31 @@ function Crafting.AddCommonRecipes()
     Utilities.StartProtocol(moduleName)
 -- There are no common clothing recipes
 -- These are all the common guns, rifles, etc recipes
--- Assault Rifles
+	-- Assault Rifles
 	Inventory.AddItem("CommonAjaxRecipe")
 	Inventory.AddItem("CommonCopperheadRecipe")
 	Inventory.AddItem("CommonMasamuneRecipe")
 	Inventory.AddItem("CommonSidewinderRecipe")
 
--- SMGs
+	-- SMGs
 	Inventory.AddItem("CommonDianRecipe")
 	Inventory.AddItem("CommonPulsarRecipe")
 	Inventory.AddItem("CommonSaratogaRecipe")
 	Inventory.AddItem("CommonShingenRecipe")
 
--- DB Shotguns
+	-- DB Shotguns
 	Inventory.AddItem("CommonIglaRecipe")
 	Inventory.AddItem("CommonPalicaRecipe")
 	Inventory.AddItem("CommonSataraRecipe")
 	Inventory.AddItem("CommonTesteraRecipe")
 
--- Shotguns
+	-- Shotguns
 	Inventory.AddItem("CommonCarnageRecipe")
 	Inventory.AddItem("CommonCrusherRecipe")
 	Inventory.AddItem("CommonTacticianRecipe")
 	Inventory.AddItem("CommonZhuoRecipe")
  
--- Pistols
+	-- Pistols
 	Inventory.AddItem("CommonChaoRecipe")
 	Inventory.AddItem("CommonKenshinRecipe")
 	Inventory.AddItem("CommonLexingtonRecipe")
@@ -930,23 +930,23 @@ function Crafting.AddCommonRecipes()
 	Inventory.AddItem("CommonUnityRecipe")
 	Inventory.AddItem("CommonYukimuraRecipe")
 
--- Revolvers
+	-- Revolvers
 	Inventory.AddItem("CommonBuryaRecipe")
 	Inventory.AddItem("CommonNovaRecipe")
 	Inventory.AddItem("CommonOvertureRecipe")
 	Inventory.AddItem("CommonQuasarRecipe")
    
--- Precision Rifles
+	-- Precision Rifles
 	Inventory.AddItem("CommonAchillesRecipe")
 	Inventory.AddItem("CommonSor22Recipe")
 
--- Sniper Rifles
+	-- Sniper Rifles
 	Inventory.AddItem("CommonAshuraRecipe")
 	Inventory.AddItem("CommonGradRecipe")
 	Inventory.AddItem("CommonNekomataRecipe")
 
 -- Melee Weapons
--- Blade weapons
+	-- Blade weapons
 	Inventory.AddItem("CommonButchersKnifeRecipe")
 	Inventory.AddItem("CommonChefsKnifeRecipe")
 	Inventory.AddItem("CommonKatanaRecipe")
@@ -960,7 +960,7 @@ function Crafting.AddCommonRecipes()
 	Inventory.AddItem("CommonPipeWrenchRecipe")
 	Inventory.AddItem("CommonTomahawkRecipe")
 
--- Blunt weapons
+	-- Blunt weapons
 	Inventory.AddItem("CommonBatRecipe")
 	Inventory.AddItem("CommonBatonAlphaRecipe")
 	Inventory.AddItem("CommonHammerRecipe")
