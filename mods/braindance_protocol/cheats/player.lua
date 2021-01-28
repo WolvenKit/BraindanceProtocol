@@ -189,9 +189,9 @@ function Player.AddMaxHealth(quantity)
     local moduleName = "Add Max Health (cumulative)"
     Utilities.StartProtocol(moduleName)
 	
-	quantity = quantity or 100
+	quantity = quantity or 0
 
-    Game.ModStatPlayer("Health", "quantity")
+    Game.ModStatPlayer("Health", quantity)
     
 	Utilities.FinishProtocol(moduleName)
 end
@@ -200,9 +200,9 @@ function Player.AddMaxArmor(quantity)
     local moduleName = "Add Max Armor (cumulative)"
     Utilities.StartProtocol(moduleName)
 	
-	quantity = quantity or 100
+	quantity = quantity or 0
 
-    Game.ModStatPlayer("Armor", "quantity")
+    Game.ModStatPlayer("Armor", quantity)
     
 	Utilities.FinishProtocol(moduleName)
 end
@@ -211,9 +211,9 @@ function Player.AddMaxStamina(quantity)
     local moduleName = "Add Max Stamina (cumulative)"
     Utilities.StartProtocol(moduleName)
 	
-	quantity = quantity or 100
+	quantity = quantity or 0
 
-    Game.ModStatPlayer("Stamina", "quantity")
+    Game.ModStatPlayer("Stamina", quantity)
     
 	Utilities.FinishProtocol(moduleName)
 end
@@ -222,9 +222,9 @@ function Player.AddMaxOxygen(quantity)
     local moduleName = "Add Max Oxygen (cumulative)"
     Utilities.StartProtocol(moduleName)
 	
-	quantity = quantity or 100
+	quantity = quantity or 0
 
-    Game.ModStatPlayer("Oxygen", "quantity")
+    Game.ModStatPlayer("Oxygen", quantity)
     
 	Utilities.FinishProtocol(moduleName)
 end
@@ -233,9 +233,9 @@ function Player.AddMaxCritDamage(quantity)
     local moduleName = "Add Max Critical Damage (cumulative)"
     Utilities.StartProtocol(moduleName)
 	
-	quantity = quantity or 100
+	quantity = quantity or 0
 
-    Game.ModStatPlayer("CritDamage", "quantity")
+    Game.ModStatPlayer("CritDamage", quantity)
     
 	Utilities.FinishProtocol(moduleName)
 end
@@ -244,9 +244,9 @@ function Player.AddMaxCarryCapacity(quantity)
     local moduleName = "Add Max Carry Capacity (cumulative)"
     Utilities.StartProtocol(moduleName)
 	
-	quantity = quantity or 100
+	quantity = quantity or 0
 
-    Game.ModStatPlayer("CarryCapacity", "quantity")
+    Game.ModStatPlayer("CarryCapacity", quantity)
     
 	Utilities.FinishProtocol(moduleName)
 end
@@ -255,9 +255,9 @@ function Player.AddMaxMemorySlots(quantity)
     local moduleName = "Add Memory Slots (cumulative)"
     Utilities.StartProtocol(moduleName)
 	
-	quantity = quantity or 5
+	quantity = quantity or 0
 
-    Game.ModStatPlayer("Memory", "quantity")
+    Game.ModStatPlayer("Memory", quantity)
     
 	Utilities.FinishProtocol(moduleName)
 end
@@ -266,9 +266,9 @@ function Player.AddMaxMovementSpeed(quantity)
     local moduleName = "Add Movement Speed (cumulative)"
     Utilities.StartProtocol(moduleName)
 	
-	quantity = quantity or 5
+	quantity = quantity or 0
 
-    Game.ModStatPlayer("MaxSpeed", "quantity")
+    Game.ModStatPlayer("MaxSpeed", quantity)
     
 	Utilities.FinishProtocol(moduleName)
 end
