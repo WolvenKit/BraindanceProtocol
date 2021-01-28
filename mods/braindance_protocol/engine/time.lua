@@ -24,16 +24,30 @@ function Time.SetTimeTo10PM()
 	Utilities.FinishProtocol(moduleName)
 end
 
-
 function Time.SetTime(quantity)
     local moduleName = "Time Changed"
     Utilities.StartProtocol(moduleName)
 
-    quantity = quantity or 18
+    quantity = quantity or 0
 
     Game.GetTimeSystem():SetGameTimeByHMS(quantity, 0, 0)
 	
     Utilities.FinishProtocol(moduleName)
 end
+
+function Time.StartTime()
+    local moduleName = "Unfreeze Clock (Resume Ingame Time)"
+    Utilities.StartProtocol(moduleName)
+    Game.GetTimeSystem():SetPausedState(false, CName.new())
+	Utilities.FinishProtocol(moduleName)
+end
+
+function Time.StopTime()
+    local moduleName = "Freeze Clock (Stop Ingame Time)"
+    Utilities.StartProtocol(moduleName)
+    Game.GetTimeSystem():SetPausedState(true, CName.new())
+	Utilities.FinishProtocol(moduleName)
+end
+
 
 return Time

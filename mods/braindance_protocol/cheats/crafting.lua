@@ -515,8 +515,9 @@ function Crafting.AddGrenadeRecipes()
     Inventory.AddItem("RecipeGrenadeReconSticky")
 	
 	-- Ozob's Nose
-	Game.GetTransactionSystem():GiveItem(Game.GetPlayer(), 
-	GetSingleton("gameItemID"):FromTDBID(TweakDBID.new(0xA91A5B6B, 28)), 1)
+	Game.AddToInventory("Items.RecipeGrenadeOzobsNose")
+	--Game.GetTransactionSystem():GiveItem(Game.GetPlayer(), 
+	--GetSingleton("gameItemID"):FromTDBID(TweakDBID.new(0xA91A5B6B, 28)), 1)
 
     Utilities.FinishProtocol(moduleName)
 end    

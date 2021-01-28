@@ -122,4 +122,155 @@ function Player.UnlockAllVehicles()
     Utilities.FinishProtocol(moduleName)
 end
 
+-- Slow Motion
+function Player.SlowMotionOn()
+    local moduleName = "Enable Slow-Motion"
+    Utilities.StartProtocol(moduleName)
+    Game.Slowmo()
+    Utilities.FinishProtocol(moduleName)
+end
+
+function Player.SlowMotionOff()
+    local moduleName = "Disablle Slow-Motion"
+    Utilities.StartProtocol(moduleName)
+	Game.Noslowmo()
+    Utilities.FinishProtocol(moduleName)
+end
+
+-- Rocket Boots / Slow Fall
+function Player.RocketBootsOn()
+    local moduleName = "Enables Rocket Boots (slow fall) - Reload Game To Disable"
+    Utilities.StartProtocol(moduleName)
+	Game.ModStatPlayer("HasAirThrusters", "1")
+    Utilities.FinishProtocol(moduleName)
+end
+
+-- Forced NPC Death
+function Player.ForceNPCDeath()
+    local moduleName = "Kills The Targeted NPC"
+    Utilities.StartProtocol(moduleName)
+	Game.ForcedNPCDeath()
+    Utilities.FinishProtocol(moduleName)
+end
+
+-- Discover All Points Of Interest
+function Player.DiscoverAllPOI()
+    local moduleName = "Reveals All Points Of Interests (All '?' Marks)"
+    Utilities.StartProtocol(moduleName)
+	Game.GetMappinSystem():DebugDiscoverAllPoiMappins()
+    Utilities.FinishProtocol(moduleName)
+end
+
+-- Infinte Stamina
+function Player.InfiniteStaminaOn()
+    local moduleName = "Enables Infine Stamina"
+    Utilities.StartProtocol(moduleName)
+	Game.InfiniteStamina(true)
+    Utilities.FinishProtocol(moduleName)
+end
+
+function Player.InfiniteStaminaOff()
+    local moduleName = "Disable Infine Stamina"
+    Utilities.StartProtocol(moduleName)
+	Game.InfiniteStamina(false)
+    Utilities.FinishProtocol(moduleName)
+end
+
+-- Infinite Oxygen
+function Player.InfiniteOxygenOn()
+    local moduleName = "Enable Infine Oxygen - Reload Game To Disable"
+    Utilities.StartProtocol(moduleName)
+	Game.ModStatPlayer("CanBreatheUnderwater", "1")
+    Utilities.FinishProtocol(moduleName)
+end
+
+-- Player Stats (Cumulative Adding Of Stats)
+function Player.AddMaxHealth(quantity)
+    local moduleName = "Add Max Health (cumulative)"
+    Utilities.StartProtocol(moduleName)
+	
+	quantity = quantity or 100
+
+    Game.ModStatPlayer("Health", "quantity")
+    
+	Utilities.FinishProtocol(moduleName)
+end
+
+function Player.AddMaxArmor(quantity)
+    local moduleName = "Add Max Armor (cumulative)"
+    Utilities.StartProtocol(moduleName)
+	
+	quantity = quantity or 100
+
+    Game.ModStatPlayer("Armor", "quantity")
+    
+	Utilities.FinishProtocol(moduleName)
+end
+
+function Player.AddMaxStamina(quantity)
+    local moduleName = "Add Max Stamina (cumulative)"
+    Utilities.StartProtocol(moduleName)
+	
+	quantity = quantity or 100
+
+    Game.ModStatPlayer("Stamina", "quantity")
+    
+	Utilities.FinishProtocol(moduleName)
+end
+
+function Player.AddMaxOxygen(quantity)
+    local moduleName = "Add Max Oxygen (cumulative)"
+    Utilities.StartProtocol(moduleName)
+	
+	quantity = quantity or 100
+
+    Game.ModStatPlayer("Oxygen", "quantity")
+    
+	Utilities.FinishProtocol(moduleName)
+end
+
+function Player.AddMaxCritDamage(quantity)
+    local moduleName = "Add Max Critical Damage (cumulative)"
+    Utilities.StartProtocol(moduleName)
+	
+	quantity = quantity or 100
+
+    Game.ModStatPlayer("CritDamage", "quantity")
+    
+	Utilities.FinishProtocol(moduleName)
+end
+
+function Player.AddMaxCarryCapacity(quantity)
+    local moduleName = "Add Max Carry Capacity (cumulative)"
+    Utilities.StartProtocol(moduleName)
+	
+	quantity = quantity or 100
+
+    Game.ModStatPlayer("CarryCapacity", "quantity")
+    
+	Utilities.FinishProtocol(moduleName)
+end
+
+function Player.AddMaxMemorySlots(quantity)
+    local moduleName = "Add Memory Slots (cumulative)"
+    Utilities.StartProtocol(moduleName)
+	
+	quantity = quantity or 5
+
+    Game.ModStatPlayer("Memory", "quantity")
+    
+	Utilities.FinishProtocol(moduleName)
+end
+
+function Player.AddMaxMovementSpeed(quantity)
+    local moduleName = "Add Movement Speed (cumulative)"
+    Utilities.StartProtocol(moduleName)
+	
+	quantity = quantity or 5
+
+    Game.ModStatPlayer("MaxSpeed", "quantity")
+    
+	Utilities.FinishProtocol(moduleName)
+end
+
 return Player

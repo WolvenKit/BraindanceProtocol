@@ -6,23 +6,24 @@ local BD = require(BraindanceProtocol.rootPath.."BD")
 
 local Protocols = {
   Parents = {
-	{ id = "Cheats"		, name = "Cheats"                       },
-	{ id = "Crafting"	, name = "Crafting Recipes"             },
-	{ id = "Cyberware"	, name = "Cyberware Items"              },
-	{ id = "Facts"		, name = "Facts [Spoiler Alert!]"       },
-	{ id = "ItemMods"	, name = "Item Modifications"			},
-	{ id = "ItemSets"	, name = "Item Sets"                    },
-	{ id = "Saves"		, name = "Saves"                        },
-	{ id = "Teleport"	, name = "Teleport - V's Homes"         },
-	{ id = "Teleport2"	, name = "Teleport - Generic"           },
-	{ id = "Teleport3"	, name = "Teleport - NPCs"              },
-	{ id = "Teleport4"	, name = "Teleport - Stores"            },
-	{ id = "Teleport5"	, name = "Teleport - Ripperdocs"        },
-	{ id = "Teleport7"	, name = "Teleport - Tarot Cards"		},
-	{ id = "Teleport6"	, name = "Teleport - Bonus Locations"   },
-	{ id = "Time"		, name = "Time Options"					},
-	{ id = "Utilities"	, name = "Utilities"                    },
-	{ id = "Vehicles"	, name = "Vehicles"                     }
+	{ id = "Cheats"			, name = "Cheats"                       },
+	{ id = "Crafting"		, name = "Crafting Recipes"             },
+	{ id = "Cyberware"		, name = "Cyberware Items"              },
+	{ id = "Facts"			, name = "Facts [Spoiler Alert!]"       },
+	{ id = "ItemMods"		, name = "Item Modifications"			},
+	{ id = "ItemSets"		, name = "Item Sets"                    },
+	{ id = "PlayerStats"	, name = "Player Stats"					},
+	{ id = "Saves"			, name = "Saves"                        },
+	{ id = "Teleport"		, name = "Teleport - V's Homes"         },
+	{ id = "Teleport2"		, name = "Teleport - Generic"           },
+	{ id = "Teleport3"		, name = "Teleport - NPCs"              },
+	{ id = "Teleport4"		, name = "Teleport - Stores"            },
+	{ id = "Teleport5"		, name = "Teleport - Ripperdocs"        },
+	{ id = "Teleport7"		, name = "Teleport - Tarot Cards"		},
+	{ id = "Teleport6"		, name = "Teleport - Bonus Locations"   },
+	{ id = "Time"			, name = "Time Options"					},
+	{ id = "Utilities"		, name = "Utilities"                    },
+	{ id = "Vehicles"		, name = "Vehicles"                     }
   },
   Items = {
 -- Button:
@@ -36,12 +37,20 @@ local Protocols = {
 
 -- Cheats
 	{ id = "Platform.UnlockAllAchievements" , name = "Unlock All Achievements" , parent = "Cheats" , description = "Unlock all achievements on your platform (Steam / GoG)." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Platform.UnlockAllAchievements() end },
+	{ id = "Player.AddMoney" , name = "Add Money" , parent = "Cheats" , description = "Gives the player specified amount of money." , type = "Input" , button_label = "Add" , value = 10000 , cmd = function(value) BD.Cheats.Player.AddMoney(value) end },
+	{ id = "Player.DiscoverAllPOI" , name = "Discover All POI" , parent = "Cheats" , description = "Reveals All '?' Marks On The Map" , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Player.DiscoverAllPOI() end },
+	{ id = "Player.ForceNPCDeath" , name = "Force Kill NPC" , parent = "Cheats" , description = "Force Kills The NPC You Target" , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Player.ForceNPCDeath() end },
+	{ id = "Player.GodMode" , name = "GodMode" , parent = "Cheats" , description = "Gives you pseudo \"god mode\". Permanent to your SaveFile." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Player.GodMode() end },
+	{ id = "Player.InfiniteOxygenOn" , name = "Infinite Oxygen On" , parent = "Cheats" , description = "Enables Infinite Oxygen\nYou'll need to reload your savegame, to disable this" , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Player.InfiniteOxygenOn() end },
+	{ id = "Player.InfiniteStaminaOff" , name = "Disable Infinite Stamina" , parent = "Cheats" , description = "Disables Infinite Stamina" , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Player.InfiniteStaminaOff() end },
+	{ id = "Player.InfiniteStaminaOn" , name = "Enable Infinite Stamina" , parent = "Cheats" , description = "Enables Infinite Stamina" , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Player.InfiniteStaminaOn() end },
 	{ id = "Player.MaxOut" , name = "MaxOut Level, Attributes, etc" , parent = "Cheats" , description = "Max Level, Attributes, Skill Points, Money." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Player.MaxOut() end },
 	{ id = "Player.Respec" , name = "Respec perks and attributes" , parent = "Cheats" , description = "Respec attributes and perks." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Player.Respec() end },
-	{ id = "Player.GodMode" , name = "GodMode" , parent = "Cheats" , description = "Gives you pseudo \"god mode\". Permanent to your SaveFile." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Player.GodMode() end },
-	{ id = "Player.AddMoney" , name = "Add Money" , parent = "Cheats" , description = "Gives the player specified amount of money." , type = "Input" , button_label = "Add" , value = 10000 , cmd = function(value) BD.Cheats.Player.AddMoney(value) end },
+	{ id = "Player.RocketBootsOn" , name = "Rocket Boots On" , parent = "Cheats" , description = "Enables Rocket Boots (Slow Fall)\nYou'll need to reload your savegame, to disable this" , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Player.RocketBootsOn() end },
+	{ id = "Player.SlowMotionOff" , name = "Slow Motion On" , parent = "Cheats" , description = "Disables Slow Motion" , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Player.SlowMotionOff() end },
+	{ id = "Player.SlowMotionOn" , name = "Slow Motion On" , parent = "Cheats" , description = "Enables Slow Motion" , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Player.SlowMotionOn() end },
 	{ id = "Johnny.AddItems" , name = "Add Johnny's Items" , parent = "Cheats" , description = "Adds Johnny's Legendary Items and his Porsche." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Johnny.AddItems() end },
-	
+
 -- Crafting
 	{ id = "Crafting.AddAll" , name = "Add All Recipes & Materials" , parent = "Crafting" , description = "Add all Recipes & Materials." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Crafting.AddAll() end },
 	{ id = "Crafting.AddLegendaryMaterials" , name = "Add Legendary Materials" , parent = "Crafting" , description = "Add specified amount of legendary crafting materials." , type = "Input" , button_label = "Add" , value = 50 , cmd = function(value) BD.Cheats.Crafting.AddLegendaryMaterials(value) end },
@@ -99,7 +108,16 @@ local Protocols = {
 	{ id = "Legend.UpgradeArmor" , name = "Legendize Equipped Armor" , parent = "ItemMods" , description = "Makes all equipped armor legendary with max stats" , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Legend.UpgradeArmor() end },
 	{ id = "Legend.UpgradeMods" , name = "Legendize Non-Equipped Mods" , parent = "ItemMods" , description = "Makes all non-equppied mods legendary with max stats" , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Legend.UpgradeMods() end },
 	{ id = "Legend.UpgradeCW" , name = "Legendize Equipped Cyberware" , parent = "ItemMods" , description = "Makes all Cyberware legendary. NOTE: This is just for aesthetics.\nYou should add the real items, from the other commands" , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Legend.UpgradeCW() end },
-	
+
+-- Player Stats
+	{ id = "Player.AddMaxArmor" , name = "Add Max Armor" , parent = "PlayerStats" , description = "Add to your max armor stat (cumulative)" , type = "Input" , button_label = "Add" , value = 100 , cmd = function(value) BD.Cheats.Player.AddMaxArmor(value) end },
+	{ id = "Player.AddMaxCarryCapacity" , name = "Add Max Carry Capacity" , parent = "PlayerStats" , description = "Add to your max carry capacity stat (cumulative)" , type = "Input" , button_label = "Add" , value = 100 , cmd = function(value) BD.Cheats.Player.AddMaxCarryCapacity(value) end },
+	{ id = "Player.AddMaxCritDamage" , name = "Add Max Crit Damage" , parent = "PlayerStats" , description = "Add to your crit damage stat (cumulative)" , type = "Input" , button_label = "Add" , value = 100 , cmd = function(value) BD.Cheats.Player.AddMaxCritDamage(value) end },
+	{ id = "Player.AddMaxHealth" , name = "Add Max Health" , parent = "PlayerStats" , description = "Add to your max health stat (cumulative)" , type = "Input" , button_label = "Add" , value = 100 , cmd = function(value) BD.Cheats.Player.AddMaxHealth(value) end },
+	{ id = "Player.AddMaxMemorySlots" , name = "Add Max Memory Slots" , parent = "PlayerStats" , description = "Add to your max memory slots (cumulative)" , type = "Input" , button_label = "Add" , value = 5 , cmd = function(value) BD.Cheats.Player.AddMaxMemorySlots(value) end },
+	{ id = "Player.AddMaxMovementSpeed" , name = "Add Max Movement Speed" , parent = "PlayerStats" , description = "Add to your max movement speed(cumulative)" , type = "Input" , button_label = "Add" , value = 5 , cmd = function(value) BD.Cheats.Player.AddMaxMovementSpeed(value) end },
+	{ id = "Player.AddMaxOxygen" , name = "Add Max Oxygen" , parent = "PlayerStats" , description = "Add to your max oxygen stat (cumulative)" , type = "Input" , button_label = "Add" , value = 100 , cmd = function(value) BD.Cheats.Player.AddMaxOxygen(value) end },
+	{ id = "Player.AddMaxStamina" , name = "Add Max Stamina" , parent = "PlayerStats" , description = "Add to your max stamina stat (cumulative)" , type = "Input" , button_label = "Add" , value = 100 , cmd = function(value) BD.Cheats.Player.AddMaxStamina(value) end },
 
 -- Teleportation
 	-- Player Homes
@@ -238,10 +256,12 @@ local Protocols = {
 	{ id = "Teleport.BonusVoodooTempleBasement" , name = "Voodoo Temple (subway)" , parent = "Teleport6" , description = "Teleport to the subway of the Voodoo Temple" , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Teleport.BonusVoodooTempleBasement() end },
 	
 -- Time Options
-	{ id = "Time.SetTime" , name = "Set Time" , parent = "Time" , description = "Set the time - Use 24h format" , type = "Input" , button_label = "Set" , value = 18 , cmd = function(value) BD.Time.SetTime(value) end },
+	{ id = "Time.SetTime" , name = "Set Time" , parent = "Time" , description = "Set the time - Use 24h format" , type = "Input" , button_label = "Set" , value = 0 , cmd = function(value) BD.Time.SetTime(value) end },
 	{ id = "Time.SetTimeTo06AM" , name = "6AM / 06:00" , parent = "Time" , description = "Sets the time to 6AM / 06:00" , type = "Button" , button_label = "Execute" , cmd = function() BD.Time.SetTimeTo06AM() end },
 	{ id = "Time.SetTimeTo10PM" , name = "10PM / 22:00" , parent = "Time" , description = "Sets the time to 10PM / 22:00" , type = "Button" , button_label = "Execute" , cmd = function() BD.Time.SetTimeTo10PM() end },
-	
+	{ id = "Time.StopTime" , name = "Freeze Clock" , parent = "Time" , description = "Freezes the clock" , type = "Button" , button_label = "Execute" , cmd = function() BD.Time.StopTime() end },
+	{ id = "Time.StartTime" , name = "Unfreeze Clock" , parent = "Time" , description = "Unfreezes the clock" , type = "Button" , button_label = "Execute" , cmd = function() BD.Time.StartTime() end },
+
 -- Save File Editing	
 	{ id = "Saves.DisableAutosave" , name = "Disable Autosave" , parent = "Saves" , description = "Disables auto saving." , type = "Button" , button_label = "Execute" , cmd = function() BD.Saves.DisableAutosave() end },
 	{ id = "Saves.DecreaseAutosaves" , name = "Decrease Autosaves" , parent = "Saves" , description = "Decreases time between auto saves." , type = "Button" , button_label = "Execute" , cmd = function() BD.Saves.DecreaseAutosaves() end },
