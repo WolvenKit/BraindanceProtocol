@@ -6,24 +6,24 @@ local BD = require(BraindanceProtocol.rootPath.."BD")
 
 local Protocols = {
   Parents = {
-	{ id = "Cheats"			, name = "Cheats"                       },
-	{ id = "Crafting"		, name = "Crafting Recipes"             },
-	{ id = "Cyberware"		, name = "Cyberware Items"              },
-	{ id = "Facts"			, name = "Facts [Spoiler Alert!]"       },
-	{ id = "ItemMods"		, name = "Item Modifications"			},
-	{ id = "ItemSets"		, name = "Item Sets"                    },
-	{ id = "PlayerStats"	, name = "Player Stats"					},
-	{ id = "Saves"			, name = "Saves"                        },
-	{ id = "Teleport"		, name = "Teleport - V's Homes"         },
-	{ id = "Teleport2"		, name = "Teleport - Generic"           },
-	{ id = "Teleport3"		, name = "Teleport - NPCs"              },
-	{ id = "Teleport4"		, name = "Teleport - Stores"            },
-	{ id = "Teleport5"		, name = "Teleport - Ripperdocs"        },
-	{ id = "Teleport7"		, name = "Teleport - Tarot Cards"		},
-	{ id = "Teleport6"		, name = "Teleport - Bonus Locations"   },
-	{ id = "Time"			, name = "Time Options"					},
+	{ id = "Cheats"			  , name = "Cheats"                       },
+	{ id = "Crafting"		  , name = "Crafting Recipes"             },
+	{ id = "Cyberware"	  , name = "Cyberware Items"              },
+	{ id = "Facts"			  , name = "Facts [Spoiler Alert!]"       },
+	{ id = "ItemMods"		  , name = "Item Modifications"			      },
+	{ id = "ItemSets"		  , name = "Item Sets"                    },
+	{ id = "PlayerStats"  , name = "Player Stats"					        },
+	{ id = "Saves"			  , name = "Saves"                        },
+	{ id = "Teleport"		  , name = "Teleport - V's Homes"         },
+	{ id = "Teleport2"	  , name = "Teleport - Generic"           },
+	{ id = "Teleport3"	  , name = "Teleport - NPCs"              },
+	{ id = "Teleport4"	  , name = "Teleport - Stores"            },
+	{ id = "Teleport5"	  , name = "Teleport - Ripperdocs"        },
+	{ id = "Teleport7"	  , name = "Teleport - Tarot Cards"		    },
+	{ id = "Teleport6"	  , name = "Teleport - Bonus Locations"   },
+	{ id = "Time"			    , name = "Time Options"					        },
 	{ id = "Utilities"		, name = "Utilities"                    },
-	{ id = "Vehicles"		, name = "Vehicles"                     }
+	{ id = "Vehicles"		  , name = "Vehicles"                     }
   },
   Items = {
 -- Button:
