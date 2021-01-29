@@ -1,5 +1,5 @@
 local BraindanceProtocol = {
-rootPath =	"plugins.cyber_engine_tweaks.mods.braindance_protocol."
+rootPath = "plugins.cyber_engine_tweaks.mods.braindance_protocol."
 }
 
 local BD = require(BraindanceProtocol.rootPath.."BD")
