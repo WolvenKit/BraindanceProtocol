@@ -1,5 +1,8 @@
 local Player = {
-    rootPath = "plugins.cyber_engine_tweaks.mods.braindance_protocol."
+    rootPath = "plugins.cyber_engine_tweaks.mods.braindance_protocol.",
+	slowMotion = false,
+	infiniteStamina = false,
+	godMode = false
 }
 
 local Utilities = require(Player.rootPath .. "utility")
@@ -14,35 +17,6 @@ local ATTRIBUTES = {
     "Cool"
 }
 
-function Player.GodMode()
-    local moduleName = "Enable God Mode"
-    Utilities.StartProtocol(moduleName)
-
-    Player.AddStatModifier("Health", 99999)
-    Player.AddStatModifier("Armor", 99999)
-    Player.AddStatModifier("HealthRegeneration", 99999)
-    Player.AddStatModifier("HealthInCombatRegenEnabled", 1)
-    Player.AddStatModifier("HealthInCombatRegenRateMult", 20)
-    Player.AddStatModifier("HealthInCombatStartDelay", -99)
-    Player.AddStatModifier("HealthOutOfCombatRegenEnabled", 1)
-    Player.AddStatModifier("HealthOutOfCombatRegenRateMult", 20)
-
-    Player.AddStatModifier("StaminaRegenEnabled", 1)
-    Player.AddStatModifier("StaminaRegenRateMult", 20)
-    Player.AddStatModifier("StaminaRegenStartDelay", -99)
-
-    Player.AddStatModifier("Memory", 20)
-    Player.AddStatModifier("MemoryCostModifier", -90)
-    Player.AddStatModifier("MemoryInCombatRegenEnabled", 1)
-    Player.AddStatModifier("MemoryInCombatRegenRateMult", 20)
-    Player.AddStatModifier("MemoryInCombatStartDelay", -99)
-    Player.AddStatModifier("MemoryOutOfCombatRegenEnabled", 1)
-    Player.AddStatModifier("MemoryOutOfCombatRegenRateMult", 20)
-    Player.AddStatModifier("MemoryOutOfCombatStartDelay", -99)
-
-    Utilities.FinishProtocol(moduleName)
-end
-
 function Player.AddMoney(quantity)
     local moduleName = "l-o-a-d-s-a-m-o-n-e-y"
     Utilities.StartProtocol(moduleName)
@@ -53,6 +27,20 @@ function Player.AddMoney(quantity)
 
     Utilities.FinishProtocol(moduleName)
 end
+
+function Player.AddAmmo()
+    local moduleName = "Refill All Ammunition"
+    Utilities.StartProtocol(moduleName)
+	
+	Game.AddToInventory("Ammo.HandgunAmmo", 1000) 
+	Game.AddToInventory("Ammo.ShotgunAmmo", 1000) 
+	Game.AddToInventory("Ammo.RifleAmmo", 1000) 
+	Game.AddToInventory("Ammo.SniperRifleAmmo", 1000) 
+	Game.AddToInventory("Ammo.Special", 1000)
+    
+	Utilities.FinishProtocol(moduleName)
+end
+
 
 function Player.MaxOut()
 	local skills =
@@ -122,18 +110,87 @@ function Player.UnlockAllVehicles()
     Utilities.FinishProtocol(moduleName)
 end
 
--- Slow Motion
-function Player.SlowMotionOn()
-    local moduleName = "Enable Slow-Motion"
+-- Toggle Slow Motion
+-- Thanks to DankRafft on Nexusmods for these toggle things
+function Player.SlowMotionToggle()
+    local moduleName = "Slow-Motion"
     Utilities.StartProtocol(moduleName)
-    Game.Slowmo()
-    Utilities.FinishProtocol(moduleName)
+	
+	Player.slowMotion = not Player.slowMotion
+	if (Player.slowMotion) then
+		Game.Slowmo()
+	else
+		Game.Noslowmo()
+	end
+	print("Status:", Player.slowMotion)
+	Utilities.FinishProtocol(moduleName)
 end
 
-function Player.SlowMotionOff()
-    local moduleName = "Disablle Slow-Motion"
+-- Toggle Infinte Stamina
+function Player.InfiniteStaminaToggle()
+    local moduleName = "Infinite Stamina"
     Utilities.StartProtocol(moduleName)
-	Game.Noslowmo()
+	
+	Player.infiniteStamina = not Player.infiniteStamina
+	Game.InfiniteStamina(Player.infiniteStamina)
+	
+	print("Status:", Player.infiniteStamina)
+	Utilities.FinishProtocol(moduleName)
+end
+
+-- God Mode Toggle
+function Player.GodModeToggle()
+    local moduleName = "God Mode"
+    Utilities.StartProtocol(moduleName)
+	
+	Player.godMode = not Player.godMode
+	if (Player.godMode) then
+		Game.AddStatModifier("Health", 99999, "Additive")
+		Game.AddStatModifier("Armor", 99999, "Additive")
+		Game.AddStatModifier("HealthRegeneration", 99999, "Additive")
+		Game.AddStatModifier("HealthInCombatRegenEnabled", 1, "Additive")
+		Game.AddStatModifier("HealthInCombatRegenRateMult", 20, "Additive")
+		Game.AddStatModifier("HealthInCombatStartDelay", -99, "Additive")
+		Game.AddStatModifier("HealthOutOfCombatRegenEnabled", 1, "Additive")
+		Game.AddStatModifier("HealthOutOfCombatRegenRateMult", 20, "Additive")
+
+		Game.AddStatModifier("StaminaRegenEnabled", 1, "Additive")
+		Game.AddStatModifier("StaminaRegenRateMult", 20, "Additive")
+		Game.AddStatModifier("StaminaRegenStartDelay", -99, "Additive")
+
+		Game.AddStatModifier("Memory", 20, "Additive")
+		Game.AddStatModifier("MemoryCostModifier", -90, "Additive")
+		Game.AddStatModifier("MemoryInCombatRegenEnabled", 1, "Additive")
+		Game.AddStatModifier("MemoryInCombatRegenRateMult", 20, "Additive")
+		Game.AddStatModifier("MemoryInCombatStartDelay", -99, "Additive")
+		Game.AddStatModifier("MemoryOutOfCombatRegenEnabled", 1, "Additive")
+		Game.AddStatModifier("MemoryOutOfCombatRegenRateMult", 20, "Additive")
+		Game.AddStatModifier("MemoryOutOfCombatStartDelay", -99, "Additive")
+	else
+		Game.AddStatModifier("Health", -99999, "Additive")
+		Game.AddStatModifier("Armor", -99999, "Additive")
+		Game.AddStatModifier("HealthRegeneration", -99999, "Additive")
+		Game.AddStatModifier("HealthInCombatRegenEnabled", -1, "Additive")
+		Game.AddStatModifier("HealthInCombatRegenRateMult", -20, "Additive")
+		Game.AddStatModifier("HealthInCombatStartDelay", 99, "Additive")
+		Game.AddStatModifier("HealthOutOfCombatRegenEnabled", -1, "Additive")
+		Game.AddStatModifier("HealthOutOfCombatRegenRateMult", -20, "Additive")
+
+		Game.AddStatModifier("StaminaRegenEnabled", -1, "Additive")
+		Game.AddStatModifier("StaminaRegenRateMult", -20, "Additive")
+		Game.AddStatModifier("StaminaRegenStartDelay", 99, "Additive")
+
+		Game.AddStatModifier("Memory", -20, "Additive")
+		Game.AddStatModifier("MemoryCostModifier", 90, "Additive")
+		Game.AddStatModifier("MemoryInCombatRegenEnabled", -1, "Additive")
+		Game.AddStatModifier("MemoryInCombatRegenRateMult", -20, "Additive")
+		Game.AddStatModifier("MemoryInCombatStartDelay", 99, "Additive")
+		Game.AddStatModifier("MemoryOutOfCombatRegenEnabled", -1, "Additive")
+		Game.AddStatModifier("MemoryOutOfCombatRegenRateMult", -20, "Additive")
+		Game.AddStatModifier("MemoryOutOfCombatStartDelay", 99, "Additive")
+	end
+	
+	print("Status:", Player.godMode)
     Utilities.FinishProtocol(moduleName)
 end
 
@@ -158,21 +215,6 @@ function Player.DiscoverAllPOI()
     local moduleName = "Reveals All Points Of Interests (All '?' Marks)"
     Utilities.StartProtocol(moduleName)
 	Game.GetMappinSystem():DebugDiscoverAllPoiMappins()
-    Utilities.FinishProtocol(moduleName)
-end
-
--- Infinte Stamina
-function Player.InfiniteStaminaOn()
-    local moduleName = "Enables Infine Stamina"
-    Utilities.StartProtocol(moduleName)
-	Game.InfiniteStamina(true)
-    Utilities.FinishProtocol(moduleName)
-end
-
-function Player.InfiniteStaminaOff()
-    local moduleName = "Disable Infine Stamina"
-    Utilities.StartProtocol(moduleName)
-	Game.InfiniteStamina(false)
     Utilities.FinishProtocol(moduleName)
 end
 
