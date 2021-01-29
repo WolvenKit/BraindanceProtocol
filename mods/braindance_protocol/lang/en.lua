@@ -269,7 +269,7 @@ return {
     item_Teleport_GenericNomadCamp_name                         = "Nomad Camp" ,
     item_Teleport_GenericNomadCamp_tip                          = "Teleport to Nomad Camp" ,
     item_Teleport_GenericNomadCamp_btn                          = "Execute" ,
-    item_Teleport_GenericPacificaDistrict_name                  = "Pacifica Disctrict" ,
+    item_Teleport_GenericPacificaDistrict_name                  = "Pacifica District" ,
     item_Teleport_GenericPacificaDistrict_tip                   = "Teleport to Pacifica District" ,
     item_Teleport_GenericPacificaDistrict_btn                   = "Execute" ,
     item_Teleport_GenericReconciliationPark_name                = "Reconciliation Park" ,
