@@ -45,6 +45,9 @@ registerHotkey("braindance_protocol_addAmmo", "Refill Ammunition", function()
 	BD.Cheats.Player.AddAmmo()
 end)
 
+registerHotkey("braindance_protocol_forceKillNPC", "Force Kill NPC", function()
+	BD.Cheats.Player.ForceNPCDeath()
+end)
 
 registerForEvent("onUpdate", function()
 	for l in pairs(languages) do

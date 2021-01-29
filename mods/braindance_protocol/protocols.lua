@@ -281,8 +281,8 @@ local Protocols = {
     { id = "Time.SetTime" , name = "item_Time_SetTime_name" , parent = "Time" , description = "item_Time_SetTime_tip" , type = "Input" , button_label = "item_Time_SetTime_btn" , value = 0 , cmd = function(value) BD.Time.SetTime(value) end } ,
     { id = "Time.SetTimeTo06AM" , name = "item_Time_SetTimeTo06AM_name" , parent = "Time" , description = "item_Time_SetTimeTo06AM_tip" , type = "Button" , button_label = "item_Time_SetTimeTo06AM_btn" , cmd = function() BD.Time.SetTimeTo06AM() end } ,
     { id = "Time.SetTimeTo10PM" , name = "item_Time_SetTimeTo10PM_name" , parent = "Time" , description = "item_Time_SetTimeTo10PM_tip" , type = "Button" , button_label = "item_Time_SetTimeTo10PM_btn" , cmd = function() BD.Time.SetTimeTo10PM() end } ,
-    { id = "Time.StopTime" , name = "item_Time_StopTime_name" , parent = "Time" , description = "item_Time_StopTime_tip" , type = "Button" , button_label = "item_Time_StopTime_btn" , cmd = function() BD.Time.StopTime() end } ,
-    { id = "Time.StartTime" , name = "item_Time_StartTime_name" , parent = "Time" , description = "item_Time_StartTime_tip" , type = "Button" , button_label = "item_Time_StartTime_btn" , cmd = function() BD.Time.StartTime() end } ,
+    { id = "Time.TimeToggle" , name = "item_Time_TimeToggle_name" , parent = "Time" , description = "item_Time_TimeToggle_tip" , type = "Button" , button_label = "item_Time_TimeToggle_btn" , cmd = function() BD.Time.TimeToggle() end } ,
+
 
   -- Save File Editing
     { id = "Saves.DisableAutosave" , name = "item_Saves_DisableAutosave_name" , parent = "Saves" , description = "item_Saves_DisableAutosave_tip" , type = "Button" , button_label = "item_Saves_DisableAutosave_btn" , cmd = function() BD.Saves.DisableAutosave() end } ,

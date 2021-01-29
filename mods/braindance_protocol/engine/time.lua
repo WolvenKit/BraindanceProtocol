@@ -1,5 +1,6 @@
 local Time = {
-    rootPath = "plugins.cyber_engine_tweaks.mods.braindance_protocol."
+    rootPath = "plugins.cyber_engine_tweaks.mods.braindance_protocol.",
+	timeToggle = false
 }
 
 local Utilities = require(Time.rootPath .. "utility")
@@ -35,19 +36,16 @@ function Time.SetTime(quantity)
     Utilities.FinishProtocol(moduleName)
 end
 
-function Time.StartTime()
-    local moduleName = "Unfreeze Clock (Resume Ingame Time)"
+-- Toggle Time Stops
+function Time.TimeToggle()
+    local moduleName = "Pause Time"
     Utilities.StartProtocol(moduleName)
-    Game.GetTimeSystem():SetPausedState(false, CName.new())
-	Utilities.FinishProtocol(moduleName)
+    
+    Time.timeToggle = not Time.timeToggle
+    Game.GetTimeSystem():SetPausedState(Time.timeToggle, CName.new())
+	
+    print("Status:", Time.timeToggle)
+    Utilities.FinishProtocol(moduleName)
 end
-
-function Time.StopTime()
-    local moduleName = "Freeze Clock (Stop Ingame Time)"
-    Utilities.StartProtocol(moduleName)
-    Game.GetTimeSystem():SetPausedState(true, CName.new())
-	Utilities.FinishProtocol(moduleName)
-end
-
 
 return Time
