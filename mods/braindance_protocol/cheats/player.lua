@@ -131,7 +131,7 @@ function Player.SlowMotionOn()
 end
 
 function Player.SlowMotionOff()
-    local moduleName = "Disablle Slow-Motion"
+    local moduleName = "Disable Slow-Motion"
     Utilities.StartProtocol(moduleName)
 	Game.Noslowmo()
     Utilities.FinishProtocol(moduleName)

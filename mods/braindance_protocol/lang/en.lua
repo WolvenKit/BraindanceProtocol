@@ -20,7 +20,7 @@ return {
     parent_Time                                                 = "Time Options" ,
     parent_Utilities                                            = "Utilities" ,
     parent_Vehicles                                             = "Vehicles" ,
-	item_Platform_UnlockAllAchievements_name                    = "Unlock All Achievements" ,
+    item_Platform_UnlockAllAchievements_name                    = "Unlock All Achievements" ,
     item_Platform_UnlockAllAchievements_tip                     = "Unlock all achievements on your platform (Steam / GoG)." ,
     item_Platform_UnlockAllAchievements_btn                     = "Execute" ,
     item_Player_AddMoney_name                                   = "Add Money" ,
