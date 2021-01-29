@@ -1,39 +1,39 @@
 local BraindanceProtocol = {
-rootPath =	"plugins.cyber_engine_tweaks.mods.braindance_protocol."
+rootPath = "plugins.cyber_engine_tweaks.mods.braindance_protocol."
 }
 
 local BD = require(BraindanceProtocol.rootPath.."BD")
 
 local Protocols = {
   Parents = {
-  	{ id = "Cheats"			  , name = "parent_Cheats"      },
-  	{ id = "Crafting"		  , name = "parent_Crafting"    },
-  	{ id = "Cyberware"	  , name = "parent_Cyberware"   },
-  	{ id = "Facts"			  , name = "parent_Facts"       },
-  	{ id = "ItemMods"		  , name = "parent_ItemMods"    },
-  	{ id = "ItemSets"		  , name = "parent_ItemSets"    },
-  	{ id = "PlayerStats"  , name = "parent_PlayerStats"	},
-  	{ id = "Saves"			  , name = "parent_Saves"       },
-  	{ id = "Teleport"		  , name = "parent_Teleport"    },
-  	{ id = "Teleport2"	  , name = "parent_Teleport2"   },
-  	{ id = "Teleport3"	  , name = "parent_Teleport3"   },
-  	{ id = "Teleport4"	  , name = "parent_Teleport4"   },
-  	{ id = "Teleport5"	  , name = "parent_Teleport5"   },
-    { id = "Teleport6"	  , name = "parent_Teleport6"		},
-  	{ id = "Teleport7"	  , name = "parent_Teleport7"   },
-  	{ id = "Time"			    , name = "parent_Time"				},
-  	{ id = "Utilities"		, name = "parent_Utilities"   },
-  	{ id = "Vehicles"		  , name = "parent_Vehicles"    }
+    { id = "Cheats"      , name = "parent_Cheats"       },
+    { id = "Crafting"    , name = "parent_Crafting"     },
+    { id = "Cyberware"   , name = "parent_Cyberware"    },
+    { id = "Facts"       , name = "parent_Facts"        },
+    { id = "ItemMods"    , name = "parent_ItemMods"     },
+    { id = "ItemSets"    , name = "parent_ItemSets"     },
+    { id = "PlayerStats" , name = "parent_PlayerStats"  },
+    { id = "Saves"       , name = "parent_Saves"        },
+    { id = "Teleport"    , name = "parent_Teleport"     },
+    { id = "Teleport2"   , name = "parent_Teleport2"    },
+    { id = "Teleport3"   , name = "parent_Teleport3"    },
+    { id = "Teleport4"   , name = "parent_Teleport4"    },
+    { id = "Teleport5"   , name = "parent_Teleport5"    },
+    { id = "Teleport6"   , name = "parent_Teleport6"    },
+    { id = "Teleport7"   , name = "parent_Teleport7"    },
+    { id = "Time"        , name = "parent_Time"         },
+    { id = "Utilities"   , name = "parent_Utilities"    },
+    { id = "Vehicles"    , name = "parent_Vehicles"     }
   },
   Items = {
 -- Button:
---  	{ id = "ID", name "Display name" , parent = "Parent" , description = "Tooltip text" , type = "Button" , button_label = "button label" , cmd = function () print("Command to run") end },
+--    { id = "ID", name "Display name" , parent = "Parent" , description = "Tooltip text" , type = "Button" , button_label = "button label" , cmd = function () print("Command to run") end },
 -- Input:
---  	{ id = "ID" , name = "Display name" , parent = "Parent" , description = "Tooltip text" , type = "Input" , button_label = "button label" , value = number (default value) , cmd = function(value) print("Command to run") end },
+--    { id = "ID" , name = "Display name" , parent = "Parent" , description = "Tooltip text" , type = "Input" , button_label = "button label" , value = number (default value) , cmd = function(value) print("Command to run") end },
 -- Toggle:
---  	{ id = "ID" , name = "Display name" , parent = "Parent" , description = "Tooltip text" , type = "Toggle" , button_label1 = "off button label" , button_label2 = "on button label" , cmd = function(value) print("Command to run") end },
+--    { id = "ID" , name = "Display name" , parent = "Parent" , description = "Tooltip text" , type = "Toggle" , button_label1 = "off button label" , button_label2 = "on button label" , cmd = function(value) print("Command to run") end },
 -- Select:
---  	{ id = "ID" , name = "Display name" , parent = "Parent" , description = "Tooltip text" , type = "Select" , options = "Option1\0Option2\0Option3\0" , cmd = function(value) print("Command to run") end },
+--    { id = "ID" , name = "Display name" , parent = "Parent" , description = "Tooltip text" , type = "Select" , options = "Option1\0Option2\0Option3\0" , cmd = function(value) print("Command to run") end },
 
 -- Cheats
     { id = "Platform.UnlockAllAchievements" , name = "item_Platform_UnlockAllAchievements_name" , parent = "Cheats" , description = "item_Platform_UnlockAllAchievements_tip" , type = "Button" , button_label = "item_Platform_UnlockAllAchievements_btn" , cmd = function() BD.Cheats.Platform.UnlockAllAchievements() end } ,
@@ -79,8 +79,8 @@ local Protocols = {
     { id = "Facts.GoroFate" , name = "item_Facts_GoroFate_name" , parent = "Facts" , description = "item_Facts_GoroFate_tip" , type = "Toggle" , button_label1 = "item_Facts_GoroFate_btn1" , button_label2 = "item_Facts_GoroFate_btn2" , cmd = function(value) if value then BD.Cheats.Facts.SetGoroAlive() else BD.Cheats.Facts.SetGoroDead() end end } ,
     { id = "Facts.SetFingersToFriendly" , name = "item_Facts_SetFingersToFriendly_name" , parent = "Facts" , description = "item_Facts_SetFingersToFriendly_tip" , type = "Button" , button_label = "item_Facts_SetFingersToFriendly_btn" , cmd = function() BD.Cheats.Facts.SetFingersToFriendly() end } ,
     { id = "Facts.SetJudyRomance" , name = "item_Facts_SetJudyRomance_name" , parent = "Facts" , description = "item_Facts_SetJudyRomance_tip" , type = "Button" , button_label = "item_Facts_SetJudyRomance_btn" , cmd = function() BD.Cheats.Facts.SetJudyRomance() end } ,
-  	-- 	{ id = "Facts.SetRiverRomance" , name = "Set River Romance" , parent = "Facts" , description = "River is now romanceable." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Facts.SetRiverRomance() end },
-  	-- 	{ id = "Facts.SetPanamRomance" , name = "Set Panam Romance" , parent = "Facts" , description = "Panam is now romanceable." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Facts.SetPanamRomance() end },
+    -- { id = "Facts.SetRiverRomance" , name = "Set River Romance" , parent = "Facts" , description = "River is now romanceable." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Facts.SetRiverRomance() end },
+    -- { id = "Facts.SetPanamRomance" , name = "Set Panam Romance" , parent = "Facts" , description = "Panam is now romanceable." , type = "Button" , button_label = "Execute" , cmd = function() BD.Cheats.Facts.SetPanamRomance() end },
     { id = "Facts.SetKerryRomance" , name = "item_Facts_SetKerryRomance_name" , parent = "Facts" , description = "item_Facts_SetKerryRomance_tip" , type = "Button" , button_label = "item_Facts_SetKerryRomance_btn" , cmd = function() BD.Cheats.Facts.SetKerryRomance() end } ,
     { id = "Facts.SetJohnnyAsFriend" , name = "item_Facts_SetJohnnyAsFriend_name" , parent = "Facts" , description = "item_Facts_SetJohnnyAsFriend_tip" , type = "Button" , button_label = "item_Facts_SetJohnnyAsFriend_btn" , cmd = function() BD.Cheats.Facts.SetJohnnyAsFriend() end } ,
 
@@ -120,10 +120,10 @@ local Protocols = {
     { id = "Player.AddMaxStamina" , name = "item_Player_AddMaxStamina_name" , parent = "PlayerStats" , description = "item_Player_AddMaxStamina_tip" , type = "Input" , button_label = "item_Player_AddMaxStamina_btn" , value = 0 , cmd = function(value) BD.Cheats.Player.AddMaxStamina(value) end } ,
 
   -- Teleportation
-  	-- Player Homes
+    -- Player Homes
     { id = "Teleport.VsApartment" , name = "item_Teleport_VsApartment_name" , parent = "Teleport" , description = "item_Teleport_VsApartment_tip" , type = "Button" , button_label = "item_Teleport_VsApartment_btn" , cmd = function() BD.Cheats.Teleport.VsApartment() end } ,
     { id = "Teleport.VsMansion" , name = "item_Teleport_VsMansion_name" , parent = "Teleport" , description = "item_Teleport_VsMansion_tip" , type = "Button" , button_label = "item_Teleport_VsMansion_btn" , cmd = function() BD.Cheats.Teleport.VsMansion() end } ,
-  	-- Generic Locations
+    -- Generic Locations
     { id = "Teleport.GenericAfterlife" , name = "item_Teleport_GenericAfterlife_name" , parent = "Teleport2" , description = "item_Teleport_GenericAfterlife_tip" , type = "Button" , button_label = "item_Teleport_GenericAfterlife_btn" , cmd = function() BD.Cheats.Teleport.GenericAfterlife() end } ,
     { id = "Teleport.GenericClouds" , name = "item_Teleport_GenericClouds_name" , parent = "Teleport2" , description = "item_Teleport_GenericClouds_tip" , type = "Button" , button_label = "item_Teleport_GenericClouds_btn" , cmd = function() BD.Cheats.Teleport.GenericClouds() end } ,
     { id = "Teleport.GenericDMCInside" , name = "item_Teleport_GenericDMCInside_name" , parent = "Teleport2" , description = "item_Teleport_GenericDMCInside_tip" , type = "Button" , button_label = "item_Teleport_GenericDMCInside_btn" , cmd = function() BD.Cheats.Teleport.GenericDMCInside() end } ,
@@ -143,7 +143,7 @@ local Protocols = {
     { id = "Teleport.GenericSunshineMotel" , name = "item_Teleport_GenericSunshineMotel_name" , parent = "Teleport2" , description = "item_Teleport_GenericSunshineMotel_tip" , type = "Button" , button_label = "item_Teleport_GenericSunshineMotel_btn" , cmd = function() BD.Cheats.Teleport.GenericSunshineMotel() end } ,
     { id = "Teleport.GenericTheAtlantis" , name = "item_Teleport_GenericTheAtlantis_name" , parent = "Teleport2" , description = "item_Teleport_GenericTheAtlantis_tip" , type = "Button" , button_label = "item_Teleport_GenericTheAtlantis_btn" , cmd = function() BD.Cheats.Teleport.GenericTheAtlantis() end } ,
     { id = "Teleport.GenericTotentanzClub" , name = "item_Teleport_GenericTotentanzClub_name" , parent = "Teleport2" , description = "item_Teleport_GenericTotentanzClub_tip" , type = "Button" , button_label = "item_Teleport_GenericTotentanzClub_btn" , cmd = function() BD.Cheats.Teleport.GenericTotentanzClub() end } ,
-  	-- NPC Locations
+    -- NPC Locations
     { id = "Teleport.NPCClaireGarage" , name = "item_Teleport_NPCClaireGarage_name" , parent = "Teleport3" , description = "item_Teleport_NPCClaireGarage_tip" , type = "Button" , button_label = "item_Teleport_NPCClaireGarage_btn" , cmd = function() BD.Cheats.Teleport.NPCClaireGarage() end } ,
     { id = "Teleport.NPCDakotaSmith" , name = "item_Teleport_NPCDakotaSmith_name" , parent = "Teleport3" , description = "item_Teleport_NPCDakotaSmith_tip" , type = "Button" , button_label = "item_Teleport_NPCDakotaSmith_btn" , cmd = function() BD.Cheats.Teleport.NPCDakotaSmith() end } ,
     { id = "Teleport.NPCDeadDexter" , name = "item_Teleport_NPCDeadDexter_name" , parent = "Teleport3" , description = "item_Teleport_NPCDeadDexter_tip" , type = "Button" , button_label = "item_Teleport_NPCDeadDexter_btn" , cmd = function() BD.Cheats.Teleport.NPCDeadDexter() end } ,
@@ -157,7 +157,7 @@ local Protocols = {
     { id = "Teleport.NPCRogueAmendiares" , name = "item_Teleport_NPCRogueAmendiares_name" , parent = "Teleport3" , description = "item_Teleport_NPCRogueAmendiares_tip" , type = "Button" , button_label = "item_Teleport_NPCRogueAmendiares_btn" , cmd = function() BD.Cheats.Teleport.NPCRogueAmendiares() end } ,
     { id = "Teleport.NPCSandraDorsettApartment" , name = "item_Teleport_NPCSandraDorsettApartment_name" , parent = "Teleport3" , description = "item_Teleport_NPCSandraDorsettApartment_tip" , type = "Button" , button_label = "item_Teleport_NPCSandraDorsettApartment_btn" , cmd = function() BD.Cheats.Teleport.NPCSandraDorsettApartment() end } ,
     { id = "Teleport.NPCWakakoOkada" , name = "item_Teleport_NPCWakakoOkada_name" , parent = "Teleport3" , description = "item_Teleport_NPCWakakoOkada_tip" , type = "Button" , button_label = "item_Teleport_NPCWakakoOkada_btn" , cmd = function() BD.Cheats.Teleport.NPCWakakoOkada() end } ,
-  	-- Store Locations
+    -- Store Locations
     { id = "Teleport.ShopClothing1" , name = "item_Teleport_ShopClothing1_name" , parent = "Teleport4" , description = "item_Teleport_ShopClothing1_tip" , type = "Button" , button_label = "item_Teleport_ShopClothing1_btn" , cmd = function() BD.Cheats.Teleport.ShopClothing1() end } ,
     { id = "Teleport.ShopClothing2" , name = "item_Teleport_ShopClothing2_name" , parent = "Teleport4" , description = "item_Teleport_ShopClothing2_tip" , type = "Button" , button_label = "item_Teleport_ShopClothing2_btn" , cmd = function() BD.Cheats.Teleport.ShopClothing2() end } ,
     { id = "Teleport.ShopClothing3" , name = "item_Teleport_ShopClothing3_name" , parent = "Teleport4" , description = "item_Teleport_ShopClothing3_tip" , type = "Button" , button_label = "item_Teleport_ShopClothing3_btn" , cmd = function() BD.Cheats.Teleport.ShopClothing3() end } ,
@@ -196,7 +196,7 @@ local Protocols = {
     { id = "Teleport.ShopWeapons14" , name = "item_Teleport_ShopWeapons14_name" , parent = "Teleport4" , description = "item_Teleport_ShopWeapons14_tip" , type = "Button" , button_label = "item_Teleport_ShopWeapons14_btn" , cmd = function() BD.Cheats.Teleport.ShopWeapons14() end } ,
     { id = "Teleport.ShopWeapons15" , name = "item_Teleport_ShopWeapons15_name" , parent = "Teleport4" , description = "item_Teleport_ShopWeapons15_tip" , type = "Button" , button_label = "item_Teleport_ShopWeapons15_btn" , cmd = function() BD.Cheats.Teleport.ShopWeapons15() end } ,
     { id = "Teleport.ShopWeapons16" , name = "item_Teleport_ShopWeapons16_name" , parent = "Teleport4" , description = "item_Teleport_ShopWeapons16_tip" , type = "Button" , button_label = "item_Teleport_ShopWeapons16_btn" , cmd = function() BD.Cheats.Teleport.ShopWeapons16() end } ,
-  	-- Ripperdoc Locations
+    -- Ripperdoc Locations
     { id = "Teleport.Ripperdoc1" , name = "item_Teleport_Ripperdoc1_name" , parent = "Teleport5" , description = "item_Teleport_Ripperdoc1_tip" , type = "Button" , button_label = "item_Teleport_Ripperdoc1_btn" , cmd = function() BD.Cheats.Teleport.Ripperdoc1() end } ,
     { id = "Teleport.Ripperdoc2" , name = "item_Teleport_Ripperdoc2_name" , parent = "Teleport5" , description = "item_Teleport_Ripperdoc2_tip" , type = "Button" , button_label = "item_Teleport_Ripperdoc2_btn" , cmd = function() BD.Cheats.Teleport.Ripperdoc2() end } ,
     { id = "Teleport.Ripperdoc3" , name = "item_Teleport_Ripperdoc3_name" , parent = "Teleport5" , description = "item_Teleport_Ripperdoc3_tip" , type = "Button" , button_label = "item_Teleport_Ripperdoc3_btn" , cmd = function() BD.Cheats.Teleport.Ripperdoc3() end } ,
@@ -212,7 +212,7 @@ local Protocols = {
     { id = "Teleport.Ripperdoc13" , name = "item_Teleport_Ripperdoc13_name" , parent = "Teleport5" , description = "item_Teleport_Ripperdoc13_tip" , type = "Button" , button_label = "item_Teleport_Ripperdoc13_btn" , cmd = function() BD.Cheats.Teleport.Ripperdoc13() end } ,
     { id = "Teleport.Ripperdoc14" , name = "item_Teleport_Ripperdoc14_name" , parent = "Teleport5" , description = "item_Teleport_Ripperdoc14_tip" , type = "Button" , button_label = "item_Teleport_Ripperdoc14_btn" , cmd = function() BD.Cheats.Teleport.Ripperdoc14() end } ,
     { id = "Teleport.Ripperdoc15" , name = "item_Teleport_Ripperdoc15_name" , parent = "Teleport5" , description = "item_Teleport_Ripperdoc15_tip" , type = "Button" , button_label = "item_Teleport_Ripperdoc15_btn" , cmd = function() BD.Cheats.Teleport.Ripperdoc15() end } ,
-  	-- Tarot Card / Graffiti Locations
+    -- Tarot Card / Graffiti Locations
     { id = "Teleport.TarotLoc1" , name = "item_Teleport_TarotLoc1_name" , parent = "Teleport6" , description = "item_Teleport_TarotLoc1_tip" , type = "Button" , button_label = "item_Teleport_TarotLoc1_btn" , cmd = function() BD.Cheats.Teleport.TarotLoc1() end } ,
     { id = "Teleport.TarotLoc2" , name = "item_Teleport_TarotLoc2_name" , parent = "Teleport6" , description = "item_Teleport_TarotLoc2_tip" , type = "Button" , button_label = "item_Teleport_TarotLoc2_btn" , cmd = function() BD.Cheats.Teleport.TarotLoc2() end } ,
     { id = "Teleport.TarotLoc3" , name = "item_Teleport_TarotLoc3_name" , parent = "Teleport6" , description = "item_Teleport_TarotLoc3_tip" , type = "Button" , button_label = "item_Teleport_TarotLoc3_btn" , cmd = function() BD.Cheats.Teleport.TarotLoc3() end } ,
@@ -234,7 +234,7 @@ local Protocols = {
     { id = "Teleport.TarotLoc19" , name = "item_Teleport_TarotLoc19_name" , parent = "Teleport6" , description = "item_Teleport_TarotLoc19_tip" , type = "Button" , button_label = "item_Teleport_TarotLoc19_btn" , cmd = function() BD.Cheats.Teleport.TarotLoc19() end } ,
     { id = "Teleport.TarotLoc20" , name = "item_Teleport_TarotLoc20_name" , parent = "Teleport6" , description = "item_Teleport_TarotLoc20_tip" , type = "Button" , button_label = "item_Teleport_TarotLoc20_btn" , cmd = function() BD.Cheats.Teleport.TarotLoc20() end } ,
     { id = "Teleport.TarotLoc21" , name = "item_Teleport_TarotLoc21_name" , parent = "Teleport6" , description = "item_Teleport_TarotLoc21_tip" , type = "Button" , button_label = "item_Teleport_TarotLoc21_btn" , cmd = function() BD.Cheats.Teleport.TarotLoc21() end } ,
-  	-- Extra/Bonus/Out-of-bounds Locations
+    -- Extra/Bonus/Out-of-bounds Locations
     { id = "Teleport.BonusAkulovPenthouse" , name = "item_Teleport_BonusAkulovPenthouse_name" , parent = "Teleport7" , description = "item_Teleport_BonusAkulovPenthouse_tip" , type = "Button" , button_label = "item_Teleport_BonusAkulovPenthouse_btn" , cmd = function() BD.Cheats.Teleport.BonusAkulovPenthouse() end } ,
     { id = "Teleport.BonusArasakaDrillingMachine" , name = "item_Teleport_BonusArasakaDrillingMachine_name" , parent = "Teleport7" , description = "item_Teleport_BonusArasakaDrillingMachine_tip" , type = "Button" , button_label = "item_Teleport_BonusArasakaDrillingMachine_btn" , cmd = function() BD.Cheats.Teleport.BonusArasakaDrillingMachine() end } ,
     { id = "Teleport.BonusArasakaOrbitalStation" , name = "item_Teleport_BonusArasakaOrbitalStation_name" , parent = "Teleport7" , description = "item_Teleport_BonusArasakaOrbitalStation_tip" , type = "Button" , button_label = "item_Teleport_BonusArasakaOrbitalStation_btn" , cmd = function() BD.Cheats.Teleport.BonusArasakaOrbitalStation() end } ,
@@ -299,7 +299,7 @@ local Protocols = {
   -- Vehicles
     { id = "Vehicles.GetAll" , name = "item_Vehicles_GetAll_name" , parent = "Vehicles" , description = "item_Vehicles_GetAll_tip" , type = "Button" , button_label = "item_Vehicles_GetAll_btn" , cmd = function() BD.Vehicles.GetAll() end } ,
     { id = "Vehicles.PreventKnockdown" , name = "item_Vehicles_PreventKnockdown_name" , parent = "Vehicles" , description = "item_Vehicles_PreventKnockdown_tip" , type = "Button" , button_label = "item_Vehicles_PreventKnockdown_btn" , cmd = function() BD.Vehicles.PreventKnockdown() end } ,
-  	-- Individual Vehicles
+    -- Individual Vehicles
     { id = "Vehicles.GetArchNazare" , name = "item_Vehicles_GetArchNazare_name" , parent = "Vehicles" , description = "item_Vehicles_GetArchNazare_tip" , type = "Button" , button_label = "item_Vehicles_GetArchNazare_btn" , cmd = function() BD.Vehicles.GetArchNazare() end } ,
     { id = "Vehicles.GetArchNazareItsumade" , name = "item_Vehicles_GetArchNazareItsumade_name" , parent = "Vehicles" , description = "item_Vehicles_GetArchNazareItsumade_tip" , type = "Button" , button_label = "item_Vehicles_GetArchNazareItsumade_btn" , cmd = function() BD.Vehicles.GetArchNazareItsumade() end } ,
     { id = "Vehicles.GetArcherQuartzECT2R660" , name = "item_Vehicles_GetArcherQuartzECT2R660_name" , parent = "Vehicles" , description = "item_Vehicles_GetArcherQuartzECT2R660_tip" , type = "Button" , button_label = "item_Vehicles_GetArcherQuartzECT2R660_btn" , cmd = function() BD.Vehicles.GetArcherQuartzECT2R660() end } ,
