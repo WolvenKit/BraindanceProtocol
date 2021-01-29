@@ -108,6 +108,7 @@ local Protocols = {
     { id = "Legend.UpgradeArmor" , name = "item_Legend_UpgradeArmor_name" , parent = "ItemMods" , description = "item_Legend_UpgradeArmor_tip" , type = "Button" , button_label = "item_Legend_UpgradeArmor_btn" , cmd = function() BD.Cheats.Legend.UpgradeArmor() end } ,
     { id = "Legend.UpgradeMods" , name = "item_Legend_UpgradeMods_name" , parent = "ItemMods" , description = "item_Legend_UpgradeMods_tip" , type = "Button" , button_label = "item_Legend_UpgradeMods_btn" , cmd = function() BD.Cheats.Legend.UpgradeMods() end } ,
     { id = "Legend.UpgradeCW" , name = "item_Legend_UpgradeCW_name" , parent = "ItemMods" , description = "item_Legend_UpgradeCW_tip" , type = "Button" , button_label = "item_Legend_UpgradeCW_btn" , cmd = function() BD.Cheats.Legend.UpgradeCW() end } ,
+	{ id = "Modify.RemoveQuestTags" , name = "item_Modify_RemoveQuestTags_name" , parent = "ItemMods" , description = "item_Modify_RemoveQuestTags_tip" , type = "Button" , button_label = "item_Modify_RemoveQuestTags_btn" , cmd = function() BD.Cheats.Modify.RemoveQuestTags() end } ,
 
   -- Player Stats
     { id = "Player.AddMaxArmor" , name = "item_Player_AddMaxArmor_name" , parent = "PlayerStats" , description = "item_Player_AddMaxArmor_tip" , type = "Input" , button_label = "item_Player_AddMaxArmor_btn" , value = 0 , cmd = function(value) BD.Cheats.Player.AddMaxArmor(value) end } ,
