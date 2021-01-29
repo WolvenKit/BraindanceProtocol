@@ -36,7 +36,7 @@ local Protocols = {
 --  	{ id = "ID" , name = "Display name" , parent = "Parent" , description = "Tooltip text" , type = "Select" , options = "Option1\0Option2\0Option3\0" , cmd = function(value) print("Command to run") end },
 
   -- Cheats
-  	{ id = "Platform.UnlockAllAchievements" , name = "item_Player_Platform_UnlockAllAchievements_name" , parent = "Cheats" , description = "item_Player_Platform_UnlockAllAchievements_tip" , type = "Button" , button_label = "item_Player_Platform_UnlockAllAchievements_btn" , cmd = function() BD.Cheats.Platform.UnlockAllAchievements() end },
+  	{ id = "Platform.UnlockAllAchievements" , name = "item_Platform_UnlockAllAchievements_name" , parent = "Cheats" , description = "item_Platform_UnlockAllAchievements_tip" , type = "Button" , button_label = "item_Platform_UnlockAllAchievements_btn" , cmd = function() BD.Cheats.Platform.UnlockAllAchievements() end },
 	{ id = "Player.AddMoney" , name = "item_Player_AddMoney_name" , parent = "Cheats" , description = "item_Player_AddMoney_tip" , type = "Input" , button_label = "item_Player_AddMoney_btn" , value = 10000 , cmd = function(value) BD.Cheats.Player.AddMoney(value) end } ,
 	{ id = "Player.DiscoverAllPOI" , name = "item_Player_Discover_All_POI_name" , parent = "Cheats" , description = "item_Player_Discover_All_POI_tip" , type = "Button" , button_label = "item_Player_Discover_All_POI_btn" , cmd = function() BD.Cheats.Player.DiscoverAllPOI() end },
 	{ id = "Player.ForceNPCDeath" , name = "item_Player_Force_Kill_NPC_name" , parent = "Cheats" , description = "item_Player_Force_Kill_NPC_tip" , type = "Button" , button_label = "item_Player_Force_Kill_NPC_btn" , cmd = function() BD.Cheats.Player.ForceNPCDeath() end },
