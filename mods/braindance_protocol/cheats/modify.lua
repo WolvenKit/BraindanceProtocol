@@ -32,12 +32,12 @@ function Modify.RemoveQuestTags()
     local moduleName = "Removed Quest Tags From Items"
     Utilities.StartProtocol(moduleName)
 	
-	player = Game.GetPlayer() 
-	ssc = Game.GetScriptableSystemsContainer() 
-	ts = Game.GetTransactionSystem() 
-	es = ssc:Get(CName.new('EquipmentSystem')) 
-	espd = es:GetPlayerData(player) 
-	espd['GetItemInEquipSlot2'] = espd['GetItemInEquipSlot;gamedataEquipmentAreaInt32'] 
+		player = Game.GetPlayer() 
+		ssc = Game.GetScriptableSystemsContainer() 
+		ts = Game.GetTransactionSystem() 
+		es = ssc:Get(CName.new('EquipmentSystem')) 
+		espd = es:GetPlayerData(player) 
+		espd['GetItemInEquipSlot2'] = espd['GetItemInEquipSlot;gamedataEquipmentAreaInt32'] 
 		local slots = { 
 				Face = 1, 
 				Feet = 1, 
@@ -54,9 +54,9 @@ function Modify.RemoveQuestTags()
 				itemid = espd:GetItemInEquipSlot2(k, i - 1) if itemid.tdbid.hash ~= 0 then 
 				itemdata = ts:GetItemData(player, itemid) if itemdata:HasTag("Quest") then 
 				itemdata:RemoveDynamicTag("Quest") end 
+				end 
 			end 
-		end 
-	end
+		end
 	
 	Utilities.FinishProtocol(moduleName)
 end
