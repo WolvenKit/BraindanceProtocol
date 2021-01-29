@@ -35,6 +35,9 @@ After adding more protocols into `protocols.lua`, we need to update the language
     {"lang":"en", "debug":true}
     ```
 2. Start *Braindance Protocol*, press the <kbd>Update language files</kbd> button.
+
+    ![Imgur](https://i.imgur.com/L4DRkfc.png)
+
 3. Updated language files will be created with "_update" suffix inside "lang/". (e.g. `en_update.lua`)
 4. New strings will be commented inside the `xx_update.lua`
     ```lua
