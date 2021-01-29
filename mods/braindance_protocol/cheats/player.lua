@@ -1,8 +1,8 @@
 local Player = {
     rootPath = "plugins.cyber_engine_tweaks.mods.braindance_protocol.",
-	slowMotion = false,
-	infiniteStamina = false,
-	godMode = false
+    slowMotion = false,
+    infiniteStamina = false,
+    godMode = false
 }
 
 local Utilities = require(Player.rootPath .. "utility")
@@ -31,46 +31,46 @@ end
 function Player.AddAmmo()
     local moduleName = "Refill All Ammunition"
     Utilities.StartProtocol(moduleName)
-	
-	Game.AddToInventory("Ammo.HandgunAmmo", 1000) 
-	Game.AddToInventory("Ammo.ShotgunAmmo", 1000) 
-	Game.AddToInventory("Ammo.RifleAmmo", 1000) 
-	Game.AddToInventory("Ammo.SniperRifleAmmo", 1000) 
-	Game.AddToInventory("Ammo.Special", 1000)
     
-	Utilities.FinishProtocol(moduleName)
+    Game.AddToInventory("Ammo.HandgunAmmo", 1000) 
+    Game.AddToInventory("Ammo.ShotgunAmmo", 1000) 
+    Game.AddToInventory("Ammo.RifleAmmo", 1000) 
+    Game.AddToInventory("Ammo.SniperRifleAmmo", 1000) 
+    Game.AddToInventory("Ammo.Special", 1000)
+    
+    Utilities.FinishProtocol(moduleName)
 end
 
 
 function Player.MaxOut()
-	local skills =
-	{
-		"Level",
-		"StreetCred",
+    local skills =
+    {
+        "Level",
+        "StreetCred",
 
-		"Assault",
-		"Athletics",
-		"Brawling",
-		"ColdBlood",
-		"CombatHacking", -- Quickhacks
-		"Crafting",
-		"Demolition", -- Annihilation
-		"Engineering",
-		"Gunslinger",
-		"Hacking",
-		"Kenjutsu", -- Blades
-		"Stealth"
-	}
+        "Assault",
+        "Athletics",
+        "Brawling",
+        "ColdBlood",
+        "CombatHacking", -- Quickhacks
+        "Crafting",
+        "Demolition", -- Annihilation
+        "Engineering",
+        "Gunslinger",
+        "Hacking",
+        "Kenjutsu", -- Blades
+        "Stealth"
+    }
 
-	local moduleName = "Max out Level, Streetcred, Perk, and Attributes"
+    local moduleName = "Max out Level, Streetcred, Perk, and Attributes"
     Utilities.StartProtocol(moduleName)
 
-	for _, attribute in ipairs(ATTRIBUTES) do
-		Game.SetAtt(attribute, 20)
-	end
+    for _, attribute in ipairs(ATTRIBUTES) do
+        Game.SetAtt(attribute, 20)
+    end
 
-	for _, skill in ipairs(skills) do
-		Game.AddExp(skill, 1000000000)
+    for _, skill in ipairs(skills) do
+        Game.AddExp(skill, 1000000000)
     end
 
     Player.AddMoney()
@@ -115,82 +115,82 @@ end
 function Player.SlowMotionToggle()
     local moduleName = "Slow-Motion"
     Utilities.StartProtocol(moduleName)
-	
-	Player.slowMotion = not Player.slowMotion
-	if (Player.slowMotion) then
-		Game.Slowmo()
-	else
-		Game.Noslowmo()
-	end
-	print("Status:", Player.slowMotion)
-	Utilities.FinishProtocol(moduleName)
+    
+    Player.slowMotion = not Player.slowMotion
+    if (Player.slowMotion) then
+        Game.Slowmo()
+    else
+        Game.Noslowmo()
+    end
+    print("Status:", Player.slowMotion)
+    Utilities.FinishProtocol(moduleName)
 end
 
 -- Toggle Infinte Stamina
 function Player.InfiniteStaminaToggle()
     local moduleName = "Infinite Stamina"
     Utilities.StartProtocol(moduleName)
-	
-	Player.infiniteStamina = not Player.infiniteStamina
-	Game.InfiniteStamina(Player.infiniteStamina)
-	
-	print("Status:", Player.infiniteStamina)
-	Utilities.FinishProtocol(moduleName)
+    
+    Player.infiniteStamina = not Player.infiniteStamina
+    Game.InfiniteStamina(Player.infiniteStamina)
+    
+    print("Status:", Player.infiniteStamina)
+    Utilities.FinishProtocol(moduleName)
 end
 
 -- God Mode Toggle
 function Player.GodModeToggle()
     local moduleName = "God Mode"
     Utilities.StartProtocol(moduleName)
-	
-	Player.godMode = not Player.godMode
-	if (Player.godMode) then
-		Game.AddStatModifier("Health", 99999, "Additive")
-		Game.AddStatModifier("Armor", 99999, "Additive")
-		Game.AddStatModifier("HealthRegeneration", 99999, "Additive")
-		Game.AddStatModifier("HealthInCombatRegenEnabled", 1, "Additive")
-		Game.AddStatModifier("HealthInCombatRegenRateMult", 20, "Additive")
-		Game.AddStatModifier("HealthInCombatStartDelay", -99, "Additive")
-		Game.AddStatModifier("HealthOutOfCombatRegenEnabled", 1, "Additive")
-		Game.AddStatModifier("HealthOutOfCombatRegenRateMult", 20, "Additive")
+    
+    Player.godMode = not Player.godMode
+    if (Player.godMode) then
+        Game.AddStatModifier("Health", 99999, "Additive")
+        Game.AddStatModifier("Armor", 99999, "Additive")
+        Game.AddStatModifier("HealthRegeneration", 99999, "Additive")
+        Game.AddStatModifier("HealthInCombatRegenEnabled", 1, "Additive")
+        Game.AddStatModifier("HealthInCombatRegenRateMult", 20, "Additive")
+        Game.AddStatModifier("HealthInCombatStartDelay", -99, "Additive")
+        Game.AddStatModifier("HealthOutOfCombatRegenEnabled", 1, "Additive")
+        Game.AddStatModifier("HealthOutOfCombatRegenRateMult", 20, "Additive")
 
-		Game.AddStatModifier("StaminaRegenEnabled", 1, "Additive")
-		Game.AddStatModifier("StaminaRegenRateMult", 20, "Additive")
-		Game.AddStatModifier("StaminaRegenStartDelay", -99, "Additive")
+        Game.AddStatModifier("StaminaRegenEnabled", 1, "Additive")
+        Game.AddStatModifier("StaminaRegenRateMult", 20, "Additive")
+        Game.AddStatModifier("StaminaRegenStartDelay", -99, "Additive")
 
-		Game.AddStatModifier("Memory", 20, "Additive")
-		Game.AddStatModifier("MemoryCostModifier", -90, "Additive")
-		Game.AddStatModifier("MemoryInCombatRegenEnabled", 1, "Additive")
-		Game.AddStatModifier("MemoryInCombatRegenRateMult", 20, "Additive")
-		Game.AddStatModifier("MemoryInCombatStartDelay", -99, "Additive")
-		Game.AddStatModifier("MemoryOutOfCombatRegenEnabled", 1, "Additive")
-		Game.AddStatModifier("MemoryOutOfCombatRegenRateMult", 20, "Additive")
-		Game.AddStatModifier("MemoryOutOfCombatStartDelay", -99, "Additive")
-	else
-		Game.AddStatModifier("Health", -99999, "Additive")
-		Game.AddStatModifier("Armor", -99999, "Additive")
-		Game.AddStatModifier("HealthRegeneration", -99999, "Additive")
-		Game.AddStatModifier("HealthInCombatRegenEnabled", -1, "Additive")
-		Game.AddStatModifier("HealthInCombatRegenRateMult", -20, "Additive")
-		Game.AddStatModifier("HealthInCombatStartDelay", 99, "Additive")
-		Game.AddStatModifier("HealthOutOfCombatRegenEnabled", -1, "Additive")
-		Game.AddStatModifier("HealthOutOfCombatRegenRateMult", -20, "Additive")
+        Game.AddStatModifier("Memory", 20, "Additive")
+        Game.AddStatModifier("MemoryCostModifier", -90, "Additive")
+        Game.AddStatModifier("MemoryInCombatRegenEnabled", 1, "Additive")
+        Game.AddStatModifier("MemoryInCombatRegenRateMult", 20, "Additive")
+        Game.AddStatModifier("MemoryInCombatStartDelay", -99, "Additive")
+        Game.AddStatModifier("MemoryOutOfCombatRegenEnabled", 1, "Additive")
+        Game.AddStatModifier("MemoryOutOfCombatRegenRateMult", 20, "Additive")
+        Game.AddStatModifier("MemoryOutOfCombatStartDelay", -99, "Additive")
+    else
+        Game.AddStatModifier("Health", -99999, "Additive")
+        Game.AddStatModifier("Armor", -99999, "Additive")
+        Game.AddStatModifier("HealthRegeneration", -99999, "Additive")
+        Game.AddStatModifier("HealthInCombatRegenEnabled", -1, "Additive")
+        Game.AddStatModifier("HealthInCombatRegenRateMult", -20, "Additive")
+        Game.AddStatModifier("HealthInCombatStartDelay", 99, "Additive")
+        Game.AddStatModifier("HealthOutOfCombatRegenEnabled", -1, "Additive")
+        Game.AddStatModifier("HealthOutOfCombatRegenRateMult", -20, "Additive")
 
-		Game.AddStatModifier("StaminaRegenEnabled", -1, "Additive")
-		Game.AddStatModifier("StaminaRegenRateMult", -20, "Additive")
-		Game.AddStatModifier("StaminaRegenStartDelay", 99, "Additive")
+        Game.AddStatModifier("StaminaRegenEnabled", -1, "Additive")
+        Game.AddStatModifier("StaminaRegenRateMult", -20, "Additive")
+        Game.AddStatModifier("StaminaRegenStartDelay", 99, "Additive")
 
-		Game.AddStatModifier("Memory", -20, "Additive")
-		Game.AddStatModifier("MemoryCostModifier", 90, "Additive")
-		Game.AddStatModifier("MemoryInCombatRegenEnabled", -1, "Additive")
-		Game.AddStatModifier("MemoryInCombatRegenRateMult", -20, "Additive")
-		Game.AddStatModifier("MemoryInCombatStartDelay", 99, "Additive")
-		Game.AddStatModifier("MemoryOutOfCombatRegenEnabled", -1, "Additive")
-		Game.AddStatModifier("MemoryOutOfCombatRegenRateMult", -20, "Additive")
-		Game.AddStatModifier("MemoryOutOfCombatStartDelay", 99, "Additive")
-	end
-	
-	print("Status:", Player.godMode)
+        Game.AddStatModifier("Memory", -20, "Additive")
+        Game.AddStatModifier("MemoryCostModifier", 90, "Additive")
+        Game.AddStatModifier("MemoryInCombatRegenEnabled", -1, "Additive")
+        Game.AddStatModifier("MemoryInCombatRegenRateMult", -20, "Additive")
+        Game.AddStatModifier("MemoryInCombatStartDelay", 99, "Additive")
+        Game.AddStatModifier("MemoryOutOfCombatRegenEnabled", -1, "Additive")
+        Game.AddStatModifier("MemoryOutOfCombatRegenRateMult", -20, "Additive")
+        Game.AddStatModifier("MemoryOutOfCombatStartDelay", 99, "Additive")
+    end
+    
+    print("Status:", Player.godMode)
     Utilities.FinishProtocol(moduleName)
 end
 
@@ -198,7 +198,7 @@ end
 function Player.RocketBootsOn()
     local moduleName = "Enables Rocket Boots (slow fall) - Reload Game To Disable"
     Utilities.StartProtocol(moduleName)
-	Game.ModStatPlayer("HasAirThrusters", "1")
+    Game.ModStatPlayer("HasAirThrusters", "1")
     Utilities.FinishProtocol(moduleName)
 end
 
@@ -206,7 +206,7 @@ end
 function Player.ForceNPCDeath()
     local moduleName = "Kills The Targeted NPC"
     Utilities.StartProtocol(moduleName)
-	Game.ForcedNPCDeath()
+    Game.ForcedNPCDeath()
     Utilities.FinishProtocol(moduleName)
 end
 
@@ -214,7 +214,7 @@ end
 function Player.DiscoverAllPOI()
     local moduleName = "Reveals All Points Of Interests (All '?' Marks)"
     Utilities.StartProtocol(moduleName)
-	Game.GetMappinSystem():DebugDiscoverAllPoiMappins()
+    Game.GetMappinSystem():DebugDiscoverAllPoiMappins()
     Utilities.FinishProtocol(moduleName)
 end
 
@@ -222,7 +222,7 @@ end
 function Player.InfiniteOxygenOn()
     local moduleName = "Enable Infine Oxygen - Reload Game To Disable"
     Utilities.StartProtocol(moduleName)
-	Game.ModStatPlayer("CanBreatheUnderwater", "1")
+    Game.ModStatPlayer("CanBreatheUnderwater", "1")
     Utilities.FinishProtocol(moduleName)
 end
 
@@ -230,89 +230,89 @@ end
 function Player.AddMaxHealth(quantity)
     local moduleName = "Add Max Health (cumulative)"
     Utilities.StartProtocol(moduleName)
-	
-	quantity = quantity or 0
+    
+    quantity = quantity or 0
 
     Game.ModStatPlayer("Health", quantity)
     
-	Utilities.FinishProtocol(moduleName)
+    Utilities.FinishProtocol(moduleName)
 end
 
 function Player.AddMaxArmor(quantity)
     local moduleName = "Add Max Armor (cumulative)"
     Utilities.StartProtocol(moduleName)
-	
-	quantity = quantity or 0
+    
+    quantity = quantity or 0
 
     Game.ModStatPlayer("Armor", quantity)
     
-	Utilities.FinishProtocol(moduleName)
+    Utilities.FinishProtocol(moduleName)
 end
 
 function Player.AddMaxStamina(quantity)
     local moduleName = "Add Max Stamina (cumulative)"
     Utilities.StartProtocol(moduleName)
-	
-	quantity = quantity or 0
+    
+    quantity = quantity or 0
 
     Game.ModStatPlayer("Stamina", quantity)
     
-	Utilities.FinishProtocol(moduleName)
+    Utilities.FinishProtocol(moduleName)
 end
 
 function Player.AddMaxOxygen(quantity)
     local moduleName = "Add Max Oxygen (cumulative)"
     Utilities.StartProtocol(moduleName)
-	
-	quantity = quantity or 0
+    
+    quantity = quantity or 0
 
     Game.ModStatPlayer("Oxygen", quantity)
     
-	Utilities.FinishProtocol(moduleName)
+    Utilities.FinishProtocol(moduleName)
 end
 
 function Player.AddMaxCritDamage(quantity)
     local moduleName = "Add Max Critical Damage (cumulative)"
     Utilities.StartProtocol(moduleName)
-	
-	quantity = quantity or 0
+    
+    quantity = quantity or 0
 
     Game.ModStatPlayer("CritDamage", quantity)
     
-	Utilities.FinishProtocol(moduleName)
+    Utilities.FinishProtocol(moduleName)
 end
 
 function Player.AddMaxCarryCapacity(quantity)
     local moduleName = "Add Max Carry Capacity (cumulative)"
     Utilities.StartProtocol(moduleName)
-	
-	quantity = quantity or 0
+    
+    quantity = quantity or 0
 
     Game.ModStatPlayer("CarryCapacity", quantity)
     
-	Utilities.FinishProtocol(moduleName)
+    Utilities.FinishProtocol(moduleName)
 end
 
 function Player.AddMaxMemorySlots(quantity)
     local moduleName = "Add Memory Slots (cumulative)"
     Utilities.StartProtocol(moduleName)
-	
-	quantity = quantity or 0
+    
+    quantity = quantity or 0
 
     Game.ModStatPlayer("Memory", quantity)
     
-	Utilities.FinishProtocol(moduleName)
+    Utilities.FinishProtocol(moduleName)
 end
 
 function Player.AddMaxMovementSpeed(quantity)
     local moduleName = "Add Movement Speed (cumulative)"
     Utilities.StartProtocol(moduleName)
-	
-	quantity = quantity or 0
+    
+    quantity = quantity or 0
 
     Game.ModStatPlayer("MaxSpeed", quantity)
     
-	Utilities.FinishProtocol(moduleName)
+    Utilities.FinishProtocol(moduleName)
 end
 
 return Player

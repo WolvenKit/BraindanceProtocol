@@ -38,7 +38,7 @@ local Protocols = {
 -- Cheats
     { id = "Platform.UnlockAllAchievements" , name = "item_Platform_UnlockAllAchievements_name" , parent = "Cheats" , description = "item_Platform_UnlockAllAchievements_tip" , type = "Button" , button_label = "item_Platform_UnlockAllAchievements_btn" , cmd = function() BD.Cheats.Platform.UnlockAllAchievements() end } ,
     { id = "Player.AddMoney" , name = "item_Player_AddMoney_name" , parent = "Cheats" , description = "item_Player_AddMoney_tip" , type = "Input" , button_label = "item_Player_AddMoney_btn" , value = 10000 , cmd = function(value) BD.Cheats.Player.AddMoney(value) end } ,
-	{ id = "Player.AddAmmo" , name = "item_Player_AddAmmo_name" , parent = "Cheats" , description = "item_Player_AddAmmo_tip" , type = "Button" , button_label = "item_Player_AddAmmo_btn" , cmd = function() BD.Cheats.Player.AddAmmo() end } ,
+    { id = "Player.AddAmmo" , name = "item_Player_AddAmmo_name" , parent = "Cheats" , description = "item_Player_AddAmmo_tip" , type = "Button" , button_label = "item_Player_AddAmmo_btn" , cmd = function() BD.Cheats.Player.AddAmmo() end } ,
     { id = "Player.DiscoverAllPOI" , name = "item_Player_DiscoverAllPOI_name" , parent = "Cheats" , description = "item_Player_DiscoverAllPOI_tip" , type = "Button" , button_label = "item_Player_DiscoverAllPOI_btn" , cmd = function() BD.Cheats.Player.DiscoverAllPOI() end } ,
     { id = "Player.ForceNPCDeath" , name = "item_Player_ForceNPCDeath_name" , parent = "Cheats" , description = "item_Player_ForceNPCDeath_tip" , type = "Button" , button_label = "item_Player_ForceNPCDeath_btn" , cmd = function() BD.Cheats.Player.ForceNPCDeath() end } ,
     { id = "Player.GodModeToggle" , name = "item_Player_GodModeToggle_name" , parent = "Cheats" , description = "item_Player_GodModeToggle_tip" , type = "Button" , button_label = "item_Player_GodModeToggle_btn" , cmd = function() BD.Cheats.Player.GodModeToggle() end } ,
@@ -47,7 +47,7 @@ local Protocols = {
     { id = "Player.MaxOut" , name = "item_Player_MaxOut_name" , parent = "Cheats" , description = "item_Player_MaxOut_tip" , type = "Button" , button_label = "item_Player_MaxOut_btn" , cmd = function() BD.Cheats.Player.MaxOut() end } ,
     { id = "Player.Respec" , name = "item_Player_Respec_name" , parent = "Cheats" , description = "item_Player_Respec_tip" , type = "Button" , button_label = "item_Player_Respec_btn" , cmd = function() BD.Cheats.Player.Respec() end } ,
     { id = "Player.RocketBootsOn" , name = "item_Player_RocketBootsOn_name" , parent = "Cheats" , description = "item_Player_RocketBootsOn_tip" , type = "Button" , button_label = "item_Player_RocketBootsOn_btn" , cmd = function() BD.Cheats.Player.RocketBootsOn() end } ,
-	{ id = "Player.SlowMotionToggle" , name = "item_Player_SlowMotionToggle_name" , parent = "Cheats" , description = "item_Player_SlowMotionToggle_tip" , type = "Button" , button_label = "item_Player_SlowMotionToggle_btn" , cmd = function() BD.Cheats.Player.SlowMotionToggle() end } ,
+    { id = "Player.SlowMotionToggle" , name = "item_Player_SlowMotionToggle_name" , parent = "Cheats" , description = "item_Player_SlowMotionToggle_tip" , type = "Button" , button_label = "item_Player_SlowMotionToggle_btn" , cmd = function() BD.Cheats.Player.SlowMotionToggle() end } ,
     { id = "Johnny.AddItems" , name = "item_Johnny_AddItems_name" , parent = "Cheats" , description = "item_Johnny_AddItems_tip" , type = "Button" , button_label = "item_Johnny_AddItems_btn" , cmd = function() BD.Cheats.Johnny.AddItems() end } ,
 
   -- Crafting
@@ -107,7 +107,7 @@ local Protocols = {
     { id = "Legend.UpgradeArmor" , name = "item_Legend_UpgradeArmor_name" , parent = "ItemMods" , description = "item_Legend_UpgradeArmor_tip" , type = "Button" , button_label = "item_Legend_UpgradeArmor_btn" , cmd = function() BD.Cheats.Legend.UpgradeArmor() end } ,
     { id = "Legend.UpgradeMods" , name = "item_Legend_UpgradeMods_name" , parent = "ItemMods" , description = "item_Legend_UpgradeMods_tip" , type = "Button" , button_label = "item_Legend_UpgradeMods_btn" , cmd = function() BD.Cheats.Legend.UpgradeMods() end } ,
     { id = "Legend.UpgradeCW" , name = "item_Legend_UpgradeCW_name" , parent = "ItemMods" , description = "item_Legend_UpgradeCW_tip" , type = "Button" , button_label = "item_Legend_UpgradeCW_btn" , cmd = function() BD.Cheats.Legend.UpgradeCW() end } ,
-	{ id = "Modify.RemoveQuestTags" , name = "item_Modify_RemoveQuestTags_name" , parent = "ItemMods" , description = "item_Modify_RemoveQuestTags_tip" , type = "Button" , button_label = "item_Modify_RemoveQuestTags_btn" , cmd = function() BD.Cheats.Modify.RemoveQuestTags() end } ,
+    { id = "Modify.RemoveQuestTags" , name = "item_Modify_RemoveQuestTags_name" , parent = "ItemMods" , description = "item_Modify_RemoveQuestTags_tip" , type = "Button" , button_label = "item_Modify_RemoveQuestTags_btn" , cmd = function() BD.Cheats.Modify.RemoveQuestTags() end } ,
 
   -- Player Stats
     { id = "Player.AddMaxArmor" , name = "item_Player_AddMaxArmor_name" , parent = "PlayerStats" , description = "item_Player_AddMaxArmor_tip" , type = "Input" , button_label = "item_Player_AddMaxArmor_btn" , value = 0 , cmd = function(value) BD.Cheats.Player.AddMaxArmor(value) end } ,
