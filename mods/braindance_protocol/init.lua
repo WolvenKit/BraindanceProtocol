@@ -36,6 +36,19 @@ registerHotkey("braindance_protocol_interface", "Open Protocol Interface", funct
 	drawWindow = not drawWindow
 end)
 
+-- A Few Hotkeys
+registerHotkey("braindance_protocol_addMoney", "Add Some Money", function()
+	BD.Cheats.Player.AddMoney(10000)
+end)
+
+registerHotkey("braindance_protocol_addAmmo", "Refill Ammunition", function()
+	BD.Cheats.Player.AddAmmo()
+end)
+
+registerHotkey("braindance_protocol_forceKillNPC", "Force Kill NPC", function()
+	BD.Cheats.Player.ForceNPCDeath()
+end)
+
 registerForEvent("onUpdate", function()
 	for l in pairs(languages) do
 		if languages[l].selLang then
