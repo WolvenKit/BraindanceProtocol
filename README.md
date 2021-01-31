@@ -20,10 +20,10 @@ Drop `mods` folder into `bin\x64\plugins\cyber_engine_tweaks\`
 ## Currently Supported Languages
 
 - English
-- Chinese - 中文 (Translatior: Senfee-Cheng)
-- Danish - Dansk (Translatior: VP-EN)
-- German - Deutsch (Translatior: nodeg)
-- Russian - Русский (Translatior: vanja-san)
+- Chinese - 中文 (Translator: Senfee-Cheng)
+- Danish - Dansk (Translator: VP-EN)
+- German - Deutsch (Translator: nodeg)
+- Russian - Русский (Translator: vanja-san)
 
 ## Need help with translation
 
