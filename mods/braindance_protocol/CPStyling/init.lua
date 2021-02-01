@@ -1,6 +1,8 @@
 -- MIT License
 --
--- - CPStyling.lua
+-- CPStyling.lua https://github.com/Nats-ji/CPStyling.lua
+--
+-- This file is a part of CPStyling.lua
 --
 -- Copyright (c) 2021 Mingming Cui
 --
@@ -23,220 +25,13 @@
 -- SOFTWARE.
 
 local CPStyle = {}
+local currentFilePath = "CPStyling/"
+CPStyle.theme = require(currentFilePath.."theme")
+local styles = require(currentFilePath.."styles")
+local ImGuiStyleNames = styles.ImGuiStyleNames
+CPStyle.color = styles.color
 
-local function isModuleAvailable(module)
-    res = pcall(require,module)
-    if res then return true
-    elseif not(res) then
-        return false
-    end
-end
-
-if isModuleAvailable("png-lua/png") then
-  png = require("png-lua/png")
-end
-
-CPStyle.theme = {
-  Text                                        =           { 1.00, 0.38, 0.33, 1.00 },
-  TextDisabled                                =           { 0.48, 0.39, 0.40, 1.00 },
-  WindowBg                                    =           { 0.06, 0.04, 0.06, 0.90 },
-  ChildBg                                     =           { 0.00, 0.00, 0.00, 0.00 },
-  PopupBg                                     =           { 0.06, 0.04, 0.06, 0.90 },
-  Border                                      =           { 0.30, 0.07, 0.08, 1.00 },
-  BorderShadow                                =           { 0.00, 0.00, 0.00, 0.00 },
-  FrameBg                                     =           { 0.50, 0.13, 0.16, 0.50 },
-  FrameBgHovered                              =           { 0.32, 0.11, 0.12, 0.50 },
-  FrameBgActive                               =           { 0.50, 0.13, 0.16, 0.50 },
-  -- FrameBgDisabled                          =           { 0.48, 0.39, 0.40, 1.00 },
-  -- FrameBgHoveredDisabled                   =           { 0.48, 0.39, 0.40, 1.00 },
-  -- FrameBgActiveDisabled                    =           { 0.48, 0.39, 0.40, 1.00 },
-  TitleBg                                     =           { 0.06, 0.04, 0.06, 0.90 },
-  TitleBgActive                               =           { 0.06, 0.04, 0.06, 0.90 },
-  TitleBgCollapsed                            =           { 0.06, 0.04, 0.06, 0.90 },
-  MenuBarBg                                   =           { 0.00, 0.00, 0.00, 0.00 },
-  ScrollbarBg                                 =           { 0.23, 0.07, 0.09, 1.00 },
-  ScrollbarGrab                               =           { 0.95, 0.30, 0.28, 1.00 },
-  ScrollbarGrabHovered                        =           { 0.95, 0.30, 0.28, 1.00 },
-  ScrollbarGrabActive                         =           { 0.95, 0.30, 0.28, 1.00 },
-  CheckMark                                   =           { 1.00, 0.44, 0.40, 1.00 },
-  -- CheckMarkTrueDisabled                    =           { 0.34, 0.22, 0.24, 1.00 },
-  -- CheckMarkFalseDisabled                   =           { 0.48, 0.39, 0.40, 1.00 },
-  SliderGrab                                  =           { 0.64, 0.22, 0.21, 1.00 },
-  SliderGrabActive                            =           { 0.64, 0.22, 0.21, 1.00 },
-  Button                                      =           { 0.57, 0.17, 0.16, 1.00 },
-  ButtonHovered                               =           { 0.45, 0.13, 0.14, 1.00 },
-  ButtonActive                                =           { 0.57, 0.17, 0.16, 1.00 },
-  Header                                      =           { 0.08, 0.08, 0.15, 1.00 },
-  HeaderHovered                               =           { 0.22, 0.64, 0.69, 0.30 },
-  HeaderActive                                =           { 0.22, 0.64, 0.69, 0.50 },
-  Separator                                   =           { 0.26, 0.09, 0.09, 1.00 },
-  SeparatorHovered                            =           { 0.26, 0.09, 0.09, 1.00 },
-  SeparatorActive                             =           { 0.26, 0.09, 0.09, 1.00 },
-  ResizeGrip                                  =           { 0.00, 0.00, 0.00, 0.00 },
-  ResizeGripHovered                           =           { 0.45, 0.13, 0.14, 1.00 },
-  ResizeGripActive                            =           { 0.57, 0.17, 0.16, 1.00 },
-  Tab                                         =           { 0.57, 0.17, 0.16, 1.00 },
-  TabHovered                                  =           { 0.45, 0.13, 0.14, 1.00 },
-  TabActive                                   =           { 0.57, 0.17, 0.16, 1.00 },
-  TabUnfocused                                =           { 0.45, 0.14, 0.13, 1.00 },
-  TabUnfocusedActive                          =           { 0.58, 0.18, 0.16, 1.00 },
-  -- PlotLines                                =           { 0.00, 0.00, 0.00, 0.00 },
-  -- PlotLinesHovered                         =           { 0.00, 0.00, 0.00, 0.00 },
-  -- PlotHistogram                            =           { 0.00, 0.00, 0.00, 0.00 },
-  -- PlotHistogramHovered                     =           { 0.00, 0.00, 0.00, 0.00 },
-  TextSelectedBg                              =           { 0.06, 0.06, 0.12, 1.00 },
-  -- DragDropTarget                           =           { 0.00, 0.00, 0.00, 0.00 },
-  -- NavHighlight                             =           { 0.00, 0.00, 0.00, 0.00 },
-  -- NavWindowingHighlight                    =           { 0.00, 0.00, 0.00, 0.00 },
-  -- NavWindowingDimBg                        =           { 0.00, 0.00, 0.00, 0.00 },
-  ModalWindowDimBg                            =           { 0.00, 0.00, 0.00, 0.00 },
-  -- ModalWindowDarkening                        =           { 0.00, 0.00, 0.00, 0.40 },
-  CPButton                                    =           { 0.06, 0.06, 0.12, 1.00 },
-  CPButtonHovered                             =           { 0.43, 0.13, 0.13, 1.00 },
-  CPButtonActive                              =           { 0.57, 0.16, 0.16, 1.00 },
-  CPButtonText                                =           { 0.34, 0.95, 0.98, 1.00 },
-  CPButtonBorder                              =           { 0.40, 0.08, 0.09, 1.00 },
-  CPButtonBorderHovered                       =           { 0.34, 0.95, 0.98, 1.00 },
-  CPToggleOn                                  =           { 0.37, 0.96, 1.00, 1.00 },
-  CPToggleOnHovered                           =           { 0.29, 0.77, 0.80, 1.00 },
-  CPToggleOnText                              =           { 0.00, 0.00, 0.00, 1.00 },
-  CPToggleOnTextHovered                       =           { 0.00, 0.00, 0.00, 1.00 },
-  CPToggleOnBorder                            =           { 0.29, 0.61, 0.58, 1.00 },
-  CPToggleOnBorderHovered                     =           { 0.26, 0.66, 0.65, 1.00 },
-  CPToggleOnDisabled                          =           { 0.03, 0.12, 0.12, 1.00 },
-  CPToggleOnDisabledHovered                   =           { 0.05, 0.16, 0.16, 1.00 },
-  CPToggleOnDisabledText                      =           { 0.08, 0.23, 0.25, 1.00 },
-  CPToggleOnDisabledTextHovered               =           { 0.09, 0.29, 0.30, 1.00 },
-  CPToggleOnDisabledBorder                    =           { 0.06, 0.15, 0.15, 1.00 },
-  CPToggleOnDisabledBorderHovered             =           { 0.09, 0.24, 0.25, 1.00 },
-  CPToggleOff                                 =           { 0.58, 0.18, 0.16, 1.00 },
-  CPToggleOffHovered                          =           { 0.45, 0.14, 0.13, 1.00 },
-  CPToggleOffText                             =           { 1.00, 0.44, 0.41, 1.00 },
-  CPToggleOffTextHovered                      =           { 1.00, 0.36, 0.33, 1.00 },
-  CPToggleOffBorder                           =           { 0.92, 0.29, 0.26, 1.00 },
-  CPToggleOffBorderHovered                    =           { 0.76, 0.23, 0.21, 1.00 },
-  CPToggleOffDisabled                         =           { 0.09, 0.04, 0.07, 1.00 },
-  CPToggleOffDisabledHovered                  =           { 0.16, 0.06, 0.07, 1.00 },
-  CPToggleOffDisabledText                     =           { 0.32, 0.09, 0.10, 1.00 },
-  CPToggleOffDisabledTextHovered              =           { 0.36, 0.11, 0.11, 1.00 },
-  CPToggleOffDisabledBorder                   =           { 0.19, 0.08, 0.09, 1.00 },
-  CPToggleOffDisabledBorderHovered            =           { 0.30, 0.09, 0.10, 1.00 },
-  CPFrameBg                                   =           { 0.06, 0.06, 0.12, 1.00 },
-  CPFrameBgHovered                            =           { 0.31, 0.11, 0.11, 1.00 },
-  CPFrameBgActive                             =           { 0.57, 0.19, 0.19, 1.00 },
-  CPSliderGrab                                =           { 0.64, 0.21, 0.21, 1.00 },
-  CPSliderGrabActive                          =           { 0.64, 0.21, 0.21, 1.00 },
-  CPFrameBorder                               =           { 0.40, 0.08, 0.09, 1.00 },
-  CPTextSelectedBg                            =           { 0.45, 0.14, 0.13, 1.00 },
-  CPToolTip2Bg                                =           { 0.11, 0.22, 0.25, 0.60 },
-  CPToolTip2Border                            =           { 0.18, 0.42, 0.46, 1.00 },
-  CPToolTip2Separator                         =           { 0.24, 0.55, 0.58, 1.00 },
-  CPToolTip2SideBg                            =           { 0.12, 0.24, 0.27, 1.00 },
-  Hidden                                      =           { 0.00, 0.00, 0.00, 0.00 }
-}
-
-CPStyle.color = {
-  red             =            { 1.00, 0.00, 0.00, 1.00 },
-  cyan            =            { 0.00, 1.00, 1.00, 1.00 },
-  blue            =            { 0.00, 0.00, 1.00, 1.00 },
-  darkBlue        =            { 0.00, 0.00, 0.63, 1.00 },
-  lightBlue       =            { 0.68, 0.85, 0.90, 1.00 },
-  purple          =            { 0.50, 0.00, 0.50, 1.00 },
-  yellow          =            { 1.00, 1.00, 0.00, 1.00 },
-  lime            =            { 0.00, 1.00, 0.00, 1.00 },
-  magenta         =            { 1.00, 0.00, 1.00, 1.00 },
-  white           =            { 1.00, 1.00, 1.00, 1.00 },
-  silver          =            { 0.75, 0.75, 0.75, 1.00 },
-  grey            =            { 0.50, 0.50, 0.50, 1.00 },
-  black           =            { 0.00, 0.00, 0.00, 1.00 },
-  orange          =            { 1.00, 0.65, 0.00, 1.00 },
-  brown           =            { 0.65, 0.16, 0.16, 1.00 },
-  maroon          =            { 0.50, 0.00, 0.00, 1.00 },
-  green           =            { 0.00, 0.50, 0.00, 1.00 },
-  olive           =            { 0.50, 0.50, 0.00, 1.00 }
-}
-
-
-local ImGuiStyleNames = {
-  Col = {
-    { ImGuiStyle = ImGuiCol.Text                        , ImGuiStyleShort = "Text" },
-    { ImGuiStyle = ImGuiCol.TextDisabled                , ImGuiStyleShort = "TextDisabled" },
-    { ImGuiStyle = ImGuiCol.WindowBg                    , ImGuiStyleShort = "WindowBg" },
-    { ImGuiStyle = ImGuiCol.ChildBg                     , ImGuiStyleShort = "ChildBg" },
-    { ImGuiStyle = ImGuiCol.PopupBg                     , ImGuiStyleShort = "PopupBg" },
-    { ImGuiStyle = ImGuiCol.Border                      , ImGuiStyleShort = "Border" },
-    { ImGuiStyle = ImGuiCol.BorderShadow                , ImGuiStyleShort = "BorderShadow" },
-    { ImGuiStyle = ImGuiCol.FrameBg                     , ImGuiStyleShort = "FrameBg" },
-    { ImGuiStyle = ImGuiCol.FrameBgHovered              , ImGuiStyleShort = "FrameBgHovered" },
-    { ImGuiStyle = ImGuiCol.FrameBgActive               , ImGuiStyleShort = "FrameBgActive" },
-    { ImGuiStyle = ImGuiCol.TitleBg                     , ImGuiStyleShort = "TitleBg" },
-    { ImGuiStyle = ImGuiCol.TitleBgActive               , ImGuiStyleShort = "TitleBgActive" },
-    { ImGuiStyle = ImGuiCol.TitleBgCollapsed            , ImGuiStyleShort = "TitleBgCollapsed" },
-    { ImGuiStyle = ImGuiCol.MenuBarBg                   , ImGuiStyleShort = "MenuBarBg" },
-    { ImGuiStyle = ImGuiCol.ScrollbarBg                 , ImGuiStyleShort = "ScrollbarBg" },
-    { ImGuiStyle = ImGuiCol.ScrollbarGrab               , ImGuiStyleShort = "ScrollbarGrab" },
-    { ImGuiStyle = ImGuiCol.ScrollbarGrabHovered        , ImGuiStyleShort = "ScrollbarGrabHovered" },
-    { ImGuiStyle = ImGuiCol.ScrollbarGrabActive         , ImGuiStyleShort = "ScrollbarGrabActive" },
-    { ImGuiStyle = ImGuiCol.CheckMark                   , ImGuiStyleShort = "CheckMark" },
-    { ImGuiStyle = ImGuiCol.SliderGrab                  , ImGuiStyleShort = "SliderGrab" },
-    { ImGuiStyle = ImGuiCol.SliderGrabActive            , ImGuiStyleShort = "SliderGrabActive" },
-    { ImGuiStyle = ImGuiCol.Button                      , ImGuiStyleShort = "Button" },
-    { ImGuiStyle = ImGuiCol.ButtonHovered               , ImGuiStyleShort = "ButtonHovered" },
-    { ImGuiStyle = ImGuiCol.ButtonActive                , ImGuiStyleShort = "ButtonActive" },
-    { ImGuiStyle = ImGuiCol.Header                      , ImGuiStyleShort = "Header" },
-    { ImGuiStyle = ImGuiCol.HeaderHovered               , ImGuiStyleShort = "HeaderHovered" },
-    { ImGuiStyle = ImGuiCol.HeaderActive                , ImGuiStyleShort = "HeaderActive" },
-    { ImGuiStyle = ImGuiCol.Separator                   , ImGuiStyleShort = "Separator" },
-    { ImGuiStyle = ImGuiCol.SeparatorHovered            , ImGuiStyleShort = "SeparatorHovered" },
-    { ImGuiStyle = ImGuiCol.SeparatorActive             , ImGuiStyleShort = "SeparatorActive" },
-    { ImGuiStyle = ImGuiCol.ResizeGrip                  , ImGuiStyleShort = "ResizeGrip" },
-    { ImGuiStyle = ImGuiCol.ResizeGripHovered           , ImGuiStyleShort = "ResizeGripHovered" },
-    { ImGuiStyle = ImGuiCol.ResizeGripActive            , ImGuiStyleShort = "ResizeGripActive" },
-    { ImGuiStyle = ImGuiCol.Tab                         , ImGuiStyleShort = "Tab" },
-    { ImGuiStyle = ImGuiCol.TabHovered                  , ImGuiStyleShort = "TabHovered" },
-    { ImGuiStyle = ImGuiCol.TabActive                   , ImGuiStyleShort = "TabActive" },
-    { ImGuiStyle = ImGuiCol.TabUnfocused                , ImGuiStyleShort = "TabUnfocused" },
-    { ImGuiStyle = ImGuiCol.TabUnfocusedActive          , ImGuiStyleShort = "TabUnfocusedActive" },
-    { ImGuiStyle = ImGuiCol.PlotLines                   , ImGuiStyleShort = "PlotLines" },
-    { ImGuiStyle = ImGuiCol.PlotLinesHovered            , ImGuiStyleShort = "PlotLinesHovered" },
-    { ImGuiStyle = ImGuiCol.PlotHistogram               , ImGuiStyleShort = "PlotHistogram" },
-    { ImGuiStyle = ImGuiCol.PlotHistogramHovered        , ImGuiStyleShort = "PlotHistogramHovered" },
-    { ImGuiStyle = ImGuiCol.TextSelectedBg              , ImGuiStyleShort = "TextSelectedBg" },
-    { ImGuiStyle = ImGuiCol.DragDropTarget              , ImGuiStyleShort = "DragDropTarget" },
-    { ImGuiStyle = ImGuiCol.NavHighlight                , ImGuiStyleShort = "NavHighlight" },
-    { ImGuiStyle = ImGuiCol.NavWindowingHighlight       , ImGuiStyleShort = "NavWindowingHighlight" },
-    { ImGuiStyle = ImGuiCol.NavWindowingDimBg           , ImGuiStyleShort = "NavWindowingDimBg" },
-    { ImGuiStyle = ImGuiCol.ModalWindowDimBg            , ImGuiStyleShort = "ModalWindowDimBg" },
-    -- { ImGuiStyle = ImGuiCol.ModalWindowDarkening        , ImGuiStyleShort = "ModalWindowDarkening" },
-    { ImGuiStyle = ImGuiCol.COUNT                       , ImGuiStyleShort = "COUNT" }
-  },
-  Var = {
-    { ImGuiStyle = ImGuiStyleVar.Alpha                  , ImGuiStyleShort = "Alpha" },
-    { ImGuiStyle = ImGuiStyleVar.WindowPadding          , ImGuiStyleShort = "WindowPadding" },
-    { ImGuiStyle = ImGuiStyleVar.WindowRounding         , ImGuiStyleShort = "WindowRounding" },
-    { ImGuiStyle = ImGuiStyleVar.WindowBorderSize       , ImGuiStyleShort = "WindowBorderSize" },
-    { ImGuiStyle = ImGuiStyleVar.WindowMinSize          , ImGuiStyleShort = "WindowMinSize" },
-    { ImGuiStyle = ImGuiStyleVar.WindowTitleAlign       , ImGuiStyleShort = "WindowTitleAlign" },
-    { ImGuiStyle = ImGuiStyleVar.ChildRounding          , ImGuiStyleShort = "ChildRounding" },
-    { ImGuiStyle = ImGuiStyleVar.ChildBorderSize        , ImGuiStyleShort = "ChildBorderSize" },
-    { ImGuiStyle = ImGuiStyleVar.PopupRounding          , ImGuiStyleShort = "PopupRounding" },
-    { ImGuiStyle = ImGuiStyleVar.PopupBorderSize        , ImGuiStyleShort = "PopupBorderSize" },
-    { ImGuiStyle = ImGuiStyleVar.FramePadding           , ImGuiStyleShort = "FramePadding" },
-    { ImGuiStyle = ImGuiStyleVar.FrameRounding          , ImGuiStyleShort = "FrameRounding" },
-    { ImGuiStyle = ImGuiStyleVar.FrameBorderSize        , ImGuiStyleShort = "FrameBorderSize" },
-    { ImGuiStyle = ImGuiStyleVar.ItemSpacing            , ImGuiStyleShort = "ItemSpacing" },
-    { ImGuiStyle = ImGuiStyleVar.ItemInnerSpacing       , ImGuiStyleShort = "ItemInnerSpacing" },
-    { ImGuiStyle = ImGuiStyleVar.IndentSpacing          , ImGuiStyleShort = "IndentSpacing" },
-    { ImGuiStyle = ImGuiStyleVar.ScrollbarSize          , ImGuiStyleShort = "ScrollbarSize" },
-    { ImGuiStyle = ImGuiStyleVar.ScrollbarRounding      , ImGuiStyleShort = "ScrollbarRounding" },
-    { ImGuiStyle = ImGuiStyleVar.GrabMinSize            , ImGuiStyleShort = "GrabMinSize" },
-    { ImGuiStyle = ImGuiStyleVar.GrabRounding           , ImGuiStyleShort = "GrabRounding" },
-    { ImGuiStyle = ImGuiStyleVar.TabRounding            , ImGuiStyleShort = "TabRounding" },
-    { ImGuiStyle = ImGuiStyleVar.SelectableTextAlign    , ImGuiStyleShort = "SelectableTextAlign" },
-    { ImGuiStyle = ImGuiStyleVar.ButtonTextAlign        , ImGuiStyleShort = "ButtonTextAlign" },
-    { ImGuiStyle = ImGuiStyleVar.COUNT                  , ImGuiStyleShort = "COUNT" }
-  }
-}
+png = require(currentFilePath.."png-lua/png")
 
 local function ToImGuiStyleName(style, which)
 	if which == "Col" then
@@ -356,7 +151,6 @@ function CPStyle.setThemeBegin()
 	-- CPStyle.colorBegin("NavWindowingHighlight"          , CPStyle.theme.NavWindowingHighlight)
 	-- CPStyle.colorBegin("NavWindowingDimBg"              , CPStyle.theme.NavWindowingDimBg)
 	CPStyle.colorBegin("ModalWindowDimBg"               , CPStyle.theme.ModalWindowDimBg)
-	-- CPStyle.colorBegin("ModalWindowDarkening"           , CPStyle.theme.ModalWindowDarkening)
   CPStyle.styleBegin("WindowRounding"                 , 0)
 	CPStyle.styleBegin("ScrollbarSize"                  , 9)
 end
@@ -601,7 +395,7 @@ function CPStyle.CPDraw(name, image, scale)
   for i = 1, totalPixel do
     ImGui.SetCursorPos(cursorx, cursory)
     if image.pixels[pixely][pixelx][4] ~= 0 then
-      CPStyle.CPRect2("##"..name..i, scale, scale, image.pixels[pixely][pixelx])
+      CPStyle.CPRect2("##"..name..i, scale*1.2, scale*1.2, image.pixels[pixely][pixelx])
     end
     pixelx = pixelx + 1
     if pixelx > image.width then pixelx = 1 pixely = pixely + 1 end
