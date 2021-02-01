@@ -1,20 +1,18 @@
 local BraindanceProtocol = {
 description = "",
-rootPath =	"plugins.cyber_engine_tweaks.mods.braindance_protocol."
 }
 
-local BD = require(BraindanceProtocol.rootPath.."BD")
+local BD = require("BD")
 
 registerForEvent("onInit", function()
-	CPS = require(BraindanceProtocol.rootPath.."CPStyling")
-	fact = require(BraindanceProtocol.rootPath.."fact")
-	i18n = require(BraindanceProtocol.rootPath.."i18n")
-	languages = require(BraindanceProtocol.rootPath.."lang.lang")
+	CPS = require("CPStyling")
+	fact = require("fact")
+	i18n = require("i18n")
+	languages = require("lang/lang")
 	theme = CPS.theme
 	color = CPS.color
-	currentWorkingDir = CPS.getCWD("braindance_protocol")
-	config = loadConfig(currentWorkingDir)
-	protocols = require(BraindanceProtocol.rootPath.."protocols")
+	config = loadConfig()
+	protocols = require("protocols")
 	if config.debug then
 		drawWindow = true
 	else
@@ -52,7 +50,7 @@ end)
 registerForEvent("onUpdate", function()
 	for l in pairs(languages) do
 		if languages[l].selLang then
-			setLang(languages[l].id, currentWorkingDir)
+			setLang(languages[l].id)
 			languages[l].selLang = false
 		end
 	end
@@ -144,19 +142,17 @@ end)
 
 function saveConfig(config_file, config)
 	local file = io.open(config_file, "w")
-	io.output(file)
 	local jconfig = json.encode(config)
-	io.write(jconfig)
+	file:write(jconfig)
 	file:close()
 end
 
-function loadConfig(currentWorkingDir)
-	local config_file = currentWorkingDir.."config.json"
+function loadConfig()
+	local config_file = "config.json"
 	local config
 	if CPS.fileExists(config_file) then
 		local file = io.open(config_file, "r")
-		io.input(file)
-		config = json.decode(io.read("*a"))
+		config = json.decode(file:read("*a"))
 		file:close()
 		if config.lang == nil then
 			config.lang = "en"
@@ -167,28 +163,26 @@ function loadConfig(currentWorkingDir)
 		saveConfig(config_file, config)
 	end
 	if config.lang ~= "en" then
-		i18n.loadFile(currentWorkingDir.."lang/en.lua")
+		i18n.loadFile("lang/en.lua")
 	end
-	i18n.loadFile(currentWorkingDir.."lang/"..config.lang..".lua")
+	i18n.loadFile("lang/"..config.lang..".lua")
 	i18n.setLocale(config.lang)
 	return config
 end
 
-function setLang(language, currentWorkingDir)
-	i18n.loadFile(currentWorkingDir.."lang/"..language..".lua")
+function setLang(language)
+	i18n.loadFile("lang/"..language..".lua")
 	i18n.setLocale(language)
 	config.lang = language
-	saveConfig(currentWorkingDir.."config.json", config)
+	saveConfig("config.json", config)
 end
 
 function updateLang()
-	local cwd = CPS.getCWD("braindance_protocol")
 	local i18n_str = {}
 	local i = 1
 	-- scan init.lua for i18n strings
-	local init_lua = io.open(cwd.."init.lua", "r")
-	io.input(init_lua)
-	local init_lua_s = io.read("*a")
+	local init_lua = io.open("init.lua", "r")
+	local init_lua_s = init_lua:read("*a")
 	for w in string.gmatch(init_lua_s, [[i18n%("([^"]+)]]) do
 		for t in pairs(i18n_str) do
 			if w == i18n_str[t] then
@@ -205,7 +199,7 @@ function updateLang()
 	end
 	init_lua:close()
 	-- read protocols.Parents into i18n_str
-	local protocols = dofile(cwd.."protocols.lua")
+	local protocols = dofile("protocols.lua")
 	for t in pairs(protocols.Parents) do
 		i18n_str[i] = "parent_"..protocols.Parents[t].id
 		print(i..": "..i18n_str[i])
@@ -248,35 +242,34 @@ function updateLang()
 	    end
 	    return newstr
 	end
-	local languages = dofile(cwd.."lang/lang.lua")
+	local languages = dofile("lang/lang.lua")
 	for t in pairs(languages) do
 		local lang = languages[t].id
-		local old_en_file = dofile(cwd.."lang/en.lua")
-		local old_lang_file = dofile(cwd.."lang/"..lang..".lua")
-		local new_lang_file = io.open(cwd.."/lang/"..lang.."_update.lua", "w")
-		io.output(new_lang_file)
+		local old_en_file = dofile("lang/en.lua")
+		local old_lang_file = dofile("lang/"..lang..".lua")
+		local new_lang_file = io.open("/lang/"..lang.."_update.lua", "w")
 		-- header
-		io.write("return {\n")
-		io.write("  "..lang.." = {\n")
+		new_lang_file:write("return {\n")
+		new_lang_file:write("  "..lang.." = {\n")
 		-- strings starts here
 		for t in pairs(i18n_str) do
 			if old_lang_file[lang][i18n_str[t]] then  -- if this i18n string exists in the old lang file, copy it
-				io.write("    "..alignstr(i18n_str[t]).." = \"")
-				io.write(old_lang_file[lang][i18n_str[t]]:gsub("\"","\\\""):gsub("\0","\\0"):gsub("\n","\\n").."\"")
+				new_lang_file:write("    "..alignstr(i18n_str[t]).." = \"")
+				new_lang_file:write(old_lang_file[lang][i18n_str[t]]:gsub("\"","\\\""):gsub("\0","\\0"):gsub("\n","\\n").."\"")
 			elseif old_en_file.en[i18n_str[t]] then -- if this i18n string exists in the old en file, copy it and comment
-				io.write("    -- "..alignstr(i18n_str[t]).." = \"")
-				io.write(old_en_file.en[i18n_str[t]]:gsub("\"","\\\""):gsub("\0","\\0"):gsub("\n","\\n").."\"")
+				new_lang_file:write("    -- "..alignstr(i18n_str[t]).." = \"")
+				new_lang_file:write(old_en_file.en[i18n_str[t]]:gsub("\"","\\\""):gsub("\0","\\0"):gsub("\n","\\n").."\"")
 			else
-				io.write("    -- "..alignstr(i18n_str[t]).." = \"\"") -- else leave blank and comment
+				new_lang_file:write("    -- "..alignstr(i18n_str[t]).." = \"\"") -- else leave blank and comment
 			end
 			if t < i-1 then
-				io.write(" ,\n")
+				new_lang_file:write(" ,\n")
 			else
-				io.write("\n")
+				new_lang_file:write("\n")
 			end
 		end
 		-- end
-		io.write("  }\n}")
+		new_lang_file:write("  }\n}")
 		io.close(new_lang_file)
 	end
 end

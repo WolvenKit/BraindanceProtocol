@@ -1,8 +1,6 @@
-local Teleport = {
-    rootPath = "plugins.cyber_engine_tweaks.mods.braindance_protocol."
-}
+local Teleport = {}
 
-local Utilities = require(Teleport.rootPath.."utility")
+local Utilities = require("utility")
 
 -- Player Homes
 function Teleport.VsApartment()

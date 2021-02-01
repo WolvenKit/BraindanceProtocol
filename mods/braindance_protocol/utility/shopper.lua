@@ -1,9 +1,7 @@
-local Shopper = {
-    rootPath = "plugins.cyber_engine_tweaks.mods.braindance_protocol."
-}
+local Shopper = {}
 
-local Utilities = require(Shopper.rootPath .. "utility")
-local Inventory = require(Shopper.rootPath .. "inventory")
+local Utilities = require("utility")
+local Inventory = require("inventory")
 
 -- Sell value is constant for each 'junk' item type available
 local price = {

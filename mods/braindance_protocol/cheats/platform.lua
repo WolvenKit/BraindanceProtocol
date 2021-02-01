@@ -1,8 +1,6 @@
-local Platform = {
-    rootPath = "plugins.cyber_engine_tweaks.mods.braindance_protocol."
-}
+local Platform = {}
 
-local Utilities = require(Platform.rootPath.."utility")
+local Utilities = require("utility")
 
 
 function Platform.UnlockAllAchievements()

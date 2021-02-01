@@ -23,7 +23,6 @@
 -- SOFTWARE.
 
 local CPStyle = {}
-local currentFilePath = (...):gsub("CPStyling$","")
 
 local function isModuleAvailable(module)
     res = pcall(require,module)
@@ -33,8 +32,8 @@ local function isModuleAvailable(module)
     end
 end
 
-if isModuleAvailable(currentFilePath.."png-lua/png") then
-  png = require(currentFilePath.."png-lua/png")
+if isModuleAvailable("png-lua/png") then
+  png = require("png-lua/png")
 end
 
 CPStyle.theme = {
@@ -91,7 +90,7 @@ CPStyle.theme = {
   -- NavWindowingHighlight                    =           { 0.00, 0.00, 0.00, 0.00 },
   -- NavWindowingDimBg                        =           { 0.00, 0.00, 0.00, 0.00 },
   ModalWindowDimBg                            =           { 0.00, 0.00, 0.00, 0.00 },
-  ModalWindowDarkening                        =           { 0.00, 0.00, 0.00, 0.40 },
+  -- ModalWindowDarkening                        =           { 0.00, 0.00, 0.00, 0.40 },
   CPButton                                    =           { 0.06, 0.06, 0.12, 1.00 },
   CPButtonHovered                             =           { 0.43, 0.13, 0.13, 1.00 },
   CPButtonActive                              =           { 0.57, 0.16, 0.16, 1.00 },
@@ -208,7 +207,7 @@ local ImGuiStyleNames = {
     { ImGuiStyle = ImGuiCol.NavWindowingHighlight       , ImGuiStyleShort = "NavWindowingHighlight" },
     { ImGuiStyle = ImGuiCol.NavWindowingDimBg           , ImGuiStyleShort = "NavWindowingDimBg" },
     { ImGuiStyle = ImGuiCol.ModalWindowDimBg            , ImGuiStyleShort = "ModalWindowDimBg" },
-    { ImGuiStyle = ImGuiCol.ModalWindowDarkening        , ImGuiStyleShort = "ModalWindowDarkening" },
+    -- { ImGuiStyle = ImGuiCol.ModalWindowDarkening        , ImGuiStyleShort = "ModalWindowDarkening" },
     { ImGuiStyle = ImGuiCol.COUNT                       , ImGuiStyleShort = "COUNT" }
   },
   Var = {
@@ -357,14 +356,14 @@ function CPStyle.setThemeBegin()
 	-- CPStyle.colorBegin("NavWindowingHighlight"          , CPStyle.theme.NavWindowingHighlight)
 	-- CPStyle.colorBegin("NavWindowingDimBg"              , CPStyle.theme.NavWindowingDimBg)
 	CPStyle.colorBegin("ModalWindowDimBg"               , CPStyle.theme.ModalWindowDimBg)
-	CPStyle.colorBegin("ModalWindowDarkening"           , CPStyle.theme.ModalWindowDarkening)
+	-- CPStyle.colorBegin("ModalWindowDarkening"           , CPStyle.theme.ModalWindowDarkening)
   CPStyle.styleBegin("WindowRounding"                 , 0)
 	CPStyle.styleBegin("ScrollbarSize"                  , 9)
 end
 
 function CPStyle.setThemeEnd()
 	CPStyle.styleEnd(2)
-	CPStyle.colorEnd(41)
+	CPStyle.colorEnd(40)
 end
 
 function CPStyle.setFrameThemeBegin()
@@ -633,16 +632,6 @@ end
 function CPStyle.fileExists(filename)
    local f=io.open(filename,"r")
    if (f~=nil) then io.close(f) return true else return false end
-end
-
-function CPStyle.getCWD(mod_name)
-  if CPStyle.fileExists("./bin/x64/plugins/cyber_engine_tweaks/mods/"..mod_name.."/init.lua") then
-    return "./bin/x64/plugins/cyber_engine_tweaks/mods/"..mod_name.."/"
-  elseif CPStyle.fileExists("./plugins/cyber_engine_tweaks/mods/"..mod_name.."/init.lua") then
-    return "./plugins/cyber_engine_tweaks/mods/"..mod_name.."/"
-  elseif  CPStyle.fileExists("./"..mod_name.."/init.lua") then
-    return "./"..mod_name.."/"
-  end
 end
 
 return CPStyle

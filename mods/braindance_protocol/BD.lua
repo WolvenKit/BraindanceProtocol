@@ -1,6 +1,5 @@
 local BraindanceProtocol = {
-description = "",
-rootPath =	"plugins.cyber_engine_tweaks.mods.braindance_protocol."
+	description = "",
 }
 
 function BraindanceProtocol:new()
@@ -11,26 +10,26 @@ function BraindanceProtocol:new()
 
 
 	-- Load LUA modules into memory
-	BDScripts.Utilities = require(BraindanceProtocol.rootPath.."utility")
-	BDScripts.Player = require(BraindanceProtocol.rootPath.."player")
-	BDScripts.Inventory = require(BraindanceProtocol.rootPath.."inventory")
-	BDScripts.Vehicles = require(BraindanceProtocol.rootPath.."ai.vehicles")
-	BDScripts.Examples = require(BraindanceProtocol.rootPath.."examples.init")
-	BDScripts.Shopper = require(BraindanceProtocol.rootPath.."utility.shopper")
-	BDScripts.Saves = require(BraindanceProtocol.rootPath.."engine.saves")
-	BDScripts.Time = require(BraindanceProtocol.rootPath.."engine.time")
+	BDScripts.Utilities = require("utility")
+	BDScripts.Player    = require("player")
+	BDScripts.Inventory = require("inventory")
+	BDScripts.Vehicles  = require("ai/vehicles")
+	BDScripts.Examples  = require("examples/init")
+	BDScripts.Shopper   = require("utility/shopper")
+	BDScripts.Saves     = require("engine/saves")
+	BDScripts.Time      = require("engine/time")
 
 	BDScripts.Cheats = {
-		Crafting = require(BraindanceProtocol.rootPath.."cheats.crafting"),
-		Johnny = require(BraindanceProtocol.rootPath.."cheats.johnny"),
-		Player = require(BraindanceProtocol.rootPath.."cheats.player"),
-		Legend = require(BraindanceProtocol.rootPath.."cheats.legend"),
-		Platform = require(BraindanceProtocol.rootPath.."cheats.platform"),
-		Modify = require(BraindanceProtocol.rootPath.."cheats.modify"),
-		ItemSets = require(BraindanceProtocol.rootPath.."cheats.itemsets"),
-		Cyberware = require(BraindanceProtocol.rootPath.."cheats.cyberware"),
-		Facts = require(BraindanceProtocol.rootPath.."cheats.facts"),
-		Teleport = require(BraindanceProtocol.rootPath.."cheats.teleport")
+		Crafting  = require("cheats/crafting"),
+		Johnny    = require("cheats/johnny"),
+		Player    = require("cheats/player"),
+		Legend    = require("cheats/legend"),
+		Platform  = require("cheats/platform"),
+		Modify    = require("cheats/modify"),
+		ItemSets  = require("cheats/itemsets"),
+		Cyberware = require("cheats/cyberware"),
+		Facts     = require("cheats/facts"),
+		Teleport  = require("cheats/teleport")
 	}
 
 	return BDScripts

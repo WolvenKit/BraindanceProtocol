@@ -1,8 +1,6 @@
-local BraindanceProtocol = {
-rootPath = "plugins.cyber_engine_tweaks.mods.braindance_protocol."
-}
+local BraindanceProtocol = {}
 
-local BD = require(BraindanceProtocol.rootPath.."BD")
+local BD = require("BD")
 
 local Protocols = {
   Parents = {

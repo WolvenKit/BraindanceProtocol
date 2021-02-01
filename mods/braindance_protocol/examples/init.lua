@@ -1,8 +1,6 @@
-local Example = {
-    rootPath = "plugins.cyber_engine_tweaks.mods.braindance_protocol."
-}
+local Example = {}
 
-local Utilities = require(Example.rootPath.."utility")
+local Utilities = require("utility")
 
 local Example = {}
 

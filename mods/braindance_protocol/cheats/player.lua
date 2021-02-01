@@ -1,12 +1,11 @@
 local Player = {
-    rootPath = "plugins.cyber_engine_tweaks.mods.braindance_protocol.",
     slowMotion = false,
     infiniteStamina = false,
     godMode = false
 }
 
-local Utilities = require(Player.rootPath .. "utility")
-local Inventory = require(Player.rootPath .. "inventory")
+local Utilities = require("utility")
+local Inventory = require("inventory")
 
 local DEFAULT_ATTRIBUTE_LEVEL = 3
 local ATTRIBUTES = {
@@ -31,13 +30,13 @@ end
 function Player.AddAmmo()
     local moduleName = "Refill All Ammunition"
     Utilities.StartProtocol(moduleName)
-    
-    Game.AddToInventory("Ammo.HandgunAmmo", 1000) 
-    Game.AddToInventory("Ammo.ShotgunAmmo", 1000) 
-    Game.AddToInventory("Ammo.RifleAmmo", 1000) 
-    Game.AddToInventory("Ammo.SniperRifleAmmo", 1000) 
+
+    Game.AddToInventory("Ammo.HandgunAmmo", 1000)
+    Game.AddToInventory("Ammo.ShotgunAmmo", 1000)
+    Game.AddToInventory("Ammo.RifleAmmo", 1000)
+    Game.AddToInventory("Ammo.SniperRifleAmmo", 1000)
     Game.AddToInventory("Ammo.Special", 1000)
-    
+
     Utilities.FinishProtocol(moduleName)
 end
 
@@ -91,7 +90,7 @@ function Player.Respec()
         local currentLevel = statsSystem:GetStatValue(playerID, attribute)
         attributesPointsToAdd = attributesPointsToAdd + (currentLevel - DEFAULT_ATTRIBUTE_LEVEL)
         Game.SetAtt(attribute, DEFAULT_ATTRIBUTE_LEVEL)
-    end 
+    end
 
     if attributesPointsToAdd > 0 then
         Game.GiveDevPoints("Attribute", attributesPointsToAdd)
@@ -115,7 +114,7 @@ end
 function Player.SlowMotionToggle()
     local moduleName = "Slow-Motion"
     Utilities.StartProtocol(moduleName)
-    
+
     Player.slowMotion = not Player.slowMotion
     if (Player.slowMotion) then
         Game.Slowmo()
@@ -130,10 +129,10 @@ end
 function Player.InfiniteStaminaToggle()
     local moduleName = "Infinite Stamina"
     Utilities.StartProtocol(moduleName)
-    
+
     Player.infiniteStamina = not Player.infiniteStamina
     Game.InfiniteStamina(Player.infiniteStamina)
-    
+
     print("Status:", Player.infiniteStamina)
     Utilities.FinishProtocol(moduleName)
 end
@@ -142,7 +141,7 @@ end
 function Player.GodModeToggle()
     local moduleName = "God Mode"
     Utilities.StartProtocol(moduleName)
-    
+
     Player.godMode = not Player.godMode
     if (Player.godMode) then
         Game.AddStatModifier("Health", 99999, "Additive")
@@ -189,7 +188,7 @@ function Player.GodModeToggle()
         Game.AddStatModifier("MemoryOutOfCombatRegenRateMult", -20, "Additive")
         Game.AddStatModifier("MemoryOutOfCombatStartDelay", 99, "Additive")
     end
-    
+
     print("Status:", Player.godMode)
     Utilities.FinishProtocol(moduleName)
 end
@@ -230,88 +229,88 @@ end
 function Player.AddMaxHealth(quantity)
     local moduleName = "Add Max Health (cumulative)"
     Utilities.StartProtocol(moduleName)
-    
+
     quantity = quantity or 0
 
     Game.ModStatPlayer("Health", quantity)
-    
+
     Utilities.FinishProtocol(moduleName)
 end
 
 function Player.AddMaxArmor(quantity)
     local moduleName = "Add Max Armor (cumulative)"
     Utilities.StartProtocol(moduleName)
-    
+
     quantity = quantity or 0
 
     Game.ModStatPlayer("Armor", quantity)
-    
+
     Utilities.FinishProtocol(moduleName)
 end
 
 function Player.AddMaxStamina(quantity)
     local moduleName = "Add Max Stamina (cumulative)"
     Utilities.StartProtocol(moduleName)
-    
+
     quantity = quantity or 0
 
     Game.ModStatPlayer("Stamina", quantity)
-    
+
     Utilities.FinishProtocol(moduleName)
 end
 
 function Player.AddMaxOxygen(quantity)
     local moduleName = "Add Max Oxygen (cumulative)"
     Utilities.StartProtocol(moduleName)
-    
+
     quantity = quantity or 0
 
     Game.ModStatPlayer("Oxygen", quantity)
-    
+
     Utilities.FinishProtocol(moduleName)
 end
 
 function Player.AddMaxCritDamage(quantity)
     local moduleName = "Add Max Critical Damage (cumulative)"
     Utilities.StartProtocol(moduleName)
-    
+
     quantity = quantity or 0
 
     Game.ModStatPlayer("CritDamage", quantity)
-    
+
     Utilities.FinishProtocol(moduleName)
 end
 
 function Player.AddMaxCarryCapacity(quantity)
     local moduleName = "Add Max Carry Capacity (cumulative)"
     Utilities.StartProtocol(moduleName)
-    
+
     quantity = quantity or 0
 
     Game.ModStatPlayer("CarryCapacity", quantity)
-    
+
     Utilities.FinishProtocol(moduleName)
 end
 
 function Player.AddMaxMemorySlots(quantity)
     local moduleName = "Add Memory Slots (cumulative)"
     Utilities.StartProtocol(moduleName)
-    
+
     quantity = quantity or 0
 
     Game.ModStatPlayer("Memory", quantity)
-    
+
     Utilities.FinishProtocol(moduleName)
 end
 
 function Player.AddMaxMovementSpeed(quantity)
     local moduleName = "Add Movement Speed (cumulative)"
     Utilities.StartProtocol(moduleName)
-    
+
     quantity = quantity or 0
 
     Game.ModStatPlayer("MaxSpeed", quantity)
-    
+
     Utilities.FinishProtocol(moduleName)
 end
 
