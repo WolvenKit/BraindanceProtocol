@@ -1,14 +1,12 @@
-local Cyberware = {
-	rootPath = "plugins.cyber_engine_tweaks.mods.braindance_protocol."
-}
+local Cyberware = {}
 
-local Utilities = require(Cyberware.rootPath.."utility")
-local Inventory = require(Cyberware.rootPath.."inventory")
+local Utilities = require("utility")
+local Inventory = require("inventory")
 
 function Cyberware.AddIconicCW()
     local moduleName = "Add All Iconic Cyberware Items"
     Utilities.StartProtocol(moduleName)
-    
+
 -- All Iconic Cyberware Items
 	-- Cyberdeck OS
 	Inventory.AddItem("BerserkC3MK5")
@@ -25,14 +23,14 @@ end
 function Cyberware.AddLegendaryCW()
     local moduleName = "Add All Legendary Cyberware Items"
     Utilities.StartProtocol(moduleName)
-    
+
 -- All Legendary Cyberware Items
 	-- Arms
 	Inventory.AddItem("MantisBladesLegendary")
 	Inventory.AddItem("NanoWiresLegendary")
 	Inventory.AddItem("ProjectileLauncherLegendary")
 	Inventory.AddItem("StrongArmsLegendary")
-	
+
 	-- Circulatory System
 	Inventory.AddItem("BioConductorsLegendary")
 	Inventory.AddItem("BloodPumpLegendary")
@@ -43,7 +41,7 @@ function Cyberware.AddLegendaryCW()
 	Inventory.AddItem("MicroGeneratorLegendary")
 	Inventory.AddItem("SecondHeart")
 	Inventory.AddItem("StaminaRegenBoosterLegendary")
-	
+
 	-- Cyberdeck OS
 	Inventory.AddItem("ArasakaLegendaryMKIV")
 	Inventory.AddItem("BerserkC2MK4")
@@ -53,7 +51,7 @@ function Cyberware.AddLegendaryCW()
 	Inventory.AddItem("SandevistanC3MK4")
 	Inventory.AddItem("StephensonLegendaryMKIV")
 	Inventory.AddItem("TetratronicRipplerLegendaryMKIV")
-	
+
 	-- Frontal Cortex
 	Inventory.AddItem("AntiVirus")
 	Inventory.AddItem("BrainCapacityBoosterLegendary")
@@ -62,26 +60,26 @@ function Cyberware.AddLegendaryCW()
 	Inventory.AddItem("LimbicSystemEnhancementLegendary")
 	Inventory.AddItem("MemoryReplenishmentLegendary")
 	Inventory.AddItem("RoboticCoreLegendary")
-	
+
 	-- Hands
 	Inventory.AddItem("PowerGripLegendary")
 	Inventory.AddItem("SmartLinkLegendary")
-	
+
 	-- Immune System
 	Inventory.AddItem("ElectroshockMechanismLegendary")
 	Inventory.AddItem("ResistancesBoosterLegendary")
-	
+
 	-- Integumentary System
 	Inventory.AddItem("OpticalCamoLegendary")
 	Inventory.AddItem("SubdermalArmorLegendary")
-	
+
 	-- Nervous System
 	Inventory.AddItem("KerenzikovLegendary")
 	Inventory.AddItem("NeoFiberLegendary")
 	Inventory.AddItem("PainReductor")
 	Inventory.AddItem("ReflexRecorderLegendary")
 	Inventory.AddItem("SynapticAcceleratorLegendary")
-	
+
 	-- Quickhack Items (not recipes)
 	Inventory.AddItem("BlindLvl4Program")
 	Inventory.AddItem("BrainMeltLvl4Program")
@@ -96,7 +94,7 @@ function Cyberware.AddLegendaryCW()
 	Inventory.AddItem("SuicideLvl4Program")
 	Inventory.AddItem("SystemCollapseLvl4Program")
 	Inventory.AddItem("WeaponMalfunctionLvl4Program")
-	
+
 	-- Skeleton
 	Inventory.AddItem("CyberRotorsLegendary")
 	Inventory.AddItem("EndoskeletonLegendary")
@@ -108,14 +106,14 @@ end
 function Cyberware.AddEpicCW()
     local moduleName = "Add All Epic Cyberware Items"
     Utilities.StartProtocol(moduleName)
-    
+
 -- All Epic Cyberware Items
 	-- Arms
 	Inventory.AddItem("MantisBladesEpic")
 	Inventory.AddItem("NanoWiresEpic")
 	Inventory.AddItem("ProjectileLauncherEpic")
 	Inventory.AddItem("StrongArmsEpic")
-	
+
 	-- Circulatory System
 	Inventory.AddItem("BioConductorsEpic")
 	Inventory.AddItem("BloodPumpEpic")
@@ -125,7 +123,7 @@ function Cyberware.AddEpicCW()
 	Inventory.AddItem("IronLungsEpic")
 	Inventory.AddItem("MicroGeneratorEpic")
 	Inventory.AddItem("StaminaRegenBoosterEpic")
-	
+
 	-- Cyberdeck OS
 	Inventory.AddItem("ArasakaEpicMKIII")
 	Inventory.AddItem("BerserkC1MK3")
@@ -144,35 +142,35 @@ function Cyberware.AddEpicCW()
 	Inventory.AddItem("MemoryBoostEpic")
 	Inventory.AddItem("MemoryReplenishmentEpic")
 	Inventory.AddItem("RoboticCoreEpic")
-	
+
 	-- Hands
 	Inventory.AddItem("PowerGripEpic")
 	Inventory.AddItem("SmartLinkEpic")
-	
+
 	-- Immune System
 	Inventory.AddItem("ElectroshockMechanismEpic")
 	Inventory.AddItem("ResistancesBoosterEpic")
 	Inventory.AddItem("ReverseMetabolicEnhancer")
 	Inventory.AddItem("ReversePowerInductor")
-	
+
 	-- Integumentary System
 	Inventory.AddItem("HeatUsingBooster")
 	Inventory.AddItem("OpticalCamoEpic")
 	Inventory.AddItem("SubdermalArmorEpic")
-	
+
 	-- Legs
 	Inventory.AddItem("CatPaws")
 	Inventory.AddItem("ReinforcedMusclesEpic")
-	
+
 	-- Nervous System
 	Inventory.AddItem("ImprovedReactionEpic")
 	Inventory.AddItem("KerenzikovEpic")
 	Inventory.AddItem("NeoFiberEpic")
 	Inventory.AddItem("SynapticAcceleratorEpic")
-	
+
 	-- Ocular System
 	Inventory.AddItem("KiroshiOpticsEpic")
-	
+
 	-- Quickhack Items (not recipes)
 	Inventory.AddItem("BlindLvl3Program")
 	Inventory.AddItem("BrainMeltLvl3Program")
@@ -191,28 +189,28 @@ function Cyberware.AddEpicCW()
 	Inventory.AddItem("SystemCollapseLvl3Program")
 	Inventory.AddItem("WeaponMalfunctionLvl3Program")
 	Inventory.AddItem("WhistleLvl3Program")
-	
+
 	-- Skeleton
 	Inventory.AddItem("CyberRotorsEpic")
 	Inventory.AddItem("DenseMarrowEpic")
 	Inventory.AddItem("EndoskeletonEpic")
-	Inventory.AddItem("EnhancedTissueEpic")	
+	Inventory.AddItem("EnhancedTissueEpic")
 	Inventory.AddItem("JointLockEpic")
 	Inventory.AddItem("MicroVibrationsGeneratorEpic")
-	
+
 	Utilities.FinishProtocol(moduleName)
 end
 
 function Cyberware.AddRareCW()
     local moduleName = "Add All Rare Cyberware Items"
     Utilities.StartProtocol(moduleName)
-    
+
 	-- Arms
 	Inventory.AddItem("MantisBlades")
 	Inventory.AddItem("NanoWires")
 	Inventory.AddItem("ProjectileLauncher")
 	Inventory.AddItem("StrongArms")
-	
+
 	-- Circulatory System
 	Inventory.AddItem("BioConductorsRare")
 	Inventory.AddItem("BloodPumpRare")
@@ -222,7 +220,7 @@ function Cyberware.AddRareCW()
 	Inventory.AddItem("IronLungsRare")
 	Inventory.AddItem("MicroGeneratorRare")
 	Inventory.AddItem("StaminaRegenBoosterRare")
-	
+
 	-- Cyberdeck OS
 	Inventory.AddItem("BerserkC1MK2")
 	Inventory.AddItem("BerserkC2MK2")
@@ -233,18 +231,18 @@ function Cyberware.AddRareCW()
 	Inventory.AddItem("SeachoRareMKII")
 	Inventory.AddItem("StephensonRareMKII")
 	Inventory.AddItem("TetratronicRareMKII")
-	
+
 	-- Frontal Cortex
 	Inventory.AddItem("BrainCapacityBoosterRare")
 	Inventory.AddItem("FastAccessMemoryRare")
 	Inventory.AddItem("LimbicSystemEnhancementRare")
 	Inventory.AddItem("MemoryBoostRare")
 	Inventory.AddItem("RoboticCoreRare")
-	
+
 	-- Hands
 	Inventory.AddItem("PowerGripRare")
 	Inventory.AddItem("SmartLinkRare")
-	
+
 	-- Immune System
 	Inventory.AddItem("ToxinCleanser")
 
@@ -254,11 +252,11 @@ function Cyberware.AddRareCW()
 	Inventory.AddItem("MetalCoveredSkin")
 	Inventory.AddItem("OpticalCamoRare")
 	Inventory.AddItem("SubdermalArmorRare")
-	
+
 	-- Legs
 	Inventory.AddItem("BoostedTendonsRare")
 	Inventory.AddItem("ReinforcedMusclesRare")
-	
+
 	-- Nervous System
 	Inventory.AddItem("ImprovedReactionRare")
 	Inventory.AddItem("KerenzikovRare")
@@ -266,10 +264,10 @@ function Cyberware.AddRareCW()
 	Inventory.AddItem("NervousSystemDischarge")
 	Inventory.AddItem("ReflexRecorderRare")
 	Inventory.AddItem("SynapticAcceleratorRare")
-	
+
 	-- Ocular System
 	Inventory.AddItem("KiroshiOpticsRare")
-	
+
 	-- Quickhack Items (not recipes)
 	Inventory.AddItem("BlindLvl2Program")
 	Inventory.AddItem("BrainMeltLvl2Program")
@@ -283,7 +281,7 @@ function Cyberware.AddRareCW()
 	Inventory.AddItem("PingLvl2Program")
 	Inventory.AddItem("WeaponMalfunctionLvl2Program")
 	Inventory.AddItem("WhistleLvl2Program")
-	
+
 	-- Skeleton
 	Inventory.AddItem("CyberRotorsRare")
 	Inventory.AddItem("DenseMarrowRare")
@@ -292,14 +290,14 @@ function Cyberware.AddRareCW()
 	Inventory.AddItem("JointLockRare")
 	Inventory.AddItem("MicroVibrationsGeneratorRare")
 	Inventory.AddItem("TitaniumInfusedBonesRare")
-	
+
 	Utilities.FinishProtocol(moduleName)
 end
 
 function Cyberware.AddUncommonCW()
     local moduleName = "Add All Uncommon Cyberware Items"
     Utilities.StartProtocol(moduleName)
-    
+
 	-- All Uncommon Cyberware Items
 	-- Circulatory System
 	Inventory.AddItem("BloodPumpUncommon")
@@ -309,7 +307,7 @@ function Cyberware.AddUncommonCW()
 	Inventory.AddItem("MicroGeneratorUncommon")
 	Inventory.AddItem("StaminaRegenBoosterUncommon")
 	Inventory.AddItem("TyrosineInjector")
-	
+
 	-- Cyberdeck OS
 	Inventory.AddItem("BerserkC1MK1")
 	Inventory.AddItem("BerserkC2MK1")
@@ -319,28 +317,28 @@ function Cyberware.AddUncommonCW()
 	Inventory.AddItem("SandevistanC2MK1")
 	Inventory.AddItem("SeachoUncommonMKI")
 	Inventory.AddItem("TetratronicUncommonMKI")
-	
+
 	-- Frontal Cortex
 	Inventory.AddItem("FastAccessMemoryUncommon")
 	Inventory.AddItem("HealOnKillUncommon")
 	Inventory.AddItem("ImprovedPerceptionUncommon")
 	Inventory.AddItem("MemoryBoostUncommon")
 	Inventory.AddItem("RoboticCoreUncommon")
-	
+
 	-- Immune System
 	Inventory.AddItem("ElectroshockMechanismUncommon")
 	Inventory.AddItem("ResistancesBoosterUncommon")
-	
+
 	-- Integumentary System
 	Inventory.AddItem("SubdermalArmorUncommon")
-	
+
 	-- Nervous System
 	Inventory.AddItem("ImprovedReactionUncommon")
 	Inventory.AddItem("KerenzikovUncommon")
 	Inventory.AddItem("NeoFiberUncommon")
 	Inventory.AddItem("ReflexRecorderUncommon")
 	Inventory.AddItem("SynapticAcceleratorUncommon")
-	
+
 	-- Quickhack Items (not recipes)
 	Inventory.AddItem("BlindProgram")
 	Inventory.AddItem("CommsCallInProgram")
@@ -353,7 +351,7 @@ function Cyberware.AddUncommonCW()
 	Inventory.AddItem("PingProgram")
 	Inventory.AddItem("WeaponMalfunctionProgram")
 	Inventory.AddItem("WhistleProgram")
-	
+
 	-- Skeleton
 	Inventory.AddItem("CyberRotorsUncommon")
 	Inventory.AddItem("DenseMarrowUncommon")
@@ -368,7 +366,7 @@ end
 function Cyberware.AddCommonCW()
     local moduleName = "Add All Common Cyberware Items"
     Utilities.StartProtocol(moduleName)
-    
+
 	-- Circulatory System
 	Inventory.AddItem("BloodPumpCommon")
 	Inventory.AddItem("EnhancedBloodVesselsCommon")
@@ -376,11 +374,11 @@ function Cyberware.AddCommonCW()
 	Inventory.AddItem("IronLungsCommon")
 	Inventory.AddItem("MicroGeneratorCommon")
 	Inventory.AddItem("StaminaRegenBoosterCommon")
-	
+
 	-- Cyberdeck OS
 	Inventory.AddItem("FuyutsuiCommonMKI")
 	Inventory.AddItem("MilitechParaline")
-	
+
 	-- Frontal Cortex
 	Inventory.AddItem("FastAccessMemoryCommon")
 	Inventory.AddItem("HealOnKillCommon")
@@ -388,24 +386,24 @@ function Cyberware.AddCommonCW()
 	Inventory.AddItem("LimbicSystemEnhancementCommon")
 	Inventory.AddItem("MemoryBoostCommon")
 	Inventory.AddItem("RoboticCoreCommon")
-	
+
 	-- Hands
 	-- "Tattoo: Together Forever"
-	Game.GetTransactionSystem():GiveItem(Game.GetPlayer(), 
+	Game.GetTransactionSystem():GiveItem(Game.GetPlayer(),
 	GetSingleton("gameItemID"):FromTDBID(TweakDBID.new(0x15138755, 0x16)), 1)
-	
+
 	-- "Tattoo: Tyger Claws Dermal Imprint"
-	Game.GetTransactionSystem():GiveItem(Game.GetPlayer(), 
+	Game.GetTransactionSystem():GiveItem(Game.GetPlayer(),
 	GetSingleton("gameItemID"):FromTDBID(TweakDBID.new(0x18FD8A52, 0x12)), 1)
-	
+
 	-- "Tattoo: Johnny's Special"
-	Game.GetTransactionSystem():GiveItem(Game.GetPlayer(), 
+	Game.GetTransactionSystem():GiveItem(Game.GetPlayer(),
 	GetSingleton("gameItemID"):FromTDBID(TweakDBID.new(0xA93E60FD, 0x12)), 1)
-	
+
 	-- Immune System
 	Inventory.AddItem("ElectroshockMechanismCommon")
 	Inventory.AddItem("ResistancesBoosterCommon")
-	
+
 	-- Integumentary System
 	Inventory.AddItem("SubdermalArmorCommon")
 
@@ -414,16 +412,16 @@ function Cyberware.AddCommonCW()
 	Inventory.AddItem("NeoFiberCommon")
 	Inventory.AddItem("ReflexRecorderCommon")
 	Inventory.AddItem("SynapticAcceleratorCommon")
-	
+
 	-- Ocular System
 	Inventory.AddItem("KiroshiOptics")
-	
+
 	-- Skeleton
 	Inventory.AddItem("CyberRotorsCommon")
 	Inventory.AddItem("EndoskeletonCommon")
 	Inventory.AddItem("EnhancedTissueCommon")
 	Inventory.AddItem("TitaniumInfusedBonesCommon")
-	
+
 	Utilities.FinishProtocol(moduleName)
 end
 
@@ -438,8 +436,8 @@ function Cyberware.AddAllCW()
 	Cyberware.AddUncommonCW()
 	Cyberware.AddCommonCW()
 
-    
+
     Utilities.FinishProtocol(moduleName)
 end
 
-return Cyberware	
+return Cyberware

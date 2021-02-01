@@ -1,9 +1,7 @@
-local Crafting = {
-rootPath = "plugins.cyber_engine_tweaks.mods.braindance_protocol."
-}
+local Crafting = {}
 
-local Utilities = require(Crafting.rootPath.."utility")
-local Inventory = require(Crafting.rootPath.."inventory")
+local Utilities = require("utility")
+local Inventory = require("inventory")
 
 function Crafting.AddLegendaryMaterials(quantity)
     local moduleName = "Add Crafting Materials"
@@ -33,7 +31,7 @@ function Crafting.AddLegendaryRecipes()
 	Inventory.AddItem("LegendaryShirtRecipe")
 	Inventory.AddItem("LegendaryTightJumpsuitRecipe")
 	Inventory.AddItem("LegendaryTShirtRecipe")
-   
+
 	-- DLC/GOG Stuff
 	Inventory.AddItem("Recipe_GOG_DLC_TShirt_Legendary")
 	Inventory.AddItem("Recipe_GOG_DLC_TShirt_Epic")
@@ -43,22 +41,22 @@ function Crafting.AddLegendaryRecipes()
 
 	Inventory.AddItem("Recipe_GOG_DLC_Jacket_Legendary")
 	Inventory.AddItem("Recipe_GOG_DLC_Jacket_Epic")
-   
+
 	-- Head Armor
 	Inventory.AddItem("LegendaryCapRecipe")
 	Inventory.AddItem("LegendaryHatRecipe")
 	Inventory.AddItem("LegendaryScarfRecipe")
-   
+
 	-- Face Armor
 	Inventory.AddItem("LegendaryGlassesRecipe")
 	Inventory.AddItem("LegendaryTechRecipe")
 	Inventory.AddItem("LegendaryVisorRecipe")
-  
+
 	-- Feet Armor
 	Inventory.AddItem("LegendaryBootsRecipe")
 	Inventory.AddItem("LegendaryCasualShoesRecipe")
 	Inventory.AddItem("LegendaryFormalShoesRecipe")
-   
+
 	-- Legs Armor
 	Inventory.AddItem("LegendaryFormalPantsRecipe")
 	Inventory.AddItem("LegendaryFormalSkirtRecipe")
@@ -96,7 +94,7 @@ function Crafting.AddLegendaryRecipes()
 	Inventory.AddItem("LegendaryCrusherRecipe")
 	Inventory.AddItem("LegendaryTacticianRecipe")
 	Inventory.AddItem("LegendaryZhuoRecipe")
- 
+
 	-- Pistols
 	Inventory.AddItem("LegendaryChaoRecipe")
 	Inventory.AddItem("LegendaryKenshinRecipe")
@@ -112,7 +110,7 @@ function Crafting.AddLegendaryRecipes()
 	Inventory.AddItem("LegendaryNovaRecipe")
 	Inventory.AddItem("LegendaryOvertureRecipe")
 	Inventory.AddItem("LegendaryQuasarRecipe")
-   
+
 	-- Precision Rifles
 	Inventory.AddItem("LegendaryAchillesRecipe")
 	Inventory.AddItem("LegendarySor22Recipe")
@@ -133,7 +131,7 @@ function Crafting.AddLegendaryRecipes()
 	Inventory.AddItem("LegendaryTantoRecipe")
 	Inventory.AddItem("Recipe_Preset_Katana_GoG_Legendary")
 	Inventory.AddItem("Recipe_Preset_Katana_GoG_Epic")
-   
+
 
 	-- Blunt weapons
 	Inventory.AddItem("LegendaryBatonAlphaRecipe")
@@ -212,10 +210,10 @@ function Crafting.AddLegendaryRecipes()
 	Inventory.AddItem("Recipe_WeaponMalfunctionLvl3Program")
 	Inventory.AddItem("Recipe_WeaponMalfunctionLvl2Program")
 	Inventory.AddItem("Recipe_WeaponMalfunctionProgram")
-   
+
 
 -- "Iconic" (unique) weapons tagged as legendary + the lesser versions of the recipes
--- Note: All of these might not work, due to some recipes requiring the  
+-- Note: All of these might not work, due to some recipes requiring the
 -- "original" weapon, given as a reward different from different quests
 	-- Gold Plated Baseball Bat
 	Inventory.AddItem("Recipe_Preset_Baseball_Bat_Denny_Legendary")
@@ -377,24 +375,24 @@ function Crafting.AddModRecipes()
     local moduleName = "Add All Mod Recipes"
     Utilities.StartProtocol(moduleName)
 
--- These are all the Clothing Mod recipes 
+-- These are all the Clothing Mod recipes
 -- (excluding legendary ones added previously)
 	Inventory.AddItem("Recipe_PowerfulFabricEnhancer02")
-	Inventory.AddItem("Recipe_PowerfulFabricEnhancer04") 
-	Inventory.AddItem("Recipe_PowerfulFabricEnhancer05") 
-	Inventory.AddItem("Recipe_PowerfulFabricEnhancer06") 
-	Inventory.AddItem("Recipe_SimpleFabricEnhancer01") 
+	Inventory.AddItem("Recipe_PowerfulFabricEnhancer04")
+	Inventory.AddItem("Recipe_PowerfulFabricEnhancer05")
+	Inventory.AddItem("Recipe_PowerfulFabricEnhancer06")
+	Inventory.AddItem("Recipe_SimpleFabricEnhancer01")
 	Inventory.AddItem("Recipe_SimpleFabricEnhancer02")
 	Inventory.AddItem("Recipe_SimpleFabricEnhancer05")
 
 
 -- These are all the Cyberware Mod recipes
-	Inventory.AddItem("Recipe_AnimalsBerserkFragment1") 
+	Inventory.AddItem("Recipe_AnimalsBerserkFragment1")
 
-	Inventory.AddItem("Recipe_ArasakaSandevistanFragment1") 
+	Inventory.AddItem("Recipe_ArasakaSandevistanFragment1")
 
-	Inventory.AddItem("Recipe_ArmsCyberwareSharedFragment1") 
-	Inventory.AddItem("Recipe_ArmsCyberwareSharedFragment2") 
+	Inventory.AddItem("Recipe_ArmsCyberwareSharedFragment1")
+	Inventory.AddItem("Recipe_ArmsCyberwareSharedFragment2")
 	Inventory.AddItem("Recipe_ArmsCyberwareSharedFragment3")
 	Inventory.AddItem("Recipe_ArmsCyberwareSharedFragment4")
 
@@ -461,7 +459,7 @@ function Crafting.AddModRecipes()
 	Inventory.AddItem("Recipe_SimpleWeaponMod03")
 	Inventory.AddItem("Recipe_SimpleWeaponMod04")
 
--- These 6 are marked as useless, added them nontheless. Remove the dashes to enable them.   
+-- These 6 are marked as useless, added them nontheless. Remove the dashes to enable them.
 	--	Inventory.AddItem("Recipe_PowerWeaponMod01")
 	--	Inventory.AddItem("Recipe_PowerWeaponMod02")
 	--	Inventory.AddItem("Recipe_PowerWeaponMod03")
@@ -476,8 +474,8 @@ end
 function Crafting.AddMedRecipes()
     local moduleName = "Add All Med/Medicine Recipes"
     Utilities.StartProtocol(moduleName)
- 
--- These are all the Medicine recipes 
+
+-- These are all the Medicine recipes
 	Inventory.AddItem("RecipeBonesMcCoy70V0")
 	Inventory.AddItem("RecipeBonesMcCoy70V1")
 	Inventory.AddItem("RecipeBonesMcCoy70V2")
@@ -526,7 +524,7 @@ function Crafting.AddGrenadeRecipes()
 	Inventory.AddItem("RecipeGrenadeOzobsNose")
 
 -- This command is supposedly not needed anymore for Ozobs Nose
-	--Game.GetTransactionSystem():GiveItem(Game.GetPlayer(), 
+	--Game.GetTransactionSystem():GiveItem(Game.GetPlayer(),
 	--GetSingleton("gameItemID"):FromTDBID(TweakDBID.new(0xA91A5B6B, 28)), 1)
 
     Utilities.FinishProtocol(moduleName)
@@ -542,7 +540,7 @@ function Crafting.AddEpicRecipes()
 	Inventory.AddItem("EpicTShirtRecipe")
 	Inventory.AddItem("EpicUndershirtRecipe")
 	Inventory.AddItem("EpicFormalShirtRecipe")
-   
+
 	-- Head Armor
 	Inventory.AddItem("EpicCapRecipe")
 	Inventory.AddItem("EpicHatRecipe")
@@ -553,13 +551,13 @@ function Crafting.AddEpicRecipes()
 	Inventory.AddItem("EpicGlassesRecipe")
 	Inventory.AddItem("EpicMaskRecipe")
 	Inventory.AddItem("EpicVisorRecipe")
-   
+
 	-- Feet Armor
 	Inventory.AddItem("EpicBootsRecipe")
 	Inventory.AddItem("EpicCasualShoesRecipe")
 	Inventory.AddItem("EpicFormalShoesRecipe")
 
-   
+
 	-- Legs Armor
 	Inventory.AddItem("EpicFormalSkirtRecipe")
 	Inventory.AddItem("EpicPantsRecipe")
@@ -593,7 +591,7 @@ function Crafting.AddEpicRecipes()
 	Inventory.AddItem("EpicCrusherRecipe")
 	Inventory.AddItem("EpicTacticianRecipe")
 	Inventory.AddItem("EpicZhuoRecipe")
- 
+
 	-- Pistols
 	Inventory.AddItem("EpicChaoRecipe")
 	Inventory.AddItem("EpicKenshinRecipe")
@@ -609,7 +607,7 @@ function Crafting.AddEpicRecipes()
 	Inventory.AddItem("EpicNovaRecipe")
 	Inventory.AddItem("EpicOvertureRecipe")
 	Inventory.AddItem("EpicQuasarRecipe")
-   
+
 	-- Precision Rifles
 	Inventory.AddItem("EpicAchillesRecipe")
 	Inventory.AddItem("EpicSor22Recipe")
@@ -680,12 +678,12 @@ function Crafting.AddRareRecipes()
 	Inventory.AddItem("RareGlassesRecipe")
 	Inventory.AddItem("RareMaskRecipe")
 	Inventory.AddItem("RareTechRecipe")
-   
+
 	-- Feet Armor
 	Inventory.AddItem("RareBootsRecipe")
 	Inventory.AddItem("RareCasualShoesRecipe")
 	Inventory.AddItem("RareFormalShoesRecipe")
-   
+
 	-- Legs Armor
 	Inventory.AddItem("RareFormalPantsRecipe")
 	Inventory.AddItem("RarePantsRecipe")
@@ -724,7 +722,7 @@ function Crafting.AddRareRecipes()
 	Inventory.AddItem("RareCrusherRecipe")
 	Inventory.AddItem("RareTacticianRecipe")
 	Inventory.AddItem("RareZhuoRecipe")
- 
+
 	-- Pistols
 	Inventory.AddItem("RareChaoRecipe")
 	Inventory.AddItem("RareKenshinRecipe")
@@ -740,7 +738,7 @@ function Crafting.AddRareRecipes()
 	Inventory.AddItem("RareNovaRecipe")
 	Inventory.AddItem("RareOvertureRecipe")
 	Inventory.AddItem("RareQuasarRecipe")
-   
+
 	-- Precision Rifles
 	Inventory.AddItem("RareAchillesRecipe")
 	Inventory.AddItem("RareSor22Recipe")
@@ -786,7 +784,7 @@ function Crafting.AddUncommonRecipes()
 	Inventory.AddItem("UncommonUndershirtRecipe")
 	Inventory.AddItem("UncommonFormalShirtRecipe")
 	Inventory.AddItem("UncommonShirtLooseRecipe")
-   
+
 	-- Head Armor
 	Inventory.AddItem("UncommonBalaclavaRecipe")
 	Inventory.AddItem("UncommonCapRecipe")
@@ -796,12 +794,12 @@ function Crafting.AddUncommonRecipes()
 	Inventory.AddItem("UncommonMaskRecipe")
 	Inventory.AddItem("UncommonTechRecipe")
 	Inventory.AddItem("UncommonVisorRecipe")
-   
+
 	-- Feet Armor
 	Inventory.AddItem("UncommonBootsRecipe")
 	Inventory.AddItem("UncommonCasualShoesRecipe")
 	Inventory.AddItem("UncommonFormalShoesRecipe")
-   
+
 	-- Legs Armor
 	Inventory.AddItem("UncommonFormalPantsRecipe")
 	Inventory.AddItem("UncommonFormalSkirtRecipe")
@@ -838,7 +836,7 @@ function Crafting.AddUncommonRecipes()
 	Inventory.AddItem("UncommonCrusherRecipe")
 	Inventory.AddItem("UncommonTacticianRecipe")
 	Inventory.AddItem("UncommonZhuoRecipe")
- 
+
 	-- Pistols
 	Inventory.AddItem("UncommonChaoRecipe")
 	Inventory.AddItem("UncommonKenshinRecipe")
@@ -854,7 +852,7 @@ function Crafting.AddUncommonRecipes()
 	Inventory.AddItem("UncommonNovaRecipe")
 	Inventory.AddItem("UncommonOvertureRecipe")
 	Inventory.AddItem("UncommonQuasarRecipe")
-   
+
 	-- Precision Rifles
 	Inventory.AddItem("UncommonAchillesRecipe")
 	Inventory.AddItem("UncommonSor22Recipe")
@@ -888,7 +886,7 @@ function Crafting.AddUncommonRecipes()
 	Inventory.AddItem("UncommonTomahawkRecipe")
 
     Utilities.FinishProtocol(moduleName)
-end 
+end
 
 
 function Crafting.AddCommonRecipes()
@@ -919,7 +917,7 @@ function Crafting.AddCommonRecipes()
 	Inventory.AddItem("CommonCrusherRecipe")
 	Inventory.AddItem("CommonTacticianRecipe")
 	Inventory.AddItem("CommonZhuoRecipe")
- 
+
 	-- Pistols
 	Inventory.AddItem("CommonChaoRecipe")
 	Inventory.AddItem("CommonKenshinRecipe")
@@ -935,7 +933,7 @@ function Crafting.AddCommonRecipes()
 	Inventory.AddItem("CommonNovaRecipe")
 	Inventory.AddItem("CommonOvertureRecipe")
 	Inventory.AddItem("CommonQuasarRecipe")
-   
+
 	-- Precision Rifles
 	Inventory.AddItem("CommonAchillesRecipe")
 	Inventory.AddItem("CommonSor22Recipe")
@@ -969,7 +967,7 @@ function Crafting.AddCommonRecipes()
 	Inventory.AddItem("CommonTireIronRecipe")
 
     Utilities.FinishProtocol(moduleName)
-end 
+end
 
 
 function Crafting.AddAll()
