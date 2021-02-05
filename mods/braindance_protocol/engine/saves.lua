@@ -1,8 +1,6 @@
-local Saves = {
-	rootPath = "plugins.cyber_engine_tweaks.mods.braindance_protocol."
-}
+local Saves = {}
 
-local Utilities = require(Saves.rootPath.."utility")
+local Utilities = require("utility")
 
 function Saves.DisableAutosave()
     local moduleName = "Disable Autosave"

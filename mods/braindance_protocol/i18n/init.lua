@@ -6,12 +6,12 @@ local pluralizeFunction
 local defaultLocale = 'en'
 local fallbackLocale = defaultLocale
 
-local currentFilePath = (...):gsub("%.init$","")
+local currentFilePath = "i18n"
 
-local plural      = require(currentFilePath .. '.plural')
-local interpolate = require(currentFilePath .. '.interpolate')
-local variants    = require(currentFilePath .. '.variants')
-local version     = require(currentFilePath .. '.version')
+local plural      = require(currentFilePath .. '/plural')
+local interpolate = require(currentFilePath .. '/interpolate')
+local variants    = require(currentFilePath .. '/variants')
+local version     = require(currentFilePath .. '/version')
 
 i18n.plural, i18n.interpolate, i18n.variants, i18n.version, i18n._VERSION =
   plural, interpolate, variants, version, version
