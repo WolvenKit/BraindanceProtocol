@@ -12,6 +12,8 @@ A GUI and Console tool to modify your Cyberpunk 2077 experience.
 
 Drop `mods` folder into `bin\x64\plugins\cyber_engine_tweaks\`
 
+*Please make a clean installation if you want to update BraindanceProtocol
+
 ## Usage
 
 - Configure the hotkey for opening the GUI inside the Hotkey tab of CyberEngineTweaks
