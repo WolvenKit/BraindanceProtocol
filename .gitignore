@@ -1,5 +1,6 @@
 builds/*
 .git/
+.github/
 
 # Local Development
 mods/braindance_protocol/braindance_protocol*.log
