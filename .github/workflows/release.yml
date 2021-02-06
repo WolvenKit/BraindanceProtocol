@@ -1,0 +1,37 @@
+name: Release
+on:
+  release:
+      types: [published]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set env
+        run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+      - name: Copy files
+        run: |
+          mkdir -p ./build/nexus/bin/x64/plugins/cyber_engine_tweaks/ ./build/cybermods/ ./build/release/
+          cp LICENSE ./mods/braindance_protocol/
+          rsync -a mods/ ./build/nexus/bin/x64/plugins/cyber_engine_tweaks/mods/
+          rsync -a mods/ ./build/cybermods/mods/
+          rsync -a README.md manifest.json icon.png ./build/cybermods/
+      - name: Zip NexusMods Release
+        uses: TheDoctor0/zip-release@0.4.1
+        with:
+          filename: ../release/braindance_protocol_${{ env.RELEASE_VERSION }}.zip
+          directory: ./build/nexus/
+
+      - name: Zip CyberMods Release
+        uses: TheDoctor0/zip-release@0.4.1
+        with:
+          filename: ../release/braindance_protocol_${{ env.RELEASE_VERSION }}_cybermods.zip
+          directory: ./build/cybermods/
+
+      - name: Upload Artifacts
+        uses: ncipollo/release-action@v1
+        with:
+          allowUpdates: true
+          artifacts: "./build/release/braindance_protocol_${{ env.RELEASE_VERSION }}.zip,./build/release/braindance_protocol_${{ env.RELEASE_VERSION }}_cybermods.zip"
+          token: ${{ secrets.GITHUB_TOKEN }}
