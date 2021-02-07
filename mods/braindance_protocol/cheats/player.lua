@@ -138,57 +138,43 @@ function Player.InfiniteStaminaToggle()
 end
 
 -- God Mode Toggle
+-- All credits to Willy-JL / Str8up Menu
 function Player.GodModeToggle()
     local moduleName = "God Mode"
     Utilities.StartProtocol(moduleName)
 
     Player.godMode = not Player.godMode
-    if (Player.godMode) then
-        Game.AddStatModifier("Health", 99999, "Additive")
-        Game.AddStatModifier("Armor", 99999, "Additive")
-        Game.AddStatModifier("HealthRegeneration", 99999, "Additive")
-        Game.AddStatModifier("HealthInCombatRegenEnabled", 1, "Additive")
-        Game.AddStatModifier("HealthInCombatRegenRateMult", 20, "Additive")
-        Game.AddStatModifier("HealthInCombatStartDelay", -99, "Additive")
-        Game.AddStatModifier("HealthOutOfCombatRegenEnabled", 1, "Additive")
-        Game.AddStatModifier("HealthOutOfCombatRegenRateMult", 20, "Additive")
-
-        Game.AddStatModifier("StaminaRegenEnabled", 1, "Additive")
-        Game.AddStatModifier("StaminaRegenRateMult", 20, "Additive")
-        Game.AddStatModifier("StaminaRegenStartDelay", -99, "Additive")
-
-        Game.AddStatModifier("Memory", 20, "Additive")
-        Game.AddStatModifier("MemoryCostModifier", -90, "Additive")
-        Game.AddStatModifier("MemoryInCombatRegenEnabled", 1, "Additive")
-        Game.AddStatModifier("MemoryInCombatRegenRateMult", 20, "Additive")
-        Game.AddStatModifier("MemoryInCombatStartDelay", -99, "Additive")
-        Game.AddStatModifier("MemoryOutOfCombatRegenEnabled", 1, "Additive")
-        Game.AddStatModifier("MemoryOutOfCombatRegenRateMult", 20, "Additive")
-        Game.AddStatModifier("MemoryOutOfCombatStartDelay", -99, "Additive")
+		if (Player.godMode) then
+        Game.GetGodModeSystem():EnableOverride(Game.GetPlayer():GetEntityID(), "Invulnerable", CName.new("SecondHeart"))
+        if Game.GetWorkspotSystem():IsActorInWorkspot(Game.GetPlayer()) then
+            veh = Game['GetMountedVehicle;GameObject'](Game.GetPlayer())
+            if veh then
+                Game.GetGodModeSystem():AddGodMode(veh:GetEntityID(), "Invulnerable", CName.new("Default"))
+            end
+        end
     else
-        Game.AddStatModifier("Health", -99999, "Additive")
-        Game.AddStatModifier("Armor", -99999, "Additive")
-        Game.AddStatModifier("HealthRegeneration", -99999, "Additive")
-        Game.AddStatModifier("HealthInCombatRegenEnabled", -1, "Additive")
-        Game.AddStatModifier("HealthInCombatRegenRateMult", -20, "Additive")
-        Game.AddStatModifier("HealthInCombatStartDelay", 99, "Additive")
-        Game.AddStatModifier("HealthOutOfCombatRegenEnabled", -1, "Additive")
-        Game.AddStatModifier("HealthOutOfCombatRegenRateMult", -20, "Additive")
-
-        Game.AddStatModifier("StaminaRegenEnabled", -1, "Additive")
-        Game.AddStatModifier("StaminaRegenRateMult", -20, "Additive")
-        Game.AddStatModifier("StaminaRegenStartDelay", 99, "Additive")
-
-        Game.AddStatModifier("Memory", -20, "Additive")
-        Game.AddStatModifier("MemoryCostModifier", 90, "Additive")
-        Game.AddStatModifier("MemoryInCombatRegenEnabled", -1, "Additive")
-        Game.AddStatModifier("MemoryInCombatRegenRateMult", -20, "Additive")
-        Game.AddStatModifier("MemoryInCombatStartDelay", 99, "Additive")
-        Game.AddStatModifier("MemoryOutOfCombatRegenEnabled", -1, "Additive")
-        Game.AddStatModifier("MemoryOutOfCombatRegenRateMult", -20, "Additive")
-        Game.AddStatModifier("MemoryOutOfCombatStartDelay", 99, "Additive")
+        ssc = Game.GetScriptableSystemsContainer()
+        es = ssc:Get(CName.new('EquipmentSystem'))
+        espd = es:GetPlayerData(Game.GetPlayer())
+        espd['GetItemInEquipSlot2'] = espd['GetItemInEquipSlot;gamedataEquipmentAreaInt32']
+        for i=0,2 do
+            if espd:GetItemInEquipSlot2("CardiovascularSystemCW", i).tdbid.hash == 3619482064 then
+                hasSecondHeart = true
+            end
+        end
+        if hasSecondHeart then
+            Game.GetGodModeSystem():EnableOverride(Game.GetPlayer():GetEntityID(), "Immortal", CName.new("SecondHeart"))
+        else
+            Game.GetGodModeSystem():DisableOverride(Game.GetPlayer():GetEntityID(), CName.new("SecondHeart"))
+        end
+        if Game.GetWorkspotSystem():IsActorInWorkspot(Game.GetPlayer()) then
+            veh = Game['GetMountedVehicle;GameObject'](Game.GetPlayer())
+            if veh then
+                Game.GetGodModeSystem():ClearGodMode(veh:GetEntityID(), CName.new("Default"))
+            end
+        end
     end
-
+	
     print("Status:", Player.godMode)
     Utilities.FinishProtocol(moduleName)
 end
