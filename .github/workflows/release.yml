@@ -33,5 +33,7 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           allowUpdates: true
+          omitNameDuringUpdate: true
+          omitBodyDuringUpdate: true
           artifacts: "./build/release/braindance_protocol_${{ env.RELEASE_VERSION }}.zip,./build/release/braindance_protocol_${{ env.RELEASE_VERSION }}_cybermods.zip"
           token: ${{ secrets.GITHUB_TOKEN }}
