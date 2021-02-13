@@ -247,7 +247,7 @@ function updateLang()
 		local lang = languages[t].id
 		local old_en_file = dofile("lang/en.lua")
 		local old_lang_file = dofile("lang/"..lang..".lua")
-		local new_lang_file = io.open("/lang/"..lang.."_update.lua", "w")
+		local new_lang_file = io.open("lang/"..lang.."_update.lua", "w")
 		-- header
 		new_lang_file:write("return {\n")
 		new_lang_file:write("  "..lang.." = {\n")
