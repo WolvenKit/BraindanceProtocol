@@ -55,7 +55,7 @@ registerHotkey("braindance_protocol_infAmmo", "Infinite Ammunition Toggle", func
 	BD.Cheats.Ammo.InfiniteAmmoToggle()
 end)
 
-registerHotkey("braindance_protocol_addAmmo", "No Reload Toggle", function()
+registerHotkey("braindance_protocol_noReload", "No Reload Toggle", function()
 	BD.Cheats.Ammo.InfiniteAmmoNoReloadToggle()
 end)
 
