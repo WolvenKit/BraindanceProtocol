@@ -27,19 +27,6 @@ function Player.AddMoney(quantity)
     Utilities.FinishProtocol(moduleName)
 end
 
-function Player.AddAmmo()
-    local moduleName = "Refill All Ammunition"
-    Utilities.StartProtocol(moduleName)
-
-    Game.AddToInventory("Ammo.HandgunAmmo", 1000)
-    Game.AddToInventory("Ammo.ShotgunAmmo", 1000)
-    Game.AddToInventory("Ammo.RifleAmmo", 1000)
-    Game.AddToInventory("Ammo.SniperRifleAmmo", 1000)
-    Game.AddToInventory("Ammo.Special", 1000)
-
-    Utilities.FinishProtocol(moduleName)
-end
-
 
 function Player.MaxOut()
     local skills =
@@ -144,7 +131,7 @@ function Player.GodModeToggle()
     Utilities.StartProtocol(moduleName)
 
     Player.godMode = not Player.godMode
-		if (Player.godMode) then
+        if (Player.godMode) then
         Game.GetGodModeSystem():EnableOverride(Game.GetPlayer():GetEntityID(), "Invulnerable", CName.new("SecondHeart"))
         if Game.GetWorkspotSystem():IsActorInWorkspot(Game.GetPlayer()) then
             veh = Game['GetMountedVehicle;GameObject'](Game.GetPlayer())
@@ -174,7 +161,7 @@ function Player.GodModeToggle()
             end
         end
     end
-	
+    
     print("Status:", Player.godMode)
     Utilities.FinishProtocol(moduleName)
 end
