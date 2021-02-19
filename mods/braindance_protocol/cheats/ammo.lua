@@ -155,8 +155,8 @@ end
 function Ammo.OnUpdateAmmo(deltaTime)
     if (Ammo.isInfiniteAmmo or Ammo.isInfiniteAmmoNoReload) and Game ~= nil then
         Ammo.counter = Ammo.counter + deltaTime
-        if (Ammo.counter > 0.1) then
-            Ammo.counter = Ammo.counter - 0.1
+        if (Ammo.counter > 0.5) then
+            Ammo.counter = Ammo.counter - 0.5
 
             local player = Game.GetPlayer()
 
