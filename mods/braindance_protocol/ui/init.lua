@@ -1,7 +1,6 @@
 local ui = {}
 local i18n = require("i18n")
 local languages = require("lang/lang")
-local fact = require("fact")
 local CPS = require("CPStyling")
 local Options = require("options")
 local theme = CPS.theme

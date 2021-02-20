@@ -1,16 +1,21 @@
+local fact = require("fact")
+local BD = require("BD")
+local protocols = require("protocols")
+local ui = require("ui")
+
 local hotkeys = {
   {
     ID = "braindance_protocol_interface",
     Description = "Open Protocol Interface",
     Callback = function()
-      if not drawWindow then
+      if not ui.drawWindow then
           for i in pairs(protocols.Items) do
               if protocols.Items[i].parent == "Facts" and protocols.Items[i].type ~= "Button" then
                   protocols.Items[i].value = fact.GetValue(protocols.Items[i].id)
               end
           end
       end
-      drawWindow = not drawWindow
+      ui.drawWindow = not ui.drawWindow
     end
   },
 
