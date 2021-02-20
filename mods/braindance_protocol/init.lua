@@ -1,7 +1,3 @@
-local BraindanceProtocol = {
-description = "",
-}
-
 local BD = require("BD")
 
 registerForEvent("onInit", function()
