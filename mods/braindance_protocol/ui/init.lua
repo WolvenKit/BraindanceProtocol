@@ -36,6 +36,16 @@ function ui:Update()
   -- Ammo OnUpdate
     -- BD.Cheats.Ammo.OnUpdateAmmo(deltaTime)
   end)
+
+  -- Open BDP with the CET console
+  registerForEvent("onOverlayOpen", function()
+      self.drawWindow = true
+  end)
+
+  registerForEvent("onOverlayClose", function()
+      self.drawWindow = false
+  end)
+
 end
 
 function ui:Draw()
