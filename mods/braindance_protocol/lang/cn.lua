@@ -1,5 +1,14 @@
 return {
   cn = {
+    hotkey_interface                                            = "打开界面" ,
+    hotkey_godMode                                              = "切换上帝模式" ,
+    hotkey_infStamina                                           = "切换无限耐力" ,
+    hotkey_slowMo                                               = "切换慢动作" ,
+    hotkey_addAmmo                                              = "添加弹药" ,
+    hotkey_infAmmo                                              = "切换无限弹药" ,
+    hotkey_noReload                                             = "切换无需装弹" ,
+    hotkey_addMoney                                             = "添加钱" ,
+    hotkey_forceKillNPC                                         = "杀死NPC" ,
     window_title                                                = "超梦协议" ,
     button_language                                             = "简中" ,
     parent_Cheats                                               = "作弊" ,

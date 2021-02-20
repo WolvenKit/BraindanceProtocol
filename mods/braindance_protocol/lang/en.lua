@@ -1,5 +1,14 @@
 return {
   en = {
+    hotkey_interface                                            = "Open Protocol Interface" ,
+    hotkey_godMode                                              = "God Mode Toggle" ,
+    hotkey_infStamina                                           = "Infinite Stamina Toggle" ,
+    hotkey_slowMo                                               = "Slow Motion Toggle" ,
+    hotkey_addAmmo                                              = "Refill Ammunition" ,
+    hotkey_infAmmo                                              = "Infinite Ammunition Toggle" ,
+    hotkey_noReload                                             = "No Reload Toggle" ,
+    hotkey_addMoney                                             = "Add Some Money" ,
+    hotkey_forceKillNPC                                         = "Force Kill NPC" ,
     window_title                                                = "Braindance Protocol" ,
     button_language                                             = "EN" ,
     parent_Cheats                                               = "Cheats" ,
