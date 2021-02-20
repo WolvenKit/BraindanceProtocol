@@ -11,6 +11,7 @@ return {
     hotkey_forceKillNPC                                         = "杀死NPC" ,
     window_title                                                = "超梦协议" ,
     button_language                                             = "简中" ,
+    searchbar_hint                                              = "搜索协议..." ,
     parent_Cheats                                               = "作弊" ,
     parent_Crafting                                             = "制作图纸" ,
     parent_Cyberware                                            = "赛博义体" ,

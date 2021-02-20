@@ -19,24 +19,30 @@ local function update()
     i = i + 1
   end
 
-  -- scan ui/init.lua for i18n strings
-  local init_lua = io.open("ui/init.lua", "r")
-  local init_lua_s = init_lua:read("*a")
-  for w in string.gmatch(init_lua_s, [[i18n%("([^"]+)]]) do
-      for t in pairs(i18n_str) do
-          if w == i18n_str[t] then
-              str_exsit = true
-          else
-              str_exsit = false
+  -- scan ui for i18n strings
+  local dir_content = dir("ui")
+  for _,v in ipairs(dir_content) do
+    if v.type == "file" and v.name:match(".lua$") then
+      local ui_lua = io.open("ui/"..v.name, "r")
+      local ui_lua_s = ui_lua:read("*a")
+      for w in string.gmatch(ui_lua_s, [[i18n%("([^"]+)]]) do
+          for t in pairs(i18n_str) do
+              if w == i18n_str[t] then
+                  str_exsit = true
+              else
+                  str_exsit = false
+              end
+          end
+          if str_exsit ~= true then
+              i18n_str[i] = w
+              print(i..": "..i18n_str[i])
+              i = i + 1
           end
       end
-      if str_exsit ~= true then
-          i18n_str[i] = w
-          print(i..": "..i18n_str[i])
-          i = i + 1
-      end
+      ui_lua:close()
+    end
   end
-  init_lua:close()
+
   -- read protocols.Parents into i18n_str
   local protocols = dofile("protocols.lua")
   for t in pairs(protocols.Parents) do

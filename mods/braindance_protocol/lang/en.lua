@@ -11,6 +11,7 @@ return {
     hotkey_forceKillNPC                                         = "Force Kill NPC" ,
     window_title                                                = "Braindance Protocol" ,
     button_language                                             = "EN" ,
+    searchbar_hint                                              = "Search Protocol.." ,
     parent_Cheats                                               = "Cheats" ,
     parent_Crafting                                             = "Crafting Recipes" ,
     parent_Cyberware                                            = "Cyberware Items" ,
