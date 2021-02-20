@@ -1,4 +1,7 @@
 local BD = require("BD")
+local hotkeys = require("hotkeys")
+
+hotkeys()
 
 registerForEvent("onInit", function()
     CPS = require("CPStyling")
@@ -26,50 +29,6 @@ end)
 
 registerForEvent("onOverlayClose", function()
     drawWindow = false
-end)
-
-registerHotkey("braindance_protocol_interface", "Open Protocol Interface", function()
-    if not drawWindow then
-        for i in pairs(protocols.Items) do
-            if protocols.Items[i].parent == "Facts" and protocols.Items[i].type ~= "Button" then
-                protocols.Items[i].value = fact.GetValue(protocols.Items[i].id)
-            end
-        end
-    end
-    drawWindow = not drawWindow
-end)
-
--- Hotkeys
-registerHotkey("braindance_protocol_godMode", "God Mode Toggle", function()
-    BD.Cheats.Player.GodModeToggle()
-end)
-
-registerHotkey("braindance_protocol_infStamina", "Infinite Stamina Toggle", function()
-    BD.Cheats.Player.InfiniteStaminaToggle()
-end)
-
-registerHotkey("braindance_protocol_slowMo", "Slow Motion Toggle", function()
-    BD.Cheats.Player.SlowMotionToggle()
-end)
-
-registerHotkey("braindance_protocol_addAmmo", "Refill Ammunition", function()
-    BD.Cheats.Ammo.AddAmmo()
-end)
-
-registerHotkey("braindance_protocol_infAmmo", "Infinite Ammunition Toggle", function()
-    BD.Cheats.Ammo.InfiniteAmmoToggle()
-end)
-
-registerHotkey("braindance_protocol_noReload", "No Reload Toggle", function()
-    BD.Cheats.Ammo.InfiniteAmmoNoReloadToggle()
-end)
-
-registerHotkey("braindance_protocol_addMoney", "Add Some Money", function()
-    BD.Cheats.Player.AddMoney(10000)
-end)
-
-registerHotkey("braindance_protocol_forceKillNPC", "Force Kill NPC", function()
-    BD.Cheats.Player.ForceNPCDeath()
 end)
 
 registerForEvent("onUpdate", function(deltaTime)
