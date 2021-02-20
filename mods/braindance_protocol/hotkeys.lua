@@ -9,11 +9,7 @@ local hotkeys = {
     Description = "Open Protocol Interface",
     Callback = function()
       if not ui.drawWindow then
-          for i in pairs(protocols.Items) do
-              if protocols.Items[i].parent == "Facts" and protocols.Items[i].type ~= "Button" then
-                  protocols.Items[i].value = fact.GetValue(protocols.Items[i].id)
-              end
-          end
+        fact.GetValue()
       end
       ui.drawWindow = not ui.drawWindow
     end

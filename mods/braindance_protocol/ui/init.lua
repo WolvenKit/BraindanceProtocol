@@ -1,4 +1,6 @@
 local ui = {}
+local BD = require("BD")
+local fact = require("fact")
 local i18n = require("i18n")
 local languages = require("lang/lang")
 local CPS = require("CPStyling")
@@ -33,11 +35,12 @@ function ui:Update()
       end
     end
   -- Ammo OnUpdate
-    -- BD.Cheats.Ammo.OnUpdateAmmo(deltaTime)
+    BD.Cheats.Ammo.OnUpdateAmmo(deltaTime)
   end)
 
   -- Open BDP with the CET console
   registerForEvent("onOverlayOpen", function()
+      fact.GetValue()
       self.drawWindow = true
   end)
 
