@@ -8,6 +8,7 @@ local Options = require("options")
 local theme = CPS.theme
 local color = CPS.color
 local protocols = require("protocols")
+local langUpdate = require("lang/update")
 
 if Options.value.debug then
     ui.drawWindow = true
@@ -19,12 +20,14 @@ ui.wWidth, ui.wHeight = GetDisplayResolution()
 
 function ui:Update()
   registerForEvent("onUpdate", function(deltaTime)
+
     for l in pairs(languages) do
       if languages[l].selLang then
         Options:setLang(languages[l].id)
         languages[l].selLang = false
       end
     end
+
     for i in pairs(protocols.Items) do
       if protocols.Items[i].press then
         if protocols.Items[i].type ~= "Button" and protocols.Items[i].value ~= nil then
@@ -68,8 +71,7 @@ function ui:Draw()
       if ImGui.BeginPopup("Language") then
         if Options.value.debug then
           if ImGui.Button("Update language files") then
-            dofile("lang/update.lua")
-            print("[BD] Language files updated..")
+            langUpdate()
           end
         end
         for l in pairs(languages) do

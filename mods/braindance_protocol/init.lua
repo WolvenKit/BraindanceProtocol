@@ -4,7 +4,7 @@ local ui = require("ui")
 local Options = require("options")
 Options:load()
 
-hotkeys()
+hotkeys:Register()
 ui:Update()
 ui:Draw()
 
