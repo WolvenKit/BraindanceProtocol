@@ -5,14 +5,15 @@ hotkeys()
 
 registerForEvent("onInit", function()
     CPS = require("CPStyling")
+    theme = CPS.theme
+    color = CPS.color
     fact = require("fact")
     i18n = require("i18n")
     languages = require("lang/lang")
-    theme = CPS.theme
-    color = CPS.color
-    config = loadConfig()
+    Options = require("options")
+    Options:load()
     protocols = require("protocols")
-    if config.debug then
+    if Options.value.debug then
         drawWindow = true
     else
         drawWindow = false
@@ -34,7 +35,7 @@ end)
 registerForEvent("onUpdate", function(deltaTime)
     for l in pairs(languages) do
         if languages[l].selLang then
-            setLang(languages[l].id)
+            Options:setLang(languages[l].id)
             languages[l].selLang = false
         end
     end
@@ -66,7 +67,7 @@ registerForEvent("onDraw", function()
             ImGui.OpenPopup("Language")
         end
         if ImGui.BeginPopup("Language") then
-            if config.debug then
+            if Options.value.debug then
                 if ImGui.Button("Update language files") then
                     dofile("lang/update.lua")
                     print("[BD] Language files updated..")
@@ -125,42 +126,5 @@ registerForEvent("onDraw", function()
         CPS.setThemeEnd()
     end
 end)
-
-function saveConfig(config_file, config)
-    local file = io.open(config_file, "w")
-    local jconfig = json.encode(config)
-    file:write(jconfig)
-    file:close()
-end
-
-function loadConfig()
-    local config_file = "config.json"
-    local config
-    if CPS.fileExists(config_file) then
-        local file = io.open(config_file, "r")
-        config = json.decode(file:read("*a"))
-        file:close()
-        if config.lang == nil then
-            config.lang = "en"
-            saveConfig(config_file, config)
-        end
-    else
-        config = { lang = "en" }
-        saveConfig(config_file, config)
-    end
-    if config.lang ~= "en" then
-        i18n.loadFile("lang/en.lua")
-    end
-    i18n.loadFile("lang/"..config.lang..".lua")
-    i18n.setLocale(config.lang)
-    return config
-end
-
-function setLang(language)
-    i18n.loadFile("lang/"..language..".lua")
-    i18n.setLocale(language)
-    config.lang = language
-    saveConfig("config.json", config)
-end
 
 return BD
