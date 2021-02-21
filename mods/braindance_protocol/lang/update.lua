@@ -8,6 +8,17 @@ local function alignstr(str) -- for aligning the table in output files
     return newstr
 end
 
+local function backup(lang)
+  local filename = "lang/"..lang..".lua"
+  local oldfile = "lang/"..lang.."_old.lua"
+  local f = io.open(filename, "r")
+  local data = f:read("*a")
+  f:close()
+  local f_backup = io.open(oldfile, "w")
+  f_backup:write(data)
+  f_backup:close()
+end
+
 local function update()
   local i18n_str = {}
   local i = 1
@@ -83,7 +94,8 @@ local function update()
       local lang = languages[t].id
       local old_en_file = dofile("lang/en.lua")
       local old_lang_file = dofile("lang/"..lang..".lua")
-      local new_lang_file = io.open("lang/"..lang.."_update.lua", "w")
+      backup(lang)
+      local new_lang_file = io.open("lang/"..lang..".lua", "w")
       -- header
       new_lang_file:write("return {\n")
       new_lang_file:write("  "..lang.." = {\n")
