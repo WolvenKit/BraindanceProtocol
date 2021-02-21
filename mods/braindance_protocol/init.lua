@@ -9,8 +9,7 @@ ui:Update()
 ui:Draw()
 
 registerForEvent("onInit", function()
-    -- Execute Braindance protocols
-    BD.Examples.Initialise()
+    print("[BD] Braindance Protocol Initialized!")
 end)
 
 return BD
