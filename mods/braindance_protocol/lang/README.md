@@ -38,15 +38,15 @@ After adding more protocols into `protocols.lua`, we need to update the language
 
     ![Imgur](https://i.imgur.com/L4DRkfc.png)
 
-3. Updated language files will be created with "_update" suffix inside "lang/". (e.g. `en_update.lua`)
-4. New strings will be commented inside the `xx_update.lua`
+3. Updated language files will be replacing the old language files. And backups of the old files will be created with "_old" suffix inside "lang/". (e.g. `en_old.lua`)
+4. New strings will be commented inside the updated files.
     ```lua
         window_title = "Brandance Protocol",
         -- new_string = ""
     ```
 
 ### How <kbd>Update language files</kbd> works?
-1. It will scan `init.lua` for strings inside `i18n("some_string")`, and strings from `protocols.lua`.
+1. It will scan `ui/*.lua` for strings inside `i18n("some_string")`, and strings from `protocols.lua`.
 2. Then it will read and compare with the old language files.
 3. If the translation of this string exists in the old language files, it will copy it over.
 4. If the translation doesn't exist in the old language files, but exists in `en.lua`, it will copy it over from `en.lua` and comment it.
