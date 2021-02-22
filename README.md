@@ -1,5 +1,3 @@
-
-
 # BraindanceProtocol
 
 A GUI and Console tool to modify your Cyberpunk 2077 experience.
