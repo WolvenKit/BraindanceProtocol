@@ -38,7 +38,7 @@ function list.DrawItem(item)
   local pmaxX, pmaxY = ImGui.GetItemRectMax()
   local width = ImGui.GetWindowContentRegionWidth()
   local drawList = ImGui.GetForegroundDrawList()
-  -- ImGui.ImDrawListAddRectFilled(drawList, pminX, pminY, pminX + width, pmaxY, 0xFFFFFF00)
+
   list_hovered = ImGui.IsMouseHoveringRect(pminX, pminY, pminX+width, pmaxY, true)
 
   if item.fav or list_hovered then
@@ -67,9 +67,9 @@ function list.DrawItem(item)
   if fav_pressed then Options.removeOrinsert(Options.fav_value.fav, item.id) end
 
   if fav_hovered then
-    ImGui.SetTooltip("Add to favorites")
+    ImGui.SetTooltip(i18n("button_addfav_tooltip"))
   elseif hk_hovered then
-    ImGui.SetTooltip("Add to hotkey list")
+    ImGui.SetTooltip(i18n("button_addhk_tooltip"))
   elseif text_hovered then
     ImGui.SetTooltip(i18n(item.description))
   end
@@ -91,7 +91,7 @@ function list.DrawTree()
   ImGui.SetNextItemOpen(true, ImGuiCond.FirstUseEver)
   CPS.colorBegin("Text" , color.white)
   CPS.colorBegin("Header", { 0.08, 0.08, 0.15, 0.8 })
-  local fav_open = ImGui.CollapsingHeader("Favorites")
+  local fav_open = ImGui.CollapsingHeader(i18n("header_fav"))
   CPS.colorEnd(2)
   if fav_open then
     for t,v in ipairs(protocols.Items) do
@@ -130,7 +130,7 @@ function list.DrawHKlist()
   end
   if #hk_list == 0 then
     ImGui.Indent(3)
-    ImGui.Text("No protocol added to the hotkey list yet.")
+    ImGui.Text(i18n("text_hklist_none"))
     ImGui.Unindent(3)
   else
     for i,v in ipairs(hk_list) do

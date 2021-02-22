@@ -42,7 +42,7 @@ function searchbar:Draw()
   ImGui.SameLine(winWidth*0.7 + 15)
   self.draw_hklist = widgets.HKButton("hklist", self.draw_hklist)
   if ImGui.IsItemHovered() then
-    ImGui.SetTooltip("Show Hotkey List")
+    ImGui.SetTooltip(i18n("button_toggle_hklist_tooltip"))
   end
   ImGui.Unindent(3)
   if self:onTextChange() then
