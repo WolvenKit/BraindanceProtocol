@@ -18,9 +18,12 @@ Drop `mods` folder into `bin\x64\plugins\cyber_engine_tweaks\`
 
 - Configure the hotkey for opening the GUI inside the ![Hotkeys](https://i.imgur.com/CunXqfq.png) tab of CyberEngineTweaks
 - To open the GUI, either:
-	1) Open the [CET](https://github.com/yamashi/CyberEngineTweaks) console - OR -
-	2) Press the hotkey to open the GUI (You need to close the console first)
+	1. Open the [CET](https://github.com/yamashi/CyberEngineTweaks) console - OR -
+	2. Press the hotkey to open the GUI (You need to close the console first)
 
+
+
+	
 ## Configuring Custom Hotkeys
 
 Follow these steps to configure custom hotkeys, for the protocols you want to keybind:
