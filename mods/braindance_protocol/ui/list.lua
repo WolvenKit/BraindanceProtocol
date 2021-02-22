@@ -1,5 +1,6 @@
 local i18n = require("i18n")
 local protocols = require("protocols")
+local widgets = require("ui/widgets")
 local CPS = require("CPStyling")
 local color = CPS.color
 
@@ -7,6 +8,8 @@ local list = {}
 
 function list.DrawItem(item)
   local btnWidth = 135
+  local text_hovered, fav_hovered, hk_hovered, list_hovered
+  local draw_fav, draw_hk
   ImGui.Indent(3)
   ImGui.BeginGroup()
   if item.type == "Button" then
@@ -26,11 +29,47 @@ function list.DrawItem(item)
   end
   ImGui.SameLine()
   ImGui.Text(i18n(item.name))
+  text_hovered = ImGui.IsItemHovered()
   ImGui.EndGroup()
-  if ImGui.IsItemHovered() then
+  ImGui.Unindent(3)
+
+  local pminX, pminY = ImGui.GetItemRectMin()
+  local pmaxX, pmaxY = ImGui.GetItemRectMax()
+  local width = ImGui.GetWindowContentRegionWidth()
+  local drawList = ImGui.GetForegroundDrawList()
+  -- ImGui.ImDrawListAddRectFilled(drawList, pminX, pminY, pminX + width, pmaxY, 0xFFFFFF00)
+  list_hovered = ImGui.IsMouseHoveringRect(pminX, pminY, pminX+width, pmaxY, true)
+
+  if item.fav or list_hovered then
+    draw_fav = true
+  else
+    draw_fav = false
+  end
+  if item.hk or list_hovered then
+    draw_hk = true
+  else
+    draw_hk = false
+  end
+
+  if draw_hk then
+    ImGui.SameLine(width - ImGui.GetFontSize()*2 -20)
+    item.hk = widgets.HKButton("hk", item.hk)
+    hk_hovered = ImGui.IsItemHovered()
+  end
+  if draw_fav then
+    ImGui.SameLine(width - ImGui.GetFontSize()- 15)
+    item.fav = widgets.StarButton("fav", item.fav)
+    fav_hovered = ImGui.IsItemHovered()
+  end
+
+
+  if fav_hovered then
+    ImGui.SetTooltip("Add to favorites")
+  elseif hk_hovered then
+    ImGui.SetTooltip("Add to hotkey list")
+  elseif text_hovered then
     ImGui.SetTooltip(i18n(item.description))
   end
-  ImGui.Unindent(3)
 end
 
 function list.UpdateItem()

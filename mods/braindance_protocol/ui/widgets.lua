@@ -1,64 +1,5 @@
 local widgets = {} -- Needs clean up
 
-function widgets.HKButton(str_id, value, size)
-  local drawList = ImGui.GetWindowDrawList()
-  local winX, winY = ImGui.GetWindowPos()
-  local cursorX, cursorY = ImGui.GetCursorPos()
-  local color
-  if size == 0 or size == nil then
-    size = ImGui.GetFontSize() + 4
-  end
-  local posX = winX + cursorX
-  local posY = winY + cursorY
-  local pressed = ImGui.InvisibleButton(str_id, size, size)
-  local active = ImGui.IsItemActive()
-  local hovered = ImGui.IsItemHovered()
-  if pressed then
-    value = not value
-  end
-  if active then
-    color = 0xFF00FFFF
-  elseif hovered then
-    color = 0xFF009696
-  elseif value then
-    color = 0xFF00FFFF
-  else
-    color = 0xFF6B6B6B
-  end
-  AddKeyPressIcon(drawList, size, posX, posY, color, 2)
-  return value, pressed
-end
-
-function widgets.StarButton(str_id, value, size)
-  local drawList = ImGui.GetWindowDrawList()
-  local winX, winY = ImGui.GetWindowPos()
-  local cursorX, cursorY = ImGui.GetCursorPos()
-  local color
-  if size == 0 or size == nil then
-    size = ImGui.GetFontSize() + 4
-  end
-  local posX = winX + cursorX + size/2
-  local posY = winY + cursorY + size/2
-  local pressed = ImGui.InvisibleButton(str_id, size, size)
-  local active = ImGui.IsItemActive()
-  local hovered = ImGui.IsItemHovered()
-  if pressed then
-    value = not value
-  end
-  if active then
-    color = 0xFF00FFFF
-  elseif hovered then
-    color = 0xFF009696
-  elseif value then
-    color = 0xFF00FFFF
-  else
-    color = 0xFF6B6B6B
-  end
-  AddStarFilled(drawList, size/2, posX, posY, color)
-  return value, pressed
-end
-
-
 local function getoutercorner(radius, centerX, centerY)
   local outer_corner = {}
   for i = 0, 4 do
@@ -149,6 +90,76 @@ local function AddKeyPressIcon(drawList, size, posX, posY, color, thickness)
   for _,v in ipairs(lines) do
     ImGui.ImDrawListAddLine(drawList, v[1].x, v[1].y, v[2].x, v[2].y, color, thickness)
   end
+end
+
+function widgets.HKButton(str_id, value, size)
+  local drawList = ImGui.GetWindowDrawList()
+  local winX, winY = ImGui.GetWindowPos()
+  local cursorX, cursorY = ImGui.GetCursorPos()
+  local scrollX = ImGui.GetScrollX()
+  local scrollY = ImGui.GetScrollY()
+  local color
+  if size == 0 or size == nil then
+    size = ImGui.GetFontSize() + 4
+  end
+  local posX = winX + cursorX - scrollX
+  local posY = winY + cursorY - scrollY
+  local pressed = ImGui.InvisibleButton(str_id, size, size)
+  local active = ImGui.IsItemActive()
+  local hovered = ImGui.IsItemHovered()
+  if pressed then
+    if value == nil then
+      value = true
+    else
+      value = not value
+    end
+  end
+  if active then
+    color = 0xFF00FFFF
+  elseif hovered then
+    color = 0xFF009696
+  elseif value then
+    color = 0xFF00FFFF
+  else
+    color = 0xFF6B6B6B
+  end
+  AddKeyPressIcon(drawList, size, posX, posY, color, 2)
+  return value, pressed
+end
+
+function widgets.StarButton(str_id, value, size)
+  local drawList = ImGui.GetWindowDrawList()
+  local winX, winY = ImGui.GetWindowPos()
+  local cursorX, cursorY = ImGui.GetCursorPos()
+  local scrollX = ImGui.GetScrollX()
+  local scrollY = ImGui.GetScrollY()
+  local color
+  if size == 0 or size == nil then
+    size = ImGui.GetFontSize() + 4
+  end
+  local posX = winX + cursorX + size/2 - scrollX
+  local posY = winY + cursorY + size/2 - scrollY
+  local pressed = ImGui.InvisibleButton(str_id, size, size)
+  local active = ImGui.IsItemActive()
+  local hovered = ImGui.IsItemHovered()
+  if pressed then
+    if value == nil then
+      value = true
+    else
+      value = not value
+    end
+  end
+  if active then
+    color = 0xFF00FFFF
+  elseif hovered then
+    color = 0xFF009696
+  elseif value then
+    color = 0xFF00FFFF
+  else
+    color = 0xFF6B6B6B
+  end
+  AddStarFilled(drawList, size/2, posX, posY, color)
+  return value, pressed
 end
 
 return widgets
