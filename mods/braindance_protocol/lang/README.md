@@ -2,7 +2,7 @@
 
 1. Edit `lang.lua`, add language *name* and it's *id*. For example
     ```lua
-    { id = "ja", name = "日本語 (Japanese)"}
+    { id = "ja", name = "日本語 (Japanese)"},
     ```
     Make sure to also write it's English name inside parentheses, because it may be rendered as ?? in a font that doesn't support it.
     
