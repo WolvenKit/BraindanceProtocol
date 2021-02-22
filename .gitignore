@@ -6,3 +6,4 @@ builds/*
 mods/braindance_protocol/braindance_protocol*.log
 mods/braindance_protocol/db.sqlite3
 mods/braindance_protocol/config.json
+mods/braindance_protocol/favorites.json

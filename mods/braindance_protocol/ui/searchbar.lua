@@ -61,7 +61,7 @@ function searchbar.DrawLang()
     ImGui.OpenPopup("Language")
   end
   if ImGui.BeginPopup("Language") then
-    if Options.value.debug then
+    if Options.config_value.debug then
       if ImGui.Button(i18n("button_update_lang")) then
         langUpdate()
       end

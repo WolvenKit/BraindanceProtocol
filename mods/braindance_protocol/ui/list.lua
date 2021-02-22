@@ -1,6 +1,7 @@
 local i18n = require("i18n")
 local protocols = require("protocols")
 local widgets = require("ui/widgets")
+local Options = require("options")
 local CPS = require("CPStyling")
 local color = CPS.color
 
@@ -8,7 +9,7 @@ local list = {}
 
 function list.DrawItem(item)
   local btnWidth = 135
-  local text_hovered, fav_hovered, hk_hovered, list_hovered
+  local text_hovered, fav_hovered, hk_hovered, list_hovered, fav_pressed, hk_pressed
   local draw_fav, draw_hk
   ImGui.Indent(3)
   ImGui.BeginGroup()
@@ -53,15 +54,17 @@ function list.DrawItem(item)
 
   if draw_hk then
     ImGui.SameLine(width - ImGui.GetFontSize()*2 -20)
-    item.hk = widgets.HKButton("hk", item.hk)
+    item.hk, hk_pressed = widgets.HKButton("hk", item.hk)
     hk_hovered = ImGui.IsItemHovered()
   end
   if draw_fav then
     ImGui.SameLine(width - ImGui.GetFontSize()- 15)
-    item.fav = widgets.StarButton("fav", item.fav)
+    item.fav, fav_pressed = widgets.StarButton("fav", item.fav)
     fav_hovered = ImGui.IsItemHovered()
   end
 
+  if hk_pressed then Options.removeOrinsert(Options.fav_value.hk, item.id) end
+  if fav_pressed then Options.removeOrinsert(Options.fav_value.fav, item.id) end
 
   if fav_hovered then
     ImGui.SetTooltip("Add to favorites")
