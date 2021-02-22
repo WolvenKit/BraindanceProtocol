@@ -55,7 +55,9 @@ function ui:Draw()
       ImGui.BeginChild("List", Childx+6, Childy)
 
       if self.searchbar.text ~= "" then
-        self.searchlist:Draw()
+        self.searchlist.Draw()
+      elseif self.searchbar.draw_hklist then
+        self.list.DrawHKlist()
       else
         self.list.DrawTree()
       end

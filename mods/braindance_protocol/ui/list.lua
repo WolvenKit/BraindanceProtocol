@@ -1,5 +1,7 @@
 local i18n = require("i18n")
 local protocols = require("protocols")
+local widgets = require("ui/widgets")
+local Options = require("options")
 local CPS = require("CPStyling")
 local color = CPS.color
 
@@ -7,6 +9,8 @@ local list = {}
 
 function list.DrawItem(item)
   local btnWidth = 135
+  local text_hovered, fav_hovered, hk_hovered, list_hovered, fav_pressed, hk_pressed
+  local draw_fav, draw_hk
   ImGui.Indent(3)
   ImGui.BeginGroup()
   if item.type == "Button" then
@@ -26,11 +30,49 @@ function list.DrawItem(item)
   end
   ImGui.SameLine()
   ImGui.Text(i18n(item.name))
+  text_hovered = ImGui.IsItemHovered()
   ImGui.EndGroup()
-  if ImGui.IsItemHovered() then
+  ImGui.Unindent(3)
+
+  local pminX, pminY = ImGui.GetItemRectMin()
+  local pmaxX, pmaxY = ImGui.GetItemRectMax()
+  local width = ImGui.GetWindowContentRegionWidth()
+  local drawList = ImGui.GetForegroundDrawList()
+
+  list_hovered = ImGui.IsMouseHoveringRect(pminX, pminY, pminX+width, pmaxY, true)
+
+  if item.fav or list_hovered then
+    draw_fav = true
+  else
+    draw_fav = false
+  end
+  if item.hk or list_hovered then
+    draw_hk = true
+  else
+    draw_hk = false
+  end
+
+  if draw_hk then
+    ImGui.SameLine(width - ImGui.GetFontSize()*2 -20)
+    item.hk, hk_pressed = widgets.HKButton("hk", item.hk)
+    hk_hovered = ImGui.IsItemHovered()
+  end
+  if draw_fav then
+    ImGui.SameLine(width - ImGui.GetFontSize()- 15)
+    item.fav, fav_pressed = widgets.StarButton("fav", item.fav)
+    fav_hovered = ImGui.IsItemHovered()
+  end
+
+  if hk_pressed then Options.removeOrinsert(Options.fav_value.hk, item.id) end
+  if fav_pressed then Options.removeOrinsert(Options.fav_value.fav, item.id) end
+
+  if fav_hovered then
+    ImGui.SetTooltip(i18n("button_addfav_tooltip"))
+  elseif hk_hovered then
+    ImGui.SetTooltip(i18n("button_addhk_tooltip"))
+  elseif text_hovered then
     ImGui.SetTooltip(i18n(item.description))
   end
-  ImGui.Unindent(3)
 end
 
 function list.UpdateItem()
@@ -45,7 +87,22 @@ function list.UpdateItem()
   end
 end
 
-function list:DrawTree()
+function list.DrawTree()
+  ImGui.SetNextItemOpen(true, ImGuiCond.FirstUseEver)
+  CPS.colorBegin("Text" , color.white)
+  CPS.colorBegin("Header", { 0.08, 0.08, 0.15, 0.8 })
+  local fav_open = ImGui.CollapsingHeader(i18n("header_fav"))
+  CPS.colorEnd(2)
+  if fav_open then
+    for t,v in ipairs(protocols.Items) do
+      if v.fav then
+        ImGui.PushID("fav"..tostring(t))
+        list.DrawItem(v)
+        ImGui.PopID()
+      end
+    end
+  end
+
   for i,pv in ipairs(protocols.Parents) do
     if i < 2 then ImGui.SetNextItemOpen(true, ImGuiCond.FirstUseEver) end
     CPS.colorBegin("Text" , color.white)
@@ -54,12 +111,32 @@ function list:DrawTree()
     CPS.colorEnd(2)
     if headerOpen then
       for t,iv in ipairs(protocols.Items) do
-        if iv.parent == pv.id then
-          ImGui.PushID(t)
+        if iv.parent == pv.id and iv.fav ~= true then
+          ImGui.PushID(iv.parent..tostring(t))
           list.DrawItem(iv)
           ImGui.PopID()
         end
       end
+    end
+  end
+end
+
+function list.DrawHKlist()
+  local hk_list = {}
+  for _,v in ipairs(protocols.Items) do
+    if v.hk then
+      table.insert(hk_list, v)
+    end
+  end
+  if #hk_list == 0 then
+    ImGui.Indent(3)
+    ImGui.Text(i18n("text_hklist_none"))
+    ImGui.Unindent(3)
+  else
+    for i,v in ipairs(hk_list) do
+      ImGui.PushID(i)
+      list.DrawItem(v)
+      ImGui.PopID()
     end
   end
 end

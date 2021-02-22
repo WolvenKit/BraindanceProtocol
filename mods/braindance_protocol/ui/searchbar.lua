@@ -5,11 +5,13 @@ local i18n = require("i18n")
 local languages = require("lang/lang")
 local langUpdate = require("lang/update")
 local Options = require("options")
+local widgets = require("ui/widgets")
 
 local searchbar = {
   seleted = false,
   textbefore = "",
   text = "",
+  draw_hklist = false,
 }
 
 function searchbar:onTextChange()
@@ -37,6 +39,11 @@ function searchbar:Draw()
     end
     CPS.colorEnd(1)
   end
+  ImGui.SameLine(winWidth*0.7 + 15)
+  self.draw_hklist = widgets.HKButton("hklist", self.draw_hklist)
+  if ImGui.IsItemHovered() then
+    ImGui.SetTooltip(i18n("button_toggle_hklist_tooltip"))
+  end
   ImGui.Unindent(3)
   if self:onTextChange() then
     search:query(self.text)
@@ -54,7 +61,7 @@ function searchbar.DrawLang()
     ImGui.OpenPopup("Language")
   end
   if ImGui.BeginPopup("Language") then
-    if Options.value.debug then
+    if Options.config_value.debug then
       if ImGui.Button(i18n("button_update_lang")) then
         langUpdate()
       end
