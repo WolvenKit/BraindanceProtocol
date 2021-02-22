@@ -5,11 +5,13 @@ local i18n = require("i18n")
 local languages = require("lang/lang")
 local langUpdate = require("lang/update")
 local Options = require("options")
+local widgets = require("ui/widgets")
 
 local searchbar = {
   seleted = false,
   textbefore = "",
   text = "",
+  draw_hklist = false,
 }
 
 function searchbar:onTextChange()
@@ -36,6 +38,11 @@ function searchbar:Draw()
       search:clear()
     end
     CPS.colorEnd(1)
+  end
+  ImGui.SameLine(winWidth*0.7 + 15)
+  self.draw_hklist = widgets.HKButton("hklist", self.draw_hklist)
+  if ImGui.IsItemHovered() then
+    ImGui.SetTooltip("Show Hotkey List")
   end
   ImGui.Unindent(3)
   if self:onTextChange() then

@@ -84,7 +84,7 @@ function list.UpdateItem()
   end
 end
 
-function list:DrawTree()
+function list.DrawTree()
   ImGui.SetNextItemOpen(true, ImGuiCond.FirstUseEver)
   CPS.colorBegin("Text" , color.white)
   CPS.colorBegin("Header", { 0.08, 0.08, 0.15, 0.8 })
@@ -114,6 +114,26 @@ function list:DrawTree()
           ImGui.PopID()
         end
       end
+    end
+  end
+end
+
+function list.DrawHKlist()
+  local hk_list = {}
+  for _,v in ipairs(protocols.Items) do
+    if v.hk then
+      table.insert(hk_list, v)
+    end
+  end
+  if #hk_list == 0 then
+    ImGui.Indent(3)
+    ImGui.Text("No protocol added to the hotkey list yet.")
+    ImGui.Unindent(3)
+  else
+    for i,v in ipairs(hk_list) do
+      ImGui.PushID(i)
+      list.DrawItem(v)
+      ImGui.PopID()
     end
   end
 end
