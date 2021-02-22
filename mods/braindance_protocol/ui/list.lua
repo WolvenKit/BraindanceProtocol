@@ -85,6 +85,21 @@ function list.UpdateItem()
 end
 
 function list:DrawTree()
+  ImGui.SetNextItemOpen(true, ImGuiCond.FirstUseEver)
+  CPS.colorBegin("Text" , color.white)
+  CPS.colorBegin("Header", { 0.08, 0.08, 0.15, 0.8 })
+  local fav_open = ImGui.CollapsingHeader("Favorites")
+  CPS.colorEnd(2)
+  if fav_open then
+    for t,v in ipairs(protocols.Items) do
+      if v.fav then
+        ImGui.PushID("fav"..tostring(t))
+        list.DrawItem(v)
+        ImGui.PopID()
+      end
+    end
+  end
+
   for i,pv in ipairs(protocols.Parents) do
     if i < 2 then ImGui.SetNextItemOpen(true, ImGuiCond.FirstUseEver) end
     CPS.colorBegin("Text" , color.white)
@@ -93,8 +108,8 @@ function list:DrawTree()
     CPS.colorEnd(2)
     if headerOpen then
       for t,iv in ipairs(protocols.Items) do
-        if iv.parent == pv.id then
-          ImGui.PushID(t)
+        if iv.parent == pv.id and iv.fav ~= true then
+          ImGui.PushID(iv.parent..tostring(t))
           list.DrawItem(iv)
           ImGui.PopID()
         end
