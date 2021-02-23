@@ -1,6 +1,9 @@
 # BraindanceProtocol
 
-A GUI and Console tool to modify your Cyberpunk 2077 experience.
+A GUI and Console tool to modify your Cyberpunk 2077 experience. 
+
+## Preview
+![Preview GUI](https://i.imgur.com/NkKN1Wg.gif) ![Favorites](https://i.imgur.com/U3EPSq4.gif) 
 
 ## Requirements
 
@@ -23,7 +26,6 @@ Drop `mods` folder into `bin\x64\plugins\cyber_engine_tweaks\`
 
 
 
-	
 ## Configuring Custom Hotkeys
 
 Follow these steps to configure custom hotkeys, for the protocols you want to keybind:
@@ -33,7 +35,8 @@ Follow these steps to configure custom hotkeys, for the protocols you want to ke
  3. Open the [CET](https://github.com/yamashi/CyberEngineTweaks) console and press the ![Reload All Mods](https://i.imgur.com/WGNgDiE.png) button
  4. Configure your new hotkey(s) from the ![Hotkeys](https://i.imgur.com/CunXqfq.png) tab in CET
 
- 
+![Custom Hotkeys](https://i.imgur.com/f1HhudU.gif)
+
 
 ## Currently Supported Languages
 
