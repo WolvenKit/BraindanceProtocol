@@ -3,7 +3,7 @@
 A GUI and Console tool to modify your Cyberpunk 2077 experience. 
 
 ## Preview
-![Preview GUI](https://media.giphy.com/media/8B162MHcCRO0qSmqUe/giphy.gif) 
+![Preview GUI](https://i.ibb.co/bPpQprN/6cz69b-Kehj.gif) 
 
 ## Requirements
 
