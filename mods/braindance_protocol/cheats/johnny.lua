@@ -5,7 +5,6 @@ local Inventory = require("inventory")
 
 function Johnny.AddItems()
     local moduleName = "Add Johnny's Items"
-    Utilities.StartProtocol(moduleName)
 
 	Inventory.AddItem("Preset_Silverhand_3516")
     Inventory.AddItem("Q005_Johnny_Glasses")

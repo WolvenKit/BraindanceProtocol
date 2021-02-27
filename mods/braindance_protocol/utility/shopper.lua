@@ -224,7 +224,6 @@ end
 function Shopper.SellJunk()
     -- Initialize protocol
     local moduleName = "The Trash Man"
-    Utilities.StartProtocol(moduleName)
 
     -- Execute generic selling logic for selected item type
     sellItems("junk")
@@ -236,7 +235,6 @@ end
 function Shopper.SellAlcohol()
     -- Initialize protocol
     local moduleName = "Mercenaries Anonymous"
-    Utilities.StartProtocol(moduleName)
 
     -- Execute generic selling logic
     sellItems("alcohol")
@@ -248,7 +246,6 @@ end
 function Shopper.SellJewellery()
     -- Initialize protocol
     local moduleName = "The Jewel Store Job"
-    Utilities.StartProtocol(moduleName)
 
     -- Execute generic selling logic
     sellItems("jewellery")
@@ -260,7 +257,6 @@ end
 function Shopper.SellAllUselessItems()
     -- Initialize protocol
     local moduleName = "V's Cleanup Detail"
-    Utilities.StartProtocol(moduleName)
 
     -- Execute generic selling logic for selected item type
     sellItems("junk")
