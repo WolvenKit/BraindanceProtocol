@@ -18,7 +18,6 @@ local ATTRIBUTES = {
 
 function Player.AddMoney(quantity)
     local moduleName = "l-o-a-d-s-a-m-o-n-e-y"
-    Utilities.StartProtocol(moduleName)
 
     quantity = quantity or 999999
 
@@ -49,7 +48,6 @@ function Player.MaxOut()
     }
 
     local moduleName = "Max out Level, Streetcred, Perk, and Attributes"
-    Utilities.StartProtocol(moduleName)
 
     for _, attribute in ipairs(ATTRIBUTES) do
         Game.SetAtt(attribute, 20)
@@ -66,7 +64,6 @@ end
 
 function Player.Respec()
     local moduleName = "Respec player perks and attributes"
-    Utilities.StartProtocol(moduleName)
 
     local playerID = Game.GetPlayer():GetEntityID()
     local statsSystem = Game.GetStatsSystem()
@@ -91,7 +88,6 @@ end
 
 function Player.UnlockAllVehicles()
     local moduleName = "Unlock All Vehicles"
-    Utilities.StartProtocol(moduleName)
     Game.EnableAllPlayerVehicles()
     Utilities.FinishProtocol(moduleName)
 end
@@ -100,7 +96,6 @@ end
 -- Thanks to DankRafft on Nexusmods for these toggle things
 function Player.SlowMotionToggle()
     local moduleName = "Slow-Motion"
-    Utilities.StartProtocol(moduleName)
 
     Player.slowMotion = not Player.slowMotion
     if (Player.slowMotion) then
@@ -115,7 +110,6 @@ end
 -- Toggle Infinte Stamina
 function Player.InfiniteStaminaToggle()
     local moduleName = "Infinite Stamina"
-    Utilities.StartProtocol(moduleName)
 
     Player.infiniteStamina = not Player.infiniteStamina
     Game.InfiniteStamina(Player.infiniteStamina)
@@ -128,7 +122,6 @@ end
 -- All credits to Willy-JL / Str8up Menu
 function Player.GodModeToggle()
     local moduleName = "God Mode"
-    Utilities.StartProtocol(moduleName)
 
     Player.godMode = not Player.godMode
         if (Player.godMode) then
@@ -169,7 +162,6 @@ end
 -- Rocket Boots / Slow Fall
 function Player.RocketBootsOn()
     local moduleName = "Enables Rocket Boots (slow fall) - Reload Game To Disable"
-    Utilities.StartProtocol(moduleName)
     Game.ModStatPlayer("HasAirThrusters", "1")
     Utilities.FinishProtocol(moduleName)
 end
@@ -177,7 +169,6 @@ end
 -- Forced NPC Death
 function Player.ForceNPCDeath()
     local moduleName = "Kills The Targeted NPC"
-    Utilities.StartProtocol(moduleName)
     Game.ForcedNPCDeath()
     Utilities.FinishProtocol(moduleName)
 end
@@ -185,7 +176,6 @@ end
 -- Discover All Points Of Interest
 function Player.DiscoverAllPOI()
     local moduleName = "Reveals All Points Of Interests (All '?' Marks)"
-    Utilities.StartProtocol(moduleName)
     Game.GetMappinSystem():DebugDiscoverAllPoiMappins()
     Utilities.FinishProtocol(moduleName)
 end
@@ -193,7 +183,6 @@ end
 -- Infinite Oxygen
 function Player.InfiniteOxygenOn()
     local moduleName = "Enable Infine Oxygen - Reload Game To Disable"
-    Utilities.StartProtocol(moduleName)
     Game.ModStatPlayer("CanBreatheUnderwater", "1")
     Utilities.FinishProtocol(moduleName)
 end
@@ -201,7 +190,6 @@ end
 -- Player Stats (Cumulative Adding Of Stats)
 function Player.AddMaxHealth(quantity)
     local moduleName = "Add Max Health (cumulative)"
-    Utilities.StartProtocol(moduleName)
 
     quantity = quantity or 0
 
@@ -212,7 +200,6 @@ end
 
 function Player.AddMaxArmor(quantity)
     local moduleName = "Add Max Armor (cumulative)"
-    Utilities.StartProtocol(moduleName)
 
     quantity = quantity or 0
 
@@ -223,7 +210,6 @@ end
 
 function Player.AddMaxStamina(quantity)
     local moduleName = "Add Max Stamina (cumulative)"
-    Utilities.StartProtocol(moduleName)
 
     quantity = quantity or 0
 
@@ -234,7 +220,6 @@ end
 
 function Player.AddMaxOxygen(quantity)
     local moduleName = "Add Max Oxygen (cumulative)"
-    Utilities.StartProtocol(moduleName)
 
     quantity = quantity or 0
 
@@ -245,7 +230,6 @@ end
 
 function Player.AddMaxCritDamage(quantity)
     local moduleName = "Add Max Critical Damage (cumulative)"
-    Utilities.StartProtocol(moduleName)
 
     quantity = quantity or 0
 
@@ -256,7 +240,6 @@ end
 
 function Player.AddMaxCarryCapacity(quantity)
     local moduleName = "Add Max Carry Capacity (cumulative)"
-    Utilities.StartProtocol(moduleName)
 
     quantity = quantity or 0
 
@@ -267,7 +250,6 @@ end
 
 function Player.AddMaxMemorySlots(quantity)
     local moduleName = "Add Memory Slots (cumulative)"
-    Utilities.StartProtocol(moduleName)
 
     quantity = quantity or 0
 
@@ -278,7 +260,6 @@ end
 
 function Player.AddMaxMovementSpeed(quantity)
     local moduleName = "Add Movement Speed (cumulative)"
-    Utilities.StartProtocol(moduleName)
 
     quantity = quantity or 0
 
