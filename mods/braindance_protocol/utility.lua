@@ -1,9 +1,5 @@
 local Utilities = {}
 
-function Utilities.StartProtocol(name)
-    print(string.format("[BD] Executing Protocol: %s", name))
-end
-
 function Utilities.FinishProtocol(name)
     print(string.format("[BD] Finished Protocol: %s", name))
 end

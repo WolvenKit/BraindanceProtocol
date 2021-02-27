@@ -6,7 +6,6 @@ local Inventory = require("inventory")
 
 function ItemSets.AddSetCorpo()
     local moduleName = "Add Corpo Item Set"
-    Utilities.StartProtocol(moduleName)
 
 	-- Corpo Set
     Inventory.AddItem("Corporate_01_Set_FormalJacket")
@@ -20,7 +19,6 @@ end
 
 function ItemSets.AddSetFixer()
     local moduleName = "Add Fixer Item Set"
-    Utilities.StartProtocol(moduleName)
 
 	-- Fixer Set
     Inventory.AddItem("Fixer_01_Set_Coat")
@@ -34,7 +32,6 @@ end
 
 function ItemSets.AddSetMaxTac()
     local moduleName = "Add MaxTac Item Set"
-    Utilities.StartProtocol(moduleName)
 
 	-- MaxTac Set
     Inventory.AddItem("SQ030_MaxTac_Chest")
@@ -46,7 +43,6 @@ end
 
 function ItemSets.AddSetMedia()
     local moduleName = "Add Media Item Set"
-    Utilities.StartProtocol(moduleName)
 
 	-- Media Set
     Inventory.AddItem("Media_01_Set_Cap")
@@ -61,7 +57,6 @@ end
 
 function ItemSets.AddSetNetrunner()
     local moduleName = "Add Netrunner Item Set"
-    Utilities.StartProtocol(moduleName)
 
 	-- Netrunner Set
     Inventory.AddItem("Netrunner_01_Set_Jumpsuit")
@@ -74,7 +69,6 @@ end
 
 function ItemSets.AddSetNomad()
     local moduleName = "Add Nomad Item Set"
-    Utilities.StartProtocol(moduleName)
 
 	-- Nomad Set
     Inventory.AddItem("Nomad_01_Set_Boots")
@@ -89,7 +83,6 @@ end
 
 function ItemSets.AddSetPolice()
     local moduleName = "Add Police Item Set"
-    Utilities.StartProtocol(moduleName)
 
 	-- Police Set
     Inventory.AddItem("Cop_01_Set_Boots")
@@ -103,7 +96,6 @@ end
 
 function ItemSets.AddSetRocker()
     local moduleName = "Add Rocker Item Set"
-    Utilities.StartProtocol(moduleName)
 
 	-- Rocker Set
     Inventory.AddItem("Rockerboy_01_Set_Boots")
@@ -117,7 +109,6 @@ end
 
 function ItemSets.AddSetSolo()
     local moduleName = "Add Solo Item Set"
-    Utilities.StartProtocol(moduleName)
 
 	-- Solo Set
     Inventory.AddItem("Solo_01_Set_Boots")
@@ -131,7 +122,6 @@ end
 
 function ItemSets.AddSetTechie()
     local moduleName = "Add Techie Item Set"
-    Utilities.StartProtocol(moduleName)
 
 	-- Techie Set
     Inventory.AddItem("Techie_01_Set_Cap")
@@ -146,7 +136,6 @@ end
 
 function ItemSets.AddSetVCorpo()
     local moduleName = "Add V's Corpo Set"
-    Utilities.StartProtocol(moduleName)
 
 	-- V's Corpo Set
     Inventory.AddItem("Q000_Corpo_FormalJacket")
@@ -159,7 +148,6 @@ end
 
 function ItemSets.AddSetVNomad()
     local moduleName = "Add V's Nomad Set"
-    Utilities.StartProtocol(moduleName)
 
 	-- V's Nomad Set
     Inventory.AddItem("Q000_half_Nomad")
@@ -174,7 +162,6 @@ end
 
 function ItemSets.AddSetVStreetkid()
     local moduleName = "Add V's Streetkid Set"
-    Utilities.StartProtocol(moduleName)
 
 	-- V's Streetkid Set
     Inventory.AddItem("Q000_half_StreetKid")
@@ -187,7 +174,6 @@ end
 
 function ItemSets.AddSetVEpilogue()
     local moduleName = "Add V's Epilogue Set"
-    Utilities.StartProtocol(moduleName)
 
 	-- Epilogue Gear
     Inventory.AddItem("Q203_Epilogue_Boots")
@@ -200,7 +186,6 @@ end
 
 function ItemSets.AddSetVMisc()
     local moduleName = "Add V's Misc Set"
-    Utilities.StartProtocol(moduleName)
 
 	-- Rest of V's Gear
     Inventory.AddItem("Q001_Pants")
@@ -212,7 +197,6 @@ end
 
 function ItemSets.AddAllSets()
     local moduleName = "Add All Item Sets"
-    Utilities.StartProtocol(moduleName)
 
 	ItemSets.AddSetCorpo()
 	ItemSets.AddSetFixer()
