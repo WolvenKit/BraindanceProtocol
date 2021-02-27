@@ -4,7 +4,6 @@ local Utilities = require("utility")
 
 function Modify.Set(cat, slot, rarity)
     local moduleName = "Modify."
-    Utilities.StartProtocol(moduleName)
 
 	player = Game.GetPlayer()
 	ssc = Game.GetScriptableSystemsContainer()
@@ -28,7 +27,6 @@ end
 
 function Modify.RemoveQuestTags()
     local moduleName = "Removed Quest Tags From Items"
-    Utilities.StartProtocol(moduleName)
 
 		player = Game.GetPlayer()
 		ssc = Game.GetScriptableSystemsContainer()

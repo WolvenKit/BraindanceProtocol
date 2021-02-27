@@ -1,7 +1,17 @@
 return {
   cn = {
+    hotkey_interface                                            = "打开界面" ,
     window_title                                                = "超梦协议" ,
+    button_addfav_tooltip                                       = "添加至收藏" ,
+    button_addhk_tooltip                                        = "添加至热键列表" ,
+    header_fav                                                  = "收藏" ,
+    text_hklist_none                                            = "你还未添加任何协议到热键列表..." ,
+    searchbar_hint                                              = "搜索协议..." ,
+    button_toggle_hklist_tooltip                                = "显示热键列表" ,
     button_language                                             = "简中" ,
+    button_language_tooltip                                     = "选择语言" ,
+    button_update_lang                                          = "更新语言文件" ,
+    text_searchlist_no_result                                   = "找不到符合的结果..." ,
     parent_Cheats                                               = "作弊" ,
     parent_Crafting                                             = "制作图纸" ,
     parent_Cyberware                                            = "赛博义体" ,

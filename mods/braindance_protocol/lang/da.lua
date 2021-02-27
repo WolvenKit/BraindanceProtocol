@@ -1,7 +1,17 @@
 return {
   da = {
+    hotkey_interface                                            = "Åben BDP Brugerflade" ,
     window_title                                                = "Braindance Protokol" ,
+    -- button_addfav_tooltip                                       = "Add to favorites" ,
+    -- button_addhk_tooltip                                        = "Add to hotkey list" ,
+    -- header_fav                                                  = "Favorites" ,
+    -- text_hklist_none                                            = "No protocol added to the hotkey list yet." ,
+    searchbar_hint                                              = "Søg Protokol.." ,
+    -- button_toggle_hklist_tooltip                                = "Show Hotkey List" ,
     button_language                                             = "DA" ,
+    button_language_tooltip                                     = "Vælg Sprog" ,
+    button_update_lang                                          = "Opdater Sprog Filer" ,
+    text_searchlist_no_result                                   = "Ingen søgeresultater fundet..." ,
     parent_Cheats                                               = "Snydekoder" ,
     parent_Crafting                                             = "Crafting Opskrifter" ,
     parent_Cyberware                                            = "Cyberware Varer" ,

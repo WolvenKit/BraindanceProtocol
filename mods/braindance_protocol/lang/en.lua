@@ -1,7 +1,17 @@
 return {
   en = {
+    hotkey_interface                                            = "Open Protocol Interface" ,
     window_title                                                = "Braindance Protocol" ,
+    button_addfav_tooltip                                       = "Add to favorites" ,
+    button_addhk_tooltip                                        = "Add to hotkey list" ,
+    header_fav                                                  = "Favorites" ,
+    text_hklist_none                                            = "No protocol added to the hotkey list yet." ,
+    searchbar_hint                                              = "Search Protocol.." ,
+    button_toggle_hklist_tooltip                                = "Show Hotkey List" ,
     button_language                                             = "EN" ,
+    button_language_tooltip                                     = "Select Language" ,
+    button_update_lang                                          = "Update Language Files" ,
+    text_searchlist_no_result                                   = "Cannot find any result..." ,
     parent_Cheats                                               = "Cheats" ,
     parent_Crafting                                             = "Crafting Recipes" ,
     parent_Cyberware                                            = "Cyberware Items" ,

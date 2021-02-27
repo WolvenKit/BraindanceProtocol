@@ -4,7 +4,6 @@ local Utilities = require("utility")
 
 function Legend.UpgradeWeapons()
     local moduleName = "All Equipped Weapons Are Now Legendary With Max Stats"
-    Utilities.StartProtocol(moduleName)
 
     player = Game.GetPlayer()
     ssc = Game.GetScriptableSystemsContainer()
@@ -47,7 +46,6 @@ end
 
 function Legend.UpgradeArmor()
     local moduleName = "All Equipped Armor Are Now Legendary With Max Stats"
-    Utilities.StartProtocol(moduleName)
 
     player = Game.GetPlayer()
     ssc = Game.GetScriptableSystemsContainer()
@@ -96,7 +94,6 @@ end
 
 function Legend.UpgradeMods()
     local moduleName = "All Non-Equipped Mods Are Now Legendary With Max Stats"
-    Utilities.StartProtocol(moduleName)
 
     player = Game.GetPlayer()
     ssc = Game.GetScriptableSystemsContainer()
@@ -128,7 +125,6 @@ end
 
 function Legend.UpgradeCW()
     local moduleName = "All Equipped Cyberware Are Now Legendary. NOTE: This is just for aesthetics. You should add the real items, from the other commands"
-    Utilities.StartProtocol(moduleName)
 
     player = Game.GetPlayer()
     ssc = Game.GetScriptableSystemsContainer()
@@ -184,7 +180,6 @@ end
 
 function Legend.UpgradeAll()
     local moduleName = "Make all equipped gear Legendary with max stats - except equipped mods"
-    Utilities.StartProtocol(moduleName)
 
     Legend.UpgradeWeapons()
     Legend.UpgradeArmor()

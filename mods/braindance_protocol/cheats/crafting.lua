@@ -5,7 +5,6 @@ local Inventory = require("inventory")
 
 function Crafting.AddLegendaryMaterials(quantity)
     local moduleName = "Add Crafting Materials"
-    Utilities.StartProtocol(moduleName)
 
     quantity = quantity or 9999
 
@@ -23,7 +22,6 @@ end
 
 function Crafting.AddLegendaryRecipes()
     local moduleName = "Add Legendary Crafting Recipes"
-    Utilities.StartProtocol(moduleName)
 
 -- These are legendary clothing recipes
 	-- Chest Armor
@@ -373,7 +371,6 @@ end
 
 function Crafting.AddModRecipes()
     local moduleName = "Add All Mod Recipes"
-    Utilities.StartProtocol(moduleName)
 
 -- These are all the Clothing Mod recipes
 -- (excluding legendary ones added previously)
@@ -473,7 +470,6 @@ end
 
 function Crafting.AddMedRecipes()
     local moduleName = "Add All Med/Medicine Recipes"
-    Utilities.StartProtocol(moduleName)
 
 -- These are all the Medicine recipes
 	Inventory.AddItem("RecipeBonesMcCoy70V0")
@@ -495,7 +491,6 @@ end
 
 function Crafting.AddGrenadeRecipes()
     local moduleName = "Add All Grenade Recipes"
-    Utilities.StartProtocol(moduleName)
 -- These are all the Grenade recipes
 	Inventory.AddItem("RecipeGrenadeBiohazardHoming")
 	Inventory.AddItem("RecipeGrenadeBiohazardRegular")
@@ -532,7 +527,6 @@ end
 
 function Crafting.AddEpicRecipes()
     local moduleName = "Add All Epic Crafting Recipes"
-    Utilities.StartProtocol(moduleName)
 
 -- These are legendary clothing recipes
 	-- Chest Armor
@@ -661,7 +655,6 @@ end
 
 function Crafting.AddRareRecipes()
     local moduleName = "Add All Rare Crafting Recipes"
-    Utilities.StartProtocol(moduleName)
 
 -- These are rare clothing recipes
 	-- Chest Armor
@@ -776,7 +769,6 @@ end
 
 function Crafting.AddUncommonRecipes()
     local moduleName = "Add All Uncommon Crafting Recipes"
-    Utilities.StartProtocol(moduleName)
 
 -- These are uncommon clothing recipes
 	-- Chest Armor
@@ -891,7 +883,6 @@ end
 
 function Crafting.AddCommonRecipes()
     local moduleName = "Add All Common Crafting Recipes"
-    Utilities.StartProtocol(moduleName)
 -- There are no common clothing recipes
 -- These are all the common guns, rifles, etc recipes
 	-- Assault Rifles
@@ -972,7 +963,6 @@ end
 
 function Crafting.AddAll()
     local moduleName = "Add All Crafting Objects"
-    Utilities.StartProtocol(moduleName)
 
 	Crafting.AddLegendaryMaterials()
 	Crafting.AddLegendaryRecipes()

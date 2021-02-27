@@ -1,5 +1,3 @@
-local BraindanceProtocol = {}
-
 local BD = require("BD")
 
 local Protocols = {

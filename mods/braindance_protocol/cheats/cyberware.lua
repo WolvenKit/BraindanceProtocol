@@ -5,7 +5,6 @@ local Inventory = require("inventory")
 
 function Cyberware.AddIconicCW()
     local moduleName = "Add All Iconic Cyberware Items"
-    Utilities.StartProtocol(moduleName)
 
 -- All Iconic Cyberware Items
 	-- Cyberdeck OS
@@ -22,7 +21,6 @@ end
 
 function Cyberware.AddLegendaryCW()
     local moduleName = "Add All Legendary Cyberware Items"
-    Utilities.StartProtocol(moduleName)
 
 -- All Legendary Cyberware Items
 	-- Arms
@@ -105,7 +103,6 @@ end
 
 function Cyberware.AddEpicCW()
     local moduleName = "Add All Epic Cyberware Items"
-    Utilities.StartProtocol(moduleName)
 
 -- All Epic Cyberware Items
 	-- Arms
@@ -203,7 +200,6 @@ end
 
 function Cyberware.AddRareCW()
     local moduleName = "Add All Rare Cyberware Items"
-    Utilities.StartProtocol(moduleName)
 
 	-- Arms
 	Inventory.AddItem("MantisBlades")
@@ -296,7 +292,6 @@ end
 
 function Cyberware.AddUncommonCW()
     local moduleName = "Add All Uncommon Cyberware Items"
-    Utilities.StartProtocol(moduleName)
 
 	-- All Uncommon Cyberware Items
 	-- Circulatory System
@@ -365,7 +360,6 @@ end
 
 function Cyberware.AddCommonCW()
     local moduleName = "Add All Common Cyberware Items"
-    Utilities.StartProtocol(moduleName)
 
 	-- Circulatory System
 	Inventory.AddItem("BloodPumpCommon")
@@ -427,7 +421,6 @@ end
 
 function Cyberware.AddAllCW()
     local moduleName = "Add All Cyberware Items"
-    Utilities.StartProtocol(moduleName)
 
 	Cyberware.AddIconicCW()
 	Cyberware.AddLegendaryCW()

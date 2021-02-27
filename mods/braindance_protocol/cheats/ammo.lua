@@ -12,7 +12,6 @@ local Inventory = require("inventory")
 -- All credits to Nexusmods user "TheBs65422" for the infinite ammo script
 function Ammo.AddAmmo()
     local moduleName = "Refill All Ammunition"
-    Utilities.StartProtocol(moduleName)
 
     Game.AddToInventory("Ammo.HandgunAmmo", 1000)
     Game.AddToInventory("Ammo.ShotgunAmmo", 1000)
@@ -120,7 +119,6 @@ end
 
 function Ammo.InfiniteAmmoToggle()
     local moduleName = "Auto Refill Ammo Toggle"
-    Utilities.StartProtocol(moduleName)
 	
     if Ammo.isInfiniteAmmo then
         Ammo.RestoreLastWeaponStats(false)
@@ -137,7 +135,6 @@ end
 
 function Ammo.InfiniteAmmoNoReloadToggle()
     local moduleName = "No Reload Toggle"
-    Utilities.StartProtocol(moduleName)
 	
     if Ammo.isInfiniteAmmoNoReload then
         Ammo.RestoreLastWeaponStats(true)
