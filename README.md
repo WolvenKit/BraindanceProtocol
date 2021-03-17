@@ -45,6 +45,7 @@ Follow these steps to configure custom hotkeys, for the protocols you want to ke
 - Danish - Dansk (Translator: VP-EN)
 - German - Deutsch (Translator: nodeg)
 - Russian - Русский (Translator: vanja-san)
+- French - Français (Translator: praxatics)
 
 ## How to display other languages
 Here is a [detailed guide](https://wiki.cybermods.net/cyber-engine-tweaks/getting-started/configuration/change-font-and-font-size#how-to-display-non-english-characters) on how to change the font of CET to display the non-English Characters. 
