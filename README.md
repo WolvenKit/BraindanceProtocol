@@ -9,7 +9,7 @@ A GUI and Console tool to modify your Cyberpunk 2077 experience.
 
 - Requires v1.12.1 of [CyberEngineTweaks](https://github.com/yamashi/CyberEngineTweaks/releases/tag/v1.12.1).
   - For help installing CyberEngineTweaks, see this [Installation page on the wiki](https://wiki.cybermods.net/cyber-engine-tweaks/getting-started/installing).
-- Legitimate Copy of Cyberpunk 2077 Version 1.12
+- Legitimate Copy of Cyberpunk 2077 Version 1.2
 
 ## Installation
 
