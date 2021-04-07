@@ -9,8 +9,6 @@ local fact = require("fact")
 local i18n = require("i18n")
 local CPS = require("CPStyling")
 
-ui.wWidth, ui.wHeight = GetDisplayResolution()
-
 function ui:Update()
   registerForEvent("onUpdate", function(deltaTime)
 

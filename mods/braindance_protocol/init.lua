@@ -10,6 +10,7 @@ ui:Update()
 ui:Draw()
 
 registerForEvent("onInit", function()
+    ui.wWidth, ui.wHeight = GetDisplayResolution()
     print("[BD] Braindance Protocol Initialized!")
 end)
 
