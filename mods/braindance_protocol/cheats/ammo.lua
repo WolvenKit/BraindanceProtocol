@@ -74,10 +74,10 @@ function Ammo.SetNewWeapon(weapon)
 
             if weaponStatsObjectID ~= nil then
                 Ammo.lastActiveWeapon = {}
-        
+
                 Ammo.lastActiveWeapon.statsObjectID = weaponStatsObjectID
                 Ammo.lastActiveWeapon.itemID = weapon:GetItemID()
-                Ammo.lastActiveWeapon.numShotsToFire = statsSystem:GetStatValue(weaponStatsObjectID, Game.EnumValueFromString("gamedataStatType", "NumShotsToFire"))
+                Ammo.lastActiveWeapon.numShotsToFire = statsSystem:GetStatValue(weaponStatsObjectID, Enum.new("gamedataStatType", "NumShotsToFire"))
             end
         end
     end
@@ -86,7 +86,7 @@ end
 function Ammo.RestoreLastWeaponStats(isModifiedStats)
     if Ammo.lastActiveWeapon ~= nil then
         if isModifiedStats then
-            local statModifier = Game['gameRPGManager::CreateStatModifier;gamedataStatTypegameStatModifierTypeFloat'](Game.EnumValueFromString("gamedataStatType", "NumShotsToFire"), Game.EnumValueFromString("gameStatModifierType", "Additive"), Ammo.lastActiveWeapon.numShotsToFire)
+            local statModifier = Game['gameRPGManager::CreateStatModifier;gamedataStatTypegameStatModifierTypeFloat'](Enum.new("gamedataStatType", "NumShotsToFire"), Enum.new("gameStatModifierType", "Additive"), Ammo.lastActiveWeapon.numShotsToFire)
 
             if statModifier ~= nil then
                 local statsSystem = Game.GetStatsSystem()
@@ -119,7 +119,7 @@ end
 
 function Ammo.InfiniteAmmoToggle()
     local moduleName = "Auto Refill Ammo Toggle"
-	
+
     if Ammo.isInfiniteAmmo then
         Ammo.RestoreLastWeaponStats(false)
     end
@@ -135,7 +135,7 @@ end
 
 function Ammo.InfiniteAmmoNoReloadToggle()
     local moduleName = "No Reload Toggle"
-	
+
     if Ammo.isInfiniteAmmoNoReload then
         Ammo.RestoreLastWeaponStats(true)
     end
@@ -159,7 +159,7 @@ function Ammo.OnUpdateAmmo(deltaTime)
 
             if player ~= nil then
                 local activeWeapon = Game.GetTransactionSystem():GetItemInSlot(player, TweakDBID.new('AttachmentSlots.WeaponRight'))
-                
+
                 if activeWeapon ~= nil and Game['gameweaponObject::IsRanged;ItemID'](activeWeapon:GetItemID()) then
                     if Ammo.isInfiniteAmmo then
                         Ammo.SetInfiniteAmmo(activeWeapon)
@@ -199,7 +199,7 @@ function Ammo.SetInfiniteAmmoNoReload(weapon)
         Ammo.SetNewWeapon(weapon)
 
         if Ammo.lastActiveWeapon ~= nil then
-            local statModifier = Game['gameRPGManager::CreateStatModifier;gamedataStatTypegameStatModifierTypeFloat'](Game.EnumValueFromString("gamedataStatType", "NumShotsToFire"), Game.EnumValueFromString("gameStatModifierType", "Additive"), -Ammo.lastActiveWeapon.numShotsToFire)
+            local statModifier = Game['gameRPGManager::CreateStatModifier;gamedataStatTypegameStatModifierTypeFloat'](Enum.new("gamedataStatType", "NumShotsToFire"), Enum.new("gameStatModifierType", "Additive"), -Ammo.lastActiveWeapon.numShotsToFire)
             local statsSystem = Game.GetStatsSystem()
 
             if statModifier ~= nil and statsSystem ~= nil then
